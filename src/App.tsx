@@ -195,7 +195,7 @@ export default function App() {
                   de cada clienta protegidos.
                 </p>
               </div>
-              <div className="flex justify-center gap-4 sm:gap-6">
+              <div className="flex items-start justify-center gap-4 sm:gap-6">
                 <figure className="w-[44%] max-w-[15rem]">
                   <img
                     src="/img/johana-inicio.webp"
@@ -207,7 +207,7 @@ export default function App() {
                   />
                   <figcaption className="mt-3 text-center text-sm text-bruma">Lo que ve la clienta</figcaption>
                 </figure>
-                <figure className="mt-12 w-[44%] max-w-[15rem]">
+                <figure className="w-[44%] max-w-[15rem]">
                   <img
                     src="/img/johana-panel.webp"
                     width={480}
