@@ -8,5 +8,9 @@ export default defineConfig({
     // Sin estilos ni scripts en línea, para que la CSP estricta de firebase.json funcione
     assetsInlineLimit: 0,
     modulePreload: { polyfill: false },
+    // Dos páginas: el inicio y el aviso de privacidad
+    rollupOptions: {
+      input: { inicio: 'index.html', privacidad: 'privacidad.html' },
+    },
   },
 })
