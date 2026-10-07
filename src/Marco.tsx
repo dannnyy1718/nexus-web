@@ -41,9 +41,15 @@ export function Encabezado() {
       </a>
 
       <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:px-8">
-        <a href="/" className="flex items-center gap-3" aria-label="NEXUS, inicio">
-          <img src="/img/escudo-mini.webp" alt="" width={40} height={40} className="rounded-lg" />
-          <span className="marca text-xl">NEXUS</span>
+        <a href="/" className="flex items-center gap-3 md:gap-4" aria-label="NEXUS, inicio">
+          <img
+            src="/img/escudo-mini.webp"
+            alt=""
+            width={64}
+            height={64}
+            className="size-12 rounded-xl shadow-[0_0_24px_-4px_var(--color-cian)] md:size-16"
+          />
+          <span className="marca marca-brillo text-2xl md:text-[2rem]">NEXUS</span>
         </a>
         <a
           href={WHATSAPP_URL}
@@ -64,8 +70,8 @@ export function Pie() {
   return (
     <footer className="mx-auto grid max-w-6xl gap-4 border-t border-linea px-4 py-8 text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8 md:px-8">
       <span className="flex items-center gap-3">
-        <img src="/img/escudo-mini.webp" alt="" width={28} height={28} className="rounded-md" loading="lazy" />
-        <span className="marca">NEXUS</span>
+        <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
+        <span className="marca text-lg">NEXUS</span>
       </span>
       <p>
         Esta página no usa cookies ni rastreadores.{' '}

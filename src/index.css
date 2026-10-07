@@ -63,6 +63,11 @@
   color: transparent;
 }
 
+/* Brillo cian alrededor de la palabra NEXUS del encabezado */
+.marca-brillo {
+  filter: drop-shadow(0 0 10px rgb(67 217 242 / 0.45));
+}
+
 /* Escudo del hero: se funde con el fondo y brilla al cargar */
 .escudo {
   mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
