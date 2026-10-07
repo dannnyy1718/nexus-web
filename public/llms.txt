@@ -1,0 +1,28 @@
+# NEXUS
+
+> NEXUS es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Crea apps móviles y web a la medida para negocios, con altos estándares de seguridad. Lema: "Tu negocio, conectado y seguro."
+
+## Servicios
+
+- Apps móviles y web a la medida: una sola app multiplataforma que funciona en Android, iPhone y computador.
+- Tiendas en línea: catálogo, carrito, pedidos por WhatsApp o pago en línea, y panel para manejar productos e inventario.
+- Sistemas de citas y reservas: los clientes ven horarios libres y agendan solos; el negocio confirma desde el celular.
+- Apps con inteligencia artificial: asistentes que responden a clientes, leen fotos de facturas o escriben descripciones de productos.
+- Cloud Security (seguridad en la nube): próximamente.
+
+## Cómo trabaja
+
+- Primera conversación por WhatsApp, sin costo.
+- Propuesta clara con precio, tiempo de entrega y costos de servicios externos antes de empezar.
+- Pago 50 % al iniciar y 50 % al entregar. Incluye 6 meses de garantía.
+- Seguridad: cada negocio tiene su propio servidor, reglas de acceso estrictas y conexión cifrada. Fundada por Danny Javier Díaz, ingeniero en ciberseguridad.
+
+## Proyecto destacado
+
+- Johana Sánchez Nails (estudio de belleza): app de citas instalable en Android y iPhone, con panel privado de administración.
+
+## Contacto
+
+- [WhatsApp +57 313 365 5136](https://wa.me/573133655136): canal de contacto principal.
+- [Sitio web de NEXUS](https://nexus-tech-co.web.app/): servicios, proyecto destacado, preguntas frecuentes y contacto.
+- [Aviso de privacidad](https://nexus-tech-co.web.app/privacidad): cómo NEXUS trata los datos personales (Ley 1581 de 2012).

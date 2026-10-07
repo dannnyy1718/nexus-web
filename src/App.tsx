@@ -1,4 +1,5 @@
 import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { preguntas } from './negocio'
 
 const servicios = [
   {
@@ -30,11 +31,11 @@ const pasos = [
   },
   {
     titulo: 'La construimos',
-    texto: 'Pagas el 50 % para arrancar y ves los avances mientras la desarrollamos.',
+    texto: 'Pagas el 50 % para arrancar y ves los avances mientras la desarrollamos.',
   },
   {
     titulo: 'La entregamos',
-    texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía.',
+    texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía.',
   },
 ]
 
@@ -59,8 +60,8 @@ export default function App() {
                 Apps para tu negocio, hechas a la medida.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg text-bruma">
-                Creamos aplicaciones que funcionan en Android, iPhone y computador. Seguras, rápidas y
-                fáciles de usar para ti y para tus clientes.
+                Desde Ibagué creamos aplicaciones que funcionan en Android, iPhone y computador. Seguras,
+                rápidas y fáciles de usar para ti y para tus clientes.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <BotonWhatsApp />
@@ -217,6 +218,20 @@ export default function App() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          {/* Preguntas frecuentes */}
+          <section className="relative pb-24 pl-12 md:pl-24">
+            <span className="nodo top-2" aria-hidden="true" />
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
+            <dl className="mt-10 grid max-w-[46rem] gap-8">
+              {preguntas.map((p) => (
+                <div key={p.pregunta}>
+                  <dt className="text-base font-semibold md:text-lg">{p.pregunta}</dt>
+                  <dd className="mt-2 text-bruma">{p.respuesta}</dd>
+                </div>
+              ))}
+            </dl>
           </section>
 
           {/* Llamado final */}

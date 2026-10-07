@@ -84,7 +84,7 @@ export function Pie() {
           Aviso de privacidad
         </a>
       </p>
-      <span>© {new Date().getFullYear()} NEXUS. Software a la medida.</span>
+      <span>© {new Date().getFullYear()} NEXUS. Software a la medida en Ibagué, Tolima.</span>
     </footer>
   )
 }
