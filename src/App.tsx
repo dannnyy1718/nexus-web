@@ -11,6 +11,11 @@ const servicios = [
     texto:
       'Tus clientes ven los horarios libres y agendan solos, sin llamar. Tú confirmas o cancelas desde el celular.',
   },
+  {
+    titulo: 'Apps con inteligencia artificial',
+    texto:
+      'Un asistente que responde a tus clientes, lee fotos de facturas o escribe las descripciones de tus productos. Con límite de gasto y sin exponer tus datos.',
+  },
 ]
 
 const pasos = [
@@ -108,7 +113,7 @@ export default function App() {
               </ul>
             </div>
 
-            <ul className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12">
+            <ul className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
               {servicios.map((s) => (
                 <li key={s.titulo} className="max-w-[30rem]">
                   <h3 className="text-lg font-semibold md:text-xl">{s.titulo}</h3>
