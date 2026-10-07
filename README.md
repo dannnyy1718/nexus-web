@@ -1,5 +1,7 @@
 # NEXUS — página web
 
+> **Tu negocio, conectado y seguro.**
+
 Página de **NEXUS**: software a la medida (apps móviles y web multiplataforma) y, próximamente, seguridad en la nube.
 
 **En vivo:** https://nexus-tech-co.web.app

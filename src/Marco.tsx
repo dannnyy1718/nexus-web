@@ -1,5 +1,7 @@
 // Piezas compartidas por todas las páginas: contacto, encabezado y pie de página
 
+export const LEMA = 'Tu negocio, conectado y seguro.'
+
 export const WHATSAPP_NUMERO = '573133655136'
 export const WHATSAPP_VISIBLE = '313 365 5136'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
@@ -71,7 +73,10 @@ export function Pie() {
     <footer className="mx-auto grid max-w-6xl gap-4 border-t border-linea px-4 py-8 text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8 md:px-8">
       <span className="flex items-center gap-3">
         <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
-        <span className="marca text-lg">NEXUS</span>
+        <span className="grid leading-tight">
+          <span className="marca text-lg">NEXUS</span>
+          <span className="text-niebla">{LEMA}</span>
+        </span>
       </span>
       <p>
         Esta página no usa cookies ni rastreadores.{' '}
