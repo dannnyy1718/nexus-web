@@ -36,7 +36,7 @@ export default function Privacidad() {
 
         <Seccion titulo="Quién es el responsable">
           <p>
-            NEXUS, emprendimiento de Danny Javier Díaz, en Colombia. Puedes contactarnos por WhatsApp al{' '}
+            NEXUS, emprendimiento de Danny Javier Díaz, con domicilio en Ibagué, Tolima (Colombia). Puedes contactarnos por WhatsApp al{' '}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-niebla hover:text-verde">
               {WHATSAPP_VISIBLE}
             </a>
