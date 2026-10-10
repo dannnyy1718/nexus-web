@@ -52,3 +52,22 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 
 - **Causa:** `npx firebase` busca un programa llamado `firebase` que no está instalado en el proyecto ni en el equipo.
 - **Arreglo:** usar el nombre completo del paquete oficial: `npx -y firebase-tools deploy --only hosting`.
+
+## 9. El mapa mundial sale vacío (solo el recuadro oscuro)
+
+- **Causa:** no cargó el archivo de puntos (`mapaPuntos`), o el navegador no soporta `canvas`.
+- **Cómo confirmarlo:** F12 → Consola. Si dice *"El mapa no pudo cargar sus puntos"*, falló la descarga.
+- **Arreglo:**
+  1. `npm run build` de nuevo y publicar: el archivo `assets/mapaPuntos-*.js` debe estar en `dist/`.
+  2. Si se borró `src/mapaPuntos.ts`, se vuelve a generar con `npm run mapa`.
+- **Ojo:** el mapa es decorativo. Si falla, el resto de la página sigue funcionando igual.
+
+## 10. Las pantallas de Johana no cambian solas
+
+- **Causa normal:** la persona tiene activado "reducir movimiento" en su equipo, el mouse está encima del celular o alguien tocó un punto (eso pausa). Es a propósito (accesibilidad).
+- **Arreglo:** si no es ninguna de esas, revisar la Consola (F12) y `src/PantallasJohana.tsx`.
+
+## 11. "Ver la app en vivo" abre la app de Johana pero no baja a los servicios
+
+- **Causa:** la app de Johana tiene que tener publicado el cambio de `/#servicios` (en `app-johana/src/pages/Home.tsx`).
+- **Arreglo:** publicar la app de Johana. Si se cambia su dirección, actualizar `JOHANA_SERVICIOS` en `src/App.tsx`.

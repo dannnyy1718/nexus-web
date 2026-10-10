@@ -175,6 +175,114 @@
     left: calc(var(--x) - 6rem);
   }
 }
+
+/* Mapa mundial (MapaRed.tsx). En el celular es más alto para que América se vea grande */
+.mapa {
+  position: relative;
+  margin-top: 2rem;
+  aspect-ratio: 1.15;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--color-linea);
+  background:
+    radial-gradient(60% 70% at 36% 52%, rgb(67 217 242 / 0.1), transparent 70%),
+    linear-gradient(180deg, var(--color-noche), var(--color-abismo));
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.9);
+}
+@media (min-width: 768px) {
+  .mapa {
+    aspect-ratio: 2.3;
+  }
+}
+.mapa-lienzo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: pan-y;
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mapa[data-listo] .mapa-lienzo {
+  opacity: 1;
+}
+
+/* Pantallas de la app de Johana que cambian solas (PantallasJohana.tsx) */
+.pantallas {
+  display: grid;
+  aspect-ratio: 480 / 860;
+}
+.pantalla {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  scale: 1.03;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    scale 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pantalla-activa {
+  opacity: 1;
+  scale: 1;
+}
+/* Botón de 32 px para el dedo, con un punto pequeño adentro */
+.punto-pantalla {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+}
+.punto-pantalla::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--color-contorno);
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s;
+}
+.punto-pantalla[aria-pressed='true']::after {
+  width: 1.4rem;
+  background: var(--color-verde);
+}
+
+/* Enlace de texto con flecha que avanza al pasar el mouse */
+.enlace-flecha {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--color-cian);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Flecha dibujada en SVG (data: está permitido en la CSP para imágenes) y pintada con el color del texto */
+.enlace-flecha::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: translate 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.enlace-flecha:hover::after {
+  translate: 0.25rem 0;
+}
+
+/* Tarjeta de NEXUS Agenda: luz dorada de la corona del logo */
+.agenda {
+  background: radial-gradient(80% 120% at 0% 0%, rgb(233 198 126 / 0.09), transparent 60%);
+}
+}
+
+::selection {
+  background: rgb(67 217 242 / 0.35);
+  color: var(--color-niebla);
 }
 
 @keyframes aparecer {

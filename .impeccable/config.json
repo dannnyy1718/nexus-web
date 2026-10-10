@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/index.css"
+        ],
+        "createdAt": "2026-10-10T01:12:59.327Z",
+        "reason": "Logotipo NEXUS (.marca) con brillo metálico del logo oficial; CLAUDE.md: a Danny le gusta el estilo brillante/3D de sus logos, no proponer planos sin preguntar"
+      }
+    ]
+  }
+}

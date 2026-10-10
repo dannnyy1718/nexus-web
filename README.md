@@ -53,6 +53,10 @@ npx -y firebase-tools deploy --only hosting
 | Aviso de privacidad | `src/Privacidad.tsx` | El texto |
 | Páginas que Google debe leer | `public/sitemap.xml` | Agregar una `<url>` por página nueva |
 | Imágenes | `public/img/` | Usar WebP; poner siempre texto alternativo (`alt`) |
+| Pantallas de Johana que cambian solas | `src/PantallasJohana.tsx` | La lista `pantallas` (imagen 480x860 en `public/img/`) |
+| Mapa mundial (densidad o recorte) | `scripts/mapa-puntos.mjs` | Cambiar `PASO`, `LON` o `LAT` y correr `npm run mapa` |
+| Animación del mapa (colores, velocidad) | `src/MapaRed.tsx` | Las constantes de arriba (`DURACION_TRAZO`, `VIDA_ARCO`, `MAX_ARCOS`) |
+| Enlace a la app de Johana | `src/App.tsx` | `JOHANA_SERVICIOS` (debe terminar en `/#servicios`) |
 
 Después de cada cambio:
 

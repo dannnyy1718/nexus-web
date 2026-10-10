@@ -1,7 +1,15 @@
-import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_NUMERO, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import MapaRed from './MapaRed'
+import PantallasJohana from './PantallasJohana'
 import { preguntas } from './negocio'
 
-const servicios = [
+// La app real de Johana, abierta directo en su lista de servicios (no en agendar)
+const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
+const AGENDA_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
+  'Hola NEXUS, quiero saber cuándo sale NEXUS Agenda.',
+)}`
+
+const servicios: { titulo: string; texto: string; enlace?: { href: string; texto: string } }[] = [
   {
     titulo: 'Tiendas en línea',
     texto:
@@ -11,6 +19,7 @@ const servicios = [
     titulo: 'Citas y reservas',
     texto:
       'Tus clientes ven los horarios libres y agendan solos, sin llamar. Tú confirmas o cancelas desde el celular.',
+    enlace: { href: '#johana', texto: 'Mira un ejemplo real' },
   },
   {
     titulo: 'Apps con inteligencia artificial',
@@ -42,7 +51,6 @@ const pasos = [
 const seguridad = [
   'Tus datos y los de tus clientes protegidos con reglas de acceso estrictas: cada persona ve solo lo que le corresponde.',
   'Cada negocio tiene su propio espacio en la nube. Tu información nunca se mezcla con la de otro cliente.',
-  'Conexión cifrada y revisión contra las fallas de seguridad más comunes en la web (OWASP Top 10).',
 ]
 
 export default function App() {
@@ -88,6 +96,25 @@ export default function App() {
             </div>
           </section>
 
+          {/* Mapa: Ibagué conectada con el mundo */}
+          <section className="relative pb-24 pl-12 md:pl-24" aria-labelledby="titulo-mapa">
+            <span className="nodo nodo-lleno top-2" aria-hidden="true" />
+            <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end md:gap-12">
+              <h2 id="titulo-mapa" className="max-w-[30rem] text-2xl font-semibold md:text-[2.25rem]">
+                Hecha en Ibagué, abierta al mundo.
+              </h2>
+              <p className="max-w-[26rem] text-bruma">
+                Tu app vive en la nube de Google: tus clientes la abren desde cualquier celular o computador,
+                estén donde estén.
+              </p>
+            </div>
+            <MapaRed />
+            <p className="mt-3 text-sm text-bruma">
+              <span className="hidden md:inline">Pasa el mouse por el mapa o haz clic</span>
+              <span className="md:hidden">Toca el mapa</span> para enviar una conexión desde Ibagué.
+            </p>
+          </section>
+
           {/* Servicios */}
           <section id="servicios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
@@ -119,6 +146,11 @@ export default function App() {
                 <li key={s.titulo} className="max-w-[30rem]">
                   <h3 className="text-lg font-semibold md:text-xl">{s.titulo}</h3>
                   <p className="mt-2 text-bruma">{s.texto}</p>
+                  {s.enlace && (
+                    <a href={s.enlace.href} className="enlace-flecha mt-3">
+                      {s.enlace.texto}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -135,7 +167,7 @@ export default function App() {
           </section>
 
           {/* Proyecto real */}
-          <section className="relative pb-24 pl-12 md:pl-24">
+          <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
             <div className="mt-10 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
@@ -150,31 +182,60 @@ export default function App() {
                   Funciona como app instalable en Android y iPhone, con inicio de sesión seguro y los datos
                   de cada clienta protegidos.
                 </p>
+                <a
+                  href={JOHANA_SERVICIOS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-verde px-6 py-3 font-semibold text-verde transition-colors hover:bg-verde hover:text-abismo"
+                >
+                  Ver la app en vivo
+                  <svg viewBox="0 0 16 16" className="size-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M6 3h7v7M13 3 4 12" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="sr-only"> (se abre en otra pestaña)</span>
+                </a>
+                <p className="mt-3 text-sm text-bruma">Abre sus servicios y precios reales.</p>
               </div>
               <div className="flex items-start justify-center gap-4 sm:gap-6">
-                <figure className="w-[44%] max-w-[15rem]">
-                  <img
-                    src="/img/johana-inicio.webp"
-                    width={480}
-                    height={860}
-                    loading="lazy"
-                    alt="Pantalla de inicio de la app: logo del estudio, botón para agendar cita y lista de servicios con precios"
-                    className="celular w-full"
-                  />
-                  <figcaption className="mt-3 text-center text-sm text-bruma">Lo que ve la clienta</figcaption>
-                </figure>
-                <figure className="w-[44%] max-w-[15rem]">
-                  <img
-                    src="/img/johana-panel.webp"
-                    width={480}
-                    height={860}
-                    loading="lazy"
-                    alt="Panel de administración: resumen de citas del día y pestañas de citas, servicios y galería"
-                    className="celular w-full"
-                  />
+                <PantallasJohana />
+                <figure className="min-w-0 max-w-[16rem] flex-1 basis-0">
+                  {/* Mismo marco que el carrusel de la clienta, para que los dos celulares midan igual */}
+                  <div className="celular pantallas">
+                    <img
+                      src="/img/johana-panel.webp"
+                      width={480}
+                      height={860}
+                      loading="lazy"
+                      alt="Panel de administración: resumen de citas del día y pestañas de citas, servicios y galería"
+                      className="pantalla pantalla-activa"
+                    />
+                  </div>
                   <figcaption className="mt-3 text-center text-sm text-bruma">Lo que ve Johana</figcaption>
                 </figure>
               </div>
+            </div>
+          </section>
+
+          {/* Próximo producto */}
+          <section className="relative pb-24 pl-12 md:pl-24">
+            <span className="nodo nodo-oro top-2 bg-oro" aria-hidden="true" />
+            <div className="agenda max-w-[46rem] rounded-3xl border border-dashed border-oro/50 p-6 md:p-10">
+              <h2 className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-2xl font-semibold md:text-[2.25rem]">
+                NEXUS Agenda
+                <span className="font-sans text-base font-semibold text-oro">Próximamente</span>
+              </h2>
+              <p className="mt-4 max-w-[36rem]">
+                Lo que hicimos para Johana, listo para cualquier negocio de servicios: uñas, peluquería,
+                barbería, estética o spa.
+              </p>
+              <p className="mt-3 max-w-[36rem] text-bruma">
+                Creas la página de tu negocio en minutos, le pones tu logo, colores, servicios y horario, y tus
+                clientas reservan solas desde el celular, sin crear cuenta.
+              </p>
+              <a href={AGENDA_URL} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-6">
+                Avísame cuando salga
+                <span className="sr-only"> (abre WhatsApp)</span>
+              </a>
             </div>
           </section>
 
@@ -217,6 +278,27 @@ export default function App() {
                   <span>{t}</span>
                 </li>
               ))}
+              <li className="flex gap-4">
+                <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
+                  <path
+                    d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6L7.3 12l1.4-1.4 2.1 2.1 4.5-4.5 1.4 1.4-5.9 6Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>
+                  Conexión cifrada y revisión contra las fallas de seguridad más comunes en la web, el{' '}
+                  <a
+                    href="https://owasp.org/www-project-top-ten/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-cian underline underline-offset-4 hover:decoration-2"
+                  >
+                    OWASP Top 10
+                    <span className="sr-only"> (se abre en otra pestaña)</span>
+                  </a>
+                  .
+                </span>
+              </li>
             </ul>
           </section>
 
