@@ -36,7 +36,7 @@ Cómo se logra:
 npm install
 npm run dev        # servidor local
 npm run build      # compila y pre-renderiza en dist/
-npx firebase deploy --only hosting
+npx -y firebase-tools deploy --only hosting
 ```
 
 ## Cómo hacer cambios comunes
@@ -58,7 +58,7 @@ Después de cada cambio:
 
 1. `npm run dev` y revisar en el navegador (computador y celular).
 2. `npm run build` (si falla, hay un error que corregir antes de publicar).
-3. `npx firebase deploy --only hosting`.
+3. `npx -y firebase-tools deploy --only hosting`.
 4. Verificar en vivo en https://nexus-tech-co.web.app (no basta con "Deploy complete").
 5. `git add` → `git commit -m "qué cambió y para qué"` → `git push`.
 

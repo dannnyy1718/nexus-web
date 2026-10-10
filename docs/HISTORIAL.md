@@ -8,6 +8,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Textos más concretos: la frase principal dice qué hacen tus clientes con la app; se cambió "altos estándares de seguridad" por "reglas de acceso estrictas y conexión cifrada" y "servidor propio" por "espacio propio en la nube".
 - Se arregló la protección de la ficha para Google en `scripts/prerender.mjs` (la barra invertida no estaba haciendo nada).
 - Se creó esta carpeta `docs/` (manual de reparación, decisiones e historial).
+- Publicado y verificado en vivo: los 8 encabezados de seguridad activos y los textos nuevos visibles.
 
 ## 2026-10-08
 - El README ganó la guía de cambios comunes y cómo publicar.

@@ -16,7 +16,7 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 
 - **Causa:** no se compiló, no se publicó o el navegador muestra la versión guardada (caché).
 - **Arreglo:**
-  1. `npm run build` y luego `npx firebase deploy --only hosting`.
+  1. `npm run build` y luego `npx -y firebase-tools deploy --only hosting`.
   2. Abre la página con Ctrl + Shift + R (recarga sin caché) o en una ventana de incógnito.
 
 ## 3. El botón de WhatsApp abre un número equivocado o un mensaje raro
@@ -47,3 +47,8 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 - **Arreglo:** revisar con el calculador:
   `python "../../.claude/skills/antislop-human/contrast-check.py" "#color-texto" "#050e1f"`
   Texto normal necesita 4.5:1; bordes de botones 3:1. Los enlaces dentro de un párrafo van siempre subrayados.
+
+## 8. Al publicar sale "npm error could not determine executable to run"
+
+- **Causa:** `npx firebase` busca un programa llamado `firebase` que no está instalado en el proyecto ni en el equipo.
+- **Arreglo:** usar el nombre completo del paquete oficial: `npx -y firebase-tools deploy --only hosting`.
