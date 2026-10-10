@@ -57,7 +57,7 @@ export function Encabezado() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-linea px-4 py-2 text-sm font-semibold transition-colors hover:border-verde hover:text-verde"
+          className="inline-flex items-center gap-2 rounded-full border border-contorno px-4 py-2 text-sm font-semibold transition-colors hover:border-verde hover:text-verde"
         >
           <IconoWhatsApp className="size-4" />
           <span className="hidden sm:inline">Escríbenos</span>
@@ -80,7 +80,7 @@ export function Pie() {
       </span>
       <p>
         Esta página no usa cookies ni rastreadores.{' '}
-        <a href="/privacidad" className="font-semibold text-cian underline-offset-4 hover:underline">
+        <a href="/privacidad" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
           Aviso de privacidad
         </a>
       </p>

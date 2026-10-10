@@ -1,0 +1,49 @@
+# Manual de reparación: página de NEXUS
+
+Cada problema tiene la misma forma: **síntoma** (lo que ves), **causa** (por qué pasa) y **arreglo** (qué hacer).
+Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en la terminal dice el archivo y la línea.
+
+## 1. La página se ve sin estilos, en blanco o sin imágenes
+
+- **Causa más común:** algo se cargó "en línea" o desde otro sitio y la CSP de `firebase.json` lo bloqueó.
+- **Cómo confirmarlo:** abre la página, presiona F12 → pestaña **Consola**. Si dice *"Refused to load... Content Security Policy"*, es eso.
+- **Arreglo:**
+  1. Nada de `<script>` ni `style="..."` dentro del HTML: todo va en archivos propios (`src/`).
+  2. Fuentes, imágenes y scripts se descargan y se sirven desde el sitio (`public/` o `npm`), nunca desde otro dominio.
+  3. Si de verdad hace falta un servicio externo, agregarlo a la CSP en `firebase.json` y anotarlo en `DECISIONES.md`.
+
+## 2. Hice un cambio y en la página en vivo no aparece
+
+- **Causa:** no se compiló, no se publicó o el navegador muestra la versión guardada (caché).
+- **Arreglo:**
+  1. `npm run build` y luego `npx firebase deploy --only hosting`.
+  2. Abre la página con Ctrl + Shift + R (recarga sin caché) o en una ventana de incógnito.
+
+## 3. El botón de WhatsApp abre un número equivocado o un mensaje raro
+
+- **Causa:** `WHATSAPP_NUMERO` en `src/Marco.tsx` debe llevar el 57 y sin espacios ni "+": `573133655136`.
+- **Arreglo:** corregir `WHATSAPP_NUMERO` y `WHATSAPP_VISIBLE` (el que se lee) en `src/Marco.tsx`.
+
+## 4. `npm run build` falla en "prerender" con "No se encontró `<div id="root">`"
+
+- **Causa:** alguien cambió `<div id="root"></div>` en `index.html`, `privacidad.html` o `404.html`.
+- **Arreglo:** dejar exactamente `<div id="root"></div>` (vacío) en los tres archivos. El script `scripts/prerender.mjs` lo busca para meter ahí el HTML ya armado.
+
+## 5. Google muestra textos viejos o no encuentra la página
+
+- **Causa:** Google tarda días en volver a leer la página.
+- **Arreglo:** en Google Search Console → "Inspección de URLs" → pegar la dirección → "Solicitar indexación". Si agregaste una página, súmala a `public/sitemap.xml`.
+
+## 6. Mozilla Observatory bajó de A+ o Lighthouse bajó de 90
+
+- **Causa:** se quitó un encabezado de `firebase.json`, se agregó algo externo o una imagen muy pesada.
+- **Arreglo:**
+  1. Comparar `firebase.json` con el historial: `git log -p firebase.json`.
+  2. Imágenes nuevas: en WebP, con `width`, `height` y `alt`.
+
+## 7. Un texto o enlace se lee mal (accesibilidad)
+
+- **Causa:** un color nuevo sin revisar el contraste.
+- **Arreglo:** revisar con el calculador:
+  `python "../../.claude/skills/antislop-human/contrast-check.py" "#color-texto" "#050e1f"`
+  Texto normal necesita 4.5:1; bordes de botones 3:1. Los enlaces dentro de un párrafo van siempre subrayados.

@@ -28,7 +28,7 @@ export default function Privacidad() {
       <Encabezado />
 
       <main id="contenido" className="mx-auto max-w-3xl px-4 pb-20 pt-8 md:px-8 md:pt-14">
-        <a href="/" className="text-sm font-semibold text-cian underline-offset-4 hover:underline">
+        <a href="/" className="text-sm font-semibold text-cian underline underline-offset-4 hover:decoration-2">
           Volver al inicio
         </a>
         <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-5xl">Aviso de privacidad</h1>
@@ -47,7 +47,7 @@ export default function Privacidad() {
         <Seccion titulo="Qué datos recoge esta página">
           <p>
             Ninguno. Esta página no usa cookies, no tiene formularios y no usa herramientas de estadísticas ni
-            rastreadores. Las fuentes y las imágenes se cargan desde nuestro propio servidor.
+            rastreadores. Las fuentes y las imágenes se cargan desde esta misma página, no desde otros sitios.
           </p>
           <p>
             Nuestro proveedor de alojamiento (Firebase Hosting, de Google) puede registrar datos técnicos de
@@ -75,7 +75,7 @@ export default function Privacidad() {
               href="https://www.whatsapp.com/legal/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-cian underline-offset-4 hover:underline"
+              className="font-semibold text-cian underline underline-offset-4 hover:decoration-2"
             >
               política de privacidad
             </a>
@@ -86,7 +86,7 @@ export default function Privacidad() {
         <Seccion titulo="Los datos de las apps que construimos">
           <p>
             Cuando creamos una app para tu negocio, los datos de tus clientes son tuyos. Cada app vive en su
-            propio servidor, separado de los demás clientes, y nosotros solo accedemos para darle soporte.
+            propio espacio en la nube, separado de los demás clientes, y nosotros solo accedemos para darle soporte.
           </p>
         </Seccion>
 

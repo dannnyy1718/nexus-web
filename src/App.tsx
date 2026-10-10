@@ -41,7 +41,7 @@ const pasos = [
 
 const seguridad = [
   'Tus datos y los de tus clientes protegidos con reglas de acceso estrictas: cada persona ve solo lo que le corresponde.',
-  'Cada negocio tiene su propio servidor. Tu información nunca se mezcla con la de otro cliente.',
+  'Cada negocio tiene su propio espacio en la nube. Tu información nunca se mezcla con la de otro cliente.',
   'Conexión cifrada y revisión contra las fallas de seguridad más comunes en la web (OWASP Top 10).',
 ]
 
@@ -60,8 +60,8 @@ export default function App() {
                 Apps para tu negocio, hechas a la medida.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg text-bruma">
-                Desde Ibagué creamos aplicaciones que funcionan en Android, iPhone y computador. Seguras,
-                rápidas y fáciles de usar para ti y para tus clientes.
+                Desde Ibagué creamos aplicaciones que funcionan en Android, iPhone y computador. Tus clientes
+                agendan o compran desde el celular, y tú lo manejas todo desde un panel.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <BotonWhatsApp />

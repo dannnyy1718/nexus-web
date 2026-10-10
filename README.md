@@ -1,4 +1,4 @@
-# NEXUS — página web
+# NEXUS: página web
 
 > **Tu negocio, conectado y seguro.**
 

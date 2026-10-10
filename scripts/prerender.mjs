@@ -13,7 +13,9 @@ for (const [archivo, pagina] of Object.entries(paginas)) {
   let salida = html.replace('<div id="root"></div>', `<div id="root">${render(pagina)}</div>`)
   if (pagina === 'inicio') {
     // Ficha Schema.org para Google y las IA (es un bloque de datos: el navegador no lo ejecuta)
-    const json = JSON.stringify(datosEstructurados()).replace(/</g, '\u003c')
+    // Doble barra: escribe el texto literal \u003c para que un "</script>" dentro de los datos no cierre
+    // la etiqueta antes de tiempo. Con una sola barra, JavaScript lo convierte otra vez en "<" y no protege.
+    const json = JSON.stringify(datosEstructurados()).replace(/</g, '\\u003c')
     salida = salida.replace('</head>', `  <script type="application/ld+json">${json}</script>
   </head>`)
   }

@@ -29,7 +29,7 @@ export const preguntas = [
   {
     pregunta: '¿Mis datos y los de mis clientes están seguros?',
     respuesta:
-      'Sí. NEXUS nace de la ingeniería en ciberseguridad: cada negocio tiene su propio servidor, con reglas de acceso estrictas y conexión cifrada.',
+      'Sí. NEXUS nace de la ingeniería en ciberseguridad: cada negocio tiene su propio espacio en la nube, con reglas de acceso estrictas y conexión cifrada.',
   },
 ]
 
@@ -43,7 +43,7 @@ export function datosEstructurados() {
       name: 'NEXUS',
       slogan: LEMA,
       description:
-        'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con altos estándares de seguridad.',
+        'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con reglas de acceso estrictas y conexión cifrada.',
       url: `${SITIO}/`,
       logo: `${SITIO}/apple-touch-icon.png`,
       image: `${SITIO}/og.jpg`,

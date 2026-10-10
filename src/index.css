@@ -4,7 +4,8 @@
 @theme {
   --color-abismo: #050e1f;
   --color-noche: #0b1c36;
-  --color-linea: #1d3a5f;
+  --color-linea: #1d3a5f; /* líneas decorativas (1.67:1, no sirve para bordes de botones) */
+  --color-contorno: #4a6e9a; /* bordes de botones: 3.66:1 sobre abismo, pasa el mínimo 3:1 de WCAG */
   --color-cian: #43d9f2;
   --color-verde: #5ee89a;
   --color-oro: #e9c67e;
