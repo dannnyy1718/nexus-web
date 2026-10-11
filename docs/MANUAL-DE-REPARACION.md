@@ -71,3 +71,9 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 
 - **Causa:** la app de Johana tiene que tener publicado el cambio de `/#servicios` (en `app-johana/src/pages/Home.tsx`).
 - **Arreglo:** publicar la app de Johana. Si se cambia su dirección, actualizar `JOHANA_SERVICIOS` en `src/App.tsx`.
+
+## 12. El escudo de la portada se ve plano, cortado o no se mueve
+- **No se mueve:** el sistema tiene "reducir movimiento" activado (es a propósito) o hay un error de JavaScript: F12 → Consola.
+- **Se ve plano (sin profundidad):** alguien puso `overflow`, `opacity` o `filter` en `.pieza-3d` o en `.orbita`; esas propiedades aplanan el 3D. Quitarlas.
+- **El anillo se corta a los lados:** bajar `--radio` de `.orbita` en `src/index.css` (10.5rem celular, 15.5rem computador).
+- **Se mueve brusco o muy lento:** ajustar `SUAVIDAD` e `INCLINACION_MAX` arriba de `src/Escudo3D.tsx`.

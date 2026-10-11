@@ -35,3 +35,14 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 
 ## 9. "Ver la app en vivo" lleva a los servicios, no a agendar (2026-10-09)
 - **Por qué:** decisión de Danny. Si llevara a agendar, curiosos podrían crear citas falsas en el negocio real de Johana.
+
+## 10. Escudo 3D con CSS, sin librerías 3D (2026-10-10)
+- **Qué:** `src/Escudo3D.tsx` + estilos `.escena-3d`/`.pieza-3d`/`.orbita` en `index.css`. CSS 3D (`perspective`, `preserve-3d`) y un bucle corto que pasa la inclinación como variables CSS.
+- **Por qué:** three.js o Spline pesan cientos de KB y bajarían Lighthouse de 90. Así cuesta unos 2 KB.
+- **Variables por JavaScript:** la CSP (`style-src 'self'`) prohíbe `style=""` en el HTML, pero permite `style.setProperty` desde JS.
+- **Solo aquí:** decisión de Danny. En NEXUS Agenda las páginas de los negocios deben cargar rápido en celulares sencillos.
+- **Accesibilidad:** con "reducir movimiento" queda quieto; deja de animar cuando no está en pantalla.
+
+## 11. Mapa: mundo completo en el celular (2026-10-10)
+- **Antes:** en pantallas angostas se acercaba a América (ajuste "cubrir").
+- **Ahora:** por debajo de 640 px usa ajuste "contener" y la caja es más ancha (`aspect-ratio: 2.2`). Pedido de Danny: la sección dice "abierta al mundo".

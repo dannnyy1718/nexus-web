@@ -1,4 +1,5 @@
 import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_NUMERO, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import PantallasJohana from './PantallasJohana'
 import { preguntas } from './negocio'
@@ -81,19 +82,7 @@ export default function App() {
                 </a>
               </div>
             </div>
-            <div className="relative order-1 mx-auto w-full max-w-[19rem] md:order-2 md:max-w-[30rem]">
-              <div className="halo absolute -inset-10" aria-hidden="true" />
-              <img
-                src="/img/escudo-560.webp"
-                srcSet="/img/escudo-560.webp 560w, /img/escudo-960.webp 960w"
-                sizes="(min-width: 768px) 30rem, 19rem"
-                width={560}
-                height={560}
-                alt="Escudo de NEXUS: una N formada por nodos conectados, sobre un mapa del mundo"
-                className="escudo relative w-full"
-                fetchPriority="high"
-              />
-            </div>
+            <Escudo3D />
           </section>
 
           {/* Mapa: Ibagué conectada con el mundo */}

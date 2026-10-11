@@ -79,6 +79,90 @@
   animation: aparecer 1.6s ease-out both;
 }
 
+/* Escudo 3D (Escudo3D.tsx): perspective da la profundidad y preserve-3d deja que cada capa
+   tenga su propia distancia. JS solo cambia --rx/--ry (inclinación) y --gx/--gy (brillo).
+   Ojo: overflow, opacity o filter en .pieza-3d aplanarían el 3D. */
+.escena-3d {
+  perspective: 1100px;
+  touch-action: pan-y; /* el dedo puede inclinarlo de lado sin bloquear el scroll vertical */
+}
+.pieza-3d {
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+}
+.pieza-3d > .halo {
+  transform: translateZ(-80px) scale(1.12);
+}
+/* Luz que se mueve sobre el escudo; usa la misma máscara redonda para no salirse de él */
+.brillo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 40%), rgb(255 255 255 / 0.2), transparent 42%);
+  mix-blend-mode: screen;
+  mask-image: radial-gradient(closest-side, #000 60%, transparent 92%);
+  transform: translateZ(2px);
+}
+/* Seis nodos que giran alrededor del escudo, como la red de NEXUS */
+.orbita {
+  --radio: 10.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateZ(-12deg);
+}
+@media (min-width: 768px) {
+  .orbita {
+    --radio: 15.5rem;
+  }
+}
+/* Anillo de luz por donde pasan los nodos: acostado en el mismo plano de la órbita */
+.orbita-anillo {
+  position: absolute;
+  width: calc(2 * var(--radio));
+  height: calc(2 * var(--radio));
+  margin: calc(-1 * var(--radio)) 0 0 calc(-1 * var(--radio));
+  border-radius: 50%;
+  border: 1px solid rgb(67 217 242 / 0.22);
+  box-shadow: 0 0 18px rgb(67 217 242 / 0.12);
+  transform: rotateX(90deg);
+}
+.orbita-giro {
+  transform-style: preserve-3d;
+  animation: girar 22s linear infinite;
+}
+.orbita-nodo {
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--a)) translateZ(var(--radio)) rotateY(calc(-1 * var(--a)));
+}
+.orbita-nodo:nth-child(1) { --a: 0deg; }
+.orbita-nodo:nth-child(2) { --a: 60deg; }
+.orbita-nodo:nth-child(3) { --a: 120deg; }
+.orbita-nodo:nth-child(4) { --a: 180deg; }
+.orbita-nodo:nth-child(5) { --a: 240deg; }
+.orbita-nodo:nth-child(6) { --a: 300deg; }
+/* El punto gira al revés que la órbita para mirar siempre de frente (si no, se vería como una raya) */
+.orbita-nodo > span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--color-cian);
+  box-shadow: 0 0 12px 2px rgb(67 217 242 / 0.7);
+  animation: girar 22s linear infinite reverse;
+}
+.orbita-nodo:nth-child(even) > span {
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  background: var(--color-verde);
+  box-shadow: 0 0 10px 2px rgb(94 232 154 / 0.6);
+}
+
 /* El circuito: la "N de nodos conectados" del logo recorre toda la página */
 .circuito {
   position: relative;
@@ -180,7 +264,7 @@
 .mapa {
   position: relative;
   margin-top: 2rem;
-  aspect-ratio: 1.15;
+  aspect-ratio: 2.2; /* celular: el mundo completo cabe a lo ancho (MapaRed.tsx) */
   border-radius: 1.5rem;
   overflow: hidden;
   border: 1px solid var(--color-linea);
@@ -289,6 +373,11 @@
   from {
     opacity: 0;
     scale: 0.94;
+  }
+}
+@keyframes girar {
+  to {
+    transform: rotateY(360deg);
   }
 }
 @keyframes trazar {

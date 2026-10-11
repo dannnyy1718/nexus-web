@@ -41,8 +41,7 @@ export default function MapaRed() {
     let puntero: { x: number; y: number } | null = null
     const arcos: Arco[] = []
 
-    // Lienzo del mapa (1000 x 372) → píxeles de pantalla. Ajuste "cubrir" centrado en Ibagué,
-    // para que en el celular se vea América cerca y no un mundo diminuto.
+    // Lienzo del mapa (1000 x 372) → píxeles de pantalla (escala y desplazamiento salen de medir())
     const aPantalla = (x: number, y: number) => [x * escala + dx, y * escala + dy] as const
 
     function medir() {
@@ -54,11 +53,19 @@ export default function MapaRed() {
       canvas.height = Math.round(alto * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
 
-      // En pantallas angostas se acerca más (0.95) para que América se vea grande y no un mundo diminuto
-      escala = Math.max(ancho / datos.ANCHO, alto / datos.ALTO, ancho < 640 ? 0.95 : 0)
       const [ix, iy] = datos.IBAGUE
-      dx = Math.min(0, Math.max(ancho - datos.ANCHO * escala, ancho * 0.42 - ix * escala))
-      dy = Math.min(0, Math.max(alto - datos.ALTO * escala, alto * 0.5 - iy * escala))
+      if (ancho < 640) {
+        // Celular: el mundo completo (ajuste "contener"), centrado. Antes se acercaba a América y
+        // Danny notó que así no se ve "abierta al mundo" (2026-10-10). La caja es más ancha (index.css).
+        escala = Math.min(ancho / datos.ANCHO, alto / datos.ALTO)
+        dx = (ancho - datos.ANCHO * escala) / 2
+        dy = (alto - datos.ALTO * escala) / 2
+      } else {
+        // Computador: ajuste "cubrir" con Ibagué un poco a la izquierda del centro
+        escala = Math.max(ancho / datos.ANCHO, alto / datos.ALTO)
+        dx = Math.min(0, Math.max(ancho - datos.ANCHO * escala, ancho * 0.42 - ix * escala))
+        dy = Math.min(0, Math.max(alto - datos.ALTO * escala, alto * 0.5 - iy * escala))
+      }
 
       // Los puntos fijos se pintan una sola vez en un lienzo aparte y luego se copian en cada cuadro
       base = document.createElement('canvas')
