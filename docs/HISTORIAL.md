@@ -6,6 +6,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Escudo 3D en la portada** (`src/Escudo3D.tsx`): el escudo se inclina siguiendo el mouse o el dedo, un brillo recorre su superficie y seis nodos cian y verde le giran alrededor por un anillo de luz. Si nadie lo mueve, flota solo. Idea sacada de un video de TikTok; Danny pidió ponerlo solo en esta página y no en NEXUS Agenda, para que agendar siga siendo rápido.
 - **Mapa en el celular:** ahora muestra el mundo completo. Antes se acercaba a América y Danny notó que así no se veía "abierta al mundo".
 - Lighthouse local igual antes y después (81 en el servidor de prueba, que no comprime los archivos): el efecto no le quita velocidad.
+- Publicado y verificado en vivo: escudo 3D presente, encabezados de seguridad activos, Lighthouse celular 94 / accesibilidad 100 / buenas prácticas 100 / SEO 100. Ojo al medir desde el PC de Danny: Kaspersky mete un script de 172 KB en cada página y baja la nota a ~85; medir con `--blocked-url-patterns="*kaspersky-labs.com*"` o con PageSpeed Insights.
 
 ## 2026-10-09 (tarde): la página deja de verse plana
 - Mapa mundial interactivo: Ibagué en el centro y conexiones que viajan a todo el mundo. Los puntos se encienden con el mouse y al tocar el mapa sale una conexión hasta ese lugar.

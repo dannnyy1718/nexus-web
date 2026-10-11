@@ -41,6 +41,8 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
   1. Comparar `firebase.json` con el historial: `git log -p firebase.json`.
   2. Imágenes nuevas: en WebP, con `width`, `height` y `alt`.
 
+- **Si mides desde el PC de Danny:** Kaspersky inyecta un script (gc.kis.v2.scr.kaspersky-labs.com) que baja la nota unos 10 puntos. No es la página: medir con `npx lighthouse <url> --blocked-url-patterns="*kaspersky-labs.com*"` o en pagespeed.web.dev.
+
 ## 7. Un texto o enlace se lee mal (accesibilidad)
 
 - **Causa:** un color nuevo sin revisar el contraste.
