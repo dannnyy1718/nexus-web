@@ -87,3 +87,8 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 ## 14. Los botones verdes o dorados se ven planos
 - Les falta la clase `boton-3d` junto a `boton-verde` o `boton-oro` (ver `BotonWhatsApp` en `src/Marco.tsx`). Los estilos están en `src/index.css`.
 
+## 15. Publiqué pero sigo viendo la versión vieja
+- **Causa:** el navegador guardó la página en caché. Antes del 2026-10-14 Firebase la guardaba 1 hora (`max-age=3600`).
+- **Arreglo ya aplicado:** en `firebase.json`, las páginas (`/`, `/privacidad` y los `.html`) llevan `Cache-Control: no-cache`. El navegador pregunta en cada visita si hay versión nueva; si no la hay, el servidor responde "sin cambios" sin volver a enviar la página. Los archivos de `/assets/` sí se guardan un año porque su nombre cambia en cada publicación.
+- **Para ver ya la versión nueva:** Ctrl + Shift + R en el computador, o abrir la página en una pestaña de incógnito en el celular.
+
