@@ -9,7 +9,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Menos espacio vacío en computador:** "Seguridad" y "Preguntas frecuentes" en dos columnas (título a la izquierda), y el escudo acompaña el llamado final.
 - **Pedido de Danny: menos texto y botones que resalten.** "Cómo trabajamos" tiene un dibujo por paso (SVG, no pesa) y los botones principales (WhatsApp y Agenda) tienen volumen 3D: luz arriba, sombra de color y suben al pasar el mouse.
 - **Imagen de Seguridad** hecha por Danny con Gemini (escudo y candado sobre la nube): pasó de 2 MB a `seguridad-400.webp` (22 KB, celular) y `seguridad-720.webp` (48 KB, computador), con los bordes desvanecidos para que se funda con el fondo.
-- Probado en local en computador y celular: nada se sale de la pantalla y el detector de diseño no encontró problemas. Publicado con el OK de Danny.
+- Probado en local en computador y celular: nada se sale de la pantalla y el detector de diseño no encontró problemas. Publicado por Danny y verificado en vivo (textos nuevos, imágenes 200 OK, encabezados de seguridad activos).
 
 ## 2026-10-10
 - **Escudo 3D en la portada** (`src/Escudo3D.tsx`): el escudo se inclina siguiendo el mouse o el dedo, un brillo recorre su superficie y seis nodos cian y verde le giran alrededor por un anillo de luz. Si nadie lo mueve, flota solo. Idea sacada de un video de TikTok; Danny pidió ponerlo solo en esta página y no en NEXUS Agenda, para que agendar siga siendo rápido.
