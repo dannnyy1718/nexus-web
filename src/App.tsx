@@ -279,6 +279,19 @@ export default function App() {
                   NEXUS nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
                   negocio y a tus clientes.
                 </p>
+                {/* Ilustración hecha con Gemini (2026-10-14): escudo y candado sobre la nube, con los colores de la marca.
+                    Dos tamaños: el celular baja la de 400 px (22 KB) y el computador la de 720 px (48 KB) */}
+                <img
+                  src="/img/seguridad-400.webp"
+                  srcSet="/img/seguridad-400.webp 400w, /img/seguridad-720.webp 720w"
+                  sizes="(min-width: 1024px) 22rem, 18rem"
+                  width={720}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                  alt=""
+                  className="imagen-fundida mt-8 w-full max-w-[18rem] lg:max-w-[22rem]"
+                />
               </div>
               <div>
             <ul className="grid max-w-[44rem] gap-5 lg:pt-2">

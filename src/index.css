@@ -430,6 +430,11 @@
   height: 1.75rem;
 }
 
+/* Imagen que se funde con el fondo: los bordes se desvanecen para que no se vea el cuadro */
+.imagen-fundida {
+  mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+}
+
 /* Tarjeta de NEXUS Agenda: luz dorada de la corona del logo */
 .agenda {
   background: radial-gradient(80% 120% at 0% 0%, rgb(233 198 126 / 0.09), transparent 60%);
