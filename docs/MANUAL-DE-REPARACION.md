@@ -79,3 +79,11 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 - **Se ve plano (sin profundidad):** alguien puso `overflow`, `opacity` o `filter` en `.pieza-3d` o en `.orbita`; esas propiedades aplanan el 3D. Quitarlas.
 - **El anillo se corta a los lados:** bajar `--radio` de `.orbita` en `src/index.css` (10.5rem celular, 15.5rem computador).
 - **Se mueve brusco o muy lento:** ajustar `SUAVIDAD` e `INCLINACION_MAX` arriba de `src/Escudo3D.tsx`.
+
+## 13. El botón "Crear mi agenda gratis" no abre NEXUS Agenda, o la captura sale vacía
+- **No abre o abre otra página:** revisar `AGENDA_URL` arriba de `src/App.tsx` (debe ser `https://nexus-agenda-co.web.app/`).
+- **Captura vacía:** debe existir `public/img/agenda-portada.webp` (480 × 860). Si la portada de Agenda cambia, tomar una captura nueva del celular **sin datos de clientes** y convertirla a webp.
+
+## 14. Los botones verdes o dorados se ven planos
+- Les falta la clase `boton-3d` junto a `boton-verde` o `boton-oro` (ver `BotonWhatsApp` en `src/Marco.tsx`). Los estilos están en `src/index.css`.
+

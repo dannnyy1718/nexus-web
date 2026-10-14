@@ -358,6 +358,78 @@
   translate: 0.25rem 0;
 }
 
+/* Botones principales con volumen (WhatsApp y NEXUS Agenda): luz arriba, borde oscuro abajo
+   y sombra suave de color, como el brillo 3D del logo. Al pasar el mouse "suben"; al tocar, "bajan".
+   Solo usa sombras y transform: no carga imágenes ni frena la página. */
+.boton-3d {
+  --tono: var(--color-verde);
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--tono) 55%, white) 0%,
+    var(--tono) 48%,
+    color-mix(in oklab, var(--tono) 82%, black) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.65),
+    inset 0 -3px 0 rgb(0 0 0 / 0.2),
+    0 2px 3px rgb(0 0 0 / 0.45),
+    0 12px 28px -10px var(--tono);
+  transition:
+    translate 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.25s;
+}
+.boton-3d:hover {
+  translate: 0 -2px;
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    inset 0 -3px 0 rgb(0 0 0 / 0.2),
+    0 4px 6px rgb(0 0 0 / 0.4),
+    0 18px 40px -10px var(--tono);
+}
+.boton-3d:active {
+  translate: 0 1px;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    inset 0 -1px 0 rgb(0 0 0 / 0.2),
+    0 1px 2px rgb(0 0 0 / 0.45),
+    0 6px 16px -8px var(--tono);
+}
+.boton-verde {
+  --tono: var(--color-verde);
+}
+.boton-oro {
+  --tono: var(--color-oro);
+}
+
+/* NEXUS Agenda ya está disponible: nodo dorado sólido (el punteado era "próximamente") */
+.nodo-oro-vivo {
+  border-color: var(--color-oro);
+  background: var(--color-oro);
+  box-shadow: 0 0 14px rgb(233 198 126 / 0.6);
+}
+
+/* Dibujo de cada paso de "Cómo trabajamos": un nodo cuadrado del circuito con su ícono */
+.icono-paso {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  color: var(--color-cian);
+  border: 1px solid rgb(67 217 242 / 0.35);
+  background: radial-gradient(circle at 30% 20%, rgb(67 217 242 / 0.18), rgb(11 28 54 / 0.9) 70%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.08),
+    0 10px 24px -12px rgb(67 217 242 / 0.6);
+}
+.icono-paso svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 /* Tarjeta de NEXUS Agenda: luz dorada de la corona del logo */
 .agenda {
   background: radial-gradient(80% 120% at 0% 0%, rgb(233 198 126 / 0.09), transparent 60%);

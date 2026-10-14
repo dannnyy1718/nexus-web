@@ -2,6 +2,14 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-14
+- **Revisión de diseño con la skill `impeccable`** (crítica guardada en `.impeccable/critique/`): 22/32, "aceptable". El contraste de los textos está bien (8.83:1 el más bajo); los problemas eran de orden y de un dato viejo.
+- **NEXUS Agenda ya dice "Disponible"**: antes decía "Próximamente" y "Avísame cuando salga", aunque está publicada desde el 10 de octubre. Ahora tiene el botón "Crear mi agenda gratis", que abre nexus-agenda-co.web.app, y al lado una captura de su portada (`public/img/agenda-portada.webp`, 41 KB, sin datos de clientes).
+- **Cloud Security** salió de "Qué hacemos" (era una tarjeta suelta que decía "Próximamente") y quedó como una línea en "Seguridad": "Próximo servicio".
+- **Menos espacio vacío en computador:** "Seguridad" y "Preguntas frecuentes" en dos columnas (título a la izquierda), y el escudo acompaña el llamado final.
+- **Pedido de Danny: menos texto y botones que resalten.** "Cómo trabajamos" tiene un dibujo por paso (SVG, no pesa) y los botones principales (WhatsApp y Agenda) tienen volumen 3D: luz arriba, sombra de color y suben al pasar el mouse.
+- Probado en local en computador y celular: nada se sale de la pantalla y el detector de diseño no encontró problemas. **Falta publicar** (con el OK de Danny).
+
 ## 2026-10-10
 - **Escudo 3D en la portada** (`src/Escudo3D.tsx`): el escudo se inclina siguiendo el mouse o el dedo, un brillo recorre su superficie y seis nodos cian y verde le giran alrededor por un anillo de luz. Si nadie lo mueve, flota solo. Idea sacada de un video de TikTok; Danny pidió ponerlo solo en esta página y no en NEXUS Agenda, para que agendar siga siendo rápido.
 - **Mapa en el celular:** ahora muestra el mundo completo. Antes se acercaba a América y Danny notó que así no se veía "abierta al mundo".

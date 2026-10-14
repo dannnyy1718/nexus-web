@@ -1,4 +1,4 @@
-import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_NUMERO, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import PantallasJohana from './PantallasJohana'
@@ -6,9 +6,8 @@ import { preguntas } from './negocio'
 
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
-const AGENDA_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-  'Hola NEXUS, quiero saber cuándo sale NEXUS Agenda.',
-)}`
+// NEXUS Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
+const AGENDA_URL = 'https://nexus-agenda-co.web.app/'
 
 const servicios: { titulo: string; texto: string; enlace?: { href: string; texto: string } }[] = [
   {
@@ -32,19 +31,23 @@ const servicios: { titulo: string; texto: string; enlace?: { href: string; texto
 const pasos = [
   {
     titulo: 'Conversamos',
+    icono: 'M4 5h16v11H10l-4 3.5V16H4z M8 10h8 M8 13h5',
     texto: 'Nos cuentas por WhatsApp qué necesita tu negocio. La primera conversación no tiene costo.',
   },
   {
     titulo: 'Recibes una propuesta clara',
+    icono: 'M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h4',
     texto:
       'Qué incluye, cuánto cuesta y cuándo se entrega. Si la app necesita servicios externos, como dominio, servidores o publicarla en Play Store o App Store, te decimos su costo antes de empezar.',
   },
   {
     titulo: 'La construimos',
+    icono: 'M9 8l-4 4 4 4 M15 8l4 4-4 4 M13.5 5l-3 14',
     texto: 'Pagas el 50 % para arrancar y ves los avances mientras la desarrollamos.',
   },
   {
     titulo: 'La entregamos',
+    icono: 'M8 2.5h8a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1z M9.5 12l2 2 3.5-3.5',
     texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía.',
   },
 ]
@@ -143,16 +146,6 @@ export default function App() {
                 </li>
               ))}
             </ul>
-
-            <div className="relative mt-12 max-w-[34rem] rounded-2xl border border-dashed border-oro/50 p-5">
-              <h3 className="flex flex-wrap items-baseline gap-x-3 text-lg font-semibold md:text-xl">
-                Cloud Security
-                <span className="font-sans text-sm font-semibold text-oro">Próximamente</span>
-              </h3>
-              <p className="mt-2 text-bruma">
-                Revisamos y protegemos la nube donde viven los datos de tu empresa.
-              </p>
-            </div>
           </section>
 
           {/* Proyecto real */}
@@ -205,26 +198,50 @@ export default function App() {
             </div>
           </section>
 
-          {/* Próximo producto */}
+          {/* NEXUS Agenda: el producto listo para usar (publicado el 2026-10-10) */}
           <section className="relative pb-24 pl-12 md:pl-24">
-            <span className="nodo nodo-oro top-2 bg-oro" aria-hidden="true" />
-            <div className="agenda max-w-[46rem] rounded-3xl border border-dashed border-oro/50 p-6 md:p-10">
-              <h2 className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-2xl font-semibold md:text-[2.25rem]">
-                NEXUS Agenda
-                <span className="font-sans text-base font-semibold text-oro">Próximamente</span>
-              </h2>
-              <p className="mt-4 max-w-[36rem]">
-                Lo que hicimos para Johana, listo para cualquier negocio de servicios: uñas, peluquería,
-                barbería, estética o spa.
-              </p>
-              <p className="mt-3 max-w-[36rem] text-bruma">
-                Creas la página de tu negocio en minutos, le pones tu logo, colores, servicios y horario, y tus
-                clientas reservan solas desde el celular, sin crear cuenta.
-              </p>
-              <a href={AGENDA_URL} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-6">
-                Avísame cuando salga
-                <span className="sr-only"> (abre WhatsApp)</span>
-              </a>
+            <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
+            <div className="agenda grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16">
+              <div>
+                <h2 className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-2xl font-semibold md:text-[2.25rem]">
+                  NEXUS Agenda
+                  <span className="font-sans text-base font-semibold text-verde">Disponible</span>
+                </h2>
+                <p className="mt-4 max-w-[36rem]">
+                  Lo que hicimos para Johana, listo para cualquier negocio de servicios: uñas, peluquería,
+                  barbería, estética o spa.
+                </p>
+                <p className="mt-3 max-w-[36rem] text-bruma">
+                  Creas la página de tu negocio en minutos, le pones tu logo, colores, servicios y horario, y tus
+                  clientas reservan solas desde el celular, sin crear cuenta.
+                </p>
+                <a
+                  href={AGENDA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="boton-3d boton-oro mt-7 inline-flex items-center gap-2 whitespace-nowrap rounded-full px-5 py-3 font-semibold text-abismo sm:px-6"
+                >
+                  Crear mi agenda gratis
+                  <svg viewBox="0 0 16 16" className="size-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M6 3h7v7M13 3 4 12" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="sr-only"> (se abre en otra pestaña)</span>
+                </a>
+                <p className="mt-3 text-sm text-bruma">Sin tarjeta de crédito.</p>
+              </div>
+              {/* Captura de la portada real de NEXUS Agenda (no tiene datos de clientes) */}
+              <figure className="mx-auto w-full max-w-[12rem] lg:max-w-[15rem]">
+                <div className="celular">
+                  <img
+                    src="/img/agenda-portada.webp"
+                    width={480}
+                    height={860}
+                    loading="lazy"
+                    alt="Portada de NEXUS Agenda: Tu agenda de citas, con tu marca, en tu celular, y el botón Crear mi agenda gratis"
+                    className="block h-auto w-full"
+                  />
+                </div>
+              </figure>
             </div>
           </section>
 
@@ -235,7 +252,13 @@ export default function App() {
             <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
               {pasos.map((p, i) => (
                 <li key={p.titulo} className="border-t border-linea pt-5">
-                  <span className="font-display text-sm font-semibold text-cian" aria-hidden="true">
+                  {/* Dibujo de cada paso en SVG: no pesa nada y le quita al bloque la sensación de "solo texto" */}
+                  <span className="icono-paso" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={p.icono} />
+                    </svg>
+                  </span>
+                  <span className="mt-4 block font-display text-sm font-semibold text-cian" aria-hidden="true">
                     Paso {i + 1}
                   </span>
                   <h3 className="mt-2 text-base font-semibold md:text-lg">{p.titulo}</h3>
@@ -248,14 +271,17 @@ export default function App() {
           {/* Seguridad */}
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
-            <h2 className="max-w-[40rem] text-2xl font-semibold md:text-[2.25rem]">
-              Seguridad desde el primer día
-            </h2>
-            <p className="mt-4 max-w-[40rem] text-bruma">
-              NEXUS nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
-              negocio y a tus clientes.
-            </p>
-            <ul className="mt-8 grid max-w-[44rem] gap-5">
+            {/* En computador: título a la izquierda y lista a la derecha, para no dejar media pantalla vacía */}
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
+              <div>
+                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
+                <p className="mt-4 max-w-[40rem] text-bruma">
+                  NEXUS nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
+                  negocio y a tus clientes.
+                </p>
+              </div>
+              <div>
+            <ul className="grid max-w-[44rem] gap-5 lg:pt-2">
               {seguridad.map((t) => (
                 <li key={t} className="flex gap-4">
                   <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
@@ -289,13 +315,20 @@ export default function App() {
                 </span>
               </li>
             </ul>
+                <p className="mt-8 max-w-[44rem] border-t border-linea pt-5 text-bruma">
+                  <span className="font-semibold text-oro">Próximo servicio: Cloud Security.</span> Revisaremos y
+                  protegeremos la nube donde viven los datos de tu empresa.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Preguntas frecuentes */}
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
-            <dl className="mt-10 grid max-w-[46rem] gap-8">
+            <dl className="grid max-w-[46rem] gap-8 lg:pt-2">
               {preguntas.map((p) => (
                 <div key={p.pregunta}>
                   <dt className="text-base font-semibold md:text-lg">{p.pregunta}</dt>
@@ -303,22 +336,36 @@ export default function App() {
                 </div>
               ))}
             </dl>
+            </div>
           </section>
 
           {/* Llamado final */}
           <section className="relative pb-20 pl-12 md:pl-24">
             <span className="nodo nodo-oro top-3 bg-oro" aria-hidden="true" />
-            <h2 className="max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl">
-              ¿Tienes una idea para tu negocio?
-            </h2>
-            <p className="mt-5 max-w-[34rem] text-lg text-bruma">
-              Cuéntanosla por WhatsApp y te respondemos con una propuesta.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <BotonWhatsApp grande />
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
-                {WHATSAPP_VISIBLE}
-              </a>
+            <div className="grid items-center gap-8 lg:grid-cols-[1fr_17rem]">
+              <div>
+                <h2 className="max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl">
+                  ¿Tienes una idea para tu negocio?
+                </h2>
+                <p className="mt-5 max-w-[34rem] text-lg text-bruma">
+                  Cuéntanosla por WhatsApp y te respondemos con una propuesta.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <BotonWhatsApp grande />
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
+                    {WHATSAPP_VISIBLE}
+                  </a>
+                </div>
+              </div>
+              {/* El mismo escudo del inicio (ya está en caché, no descarga nada nuevo), solo en computador */}
+              <img
+                src="/img/escudo-560.webp"
+                width={480}
+                height={480}
+                loading="lazy"
+                alt=""
+                className="escudo hidden lg:block"
+              />
             </div>
           </section>
         </div>

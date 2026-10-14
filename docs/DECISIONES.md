@@ -46,3 +46,14 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 ## 11. Mapa: mundo completo en el celular (2026-10-10)
 - **Antes:** en pantallas angostas se acercaba a América (ajuste "cubrir").
 - **Ahora:** por debajo de 640 px usa ajuste "contener" y la caja es más ancha (`aspect-ratio: 2.2`). Pedido de Danny: la sección dice "abierta al mundo".
+
+## 12. NEXUS Agenda como producto disponible, no como portada (2026-10-14)
+- **Qué:** la sección de Agenda pasa de "Próximamente" a "Disponible", con un botón dorado que lleva a crear la agenda.
+- **Por qué:** decisión de Danny. Lo principal de la portada siguen siendo las **apps a la medida**; Agenda queda como sección destacada justo después del caso de Johana, que es su prueba.
+- **Cloud Security** se nombra como "Próximo servicio" dentro de Seguridad, para no mezclar lo que se vende hoy con lo que viene.
+
+## 13. Botones 3D solo con CSS (2026-10-14)
+- **Qué:** clase `.boton-3d` en `index.css` (con `.boton-verde` y `.boton-oro`): degradado de luz, borde interno y sombra de color. Solo en los botones principales (WhatsApp y Agenda), para que resalten sobre los enlaces normales.
+- **Por qué:** pedido de Danny ("toque 3D"). Se hace con sombras y `translate`, sin imágenes ni librerías, así que no le quita velocidad a la página. Con "reducir movimiento" no se anima.
+- **Dibujos de "Cómo trabajamos":** íconos SVG dentro del código (0 KB extra) en vez de fotos, por la misma razón.
+

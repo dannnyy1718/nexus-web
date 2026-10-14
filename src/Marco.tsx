@@ -22,7 +22,7 @@ export function BotonWhatsApp({ grande = false }: { grande?: boolean }) {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-3 rounded-full bg-verde font-semibold text-abismo shadow-[0_0_30px_-6px_var(--color-verde)] transition-colors hover:bg-[#7ff0b1] ${
+      className={`boton-3d boton-verde inline-flex items-center gap-3 rounded-full font-semibold text-abismo ${
         grande ? 'px-8 py-4 text-lg' : 'px-6 py-3'
       }`}
     >
