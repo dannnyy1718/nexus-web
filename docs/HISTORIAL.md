@@ -13,6 +13,8 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
 - **Caché de la página:** Danny no veía la imagen nueva porque el navegador guardaba la página 1 hora. Ahora `firebase.json` le pide al navegador revisar en cada visita si hay versión nueva (`no-cache`). Publicado por Danny y verificado en vivo.
 
+- **Texto de Agenda corregido** (aclaración de Danny): decía "Lo que hicimos para Johana…", pero NEXUS Agenda es un emprendimiento propio de NEXUS. Ahora dice "La app de citas propia de NEXUS, lista para cualquier negocio que trabaje con citas…".
+
 ## 2026-10-10
 - **Escudo 3D en la portada** (`src/Escudo3D.tsx`): el escudo se inclina siguiendo el mouse o el dedo, un brillo recorre su superficie y seis nodos cian y verde le giran alrededor por un anillo de luz. Si nadie lo mueve, flota solo. Idea sacada de un video de TikTok; Danny pidió ponerlo solo en esta página y no en NEXUS Agenda, para que agendar siga siendo rápido.
 - **Mapa en el celular:** ahora muestra el mundo completo. Antes se acercaba a América y Danny notó que así no se veía "abierta al mundo".

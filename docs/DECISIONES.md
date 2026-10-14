@@ -49,7 +49,8 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 
 ## 12. NEXUS Agenda como producto disponible, no como portada (2026-10-14)
 - **Qué:** la sección de Agenda pasa de "Próximamente" a "Disponible", con un botón dorado que lleva a crear la agenda.
-- **Por qué:** decisión de Danny. Lo principal de la portada siguen siendo las **apps a la medida**; Agenda queda como sección destacada justo después del caso de Johana, que es su prueba.
+- **Por qué:** decisión de Danny. Lo principal de la portada siguen siendo las **apps a la medida**; Agenda queda como sección destacada después del caso de Johana.
+- **Agenda es un producto propio de NEXUS**, no una versión de la app de Johana (aclaración de Danny, 2026-10-14). El texto no debe decir que se hizo "para Johana".
 - **Cloud Security** se nombra como "Próximo servicio" dentro de Seguridad, para no mezclar lo que se vende hoy con lo que viene.
 
 ## 13. Botones 3D solo con CSS (2026-10-14)

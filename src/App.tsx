@@ -208,8 +208,8 @@ export default function App() {
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
                 </h2>
                 <p className="mt-4 max-w-[36rem]">
-                  Lo que hicimos para Johana, listo para cualquier negocio de servicios: uñas, peluquería,
-                  barbería, estética o spa.
+                  La app de citas propia de NEXUS, lista para cualquier negocio que trabaje con citas: uñas,
+                  peluquería, barbería, estética, spa, consultorios y más.
                 </p>
                 <p className="mt-3 max-w-[36rem] text-bruma">
                   Creas la página de tu negocio en minutos, le pones tu logo, colores, servicios y horario, y tus
