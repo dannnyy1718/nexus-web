@@ -77,7 +77,7 @@ export default function Escudo3D() {
           sizes="(min-width: 1536px) 38rem, (min-width: 768px) 30rem, 19rem"
           width={560}
           height={560}
-          alt="Escudo de NEXUS: una N formada por nodos conectados, sobre un mapa del mundo"
+          alt="Escudo de NODRA: una N formada por nodos conectados, sobre un mapa del mundo"
           className="escudo relative w-full"
           fetchPriority="high"
         />

@@ -1,12 +1,12 @@
-# NEXUS: página web
+# NODRA: página web
 
 > **Tu negocio, conectado y seguro.**
 
-Página de **NEXUS**: software a la medida (apps móviles y web multiplataforma) y, próximamente, seguridad en la nube.
+Página de **NODRA** (antes NEXUS): software a la medida (apps móviles y web multiplataforma) y, próximamente, seguridad en la nube.
 
 **En vivo:** https://nexus-tech-co.web.app
 
-![Vista previa de NEXUS](public/og.jpg)
+![Vista previa de NODRA](public/og.jpg)
 
 ## Tecnologías
 
@@ -74,4 +74,4 @@ Después de cada cambio:
 
 ---
 
-Hecho por Danny Javier Díaz · NEXUS
+Hecho por Danny Javier Díaz · NODRA

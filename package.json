@@ -1,7 +1,7 @@
 {
   "name": "nexus-web",
   "version": "1.0.0",
-  "description": "Página web de NEXUS: apps móviles y web a la medida",
+  "description": "Página web de NODRA: apps móviles y web a la medida",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",

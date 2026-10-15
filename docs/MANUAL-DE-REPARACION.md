@@ -1,4 +1,4 @@
-# Manual de reparación: página de NEXUS
+# Manual de reparación: página de NODRA
 
 Cada problema tiene la misma forma: **síntoma** (lo que ves), **causa** (por qué pasa) y **arreglo** (qué hacer).
 Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en la terminal dice el archivo y la línea.

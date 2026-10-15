@@ -63,3 +63,9 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Qué:** encabezado, contenido y pie con `max-w-[92rem]` (antes `max-w-6xl` = 72rem) y margen `xl:px-12`. Desde `2xl` (1536 px) crecen el título, el escudo (38rem, con su órbita en `index.css`) y las capturas, y se abren columnas.
 - **Por qué:** en un monitor de 1920 px la página ocupaba solo el 60 % del ancho y se veía angosta. No se hizo con zoom ni agrandando todas las letras: se amplió el contenedor y se repartió el contenido. Los párrafos conservan su ancho máximo (`max-w-[..rem]`) porque las líneas muy largas se leen mal.
 - **Ojo:** si se agrega una sección nueva, usar el mismo `max-w-[92rem]` para que quede alineada.
+
+## 15. La marca pasa de NEXUS a NODRA (2026-10-14)
+- **Qué:** todo texto visible dice NODRA; NEXUS Agenda se llama NODRA Agenda. El escudo con la N de nodos, los colores y el lema se quedan.
+- **Por qué:** en la SIC, la Fuerza Aérea Colombiana pidió "NEXUS" (SD2025/0096428) en las clases 9 y 42 con "software" y "desarrollo de software". En Colombia la marca es de quien la registra primero. "NODRA" no tiene resultados en la SIC (clases 9 y 42) ni empresas de software con ese nombre en internet. NEXUSX se descartó por parecerse demasiado; NODIA porque ya la usan empresas de software (una con oficina en Cali).
+- **Lo que NO cambia todavía:** las direcciones `nexus-tech-co.web.app` y `nexus-agenda-co.web.app`, el id del proyecto de Firebase (`nexus-tech-co`) y el nombre de la carpeta. Las direcciones se mudan una sola vez cuando se compre `nodra.co`; el id de Firebase no se puede cambiar.
+- **Registro de la marca:** Danny decidió registrarla en la SIC cuando la empresa dé ganancias (clases 9 y 42: unos 2.021.000 COP, o 1.455.000 con tarifa MiPyme, en 2026).

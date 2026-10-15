@@ -5,7 +5,7 @@ export const LEMA = 'Tu negocio, conectado y seguro.'
 export const WHATSAPP_NUMERO = '573133655136'
 export const WHATSAPP_VISIBLE = '313 365 5136'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-  'Hola NEXUS, quiero una app para mi negocio.',
+  'Hola NODRA, quiero una app para mi negocio.',
 )}`
 
 export function IconoWhatsApp({ className = '' }: { className?: string }) {
@@ -43,7 +43,7 @@ export function Encabezado() {
       </a>
 
       <header className="mx-auto flex max-w-[92rem] items-center justify-between px-4 py-5 md:px-8 xl:px-12">
-        <a href="/" className="flex items-center gap-3 md:gap-4" aria-label="NEXUS, inicio">
+        <a href="/" className="flex items-center gap-3 md:gap-4" aria-label="NODRA, inicio">
           <img
             src="/img/escudo-mini.webp"
             alt=""
@@ -51,7 +51,7 @@ export function Encabezado() {
             height={64}
             className="size-12 rounded-xl shadow-[0_0_24px_-4px_var(--color-cian)] md:size-16"
           />
-          <span className="marca marca-brillo text-2xl md:text-[2rem]">NEXUS</span>
+          <span className="marca marca-brillo text-2xl md:text-[2rem]">NODRA</span>
         </a>
         <a
           href={WHATSAPP_URL}
@@ -74,7 +74,7 @@ export function Pie() {
       <span className="flex items-center gap-3">
         <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
         <span className="grid leading-tight">
-          <span className="marca text-lg">NEXUS</span>
+          <span className="marca text-lg">NODRA</span>
           <span className="text-niebla">{LEMA}</span>
         </span>
       </span>
@@ -84,7 +84,7 @@ export function Pie() {
           Aviso de privacidad
         </a>
       </p>
-      <span>© {new Date().getFullYear()} NEXUS. Software a la medida en Ibagué, Tolima.</span>
+      <span>© {new Date().getFullYear()} NODRA. Software a la medida en Ibagué, Tolima.</span>
     </footer>
   )
 }

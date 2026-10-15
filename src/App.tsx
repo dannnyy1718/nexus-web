@@ -6,7 +6,7 @@ import { preguntas } from './negocio'
 
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
-// NEXUS Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
+// NODRA Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
 const AGENDA_URL = 'https://nexus-agenda-co.web.app/'
 
 const servicios: { titulo: string; texto: string; enlace?: { href: string; texto: string } }[] = [
@@ -198,17 +198,17 @@ export default function App() {
             </div>
           </section>
 
-          {/* NEXUS Agenda: el producto listo para usar (publicado el 2026-10-10) */}
+          {/* NODRA Agenda: el producto listo para usar (publicado el 2026-10-10) */}
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
             <div className="agenda grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16 2xl:grid-cols-[1fr_18rem] 2xl:px-16">
               <div>
                 <h2 className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-2xl font-semibold md:text-[2.25rem]">
-                  NEXUS Agenda
+                  NODRA Agenda
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
                 </h2>
                 <p className="mt-4 max-w-[36rem]">
-                  La app de citas propia de NEXUS, lista para cualquier negocio que trabaje con citas: uñas,
+                  La app de citas propia de NODRA, lista para cualquier negocio que trabaje con citas: uñas,
                   peluquería, barbería, estética, spa, consultorios y más.
                 </p>
                 <p className="mt-3 max-w-[36rem] text-bruma">
@@ -229,7 +229,7 @@ export default function App() {
                 </a>
                 <p className="mt-3 text-sm text-bruma">Sin tarjeta de crédito.</p>
               </div>
-              {/* Captura de la portada real de NEXUS Agenda (no tiene datos de clientes) */}
+              {/* Captura de la portada real de NODRA Agenda (no tiene datos de clientes) */}
               <figure className="mx-auto w-full max-w-[12rem] lg:max-w-[15rem] 2xl:max-w-[18rem]">
                 <div className="celular">
                   <img
@@ -237,7 +237,7 @@ export default function App() {
                     width={480}
                     height={860}
                     loading="lazy"
-                    alt="Portada de NEXUS Agenda: Tu agenda de citas, con tu marca, en tu celular, y el botón Crear mi agenda gratis"
+                    alt="Portada de NODRA Agenda: Tu agenda de citas, con tu marca, en tu celular, y el botón Crear mi agenda gratis"
                     className="block h-auto w-full"
                   />
                 </div>
@@ -276,7 +276,7 @@ export default function App() {
               <div>
                 <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
                 <p className="mt-4 max-w-[40rem] text-bruma">
-                  NEXUS nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
+                  NODRA nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
                   negocio y a tus clientes.
                 </p>
                 {/* Ilustración hecha con Gemini (2026-10-14): escudo y candado sobre la nube, con los colores de la marca.

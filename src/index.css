@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Tokens de marca NEXUS: colores sacados del logo (escudo, nodos y luz de la corona) */
+/* Tokens de marca NODRA: colores sacados del logo (escudo, nodos y luz de la corona) */
 @theme {
   --color-abismo: #050e1f;
   --color-noche: #0b1c36;
@@ -53,7 +53,7 @@
 }
 
 @layer components {
-/* Palabra NEXUS con brillo metálico, como en el logo */
+/* Palabra NODRA con brillo metálico, como en el logo */
 .marca {
   font-family: var(--font-display);
   font-weight: 700;
@@ -64,7 +64,7 @@
   color: transparent;
 }
 
-/* Brillo cian alrededor de la palabra NEXUS del encabezado */
+/* Brillo cian alrededor de la palabra NODRA del encabezado */
 .marca-brillo {
   filter: drop-shadow(0 0 10px rgb(67 217 242 / 0.45));
 }
@@ -104,7 +104,7 @@
   mask-image: radial-gradient(closest-side, #000 60%, transparent 92%);
   transform: translateZ(2px);
 }
-/* Seis nodos que giran alrededor del escudo, como la red de NEXUS */
+/* Seis nodos que giran alrededor del escudo, como la red de NODRA */
 .orbita {
   --radio: 10.5rem;
   position: absolute;
@@ -364,7 +364,7 @@
   translate: 0.25rem 0;
 }
 
-/* Botones principales con volumen (WhatsApp y NEXUS Agenda): luz arriba, borde oscuro abajo
+/* Botones principales con volumen (WhatsApp y NODRA Agenda): luz arriba, borde oscuro abajo
    y sombra suave de color, como el brillo 3D del logo. Al pasar el mouse "suben"; al tocar, "bajan".
    Solo usa sombras y transform: no carga imágenes ni frena la página. */
 .boton-3d {
@@ -410,7 +410,7 @@
   --tono: var(--color-oro);
 }
 
-/* NEXUS Agenda ya está disponible: nodo dorado sólido (el punteado era "próximamente") */
+/* NODRA Agenda ya está disponible: nodo dorado sólido (el punteado era "próximamente") */
 .nodo-oro-vivo {
   border-color: var(--color-oro);
   background: var(--color-oro);
@@ -441,7 +441,7 @@
   mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
 }
 
-/* Tarjeta de NEXUS Agenda: luz dorada de la corona del logo */
+/* Tarjeta de NODRA Agenda: luz dorada de la corona del logo */
 .agenda {
   background: radial-gradient(80% 120% at 0% 0%, rgb(233 198 126 / 0.09), transparent 60%);
 }

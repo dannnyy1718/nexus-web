@@ -1,4 +1,4 @@
-// Datos de NEXUS en un solo lugar: los usa la página visible y la ficha para buscadores (Schema.org)
+// Datos de NODRA en un solo lugar: los usa la página visible y la ficha para buscadores (Schema.org)
 import { LEMA, WHATSAPP_NUMERO } from './Marco'
 
 export const SITIO = 'https://nexus-tech-co.web.app'
@@ -7,9 +7,9 @@ export const DEPARTAMENTO = 'Tolima'
 
 export const preguntas = [
   {
-    pregunta: '¿Dónde está NEXUS?',
+    pregunta: '¿Dónde está NODRA?',
     respuesta:
-      'NEXUS es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Nos contactas por WhatsApp.',
+      'NODRA es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Nos contactas por WhatsApp.',
   },
   {
     pregunta: '¿Qué tipo de apps hacen?',
@@ -29,18 +29,18 @@ export const preguntas = [
   {
     pregunta: '¿Mis datos y los de mis clientes están seguros?',
     respuesta:
-      'Sí. NEXUS nace de la ingeniería en ciberseguridad: cada negocio tiene su propio espacio en la nube, con reglas de acceso estrictas y conexión cifrada.',
+      'Sí. NODRA nace de la ingeniería en ciberseguridad: cada negocio tiene su propio espacio en la nube, con reglas de acceso estrictas y conexión cifrada.',
   },
 ]
 
-// Ficha para Google y las IA: qué es NEXUS, dónde está y qué ofrece
+// Ficha para Google y las IA: qué es NODRA, dónde está y qué ofrece
 export function datosEstructurados() {
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       '@id': `${SITIO}/#negocio`,
-      name: 'NEXUS',
+      name: 'NODRA',
       slogan: LEMA,
       description:
         'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con reglas de acceso estrictas y conexión cifrada.',
@@ -65,7 +65,7 @@ export function datosEstructurados() {
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Servicios de NEXUS',
+        name: 'Servicios de NODRA',
         itemListElement: [
           'Apps móviles y web a la medida',
           'Tiendas en línea',
