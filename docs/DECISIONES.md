@@ -58,3 +58,8 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Por qué:** pedido de Danny ("toque 3D"). Se hace con sombras y `translate`, sin imágenes ni librerías, así que no le quita velocidad a la página. Con "reducir movimiento" no se anima.
 - **Dibujos de "Cómo trabajamos":** íconos SVG dentro del código (0 KB extra) en vez de fotos, por la misma razón.
 
+
+## 14. Ancho máximo de 92rem y ajustes para pantallas grandes (2026-10-14)
+- **Qué:** encabezado, contenido y pie con `max-w-[92rem]` (antes `max-w-6xl` = 72rem) y margen `xl:px-12`. Desde `2xl` (1536 px) crecen el título, el escudo (38rem, con su órbita en `index.css`) y las capturas, y se abren columnas.
+- **Por qué:** en un monitor de 1920 px la página ocupaba solo el 60 % del ancho y se veía angosta. No se hizo con zoom ni agrandando todas las letras: se amplió el contenedor y se repartió el contenido. Los párrafos conservan su ancho máximo (`max-w-[..rem]`) porque las líneas muy largas se leen mal.
+- **Ojo:** si se agrega una sección nueva, usar el mismo `max-w-[92rem]` para que quede alineada.

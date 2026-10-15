@@ -42,7 +42,7 @@ export function Encabezado() {
         Ir al contenido
       </a>
 
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:px-8">
+      <header className="mx-auto flex max-w-[92rem] items-center justify-between px-4 py-5 md:px-8 xl:px-12">
         <a href="/" className="flex items-center gap-3 md:gap-4" aria-label="NEXUS, inicio">
           <img
             src="/img/escudo-mini.webp"
@@ -70,7 +70,7 @@ export function Encabezado() {
 
 export function Pie() {
   return (
-    <footer className="mx-auto grid max-w-6xl gap-4 border-t border-linea px-4 py-8 text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8 md:px-8">
+    <footer className="mx-auto grid max-w-[92rem] gap-4 border-t border-linea px-4 py-8 text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8 md:px-8 xl:px-12">
       <span className="flex items-center gap-3">
         <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
         <span className="grid leading-tight">

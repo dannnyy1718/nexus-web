@@ -44,7 +44,7 @@ export default function PantallasJohana() {
 
   return (
     <figure
-      className="min-w-0 max-w-[16rem] flex-1 basis-0"
+      className="min-w-0 max-w-[16rem] flex-1 basis-0 2xl:max-w-[19rem]"
       onPointerEnter={() => setEncima(true)}
       onPointerLeave={() => setEncima(false)}
       onFocus={() => setEncima(true)}

@@ -3,6 +3,7 @@
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
 ## 2026-10-14
+- **La página ahora usa todo el ancho en pantallas grandes** (pedido de Danny con captura a 1920 px): antes el contenido tenía un tope de 1152 px y quedaban franjas vacías a los lados. Ahora el tope es 1472 px (`max-w-[92rem]`) en encabezado, contenido y pie, y desde 1536 px el contenido se reparte mejor: título y escudo más grandes, celulares de Johana y Agenda más grandes, Seguridad con columna más ancha y Preguntas frecuentes en dos columnas. En celular y portátil no cambia nada. Probado en local a 375, 1366 y 1920 px, sin barra horizontal.
 - **Revisión de diseño con la skill `impeccable`** (crítica guardada en `.impeccable/critique/`): 22/32, "aceptable". El contraste de los textos está bien (8.83:1 el más bajo); los problemas eran de orden y de un dato viejo.
 - **NEXUS Agenda ya dice "Disponible"**: antes decía "Próximamente" y "Avísame cuando salga", aunque está publicada desde el 10 de octubre. Ahora tiene el botón "Crear mi agenda gratis", que abre nexus-agenda-co.web.app, y al lado una captura de su portada (`public/img/agenda-portada.webp`, 41 KB, sin datos de clientes).
 - **Cloud Security** salió de "Qué hacemos" (era una tarjeta suelta que decía "Próximamente") y quedó como una línea en "Seguridad": "Próximo servicio".

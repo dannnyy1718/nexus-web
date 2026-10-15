@@ -118,6 +118,12 @@
     --radio: 15.5rem;
   }
 }
+/* Pantallas grandes (≥1536 px): el escudo crece a 38rem y la órbita con él */
+@media (min-width: 1536px) {
+  .orbita {
+    --radio: 19.6rem;
+  }
+}
 /* Anillo de luz por donde pasan los nodos: acostado en el mismo plano de la órbita */
 .orbita-anillo {
   position: absolute;
