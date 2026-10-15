@@ -339,11 +339,20 @@ export default function App() {
           {/* Preguntas frecuentes */}
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,24rem)_1fr] 2xl:gap-20">
+            {/* En computador el título se queda fijo al bajar (sticky) y lleva una salida a WhatsApp:
+                así la columna izquierda no queda vacía y quien no encuentra su respuesta sabe qué hacer */}
+            <div className="lg:sticky lg:top-10 lg:self-start">
+              <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
+              <p className="mt-4 max-w-[22rem] text-bruma 2xl:text-lg">¿Tu pregunta no está aquí? Escríbenos y te respondemos.</p>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-3">
+                Preguntar por WhatsApp
+                <span className="sr-only"> (se abre en otra pestaña)</span>
+              </a>
+            </div>
             <dl className="grid max-w-[46rem] gap-8 lg:pt-2 2xl:max-w-none 2xl:grid-cols-2 2xl:gap-x-14 2xl:gap-y-10">
               {preguntas.map((p) => (
-                <div key={p.pregunta}>
+                <div key={p.pregunta} className="border-t border-linea pt-5">
                   <dt className="text-base font-semibold md:text-lg">{p.pregunta}</dt>
                   <dd className="mt-2 text-bruma">{p.respuesta}</dd>
                 </div>
