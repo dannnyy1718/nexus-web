@@ -48,7 +48,7 @@ const pasos = [
   {
     titulo: 'La entregamos',
     icono: 'M8 2.5h8a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1z M9.5 12l2 2 3.5-3.5',
-    texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía.',
+    texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía sobre lo acordado.',
   },
 ]
 

@@ -24,7 +24,7 @@ export const preguntas = [
   {
     pregunta: '¿Cómo se paga y qué garantía tiene?',
     respuesta:
-      'Pagas el 50 % para empezar y el otro 50 % al recibir la app funcionando. Incluye 6 meses de garantía.',
+      'Pagas el 50 % para empezar y el otro 50 % al recibir la app funcionando. Incluye 6 meses de garantía: corregimos sin costo cualquier falla en las funciones acordadas en la propuesta. Las funciones nuevas o los cambios de idea se cotizan aparte.',
   },
   {
     pregunta: '¿Mis datos y los de mis clientes están seguros?',

@@ -69,3 +69,7 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Por qué:** en la SIC, la Fuerza Aérea Colombiana pidió "NEXUS" (SD2025/0096428) en las clases 9 y 42 con "software" y "desarrollo de software". En Colombia la marca es de quien la registra primero. "NODRA" no tiene resultados en la SIC (clases 9 y 42) ni empresas de software con ese nombre en internet. NEXUSX se descartó por parecerse demasiado; NODIA porque ya la usan empresas de software (una con oficina en Cali).
 - **Lo que NO cambia todavía:** las direcciones `nexus-tech-co.web.app` y `nexus-agenda-co.web.app`, el id del proyecto de Firebase (`nexus-tech-co`) y el nombre de la carpeta. Las direcciones se mudan una sola vez cuando se compre `nodra.co`; el id de Firebase no se puede cambiar.
 - **Registro de la marca:** Danny decidió registrarla en la SIC cuando la empresa dé ganancias (clases 9 y 42: unos 2.021.000 COP, o 1.455.000 con tarifa MiPyme, en 2026).
+
+## 16. La garantía dice qué cubre (2026-10-17)
+- **Qué:** la página ya no dice solo "6 meses de garantía": aclara que cubre las fallas en las funciones acordadas en la propuesta, y que lo nuevo se cotiza aparte.
+- **Por qué:** una garantía sin límites invita a pedir funciones nuevas gratis y genera discusiones. La Ley 1480 obliga a cumplir lo prometido, así que la garantía se amarra a la lista de funciones de cada cotización. El detalle completo (qué cubre, qué no, tiempos y diferencia con la mensualidad) está en `Empresa NEXUS/Cotizaciones/GARANTIA-ESTANDAR.md`.

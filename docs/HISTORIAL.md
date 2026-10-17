@@ -2,6 +2,9 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-17
+- **Garantía explicada con claridad:** antes solo decía "Incluye 6 meses de garantía". Ahora la pregunta frecuente (y la ficha para Google, que sale de ahí) dice que se corrige sin costo cualquier falla en las funciones acordadas, y que lo nuevo se cotiza aparte. El paso "La entregamos" dice "garantía sobre lo acordado" y `llms.txt` tiene la versión completa. Es la garantía estándar de NODRA (`Cotizaciones/GARANTIA-ESTANDAR.md`).
+
 ## 2026-10-14
 - **Imagen para compartir con el logo nuevo de Gemini:** `public/og.jpg` ahora es un recorte de `NODRA-principal.jpg` (escudo, luz, mundo y la palabra NODRA), 1200×630, 104 KB. Reemplaza la armada a mano más temprano.
 - **La marca cambió de NEXUS a NODRA** (decisión de Danny). La Fuerza Aérea Colombiana pidió "NEXUS" en la SIC para software (expediente SD2025/0096428), así que seguir con ese nombre era un riesgo. Se cambiaron todos los textos visibles (encabezado, pie, preguntas, privacidad, títulos, ficha para Google, llms.txt, mensaje de WhatsApp) y la imagen para compartir (`public/og.jpg`, mismo escudo con "NODRA"). Las direcciones (nexus-tech-co.web.app y el enlace a nexus-agenda-co.web.app) siguen iguales hasta comprar el dominio nodra.co. La captura `agenda-portada.webp` ya muestra "NODRA Agenda" (480×860, 40 KB). Publicado por Danny y verificado en vivo: 0 "NEXUS" en inicio y privacidad, imagen nueva 200 OK, WhatsApp dice "Hola NODRA", encabezados de seguridad activos.
