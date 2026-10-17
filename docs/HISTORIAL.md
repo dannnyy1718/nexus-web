@@ -3,7 +3,7 @@
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
 ## 2026-10-17
-- **Garantía explicada con claridad:** antes solo decía "Incluye 6 meses de garantía". Ahora la pregunta frecuente (y la ficha para Google, que sale de ahí) dice que se corrige sin costo cualquier falla en las funciones acordadas, y que lo nuevo se cotiza aparte. El paso "La entregamos" dice "garantía sobre lo acordado" y `llms.txt` tiene la versión completa. Es la garantía estándar de NODRA (`Cotizaciones/GARANTIA-ESTANDAR.md`).
+- **Garantía explicada con claridad:** antes solo decía "Incluye 6 meses de garantía". Ahora la pregunta frecuente (y la ficha para Google, que sale de ahí) dice que se corrige sin costo cualquier falla en las funciones acordadas, y que lo nuevo se cotiza aparte. El paso "La entregamos" dice "garantía sobre lo acordado" y `llms.txt` tiene la versión completa. Es la garantía estándar de NODRA (`Cotizaciones/GARANTIA-ESTANDAR.md`). Publicado y verificado en vivo: texto nuevo en la página y en `llms.txt`, encabezados de seguridad activos.
 
 ## 2026-10-14
 - **Imagen para compartir con el logo nuevo de Gemini:** `public/og.jpg` ahora es un recorte de `NODRA-principal.jpg` (escudo, luz, mundo y la palabra NODRA), 1200×630, 104 KB. Reemplaza la armada a mano más temprano.
