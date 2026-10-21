@@ -1,7 +1,9 @@
 import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
-import PantallasJohana from './PantallasJohana'
+import CelularJohana from './CelularJohana'
+import { DemoCitas, DemoIA, DemoTienda } from './Demos'
+import Pasos from './Pasos'
 import { preguntas } from './negocio'
 
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
@@ -9,52 +11,29 @@ const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 // NODRA Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
 const AGENDA_URL = 'https://nexus-agenda-co.web.app/'
 
-const servicios: { titulo: string; texto: string; enlace?: { href: string; texto: string } }[] = [
+// Cada servicio con un ejemplo que se puede tocar y una sola línea de texto (2026-10-21)
+const servicios = [
   {
     titulo: 'Tiendas en línea',
-    texto:
-      'Catálogo, carrito y pedidos por WhatsApp o con pago en línea. Tú cambias productos, precios e inventario desde un panel.',
+    texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde un panel.',
+    Demo: DemoTienda,
   },
   {
     titulo: 'Citas y reservas',
-    texto:
-      'Tus clientes ven los horarios libres y agendan solos, sin llamar. Tú confirmas o cancelas desde el celular.',
+    texto: 'Tus clientes agendan solos, sin llamar. Tú confirmas desde el celular.',
+    Demo: DemoCitas,
     enlace: { href: '#johana', texto: 'Mira un ejemplo real' },
   },
   {
     titulo: 'Apps con inteligencia artificial',
-    texto:
-      'Un asistente que responde a tus clientes, lee fotos de facturas o escribe las descripciones de tus productos. Con límite de gasto y sin exponer tus datos.',
-  },
-]
-
-const pasos = [
-  {
-    titulo: 'Conversamos',
-    icono: 'M4 5h16v11H10l-4 3.5V16H4z M8 10h8 M8 13h5',
-    texto: 'Nos cuentas por WhatsApp qué necesita tu negocio. La primera conversación no tiene costo.',
-  },
-  {
-    titulo: 'Recibes una propuesta clara',
-    icono: 'M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h4',
-    texto:
-      'Qué incluye, cuánto cuesta y cuándo se entrega. Si la app necesita servicios externos, como dominio, servidores o publicarla en Play Store o App Store, te decimos su costo antes de empezar.',
-  },
-  {
-    titulo: 'La construimos',
-    icono: 'M9 8l-4 4 4 4 M15 8l4 4-4 4 M13.5 5l-3 14',
-    texto: 'Pagas el 50 % para arrancar y ves los avances mientras la desarrollamos.',
-  },
-  {
-    titulo: 'La entregamos',
-    icono: 'M8 2.5h8a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1z M9.5 12l2 2 3.5-3.5',
-    texto: 'Pagas el otro 50 % al recibirla funcionando. Incluye 6 meses de garantía sobre lo acordado.',
+    texto: 'Un asistente que responde a tus clientes, con límite de gasto y sin exponer tus datos.',
+    Demo: DemoIA,
   },
 ]
 
 const seguridad = [
-  'Tus datos y los de tus clientes protegidos con reglas de acceso estrictas: cada persona ve solo lo que le corresponde.',
-  'Cada negocio tiene su propio espacio en la nube. Tu información nunca se mezcla con la de otro cliente.',
+  'Cada persona ve solo lo que le corresponde: reglas de acceso estrictas.',
+  'Cada negocio en su propio espacio en la nube, sin mezclarse con otros.',
 ]
 
 export default function App() {
@@ -111,36 +90,18 @@ export default function App() {
           <section id="servicios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Qué hacemos</h2>
+            <p className="mt-3 max-w-[34rem] text-bruma">Apps a la medida para tu negocio. Prueba los ejemplos.</p>
 
-            <div className="relative mt-10">
-              <span className="rama en-rama top-5" aria-hidden="true" />
-              <span className="nodo nodo-lleno en-rama top-[0.85rem]" aria-hidden="true" />
-              <h3 className="text-xl font-semibold text-cian md:text-3xl">Apps móviles y web a la medida</h3>
-              <p className="mt-3 max-w-[40rem] text-bruma">
-                Diseñamos desde cero la app que tu negocio necesita. Una sola aplicación multiplataforma que
-                se instala en el celular como cualquier otra y también abre en el computador.
-              </p>
-              <ul className="plataformas mt-5 text-sm font-semibold" aria-label="Plataformas">
-                <li>
-                  <span className="rounded-full border border-linea px-3 py-1">Android</span>
-                </li>
-                <li>
-                  <span className="rounded-full border border-linea px-3 py-1">iPhone</span>
-                </li>
-                <li>
-                  <span className="rounded-full border border-linea px-3 py-1">Computador</span>
-                </li>
-              </ul>
-            </div>
-
-            <ul className="mt-12 grid gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-              {servicios.map((s) => (
-                <li key={s.titulo} className="max-w-[30rem] 2xl:max-w-none">
-                  <h3 className="text-lg font-semibold md:text-xl">{s.titulo}</h3>
-                  <p className="mt-2 text-bruma">{s.texto}</p>
-                  {s.enlace && (
-                    <a href={s.enlace.href} className="enlace-flecha mt-3">
-                      {s.enlace.texto}
+            {/* Un ejemplo para tocar por servicio (Demos.tsx), con una sola línea de texto */}
+            <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 2xl:gap-12">
+              {servicios.map(({ titulo, texto, Demo, enlace }) => (
+                <li key={titulo} className="max-w-[24rem] lg:max-w-none">
+                  <Demo />
+                  <h3 className="mt-5 text-lg font-semibold md:text-xl">{titulo}</h3>
+                  <p className="mt-1 text-bruma">{texto}</p>
+                  {enlace && (
+                    <a href={enlace.href} className="enlace-flecha mt-2">
+                      {enlace.texto}
                     </a>
                   )}
                 </li>
@@ -152,17 +113,13 @@ export default function App() {
           <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
-            <div className="mt-10 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] 2xl:gap-20">
+            <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] 2xl:gap-20">
               <div>
                 <h3 className="text-xl font-semibold text-verde">Johana Sánchez Nails</h3>
                 <p className="mt-1 text-sm text-bruma">Estudio de belleza</p>
-                <p className="mt-5 max-w-[34rem]">
-                  Sus clientas ven los servicios y precios, eligen un horario libre y agendan sin llamar.
-                  Johana confirma las citas y cambia sus servicios desde un panel privado en su celular.
-                </p>
-                <p className="mt-4 max-w-[34rem] text-bruma">
-                  Funciona como app instalable en Android y iPhone, con inicio de sesión seguro y los datos
-                  de cada clienta protegidos.
+                <p className="mt-4 max-w-[34rem]">
+                  Sus clientas agendan sin llamar. Johana confirma las citas y cambia sus servicios desde su
+                  celular.
                 </p>
                 <a
                   href={JOHANA_SERVICIOS}
@@ -178,23 +135,8 @@ export default function App() {
                 </a>
                 <p className="mt-3 text-sm text-bruma">Abre sus servicios y precios reales.</p>
               </div>
-              <div className="flex items-start justify-center gap-4 sm:gap-6">
-                <PantallasJohana />
-                <figure className="min-w-0 max-w-[16rem] flex-1 basis-0 2xl:max-w-[19rem]">
-                  {/* Mismo marco que el carrusel de la clienta, para que los dos celulares midan igual */}
-                  <div className="celular pantallas">
-                    <img
-                      src="/img/johana-panel.webp"
-                      width={480}
-                      height={860}
-                      loading="lazy"
-                      alt="Panel de administración: resumen de citas del día y pestañas de citas, servicios y galería"
-                      className="pantalla pantalla-activa"
-                    />
-                  </div>
-                  <figcaption className="mt-3 text-center text-sm text-bruma">Lo que ve Johana</figcaption>
-                </figure>
-              </div>
+              {/* Un solo celular grande que se desliza, con las pantallas reales (CelularJohana.tsx) */}
+              <CelularJohana />
             </div>
           </section>
 
@@ -208,12 +150,11 @@ export default function App() {
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
                 </h2>
                 <p className="mt-4 max-w-[36rem]">
-                  La app de citas propia de NODRA, lista para cualquier negocio que trabaje con citas: uñas,
-                  peluquería, barbería, estética, spa, consultorios y más.
+                  Tu página de citas lista en minutos, con tu logo, servicios y horario. Tus clientas reservan
+                  solas, sin crear cuenta.
                 </p>
-                <p className="mt-3 max-w-[36rem] text-bruma">
-                  Creas la página de tu negocio en minutos, le pones tu logo, colores, servicios y horario, y tus
-                  clientas reservan solas desde el celular, sin crear cuenta.
+                <p className="mt-2 max-w-[36rem] text-sm text-bruma">
+                  Uñas, peluquería, barbería, estética, spa, consultorios y más.
                 </p>
                 <a
                   href={AGENDA_URL}
@@ -230,7 +171,7 @@ export default function App() {
                 <p className="mt-3 text-sm text-bruma">Sin tarjeta de crédito.</p>
               </div>
               {/* Captura de la portada real de NODRA Agenda (no tiene datos de clientes) */}
-              <figure className="mx-auto w-full max-w-[12rem] lg:max-w-[15rem] 2xl:max-w-[18rem]">
+              <figure className="mx-auto w-full max-w-[15rem] 2xl:max-w-[18rem]">
                 <div className="celular">
                   <img
                     src="/img/agenda-portada.webp"
@@ -249,23 +190,8 @@ export default function App() {
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo trabajamos</h2>
-            <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 2xl:gap-10">
-              {pasos.map((p, i) => (
-                <li key={p.titulo} className="border-t border-linea pt-5">
-                  {/* Dibujo de cada paso en SVG: no pesa nada y le quita al bloque la sensación de "solo texto" */}
-                  <span className="icono-paso" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                      <path d={p.icono} />
-                    </svg>
-                  </span>
-                  <span className="mt-4 block font-display text-sm font-semibold text-cian" aria-hidden="true">
-                    Paso {i + 1}
-                  </span>
-                  <h3 className="mt-2 text-base font-semibold md:text-lg">{p.titulo}</h3>
-                  <p className="mt-2 text-[0.98rem] text-bruma">{p.texto}</p>
-                </li>
-              ))}
-            </ol>
+            {/* 4 nodos que se encienden al bajar (Pasos.tsx) */}
+            <Pasos />
           </section>
 
           {/* Seguridad */}
@@ -276,8 +202,7 @@ export default function App() {
               <div>
                 <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
                 <p className="mt-4 max-w-[40rem] text-bruma">
-                  NODRA nace de la ingeniería en ciberseguridad. Cada app se construye pensando en proteger tu
-                  negocio y a tus clientes.
+                  NODRA nace de la ingeniería en ciberseguridad.
                 </p>
                 {/* Ilustración hecha con Gemini (2026-10-14): escudo y candado sobre la nube, con los colores de la marca.
                     Dos tamaños: el celular baja la de 400 px (22 KB) y el computador la de 720 px (48 KB) */}
@@ -314,7 +239,7 @@ export default function App() {
                   />
                 </svg>
                 <span>
-                  Conexión cifrada y revisión contra las fallas de seguridad más comunes en la web, el{' '}
+                  Conexión cifrada y revisión contra las fallas más comunes de la web, el{' '}
                   <a
                     href="https://owasp.org/www-project-top-ten/"
                     target="_blank"
@@ -329,8 +254,8 @@ export default function App() {
               </li>
             </ul>
                 <p className="mt-8 max-w-[44rem] border-t border-linea pt-5 text-bruma">
-                  <span className="font-semibold text-oro">Próximo servicio: Cloud Security.</span> Revisaremos y
-                  protegeremos la nube donde viven los datos de tu empresa.
+                  <span className="font-semibold text-oro">Próximo servicio: Cloud Security.</span> Protegeremos la nube
+                  donde viven los datos de tu empresa.
                 </p>
               </div>
             </div>
@@ -350,14 +275,16 @@ export default function App() {
                 <span className="sr-only"> (se abre en otra pestaña)</span>
               </a>
             </div>
-            <dl className="grid max-w-[46rem] gap-8 lg:pt-2 2xl:max-w-none 2xl:grid-cols-2 2xl:gap-x-14 2xl:gap-y-10">
+            {/* Cada pregunta se abre al tocarla: details/summary del navegador, funciona con teclado y sin
+                JavaScript, y Google igual lee las respuestas (están en el HTML) */}
+            <div className="max-w-[46rem] border-b border-linea lg:pt-2">
               {preguntas.map((p) => (
-                <div key={p.pregunta} className="border-t border-linea pt-5">
-                  <dt className="text-base font-semibold md:text-lg">{p.pregunta}</dt>
-                  <dd className="mt-2 text-bruma">{p.respuesta}</dd>
-                </div>
+                <details key={p.pregunta} className="pregunta">
+                  <summary>{p.pregunta}</summary>
+                  <p className="pb-5 text-bruma">{p.respuesta}</p>
+                </details>
               ))}
-            </dl>
+            </div>
             </div>
           </section>
 

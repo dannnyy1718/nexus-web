@@ -73,3 +73,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 ## 16. La garantía dice qué cubre (2026-10-17)
 - **Qué:** la página ya no dice solo "6 meses de garantía": aclara que cubre las fallas en las funciones acordadas en la propuesta, y que lo nuevo se cotiza aparte.
 - **Por qué:** una garantía sin límites invita a pedir funciones nuevas gratis y genera discusiones. La Ley 1480 obliga a cumplir lo prometido, así que la garantía se amarra a la lista de funciones de cada cotización. El detalle completo (qué cubre, qué no, tiempos y diferencia con la mensualidad) está en `Empresa NEXUS/Cotizaciones/GARANTIA-ESTANDAR.md`.
+
+## 17. Menos texto, más cosas para ver y tocar (2026-10-21)
+- **Qué:** pedido de Danny ("tiene demasiado texto y a la gente no le gusta"). La página pasó de ~760 a ~510 palabras visibles en celular y de 10,6 a 9,3 pantallas de alto.
+  1. **Qué hacemos:** cada servicio tiene un ejemplo que se puede tocar (`src/Demos.tsx`): tienda con carrito, horarios para apartar y un asistente que responde. Hechos con HTML y CSS, sin imágenes ni librerías (0 KB extra). Dicen "Ejemplo" arriba porque los productos, horarios y respuesta son inventados (regla de textos honestos).
+  2. **Johana:** un solo celular grande que se desliza con el dedo (`src/CelularJohana.tsx`, scroll-snap del navegador) con botones Inicio / Agendar / Galería / Panel. Reemplaza el carrusel automático de dos celulares pequeños (decisión 8): ya no se mueve solo, así que no necesita botón de pausa.
+  3. **Cómo trabajamos:** 4 nodos unidos por una línea que se encienden al bajar (`src/Pasos.tsx`). El texto siempre se ve; solo cambia la luz del nodo.
+  4. **Preguntas frecuentes:** se abren al tocarlas (`<details>`). Google las sigue leyendo porque están en el HTML y en la ficha FAQPage.
+  5. Escudo del inicio más pequeño en celular (13,5rem) para que el título se vea en la primera pantalla.
+- **Velocidad:** Lighthouse en el PC de Danny dio lo mismo antes y después (83 en vivo antes, 81 en local sin compresión); el cambio no agrega descargas.

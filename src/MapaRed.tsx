@@ -46,6 +46,8 @@ export default function MapaRed() {
 
     function medir() {
       if (!datos || !canvas || !ctx || !div) return
+      // Mientras el mapa está oculto o sin tamaño (0 px) no se redibuja: un lienzo de 0 px rompe drawImage
+      if (div.clientWidth === 0 || div.clientHeight === 0) return
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
       ancho = div.clientWidth
       alto = div.clientHeight
@@ -120,7 +122,7 @@ export default function MapaRed() {
     const suave = (t: number) => 1 - Math.pow(1 - t, 3)
 
     function dibujar(ahora: number) {
-      if (!ctx || !base || !datos) return
+      if (!ctx || !base || !datos || base.width === 0 || base.height === 0) return
       ctx.clearRect(0, 0, ancho, alto)
       ctx.drawImage(base, 0, 0, ancho, alto)
 
