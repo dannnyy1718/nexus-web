@@ -84,7 +84,7 @@
    Ojo: overflow, opacity o filter en .pieza-3d aplanarían el 3D. */
 .escena-3d {
   perspective: 1100px;
-  touch-action: pan-y; /* el dedo puede inclinarlo de lado sin bloquear el scroll vertical */
+  touch-action: pan-y pinch-zoom; /* el dedo puede inclinarlo de lado sin bloquear el scroll vertical ni el zoom con dos dedos */
 }
 .pieza-3d {
   transform-style: preserve-3d;
@@ -290,7 +290,7 @@
   width: 100%;
   height: 100%;
   cursor: crosshair;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom; /* sin pinch-zoom, pellizcar sobre el mapa no hacía zoom en celular */
   opacity: 0;
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }

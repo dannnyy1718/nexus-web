@@ -92,3 +92,7 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 - **Arreglo ya aplicado:** en `firebase.json`, las páginas (`/`, `/privacidad` y los `.html`) llevan `Cache-Control: no-cache`. El navegador pregunta en cada visita si hay versión nueva; si no la hay, el servidor responde "sin cambios" sin volver a enviar la página. Los archivos de `/assets/` sí se guardan un año porque su nombre cambia en cada publicación.
 - **Para ver ya la versión nueva:** Ctrl + Shift + R en el computador, o abrir la página en una pestaña de incógnito en el celular.
 
+
+## 16. En el celular no se puede hacer zoom con los dedos
+- **Causa:** una zona grande tiene `touch-action: pan-y` (solo deja desplazar arriba/abajo) o el `viewport` de `index.html` tiene `user-scalable=no` o `maximum-scale`.
+- **Arreglo:** usar `touch-action: pan-y pinch-zoom` (así está el escudo y el mapa en `src/index.css`) y dejar el viewport en `width=device-width, initial-scale=1.0`. Bloquear el zoom va contra la accesibilidad (WCAG).

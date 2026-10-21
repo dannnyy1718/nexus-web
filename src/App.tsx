@@ -365,14 +365,15 @@ export default function App() {
           <section className="relative pb-20 pl-12 md:pl-24">
             <span className="nodo nodo-oro top-3 bg-oro" aria-hidden="true" />
             <div className="grid items-center gap-8 lg:grid-cols-[1fr_17rem] 2xl:grid-cols-[1fr_24rem]">
-              <div>
-                <h2 className="max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl 2xl:max-w-[44rem] 2xl:text-6xl">
+              {/* En celular y tableta va centrado (cierre de la página); en computador, a la izquierda junto al escudo */}
+              <div className="text-center lg:text-left">
+                <h2 className="mx-auto max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl lg:mx-0 2xl:max-w-[44rem] 2xl:text-6xl">
                   ¿Tienes una idea para tu negocio?
                 </h2>
-                <p className="mt-5 max-w-[34rem] text-lg text-bruma">
+                <p className="mx-auto mt-5 max-w-[34rem] text-lg text-bruma lg:mx-0">
                   Cuéntanosla por WhatsApp y te respondemos con una propuesta.
                 </p>
-                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 lg:justify-start">
                   <BotonWhatsApp grande />
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
                     {WHATSAPP_VISIBLE}

@@ -69,11 +69,12 @@ export function Encabezado() {
 }
 
 export function Pie() {
+  // En celular las tres partes van una debajo de otra y centradas; en computador, en una fila
   return (
-    <footer className="mx-auto grid max-w-[92rem] gap-4 border-t border-linea px-4 py-8 text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8 md:px-8 xl:px-12">
+    <footer className="mx-auto grid max-w-[92rem] justify-items-center gap-4 border-t border-linea px-4 py-8 text-center text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:justify-items-stretch md:gap-8 md:px-8 md:text-left xl:px-12">
       <span className="flex items-center gap-3">
         <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
-        <span className="grid leading-tight">
+        <span className="grid text-left leading-tight">
           <span className="marca text-lg">NODRA</span>
           <span className="text-niebla">{LEMA}</span>
         </span>
