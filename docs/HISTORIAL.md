@@ -4,7 +4,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
 ## 2026-10-21
 - **Zoom con los dedos en celular** (Danny no podía hacer zoom): el escudo del inicio y el mapa tenían `touch-action: pan-y`, que solo deja mover la página arriba y abajo; como el escudo ocupa casi toda la primera pantalla, pellizcar no hacía nada. Ahora es `pan-y pinch-zoom` en `src/index.css`.
-- **Parte de abajo centrada en celular** (pedido de Danny, "se mira feo"): el llamado final ("¿Tienes una idea para tu negocio?", botón y número) y el pie (logo, aviso de privacidad, ©) van centrados en celular y tableta. En computador siguen igual (llamado a la izquierda con el escudo, pie en una fila).
+- **Parte de abajo centrada en celular** (pedido de Danny, "se mira feo"): el llamado final ("¿Tienes una idea para tu negocio?", botón y número) y el pie (logo, aviso de privacidad, ©) van centrados en celular y tableta. En computador siguen igual (llamado a la izquierda con el escudo, pie en una fila). Publicado y verificado en vivo (commit 6b164f3): zoom permitido en escudo y mapa, final y pie centrados en celular, encabezados de seguridad activos.
 - Auditoría corta: ~760 palabras y más de 10 pantallas en celular, partes sin imágenes y textos repetidos. Pendiente con Danny: preguntas que se abren al tocarlas, imágenes por servicio, pasos más cortos, escudo más pequeño en celular y quitar lo repetido. También pendiente: error en consola del mapa (`drawImage` con lienzo de tamaño 0 al cambiar de tamaño).
 
 ## 2026-10-17
