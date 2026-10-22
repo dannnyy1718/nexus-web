@@ -25,5 +25,5 @@
 ## Contacto
 
 - [WhatsApp +57 313 365 5136](https://wa.me/573133655136): canal de contacto principal.
-- [Sitio web de NODRA](https://nexus-tech-co.web.app/): servicios, proyecto destacado, preguntas frecuentes y contacto.
-- [Aviso de privacidad](https://nexus-tech-co.web.app/privacidad): cómo NODRA trata los datos personales (Ley 1581 de 2012).
+- [Sitio web de NODRA](https://nodrasoft.com/): servicios, proyecto destacado, preguntas frecuentes y contacto.
+- [Aviso de privacidad](https://nodrasoft.com/privacidad): cómo NODRA trata los datos personales (Ley 1581 de 2012).

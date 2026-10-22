@@ -1,7 +1,7 @@
 // Datos de NODRA en un solo lugar: los usa la página visible y la ficha para buscadores (Schema.org)
 import { LEMA, WHATSAPP_NUMERO } from './Marco'
 
-export const SITIO = 'https://nexus-tech-co.web.app'
+export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
 export const DEPARTAMENTO = 'Tolima'
 

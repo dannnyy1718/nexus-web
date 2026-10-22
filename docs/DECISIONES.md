@@ -89,3 +89,7 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Por qué Namecheap:** precio de renovación claro (14,98 USD/año), privacidad WHOIS gratis y sin obligar a comprar hosting. El alojamiento y el HTTPS los sigue dando Firebase gratis.
 - **Por qué antes de Play Store:** la app Android (TWA) queda amarrada al dominio; si se publicaba con `.web.app` habría que rehacerla al cambiar.
 - **A nombre de Danny como persona:** NODRA aún no está registrada como empresa; se cambia el titular cuando lo esté.
+
+## 19. La dirección oficial para Google es nodrasoft.com (2026-10-22)
+- **Qué:** la etiqueta canónica, el sitemap y la ficha para Google apuntan a `nodrasoft.com`. `nexus-tech-co.web.app` no se apaga ni se redirige.
+- **Por qué:** la etiqueta canónica le dice a Google cuál de las dos direcciones mostrar; así Google pasa sola la página a la nueva sin perder lo ganado y sin romper enlaces viejos ya compartidos.

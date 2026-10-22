@@ -9,7 +9,7 @@ import { preguntas } from './negocio'
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 // NODRA Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
-const AGENDA_URL = 'https://nexus-agenda-co.web.app/'
+const AGENDA_URL = 'https://agenda.nodrasoft.com/'
 
 // Cada servicio con un ejemplo que se puede tocar y una sola línea de texto (2026-10-21)
 const servicios = [
