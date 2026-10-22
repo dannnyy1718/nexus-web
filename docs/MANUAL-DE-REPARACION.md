@@ -96,3 +96,11 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 ## 16. En el celular no se puede hacer zoom con los dedos
 - **Causa:** una zona grande tiene `touch-action: pan-y` (solo deja desplazar arriba/abajo) o el `viewport` de `index.html` tiene `user-scalable=no` o `maximum-scale`.
 - **Arreglo:** usar `touch-action: pan-y pinch-zoom` (así está el escudo y el mapa en `src/index.css`) y dejar el viewport en `width=device-width, initial-scale=1.0`. Bloquear el zoom va contra la accesibilidad (WCAG).
+
+## 17. nodrasoft.com no abre, sale "no seguro" o muestra la página de Namecheap
+- **Dónde se maneja:** el nombre en Namecheap (usuario `nodrasoft`, con verificación en 2 pasos: Lista de dominios → Administrar → DNS avanzado); la página en Firebase (proyecto `nexus-tech-co` → Hosting → Dominios).
+- **Registros correctos:** A `@` → `199.36.158.100`; TXT `@` → `hosting-site=nexus-tech-co`; CNAME `www` → `nexus-tech-co.web.app`. No debe haber "Registro de redireccionamiento de URL" ni CNAME a `parkingpage.namecheap.com`. El TXT `v=spf1 ...` con candado es de Namecheap y no estorba.
+- **Revisar desde cualquier PC:** `https://dns.google/resolve?name=nodrasoft.com&type=A` debe responder `199.36.158.100`.
+- **"No seguro" justo después de conectar:** es normal; Firebase tarda de minutos a 24 h en crear el certificado. Si pasa más de un día, en Firebase → Dominios → Verificar.
+- **Dejó de funcionar de un momento a otro:** revisar que el dominio no se haya vencido (vence cada 22 de octubre; renovación automática) y que el correo de contacto esté verificado (ICANN suspende si no se confirma en 15 días).
+- **Ojo en la traducción de Namecheap:** "Un registro" significa *A Record*.

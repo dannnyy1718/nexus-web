@@ -2,6 +2,12 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-21 (noche): dominio propio nodrasoft.com
+- **Se compró `nodrasoft.com`** en Namecheap (6,68 USD el primer año con cupón; renueva a 14,98 USD/año con renovación automática). `nodra.co` ya tenía dueño. Cuenta de Namecheap con privacidad WHOIS gratis y verificación en 2 pasos (Google Authenticator). Ver `DECISIONES.md` n.º 18.
+- **Conectado a Firebase Hosting** (proyecto `nexus-tech-co`): en Namecheap se borraron los dos registros de "página en construcción" y se agregaron A `@` → `199.36.158.100` y TXT `@` → `hosting-site=nexus-tech-co`. `www.nodrasoft.com` redirige a `nodrasoft.com` (CNAME `www` → `nexus-tech-co.web.app`).
+- La primera verificación de Firebase falló porque todavía veía la dirección vieja de Namecheap (caché DNS de 30 min). El candado HTTPS lo crea Firebase solo; puede tardar unas horas.
+- Falta: confirmar el correo de verificación de Namecheap (ICANN, 15 días) y, cuando el dominio esté "Conectado", cambiar enlaces, sitemap y la etiqueta canónica a `nodrasoft.com`.
+
 ## 2026-10-21
 - **Zoom con los dedos en celular** (Danny no podía hacer zoom): el escudo del inicio y el mapa tenían `touch-action: pan-y`, que solo deja mover la página arriba y abajo; como el escudo ocupa casi toda la primera pantalla, pellizcar no hacía nada. Ahora es `pan-y pinch-zoom` en `src/index.css`.
 - **Parte de abajo centrada en celular** (pedido de Danny, "se mira feo"): el llamado final ("¿Tienes una idea para tu negocio?", botón y número) y el pie (logo, aviso de privacidad, ©) van centrados en celular y tableta. En computador siguen igual (llamado a la izquierda con el escudo, pie en una fila). Publicado y verificado en vivo (commit 6b164f3): zoom permitido en escudo y mapa, final y pie centrados en celular, encabezados de seguridad activos.

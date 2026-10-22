@@ -82,3 +82,10 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   4. **Preguntas frecuentes:** se abren al tocarlas (`<details>`). Google las sigue leyendo porque están en el HTML y en la ficha FAQPage.
   5. Escudo del inicio más pequeño en celular (13,5rem) para que el título se vea en la primera pantalla.
 - **Velocidad:** Lighthouse en el PC de Danny dio lo mismo antes y después (83 en vivo antes, 81 en local sin compresión); el cambio no agrega descargas.
+
+## 18. Dominio propio: nodrasoft.com (2026-10-21)
+- **Qué:** la dirección de la empresa es `nodrasoft.com` (página) y será `agenda.nodrasoft.com` (NODRA Agenda). La marca sigue siendo solo "NODRA".
+- **Por qué este nombre:** `nodra.co` estaba registrado desde 2024 y también `nodra.com`, `.app`, `.net`, `.dev`, `.tech`, `.org` y `getnodra.com`. Un `.com` es lo que más confianza da fuera de Colombia, y "soft" dice que hacemos software. Se descartó `.lat` (1,80 USD el primer año pero 40,98 al renovar).
+- **Por qué Namecheap:** precio de renovación claro (14,98 USD/año), privacidad WHOIS gratis y sin obligar a comprar hosting. El alojamiento y el HTTPS los sigue dando Firebase gratis.
+- **Por qué antes de Play Store:** la app Android (TWA) queda amarrada al dominio; si se publicaba con `.web.app` habría que rehacerla al cambiar.
+- **A nombre de Danny como persona:** NODRA aún no está registrada como empresa; se cambia el titular cuando lo esté.
