@@ -6,7 +6,8 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Candado HTTPS listo en `nodrasoft.com` y `www.nodrasoft.com` (este redirige al primero).
 - Se cambió `nexus-tech-co.web.app` por `nodrasoft.com` en la etiqueta canónica, Open Graph, sitemap, robots, `llms.txt`
   y la ficha para Google (`src/negocio.ts`). El botón de NODRA Agenda ahora lleva a `agenda.nodrasoft.com`.
-- `nexus-tech-co.web.app` sigue abriendo igual. Falta: en Search Console agregar `nodrasoft.com` y enviar el sitemap nuevo.
+- `nexus-tech-co.web.app` sigue abriendo igual.
+- **Search Console:** propiedad tipo **Dominio** `nodrasoft.com`, verificada con un registro TXT `google-site-verification=…` en Namecheap (**no borrarlo**; convive con el TXT de Firebase). Cubre también `www` y `agenda`. Sitemaps enviados: `nodrasoft.com/sitemap.xml` (2 páginas) y `agenda.nodrasoft.com/sitemap.xml` (4), ambos "Correcto".
 
 ## 2026-10-21 (noche): dominio propio nodrasoft.com
 - **Se compró `nodrasoft.com`** en Namecheap (6,68 USD el primer año con cupón; renueva a 14,98 USD/año con renovación automática). `nodra.co` ya tenía dueño. Cuenta de Namecheap con privacidad WHOIS gratis y verificación en 2 pasos (Google Authenticator). Ver `DECISIONES.md` n.º 18.
