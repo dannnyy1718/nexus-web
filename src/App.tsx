@@ -146,10 +146,12 @@ export default function App() {
             <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
             <div className="agenda grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16 2xl:grid-cols-[1fr_18rem] 2xl:px-16">
               <div>
-                <h2 className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-2xl font-semibold md:text-[2.25rem]">
-                  NODRA Agenda
+                {/* La etiqueta "Disponible" va fuera del h2: adentro, Google y los lectores de pantalla leían
+                    "NODRA AgendaDisponible" (auditoría SEO 2026-10-24) */}
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h2 className="text-2xl font-semibold md:text-[2.25rem]">NODRA Agenda</h2>
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
-                </h2>
+                </div>
                 <p className="mt-4 max-w-[36rem]">
                   Tu página de citas lista en minutos, con tu logo, servicios y horario. Tus clientas reservan
                   solas, sin crear cuenta.

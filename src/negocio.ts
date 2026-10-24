@@ -33,61 +33,93 @@ export const preguntas = [
   },
 ]
 
-// Ficha para Google y las IA: qué es NODRA, dónde está y qué ofrece
+const NEGOCIO = { '@id': `${SITIO}/#negocio` }
+
+// Ficha para Google y las IA: qué es NODRA, dónde está y qué ofrece.
+// Va en un solo @graph con @id para que Google sepa que el sitio, la página, el negocio, su fundador y las
+// preguntas son la misma entidad (auditoría SEO 2026-10-24). El nodo WebSite le da a Google el nombre "NODRA".
 export function datosEstructurados() {
-  return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      '@id': `${SITIO}/#negocio`,
-      name: 'NODRA',
-      slogan: LEMA,
-      description:
-        'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con reglas de acceso estrictas y conexión cifrada.',
-      url: `${SITIO}/`,
-      logo: `${SITIO}/apple-touch-icon.png`,
-      image: `${SITIO}/og.jpg`,
-      telephone: `+${WHATSAPP_NUMERO}`,
-      founder: { '@type': 'Person', name: 'Danny Javier Díaz' },
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: CIUDAD,
-        addressRegion: DEPARTAMENTO,
-        addressCountry: 'CO',
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${SITIO}/#website`,
+        url: `${SITIO}/`,
+        name: 'NODRA',
+        inLanguage: 'es-CO',
+        publisher: NEGOCIO,
       },
-      areaServed: [
-        { '@type': 'City', name: CIUDAD },
-        { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
-      ],
-      // Perfiles oficiales: le confirman a Google y a las IA que la página y las redes son la misma empresa.
-      // Agregar aquí Instagram cuando NODRA tenga cuenta propia.
-      sameAs: ['https://www.facebook.com/profile.php?id=61595330230362', 'https://www.tiktok.com/@nexus.tech.co'],
-      knowsAbout: [
-        'Desarrollo de aplicaciones móviles',
-        'Desarrollo web',
-        'Inteligencia artificial',
-        'Ciberseguridad',
-        'Seguridad en la nube',
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Servicios de NODRA',
-        itemListElement: [
-          'Apps móviles y web a la medida',
-          'Tiendas en línea',
-          'Sistemas de citas y reservas',
-          'Apps con inteligencia artificial',
-        ].map((nombre) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: nombre } })),
+      {
+        '@type': 'WebPage',
+        '@id': `${SITIO}/#webpage`,
+        url: `${SITIO}/`,
+        name: 'NODRA Ibagué | Apps a la medida y seguridad en la nube',
+        inLanguage: 'es-CO',
+        isPartOf: { '@id': `${SITIO}/#website` },
+        about: NEGOCIO,
+        primaryImageOfPage: `${SITIO}/og.jpg`,
       },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: preguntas.map((p) => ({
-        '@type': 'Question',
-        name: p.pregunta,
-        acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
-      })),
-    },
-  ]
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${SITIO}/#negocio`,
+        name: 'NODRA',
+        slogan: LEMA,
+        description:
+          'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con reglas de acceso estrictas y conexión cifrada.',
+        url: `${SITIO}/`,
+        logo: `${SITIO}/apple-touch-icon.png`,
+        image: `${SITIO}/og.jpg`,
+        telephone: `+${WHATSAPP_NUMERO}`,
+        founder: { '@id': `${SITIO}/#fundador` },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: CIUDAD,
+          addressRegion: DEPARTAMENTO,
+          addressCountry: 'CO',
+        },
+        areaServed: [
+          { '@type': 'City', name: CIUDAD },
+          { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
+        ],
+        // Perfiles oficiales: le confirman a Google y a las IA que la página y las redes son la misma empresa.
+        // Agregar aquí Instagram cuando NODRA tenga cuenta propia.
+        sameAs: ['https://www.facebook.com/profile.php?id=61595330230362', 'https://www.tiktok.com/@nexus.tech.co'],
+        knowsAbout: [
+          'Desarrollo de aplicaciones móviles',
+          'Desarrollo web',
+          'Inteligencia artificial',
+          'Ciberseguridad',
+          'Seguridad en la nube',
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Servicios de NODRA',
+          itemListElement: [
+            'Apps móviles y web a la medida',
+            'Tiendas en línea',
+            'Sistemas de citas y reservas',
+            'Apps con inteligencia artificial',
+          ].map((nombre) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: nombre, provider: NEGOCIO } })),
+        },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${SITIO}/#fundador`,
+        name: 'Danny Javier Díaz',
+        jobTitle: 'Fundador',
+        worksFor: NEGOCIO,
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${SITIO}/#faq`,
+        isPartOf: { '@id': `${SITIO}/#webpage` },
+        mainEntity: preguntas.map((p) => ({
+          '@type': 'Question',
+          name: p.pregunta,
+          acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
+        })),
+      },
+    ],
+  }
 }

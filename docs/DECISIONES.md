@@ -103,3 +103,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Decisión de enfoque:** el SEO de software a la medida se concentra en Ibagué y el Tolima por ahora.
 - **Pendiente:** agregar Instagram a `sameAs` cuando NODRA tenga cuenta propia.
 
+## 21. Ficha para Google en un @graph y arreglos de la auditoría SEO (2026-10-24)
+- **Qué:** `datosEstructurados()` devuelve un `@graph` con WebSite, WebPage, ProfessionalService, Person (fundador) y
+  FAQPage unidos por `@id`. Se quitó la precarga manual del escudo y se ajustaron metas de `/privacidad`.
+- **Por qué:** lo pidió la auditoría `claude-seo-ai` (24-oct). El nodo WebSite le dice a Google el nombre del sitio
+  (útil tras el cambio NEXUS → NODRA). La precarga manual bajaba siempre la imagen de 560 px aunque la pantalla
+  pidiera la de 960 px (dos descargas compitiendo).
+- **Qué no se puso a propósito:** precios en las ofertas, coordenadas y dirección exacta (NODRA no tiene local
+  público); `sameAs` del fundador hasta tener un perfil profesional confirmado.
+

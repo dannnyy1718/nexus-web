@@ -2,6 +2,14 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (tarde): arreglos de la auditoría SEO
+- Auditoría con `claude-seo-ai` (punto de partida: SEO 71 C, IA 75 C). Informe en la carpeta de datos del plugin.
+- Ficha para Google en un solo bloque conectado (`@graph`): sitio (WebSite "NODRA"), página, negocio, fundador y preguntas.
+- `/privacidad` tiene su propia tarjeta al compartir (antes salía la de la portada) y un título más largo.
+- Etiqueta `twitter:card` en las dos páginas y descripción de la portada más corta (155 caracteres).
+- "NODRA Agenda" ya no se lee "NODRA AgendaDisponible": la etiqueta quedó fuera del subtítulo.
+- Se quitó la precarga repetida del escudo en `index.html` (React ya la pone con el tamaño correcto).
+
 ## 2026-10-24: SEO local, primeros pasos del plan
 - El título grande (H1) ahora dice "Apps a la medida para negocios en Ibagué." (qué hacemos, para quién y dónde).
 - La ficha para Google (`src/negocio.ts`) enlaza Facebook y TikTok de NODRA (`sameAs`) y suma el Tolima como zona.
