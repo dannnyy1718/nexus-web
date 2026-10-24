@@ -8,6 +8,14 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURICo
   'Hola NODRA, quiero una app para mi negocio.',
 )}`
 
+// Horario de atención (2026-10-24). Debe ser IGUAL al del Perfil de Empresa en Google: si cambia, cambiarlo en los dos.
+// Se muestra en el pie y va a la ficha para Google (negocio.ts, openingHoursSpecification).
+export const HORARIO_VISIBLE = 'Lunes a sábado, 8 a. m. a 8 p. m. · Domingos, 9 a. m. a 5 p. m.'
+export const HORARIO = [
+  { dias: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], abre: '08:00', cierra: '20:00' },
+  { dias: ['Sunday'], abre: '09:00', cierra: '17:00' },
+]
+
 // NODRA Agenda ya está publicada: los botones llevan a su portada, donde el negocio crea su agenda
 export const AGENDA_URL = 'https://agenda.nodrasoft.com/'
 
@@ -82,12 +90,17 @@ export function Pie() {
           <span className="text-niebla">{LEMA}</span>
         </span>
       </span>
-      <p>
-        Esta página no usa cookies ni rastreadores.{' '}
-        <a href="/privacidad" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
-          Aviso de privacidad
-        </a>
-      </p>
+      <div className="grid gap-1">
+        <p>
+          <span className="font-semibold text-niebla">Atención:</span> {HORARIO_VISIBLE}
+        </p>
+        <p>
+          Esta página no usa cookies ni rastreadores.{' '}
+          <a href="/privacidad" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            Aviso de privacidad
+          </a>
+        </p>
+      </div>
       <span>© {new Date().getFullYear()} NODRA. Software a la medida en Ibagué, Tolima.</span>
     </footer>
   )

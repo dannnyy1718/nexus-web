@@ -1,5 +1,5 @@
 // Datos de NODRA en un solo lugar: los usa la página visible y la ficha para buscadores (Schema.org)
-import { LEMA, WHATSAPP_NUMERO } from './Marco'
+import { HORARIO, LEMA, WHATSAPP_NUMERO } from './Marco'
 
 export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
@@ -85,6 +85,13 @@ export function datosEstructurados() {
         // Perfiles oficiales: le confirman a Google y a las IA que la página y las redes son la misma empresa.
         // Agregar aquí Instagram cuando NODRA tenga cuenta propia.
         sameAs: ['https://www.facebook.com/profile.php?id=61595330230362', 'https://www.tiktok.com/@nexus.tech.co'],
+        // Mismo horario que el pie de página y el Perfil de Empresa en Google
+        openingHoursSpecification: HORARIO.map((h) => ({
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: h.dias,
+          opens: h.abre,
+          closes: h.cierra,
+        })),
         knowsAbout: [
           'Desarrollo de aplicaciones móviles',
           'Desarrollo web',

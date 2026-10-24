@@ -2,6 +2,11 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (noche): horario de atención
+- Horario igual al del Perfil de Empresa en Google: lunes a sábado 8 a. m.-8 p. m. y domingos 9 a. m.-5 p. m.
+  Se ve en el pie de todas las páginas y va a la ficha para Google (`openingHoursSpecification`).
+- Datos en `src/Marco.tsx` (`HORARIO_VISIBLE` y `HORARIO`): si cambia, cambiarlo también en el Perfil de Empresa.
+
 ## 2026-10-24 (noche): página "App de citas en Ibagué"
 - Danny pidió la indexación en Search Console de la página nueva y de la portada (guía en el README).
 - Nueva página `/app-de-citas-ibague` que lleva a NODRA Agenda: cómo funciona, qué incluye, para qué negocios,

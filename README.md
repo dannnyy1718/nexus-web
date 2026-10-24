@@ -46,6 +46,7 @@ npx -y firebase-tools deploy --only hosting
 | Número de WhatsApp | `src/Marco.tsx` | `WHATSAPP_NUMERO` (con 57) y `WHATSAPP_VISIBLE` |
 | Mensaje que llega por WhatsApp | `src/Marco.tsx` | El texto dentro de `WHATSAPP_URL` |
 | Lema | `src/Marco.tsx` | `LEMA` |
+| Horario de atención | `src/Marco.tsx` | `HORARIO_VISIBLE` (pie) y `HORARIO` (Google). Igual al del Perfil de Empresa en Google |
 | Servicios | `src/App.tsx` | La lista `servicios` (y `hasOfferCatalog` en `src/negocio.ts` para Google) |
 | Pasos de trabajo | `src/App.tsx` | La lista `pasos` |
 | Preguntas frecuentes | `src/negocio.ts` | La lista `preguntas` (se muestran en la página y van a Google) |
