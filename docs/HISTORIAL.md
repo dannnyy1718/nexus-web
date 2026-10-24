@@ -7,6 +7,8 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   cómo trabaja y el cambio de NEXUS a NODRA. Texto aprobado por Danny; sin la Policía y sin foto, por decisión suya.
 - "NODRA nace de la ingeniería en ciberseguridad" pasó a "formación" (portada y preguntas), y `llms.txt` ya no dice
   "ingeniero": Danny todavía estudia la ingeniería (textos honestos, regla 8.6).
+- Por pedido de Danny ("se mira mucho texto") solo la primera frase queda a la vista; la formación y cómo trabaja van en
+  un desplegable "Mi formación y cómo trabajo", igual al de las preguntas frecuentes.
 
 ## 2026-10-24 (tarde): arreglos de la auditoría SEO
 - Auditoría con `claude-seo-ai` (punto de partida: SEO 71 C, IA 75 C). Informe en la carpeta de datos del plugin.
