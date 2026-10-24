@@ -8,6 +8,9 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURICo
   'Hola NODRA, quiero una app para mi negocio.',
 )}`
 
+// NODRA Agenda ya está publicada: los botones llevan a su portada, donde el negocio crea su agenda
+export const AGENDA_URL = 'https://agenda.nodrasoft.com/'
+
 export function IconoWhatsApp({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">

@@ -51,6 +51,8 @@ npx -y firebase-tools deploy --only hosting
 | Preguntas frecuentes | `src/negocio.ts` | La lista `preguntas` (se muestran en la página y van a Google) |
 | Ciudad o dirección del sitio | `src/negocio.ts` | `CIUDAD`, `DEPARTAMENTO`, `SITIO` |
 | Aviso de privacidad | `src/Privacidad.tsx` | El texto |
+| Página "App de citas en Ibagué" | `src/AppCitas.tsx` + `src/negocio.ts` | Textos en `AppCitas.tsx`; pasos, planes (precios) y preguntas en `negocio.ts`; título y descripción en `app-de-citas-ibague.html` |
+| Agregar otra página | `nuevo.html` + `vite.config.ts` + `main.tsx` + `entry-server.tsx` + `scripts/prerender.mjs` + `public/sitemap.xml` | Copiar cómo está hecha `app-de-citas-ibague` |
 | Páginas que Google debe leer | `public/sitemap.xml` | Agregar una `<url>` por página nueva |
 | Imágenes | `public/img/` | Usar WebP; poner siempre texto alternativo (`alt`) |
 | Pantallas de Johana que cambian solas | `src/PantallasJohana.tsx` | La lista `pantallas` (imagen 480x860 en `public/img/`) |

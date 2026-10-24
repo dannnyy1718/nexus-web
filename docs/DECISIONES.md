@@ -120,3 +120,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Reglas:** solo datos verdaderos; "estudio Ingeniería", nunca "ingeniero", hasta tener el título; la Policía no se
   menciona en público (decisión de Danny).
 
+## 23. Página "App de citas en Ibagué" (2026-10-24)
+- **Qué:** una página por servicio, empezando por la app de citas, en `/app-de-citas-ibague`.
+- **Por qué:** con una sola página, la portada compite por todas las búsquedas a la vez (auditoría SEO, punto M10).
+  "App de citas Ibagué" es una búsqueda larga y local, con poca competencia (videos de SEO de @gu.ferrey y
+  @oscarcontreras.seo). Lleva a NODRA Agenda, el producto que ya está listo para vender.
+- **Reglas:** precios iguales a `nexus-agenda/src/lib/planes.ts` (si cambian allá, cambiar `planesCitas`); solo se
+  promete lo que Agenda hace hoy; poco texto a la vista (tabla, listas y preguntas plegadas, pedido de Danny).
+- **Siguiente:** más páginas por sector (salones, consultorios, veterinarias) cada una con contenido propio, no copias.
+

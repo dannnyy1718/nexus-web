@@ -2,6 +2,14 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (noche): página "App de citas en Ibagué"
+- Nueva página `/app-de-citas-ibague` que lleva a NODRA Agenda: cómo funciona, qué incluye, para qué negocios,
+  tabla de precios reales (Gratis, $20.000 y $50.000 al mes) con sus condiciones al lado, preguntas plegadas y botón.
+- La palabra clave va en la dirección, el H1, el título, la descripción, el primer párrafo y un H2.
+- Ficha para Google propia: página con migas (Inicio > App de citas), servicio con sus 3 planes en COP y preguntas.
+- En la portada, la sección de NODRA Agenda enlaza a la página ("Ver precios y cómo funciona"). Sitemap actualizado.
+- `AGENDA_URL` pasó a `Marco.tsx` para usarlo en las dos páginas.
+
 ## 2026-10-24 (noche): sección "Quién está detrás de NODRA"
 - Nueva sección en la portada (antes de las preguntas): Danny, su formación (SENA y Politécnico Grancolombiano),
   cómo trabaja y el cambio de NEXUS a NODRA. Texto aprobado por Danny; sin la Policía y sin foto, por decisión suya.

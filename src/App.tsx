@@ -1,4 +1,4 @@
-import { BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { AGENDA_URL, BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import CelularJohana from './CelularJohana'
@@ -8,8 +8,6 @@ import { preguntas } from './negocio'
 
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
-// NODRA Agenda ya está publicada: el botón lleva a su portada, donde el negocio crea su agenda
-const AGENDA_URL = 'https://agenda.nodrasoft.com/'
 
 // Cada servicio con un ejemplo que se puede tocar y una sola línea de texto (2026-10-21)
 const servicios = [
@@ -172,6 +170,11 @@ export default function App() {
                   <span className="sr-only"> (se abre en otra pestaña)</span>
                 </a>
                 <p className="mt-3 text-sm text-bruma">Sin tarjeta de crédito.</p>
+                {/* Enlace interno a la página de la app de citas: Google la encuentra y entiende de qué trata por el
+                    texto del enlace (auditoría SEO 2026-10-24) */}
+                <a href="/app-de-citas-ibague" className="enlace-flecha mt-4">
+                  Ver precios y cómo funciona
+                </a>
               </div>
               {/* Captura de la portada real de NODRA Agenda (no tiene datos de clientes) */}
               <figure className="mx-auto w-full max-w-[15rem] 2xl:max-w-[18rem]">

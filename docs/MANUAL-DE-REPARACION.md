@@ -26,7 +26,7 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 
 ## 4. `npm run build` falla en "prerender" con "No se encontró `<div id="root">`"
 
-- **Causa:** alguien cambió `<div id="root"></div>` en `index.html`, `privacidad.html` o `404.html`.
+- **Causa:** alguien cambió `<div id="root"></div>` en `index.html`, `privacidad.html`, `app-de-citas-ibague.html` o `404.html`.
 - **Arreglo:** dejar exactamente `<div id="root"></div>` (vacío) en los tres archivos. El script `scripts/prerender.mjs` lo busca para meter ahí el HTML ya armado.
 
 ## 5. Google muestra textos viejos o no encuentra la página

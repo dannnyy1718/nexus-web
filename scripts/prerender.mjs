@@ -3,19 +3,26 @@ import { readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
 
-const { render, datosEstructurados } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
-const paginas = { 'index.html': 'inicio', 'privacidad.html': 'privacidad', '404.html': 'noEncontrada' }
+const { render, datosEstructurados, datosAppCitas } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
+const paginas = {
+  'index.html': 'inicio',
+  'privacidad.html': 'privacidad',
+  'app-de-citas-ibague.html': 'appCitas',
+  '404.html': 'noEncontrada',
+}
+// Ficha Schema.org de cada página que la tiene
+const fichas = { inicio: datosEstructurados, appCitas: datosAppCitas }
 
 for (const [archivo, pagina] of Object.entries(paginas)) {
   const ruta = resolve('dist', archivo)
   const html = readFileSync(ruta, 'utf8')
   if (!html.includes('<div id="root"></div>')) throw new Error(`No se encontró <div id="root"> en dist/${archivo}`)
   let salida = html.replace('<div id="root"></div>', `<div id="root">${render(pagina)}</div>`)
-  if (pagina === 'inicio') {
+  if (fichas[pagina]) {
     // Ficha Schema.org para Google y las IA (es un bloque de datos: el navegador no lo ejecuta)
     // Doble barra: escribe el texto literal \u003c para que un "</script>" dentro de los datos no cierre
     // la etiqueta antes de tiempo. Con una sola barra, JavaScript lo convierte otra vez en "<" y no protege.
-    const json = JSON.stringify(datosEstructurados()).replace(/</g, '\\u003c')
+    const json = JSON.stringify(fichas[pagina]()).replace(/</g, '\\u003c')
     salida = salida.replace('</head>', `  <script type="application/ld+json">${json}</script>
   </head>`)
   }
