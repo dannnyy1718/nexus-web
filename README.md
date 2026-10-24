@@ -77,3 +77,12 @@ Después de cada cambio:
 ---
 
 Hecho por Danny Javier Díaz · NODRA
+
+## Después de publicar una página nueva o un cambio grande
+Para que Google la lea en días y no en semanas (aprendido el 2026-10-24):
+1. Entrar a https://search.google.com/search-console con kaleth1718@gmail.com y elegir la propiedad **nodrasoft.com**.
+2. En la barra de arriba ("Inspeccionar las URL…") pegar la dirección completa, por ejemplo
+   `https://nodrasoft.com/app-de-citas-ibague`, y presionar Enter.
+3. Clic en **SOLICITAR INDEXACIÓN** y esperar 1-2 minutos hasta el mensaje verde "Se ha solicitado la indexación".
+4. **Una sola vez por cambio:** pedirlo varias veces no adelanta la fila.
+5. Si la página es nueva, agregarla antes a `public/sitemap.xml` y enlazarla desde una página que ya esté en Google.

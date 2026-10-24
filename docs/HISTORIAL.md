@@ -3,6 +3,7 @@
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
 ## 2026-10-24 (noche): página "App de citas en Ibagué"
+- Danny pidió la indexación en Search Console de la página nueva y de la portada (guía en el README).
 - Nueva página `/app-de-citas-ibague` que lleva a NODRA Agenda: cómo funciona, qué incluye, para qué negocios,
   tabla de precios reales (Gratis, $20.000 y $50.000 al mes) con sus condiciones al lado, preguntas plegadas y botón.
 - La palabra clave va en la dirección, el H1, el título, la descripción, el primer párrafo y un H2.
