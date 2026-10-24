@@ -112,3 +112,11 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Qué no se puso a propósito:** precios en las ofertas, coordenadas y dirección exacta (NODRA no tiene local
   público); `sameAs` del fundador hasta tener un perfil profesional confirmado.
 
+## 22. Sección "Quién está detrás de NODRA" en la portada (2026-10-24)
+- **Qué:** una sección corta con el nombre, la formación real y la forma de trabajar de Danny, en vez de una página
+  `/nosotros` aparte.
+- **Por qué:** la auditoría SEO encontró que el nombre del fundador solo estaba escondido en la ficha para Google.
+  Google y las IA confían más cuando se ve quién responde. En la portada se ve de inmediato y no hay que crear ruta nueva.
+- **Reglas:** solo datos verdaderos; "estudio Ingeniería", nunca "ingeniero", hasta tener el título; la Policía no se
+  menciona en público (decisión de Danny).
+

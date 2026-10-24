@@ -29,7 +29,7 @@ export const preguntas = [
   {
     pregunta: '¿Mis datos y los de mis clientes están seguros?',
     respuesta:
-      'Sí. NODRA nace de la ingeniería en ciberseguridad: cada negocio tiene su propio espacio en la nube, con reglas de acceso estrictas y conexión cifrada.',
+      'Sí. NODRA nace de la formación en ciberseguridad: cada negocio tiene su propio espacio en la nube, con reglas de acceso estrictas y conexión cifrada.',
   },
 ]
 

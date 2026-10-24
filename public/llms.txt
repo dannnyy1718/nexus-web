@@ -16,7 +16,7 @@
 - Propuesta clara con precio, tiempo de entrega y costos de servicios externos antes de empezar.
 - Pago 50 % al iniciar y 50 % al entregar.
 - Garantía de 6 meses: corrige sin costo cualquier falla en las funciones acordadas en la propuesta. No incluye funciones nuevas, cambios de diseño ni problemas por datos mal cargados o por cambios de terceros.
-- Seguridad: cada negocio tiene su propio espacio en la nube, reglas de acceso estrictas y conexión cifrada. Fundada por Danny Javier Díaz, ingeniero en ciberseguridad.
+- Seguridad: cada negocio tiene su propio espacio en la nube, reglas de acceso estrictas y conexión cifrada. Fundada por Danny Javier Díaz, tecnólogo en desarrollo de software (SENA) y estudiante de Ingeniería en Seguridad de la Información.
 
 ## Proyecto destacado
 

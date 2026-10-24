@@ -205,7 +205,8 @@ export default function App() {
               <div>
                 <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
                 <p className="mt-4 max-w-[40rem] text-bruma">
-                  NODRA nace de la ingeniería en ciberseguridad.
+                  {/* "Formación" y no "ingeniería": Danny aún estudia la ingeniería (textos honestos, regla 8.6) */}
+                  NODRA nace de la formación en ciberseguridad.
                 </p>
                 {/* Ilustración hecha con Gemini (2026-10-14): escudo y candado sobre la nube, con los colores de la marca.
                     Dos tamaños: el celular baja la de 400 px (22 KB) y el computador la de 720 px (48 KB) */}
@@ -260,6 +261,32 @@ export default function App() {
                   <span className="font-semibold text-oro">Próximo servicio: Cloud Security.</span> Protegeremos la nube
                   donde viven los datos de tu empresa.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Quién está detrás (auditoría SEO 2026-10-24): Google y las IA confían más cuando se ve una persona real
+              con su formación. Solo datos verdaderos, revisados por Danny; la Policía no va por decisión suya */}
+          <section id="quienes-somos" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
+            <span className="nodo top-2" aria-hidden="true" />
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
+              <h2 className="text-2xl font-semibold md:text-[2.25rem]">Quién está detrás de NODRA</h2>
+              <div className="grid max-w-[44rem] gap-4 2xl:max-w-[50rem] 2xl:text-lg">
+                <p>
+                  Soy <strong>Danny Javier Díaz</strong>, de Ibagué. Fundé NODRA en 2026 para que los negocios del Tolima
+                  tengan apps hechas a su medida, sin pagar precios de agencia grande.
+                </p>
+                <p>
+                  Me formé como Técnico en Sistemas y Tecnólogo en Análisis y Desarrollo de Software en el SENA, y hoy
+                  estudio Ingeniería en Seguridad de la Información en el Politécnico Grancolombiano. Por eso cada app
+                  que entrego nace con la seguridad pensada desde el primer día: cada negocio en su propio espacio en la
+                  nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web.
+                </p>
+                <p>
+                  Trabajo directo contigo: me escribes por WhatsApp, te explico todo en palabras sencillas y no
+                  desaparezco después de la entrega. Cada app tiene 6 meses de garantía.
+                </p>
+                <p className="text-bruma">Antes nos llamábamos NEXUS; desde octubre de 2026 somos NODRA.</p>
               </div>
             </div>
           </section>

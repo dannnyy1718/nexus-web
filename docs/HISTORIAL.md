@@ -2,6 +2,12 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (noche): sección "Quién está detrás de NODRA"
+- Nueva sección en la portada (antes de las preguntas): Danny, su formación (SENA y Politécnico Grancolombiano),
+  cómo trabaja y el cambio de NEXUS a NODRA. Texto aprobado por Danny; sin la Policía y sin foto, por decisión suya.
+- "NODRA nace de la ingeniería en ciberseguridad" pasó a "formación" (portada y preguntas), y `llms.txt` ya no dice
+  "ingeniero": Danny todavía estudia la ingeniería (textos honestos, regla 8.6).
+
 ## 2026-10-24 (tarde): arreglos de la auditoría SEO
 - Auditoría con `claude-seo-ai` (punto de partida: SEO 71 C, IA 75 C). Informe en la carpeta de datos del plugin.
 - Ficha para Google en un solo bloque conectado (`@graph`): sitio (WebSite "NODRA"), página, negocio, fundador y preguntas.
