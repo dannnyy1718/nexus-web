@@ -2,6 +2,11 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24: SEO local, primeros pasos del plan
+- El título grande (H1) ahora dice "Apps a la medida para negocios en Ibagué." (qué hacemos, para quién y dónde).
+- La ficha para Google (`src/negocio.ts`) enlaza la página de Facebook de NODRA (`sameAs`) y suma el Tolima como zona.
+- El plan completo está en `3 Marketing/Planes y guiones/2026-10-24-plan-SEO-NODRA.md`.
+
 ## 2026-10-22: la página ya se presenta como nodrasoft.com
 - Candado HTTPS listo en `nodrasoft.com` y `www.nodrasoft.com` (este redirige al primero).
 - Se cambió `nexus-tech-co.web.app` por `nodrasoft.com` en la etiqueta canónica, Open Graph, sitemap, robots, `llms.txt`

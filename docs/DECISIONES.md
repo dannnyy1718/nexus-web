@@ -93,3 +93,13 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 ## 19. La dirección oficial para Google es nodrasoft.com (2026-10-22)
 - **Qué:** la etiqueta canónica, el sitemap y la ficha para Google apuntan a `nodrasoft.com`. `nexus-tech-co.web.app` no se apaga ni se redirige.
 - **Por qué:** la etiqueta canónica le dice a Google cuál de las dos direcciones mostrar; así Google pasa sola la página a la nueva sin perder lo ganado y sin romper enlaces viejos ya compartidos.
+
+## 20. H1 con ciudad y redes en la ficha para Google (2026-10-24)
+- **Qué:** el H1 cambió de "Apps para tu negocio, hechas a la medida." a "Apps a la medida para negocios en Ibagué.";
+  la ficha Schema tiene `sameAs` (Facebook) y `areaServed` Ibagué + Tolima.
+- **Por qué:** Google mira el H1 para saber qué es la página; debe decir qué, a quién y dónde (videos de @gu.ferrey y
+  @oscarcontreras.seo). La búsqueda "apps en Ibagué" tiene poca competencia; "apps" a secas la ganan agencias grandes.
+  `sameAs` confirma que la página y las redes son la misma empresa.
+- **Decisión de enfoque:** el SEO de software a la medida se concentra en Ibagué y el Tolima por ahora.
+- **Pendiente:** agregar TikTok e Instagram a `sameAs` cuando NODRA tenga cuentas propias.
+

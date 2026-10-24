@@ -48,7 +48,8 @@ export default function App() {
             <span className="nodo nodo-lleno top-8 md:top-16" aria-hidden="true" />
             <div className="order-2 md:order-1">
               <h1 className="text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-5xl lg:text-[3.6rem] 2xl:text-[4.6rem]">
-                Apps para tu negocio, hechas a la medida.
+                {/* SEO (2026-10-24): el H1 dice qué hacemos, para quién y dónde; Google lo usa para ubicarnos */}
+                Apps a la medida para negocios en Ibagué.
               </h1>
               <p className="mt-6 max-w-[34rem] text-lg text-bruma 2xl:max-w-[40rem] 2xl:text-xl">
                 Desde Ibagué creamos aplicaciones que funcionan en Android, iPhone y computador. Tus clientes

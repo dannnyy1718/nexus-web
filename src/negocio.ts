@@ -55,7 +55,13 @@ export function datosEstructurados() {
         addressRegion: DEPARTAMENTO,
         addressCountry: 'CO',
       },
-      areaServed: { '@type': 'City', name: CIUDAD },
+      areaServed: [
+        { '@type': 'City', name: CIUDAD },
+        { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
+      ],
+      // Perfiles oficiales: le confirman a Google y a las IA que la página y las redes son la misma empresa.
+      // Agregar aquí TikTok e Instagram cuando tengan cuenta propia de NODRA.
+      sameAs: ['https://www.facebook.com/profile.php?id=61595330230362'],
       knowsAbout: [
         'Desarrollo de aplicaciones móviles',
         'Desarrollo web',
