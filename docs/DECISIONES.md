@@ -96,10 +96,10 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 
 ## 20. H1 con ciudad y redes en la ficha para Google (2026-10-24)
 - **Qué:** el H1 cambió de "Apps para tu negocio, hechas a la medida." a "Apps a la medida para negocios en Ibagué.";
-  la ficha Schema tiene `sameAs` (Facebook) y `areaServed` Ibagué + Tolima.
+  la ficha Schema tiene `sameAs` (Facebook y TikTok @nexus.tech.co) y `areaServed` Ibagué + Tolima.
 - **Por qué:** Google mira el H1 para saber qué es la página; debe decir qué, a quién y dónde (videos de @gu.ferrey y
   @oscarcontreras.seo). La búsqueda "apps en Ibagué" tiene poca competencia; "apps" a secas la ganan agencias grandes.
   `sameAs` confirma que la página y las redes son la misma empresa.
 - **Decisión de enfoque:** el SEO de software a la medida se concentra en Ibagué y el Tolima por ahora.
-- **Pendiente:** agregar TikTok e Instagram a `sameAs` cuando NODRA tenga cuentas propias.
+- **Pendiente:** agregar Instagram a `sameAs` cuando NODRA tenga cuenta propia.
 

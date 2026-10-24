@@ -60,8 +60,8 @@ export function datosEstructurados() {
         { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
       ],
       // Perfiles oficiales: le confirman a Google y a las IA que la página y las redes son la misma empresa.
-      // Agregar aquí TikTok e Instagram cuando tengan cuenta propia de NODRA.
-      sameAs: ['https://www.facebook.com/profile.php?id=61595330230362'],
+      // Agregar aquí Instagram cuando NODRA tenga cuenta propia.
+      sameAs: ['https://www.facebook.com/profile.php?id=61595330230362', 'https://www.tiktok.com/@nexus.tech.co'],
       knowsAbout: [
         'Desarrollo de aplicaciones móviles',
         'Desarrollo web',
