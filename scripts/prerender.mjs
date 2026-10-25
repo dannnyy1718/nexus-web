@@ -7,6 +7,7 @@ const { render, datosEstructurados, datosAppCitas } = await import(pathToFileURL
 const paginas = {
   'index.html': 'inicio',
   'privacidad.html': 'privacidad',
+  'terminos.html': 'terminos',
   'app-de-citas-ibague.html': 'appCitas',
   '404.html': 'noEncontrada',
 }

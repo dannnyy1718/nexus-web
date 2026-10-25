@@ -109,6 +109,10 @@ export function Pie() {
           Esta página no usa cookies ni rastreadores.{' '}
           <a href="/privacidad" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
             Aviso de privacidad
+          </a>{' '}
+          ·{' '}
+          <a href="/terminos" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            Términos y condiciones
           </a>
         </p>
       </div>

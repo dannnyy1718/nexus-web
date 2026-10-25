@@ -28,3 +28,4 @@
 - Correo: contacto@nodrasoft.com
 - [Sitio web de NODRA](https://nodrasoft.com/): servicios, proyecto destacado, preguntas frecuentes y contacto.
 - [Aviso de privacidad](https://nodrasoft.com/privacidad): cómo NODRA trata los datos personales (Ley 1581 de 2012).
+- [Términos y condiciones](https://nodrasoft.com/terminos): cómo se contrata una app a la medida, garantía de 6 meses, de quién es la app y límite de responsabilidad.

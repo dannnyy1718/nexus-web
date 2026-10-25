@@ -8,11 +8,12 @@ export default defineConfig({
     // Sin estilos ni scripts en línea, para que la CSP estricta de firebase.json funcione
     assetsInlineLimit: 0,
     modulePreload: { polyfill: false },
-    // Páginas: inicio, aviso de privacidad, app de citas en Ibagué y la de "no encontrada" (404)
+    // Páginas: inicio, aviso de privacidad, términos, app de citas en Ibagué y la de "no encontrada" (404)
     rollupOptions: {
       input: {
         inicio: 'index.html',
         privacidad: 'privacidad.html',
+        terminos: 'terminos.html',
         appCitas: 'app-de-citas-ibague.html',
         noEncontrada: '404.html',
       },

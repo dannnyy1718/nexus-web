@@ -135,3 +135,10 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   datos (Ley 1581) pide un canal claro para reclamos. El reenvío cuesta $0 y no hay otro buzón que revisar.
 - **Límite:** solo recibe. Si algún día hace falta responder *como* contacto@, configurar en Gmail "Enviar como" con
   un SMTP o comprar el correo privado de Namecheap.
+
+## 25. Términos en la página, iguales a los de las cotizaciones (2026-10-24)
+- **Qué:** `/terminos` resume los términos que van en cada propuesta; la propuesta escrita manda si hay diferencias.
+- **Por qué:** un cliente debe poder leer las reglas antes de escribir, y un solo juego de reglas evita contradicciones.
+  La página no vende nada directamente, por eso no lleva casillas ni guarda aceptaciones: eso pasa en la propuesta.
+- **Consecuencias:** si cambia la plantilla de cotizaciones (garantía, pago, propiedad, límite de responsabilidad),
+  cambiar también `src/Terminos.tsx` y su fecha de vigencia.

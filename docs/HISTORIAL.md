@@ -2,6 +2,17 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (noche): página de términos y condiciones (/terminos)
+- Nueva página `/terminos` (`src/Terminos.tsx` + `terminos.html`), con el mismo diseño del aviso de privacidad:
+  cómo se contrata (propuesta por escrito; "acepto" por WhatsApp o el anticipo valen como firma), pago 50/50,
+  garantía de 6 meses (qué cubre y qué no), de quién es la app, datos de los clientes (NODRA como encargado),
+  límite de responsabilidad, sin retracto en apps a la medida, enlace a los términos de NODRA Agenda y cómo
+  resolver un desacuerdo (hablar → conciliación en Ibagué → jueces).
+- Enlace "Términos y condiciones" en el pie de todas las páginas; agregada a `sitemap.xml` y `llms.txt`.
+- Resume la plantilla que va en cada cotización (`2 Clientes/TERMINOS-COTIZACIONES.md`). Se basó en videos de un
+  abogado de emprendedores; **falta revisión de un abogado**.
+- Pendiente después de publicar: pedir indexación de `https://nodrasoft.com/terminos` en Search Console.
+
 ## 2026-10-24 (noche): correo contacto@nodrasoft.com
 - Creado en Namecheap (Lista de dominios → nodrasoft.com → Redirigir correo electrónico): `contacto` reenvía a
   avisos.nexusagenda@gmail.com. Danny lo probó y llegó.
