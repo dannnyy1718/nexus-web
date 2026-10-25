@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
-import { Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { CORREO, CORREO_URL, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 
 // Aviso de privacidad según la Ley 1581 de 2012 y el Decreto 1377 de 2013 (Colombia)
-const VIGENCIA = '6 de octubre de 2026'
+const VIGENCIA = '24 de octubre de 2026'
 
 const derechos = [
   'Conocer, actualizar y corregir tus datos.',
@@ -39,6 +39,10 @@ export default function Privacidad() {
             NODRA, emprendimiento de Danny Javier Díaz, con domicilio en Ibagué, Tolima (Colombia). Puedes contactarnos por WhatsApp al{' '}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-niebla hover:text-verde">
               {WHATSAPP_VISIBLE}
+            </a>{' '}
+            o al correo{' '}
+            <a href={CORREO_URL} className="font-semibold text-niebla hover:text-verde">
+              {CORREO}
             </a>
             .
           </p>
@@ -101,7 +105,7 @@ export default function Privacidad() {
 
         <Seccion titulo="Cómo ejercerlos">
           <p>
-            Escríbenos por WhatsApp al {WHATSAPP_VISIBLE} diciendo qué necesitas. Respondemos las consultas
+            Escríbenos por WhatsApp al {WHATSAPP_VISIBLE} o al correo {CORREO} diciendo qué necesitas. Respondemos las consultas
             en máximo 10 días hábiles y los reclamos en máximo 15 días hábiles, como indica la ley.
           </p>
         </Seccion>

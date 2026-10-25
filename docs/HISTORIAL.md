@@ -2,6 +2,13 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-24 (noche): correo contacto@nodrasoft.com
+- Creado en Namecheap (Lista de dominios → nodrasoft.com → Redirigir correo electrónico): `contacto` reenvía a
+  avisos.nexusagenda@gmail.com. Danny lo probó y llegó.
+- Se ve en el pie de todas las páginas, en el cierre de la portada y en el aviso de privacidad (responsable y cómo
+  ejercer los derechos; vigencia actualizada al 24 de octubre). También va en la ficha para Google (`email`) y en `llms.txt`.
+- Dato en `src/Marco.tsx` (`CORREO`).
+
 ## 2026-10-24 (noche): horario de atención
 - Horario igual al del Perfil de Empresa en Google: lunes a sábado 8 a. m.-8 p. m. y domingos 9 a. m.-5 p. m.
   Se ve en el pie de todas las páginas y va a la ficha para Google (`openingHoursSpecification`).

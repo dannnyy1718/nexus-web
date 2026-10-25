@@ -8,6 +8,11 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURICo
   'Hola NODRA, quiero una app para mi negocio.',
 )}`
 
+// Correo de contacto (2026-10-24). Es un reenvío de Namecheap ("Redirigir correo electrónico"):
+// lo que llega aquí cae en avisos.nexusagenda@gmail.com. Solo recibe; las respuestas salen desde ese Gmail.
+export const CORREO = 'contacto@nodrasoft.com'
+export const CORREO_URL = `mailto:${CORREO}`
+
 // Horario de atención (2026-10-24). Debe ser IGUAL al del Perfil de Empresa en Google: si cambia, cambiarlo en los dos.
 // Se muestra en el pie y va a la ficha para Google (negocio.ts, openingHoursSpecification).
 export const HORARIO_VISIBLE = 'Lunes a sábado, 8 a. m. a 8 p. m. · Domingos, 9 a. m. a 5 p. m.'
@@ -93,6 +98,12 @@ export function Pie() {
       <div className="grid gap-1">
         <p>
           <span className="font-semibold text-niebla">Atención:</span> {HORARIO_VISIBLE}
+        </p>
+        <p>
+          <span className="font-semibold text-niebla">Correo:</span>{' '}
+          <a href={CORREO_URL} className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            {CORREO}
+          </a>
         </p>
         <p>
           Esta página no usa cookies ni rastreadores.{' '}

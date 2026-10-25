@@ -1,5 +1,5 @@
 // Datos de NODRA en un solo lugar: los usa la página visible y la ficha para buscadores (Schema.org)
-import { HORARIO, LEMA, WHATSAPP_NUMERO } from './Marco'
+import { CORREO, HORARIO, LEMA, WHATSAPP_NUMERO } from './Marco'
 
 export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
@@ -71,6 +71,7 @@ export function datosEstructurados() {
         logo: `${SITIO}/apple-touch-icon.png`,
         image: `${SITIO}/og.jpg`,
         telephone: `+${WHATSAPP_NUMERO}`,
+        email: CORREO,
         founder: { '@id': `${SITIO}/#fundador` },
         address: {
           '@type': 'PostalAddress',

@@ -104,3 +104,11 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
 - **"No seguro" justo después de conectar:** es normal; Firebase tarda de minutos a 24 h en crear el certificado. Si pasa más de un día, en Firebase → Dominios → Verificar.
 - **Dejó de funcionar de un momento a otro:** revisar que el dominio no se haya vencido (vence cada 22 de octubre; renovación automática) y que el correo de contacto esté verificado (ICANN suspende si no se confirma en 15 días).
 - **Ojo en la traducción de Namecheap:** "Un registro" significa *A Record*.
+
+## 18. No llegan los correos a contacto@nodrasoft.com
+- **Dónde se maneja:** Namecheap → Lista de dominios → nodrasoft.com → Administrar → pestaña Dominio → "Redirigir correo
+  electrónico". Debe existir `contacto` → `avisos.nexusagenda@gmail.com`.
+- **Registros necesarios (los pone Namecheap solo):** MX `eforward1` a `eforward5.registrar-servers.com` y el TXT
+  `v=spf1 include:spf.efwd.registrar-servers.com ~all`. Revisar: `https://dns.google/resolve?name=nodrasoft.com&type=MX`.
+- **Si se cambian los servidores de nombres** (deja de ser "DNS básico de Namecheap"), el reenvío deja de funcionar.
+- **Primero mirar Spam** en avisos.nexusagenda@gmail.com.

@@ -1,4 +1,4 @@
-import { AGENDA_URL, BotonWhatsApp, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import CelularJohana from './CelularJohana'
@@ -344,6 +344,9 @@ export default function App() {
                   <BotonWhatsApp grande />
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
                     {WHATSAPP_VISIBLE}
+                  </a>
+                  <a href={CORREO_URL} className="font-semibold hover:text-verde">
+                    {CORREO}
                   </a>
                 </div>
               </div>

@@ -129,3 +129,9 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   promete lo que Agenda hace hoy; poco texto a la vista (tabla, listas y preguntas plegadas, pedido de Danny).
 - **Siguiente:** más páginas por sector (salones, consultorios, veterinarias) cada una con contenido propio, no copias.
 
+## 24. Correo de contacto por reenvío, no buzón pagado (2026-10-24)
+- **Qué:** `contacto@nodrasoft.com` es un reenvío gratis de Namecheap hacia avisos.nexusagenda@gmail.com.
+- **Por qué:** la auditoría SEO marcó "solo WhatsApp de contacto"; un correo con el dominio da confianza y la ley de
+  datos (Ley 1581) pide un canal claro para reclamos. El reenvío cuesta $0 y no hay otro buzón que revisar.
+- **Límite:** solo recibe. Si algún día hace falta responder *como* contacto@, configurar en Gmail "Enviar como" con
+  un SMTP o comprar el correo privado de Namecheap.
