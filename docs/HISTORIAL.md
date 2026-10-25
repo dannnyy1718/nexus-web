@@ -6,6 +6,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - En `/app-de-citas-ibague`, el plan Gratis ahora dice "Para empezar: tu agenda recibe hasta 20 citas al mes."
   Antes decía "hasta 20 citas al mes" y se podía entender como "20 citas gratis" (servicios regalados a los clientes).
   Misma frase que el volante de diciembre y el WhatsApp Business.
+- Publicado y verificado en vivo (nodrasoft.com y nexus-tech-co.web.app): la frase nueva aparece, la vieja ya no, y los encabezados de seguridad siguen activos.
 
 ## 2026-10-24 (noche): página de términos y condiciones (/terminos)
 - Nueva página `/terminos` (`src/Terminos.tsx` + `terminos.html`), con el mismo diseño del aviso de privacidad:
