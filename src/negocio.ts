@@ -143,7 +143,8 @@ export const pasosCitas = [
 ]
 
 export const planesCitas = [
-  { nombre: 'Gratis', precio: '$0', paraQuien: 'Para empezar: hasta 20 citas al mes.' },
+  // "Tu agenda recibe…": dicho así nadie entiende que se regalan 20 citas a los clientes.
+  { nombre: 'Gratis', precio: '$0', paraQuien: 'Para empezar: tu agenda recibe hasta 20 citas al mes.' },
   { nombre: 'Independiente', precio: '$20.000 al mes', paraQuien: 'Quien trabaja sola o solo: citas sin límite.' },
   { nombre: 'Salón', precio: '$50.000 al mes', paraQuien: 'Hasta 10 profesionales; tus clientes eligen con quién.' },
 ]
