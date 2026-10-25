@@ -11,7 +11,9 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Enlace "Términos y condiciones" en el pie de todas las páginas; agregada a `sitemap.xml` y `llms.txt`.
 - Resume la plantilla que va en cada cotización (`2 Clientes/TERMINOS-COTIZACIONES.md`). Se basó en videos de un
   abogado de emprendedores; **falta revisión de un abogado**.
-- Pendiente después de publicar: pedir indexación de `https://nodrasoft.com/terminos` en Search Console.
+- **Publicada por Danny** (`deploy --only hosting`) y **verificada en vivo**: `/terminos` responde 200 con su título,
+  canonical y encabezados de seguridad (CSP, HSTS); el pie de la portada la enlaza; está en `sitemap.xml` y `llms.txt`.
+- Pendiente: pedir indexación de `https://nodrasoft.com/terminos` en Search Console (README, "Después de publicar").
 
 ## 2026-10-24 (noche): correo contacto@nodrasoft.com
 - Creado en Namecheap (Lista de dominios → nodrasoft.com → Redirigir correo electrónico): `contacto` reenvía a
