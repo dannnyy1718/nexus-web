@@ -6,6 +6,9 @@ import { DemoCitas, DemoIA, DemoTienda } from './Demos'
 import Pasos from './Pasos'
 import { preguntas } from './negocio'
 
+// GIF transparente de 1 píxel: lo que baja el celular en vez de las capturas de la vitrina (ver la vitrina)
+const PIXEL_VACIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 
@@ -68,32 +71,40 @@ export default function App() {
             </div>
             {/* Vitrina (crítica 2026-10-28): el escudo solo decía "marca"; ahora lo acompañan dos trabajos reales
                 para que se vea que hacemos apps. Solo en computador: en el celular el título debe caber en la
-                primera pantalla. Con loading="lazy" el celular ni las descarga (están ocultas). */}
+                primera pantalla. Medido con Lighthouse 2026-10-28: aunque estén ocultas y con loading="lazy", Chrome las bajaba
+                en el celular (40 KB de más); con <picture> + media solo el computador baja la captura real y el
+                celular recibe un GIF vacío de 1 píxel (data:, permitido por la CSP en img-src). */}
             <div className="vitrina relative order-1 md:order-2">
               <Escudo3D />
               <figure className="vitrina-cel vitrina-izq hidden lg:block">
                 <div className="celular">
-                  <img
-                    src="/img/johana-inicio.webp"
-                    width={480}
-                    height={860}
-                    loading="lazy"
-                    alt="App de citas de Johana Sánchez Nails, hecha por NODRA"
-                    className="block h-auto w-full"
-                  />
+                  <picture>
+                    <source media="(min-width: 1024px)" srcSet="/img/johana-inicio.webp" />
+                    <img
+                      src={PIXEL_VACIO}
+                      width={480}
+                      height={860}
+                      loading="lazy"
+                      alt="App de citas de Johana Sánchez Nails, hecha por NODRA"
+                      className="block h-auto w-full"
+                    />
+                  </picture>
                 </div>
                 <figcaption>App de Johana</figcaption>
               </figure>
               <figure className="vitrina-cel vitrina-der hidden lg:block">
                 <div className="celular">
-                  <img
-                    src="/img/agenda-portada.webp"
-                    width={480}
-                    height={860}
-                    loading="lazy"
-                    alt="NODRA Agenda, nuestro producto de citas"
-                    className="block h-auto w-full"
-                  />
+                  <picture>
+                    <source media="(min-width: 1024px)" srcSet="/img/agenda-portada.webp" />
+                    <img
+                      src={PIXEL_VACIO}
+                      width={480}
+                      height={860}
+                      loading="lazy"
+                      alt="NODRA Agenda, nuestro producto de citas"
+                      className="block h-auto w-full"
+                    />
+                  </picture>
                 </div>
                 <figcaption>NODRA Agenda</figcaption>
               </figure>

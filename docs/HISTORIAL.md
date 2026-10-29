@@ -16,7 +16,12 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Mensaje de WhatsApp más natural: "tengo un negocio y quiero saber qué app me sirve".
 - Menos neón: los puntos de la línea del circuito ya no brillan; el brillo queda en el logo, el escudo y los botones.
 - Revisado en local en PC (1440 px) y celular (390 px): sin errores en consola y sin desplazamiento de lado.
-  Falta publicar (con el OK de Danny) y medir PageSpeed en vivo.
+- PUBLICADO con el OK de Danny y verificado en vivo (nodrasoft.com y nexus-tech-co.web.app): textos nuevos, foto y
+  encabezados de seguridad activos. Lighthouse en el PC de Danny: computador 99; celular 86 con Kaspersky (mete un
+  script de 180 KB en cada página del PC) y **94 sin Kaspersky**, que es lo que ven los visitantes. Accesibilidad,
+  buenas prácticas y SEO: 100. PageSpeed en línea no respondió (cupo diario agotado).
+- Las capturas de la vitrina ahora van en `<picture>` con `media`: el celular baja un GIF vacío y no 40 KB de más.
+- Lo tradicional del Tolima (tamales, lechona) quedó para después: Danny lo quiere pensar mejor.
 
 ## 2026-10-25: frase del plan Gratis más clara
 - En `/app-de-citas-ibague`, el plan Gratis ahora dice "Para empezar: tu agenda recibe hasta 20 citas al mes."
