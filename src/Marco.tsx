@@ -5,7 +5,8 @@ export const LEMA = 'Tu negocio, conectado y seguro.'
 export const WHATSAPP_NUMERO = '573133655136'
 export const WHATSAPP_VISIBLE = '313 365 5136'
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-  'Hola NODRA, quiero una app para mi negocio.',
+  // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
+  'Hola NODRA, tengo un negocio y quiero saber qué app me sirve.',
 )}`
 
 // Correo de contacto (2026-10-24). Es un reenvío de Namecheap ("Redirigir correo electrónico"):

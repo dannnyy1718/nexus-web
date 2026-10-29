@@ -142,3 +142,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   La página no vende nada directamente, por eso no lleva casillas ni guarda aceptaciones: eso pasa en la propuesta.
 - **Consecuencias:** si cambia la plantilla de cotizaciones (garantía, pago, propiedad, límite de responsabilidad),
   cambiar también `src/Terminos.tsx` y su fecha de vigencia.
+
+## 26. Portada de empresa de software, no de un solo producto (2026-10-28)
+- **Qué:** orden Qué hacemos → Nuestros productos → Un proyecto real → Quién está detrás; NODRA Agenda va dentro de
+  "Nuestros productos" y el inicio muestra trabajo real junto al escudo.
+- **Por qué:** la crítica de diseño propuso abrir con NODRA Agenda, pero Danny aclaró que NODRA es una empresa de
+  software y Agenda es solo uno de sus productos. El mapa del mundo se queda porque a Danny le gusta.
+- **Consecuencias:** cada producto nuevo de NODRA se agrega en "Nuestros productos" y cada cliente terminado (con su
+  permiso) en "Un proyecto real" (cambiar el título a plural cuando haya dos). La foto de Danny es real y no debe
+  mostrar el carnet ni el cordón de la Policía.

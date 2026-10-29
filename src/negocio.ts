@@ -16,10 +16,17 @@ export const preguntas = [
     respuesta:
       'Apps móviles y web a la medida para negocios: tiendas en línea, sistemas de citas y reservas, paneles de administración y apps con inteligencia artificial.',
   },
+  // Crítica 2026-10-28: las dudas reales de quien no es técnico (¿hay que descargar algo?, ¿cuánto cuesta?).
+  // Respuestas honestas: el precio depende de cada app, así que no se publica una cifra que no existe.
   {
-    pregunta: '¿La app funciona en Android y en iPhone?',
+    pregunta: '¿Funciona en Android y en iPhone? ¿Mis clientes tienen que descargar algo?',
     respuesta:
-      'Sí. Hacemos una sola app multiplataforma que se instala en Android y iPhone y también abre en el computador.',
+      'Funciona en Android, iPhone y computador. Tus clientes la abren desde un enlace, sin descargar nada; si quieren, la instalan en su celular con un toque.',
+  },
+  {
+    pregunta: '¿Cuánto cuesta una app?',
+    respuesta:
+      'Depende de lo que necesite tu negocio. Te enviamos una propuesta sin costo con el precio, lo que incluye y la fecha de entrega. NODRA Agenda tiene un plan gratis para empezar.',
   },
   {
     pregunta: '¿Cómo se paga y qué garantía tiene?',

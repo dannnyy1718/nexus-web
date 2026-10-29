@@ -202,11 +202,10 @@
   border-radius: 999px;
   background: var(--color-abismo);
   border: 2px solid var(--color-cian);
-  box-shadow: 0 0 14px rgb(67 217 242 / 0.6);
+  /* Sin halo de neón (crítica 2026-10-28): el brillo queda solo en el logo, el escudo y los botones */
 }
 .nodo-verde {
   border-color: var(--color-verde);
-  box-shadow: 0 0 14px rgb(94 232 154 / 0.6);
 }
 .nodo-oro {
   border-color: var(--color-oro);
@@ -332,7 +331,46 @@
 .nodo-oro-vivo {
   border-color: var(--color-oro);
   background: var(--color-oro);
-  box-shadow: 0 0 14px rgb(233 198 126 / 0.6);
+}
+
+/* Vitrina del inicio (crítica 2026-10-28): dos celulares con trabajo real a los lados del escudo, inclinados
+   como si el escudo los presentara. Solo se ven en computador (lg) y no tapan el centro del escudo. */
+.vitrina-cel {
+  position: absolute;
+  bottom: -0.5rem;
+  z-index: 2;
+  width: 8.5rem;
+  margin: 0;
+}
+.vitrina-cel figcaption {
+  margin-top: 0.6rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-bruma);
+}
+.vitrina-izq {
+  left: -2.5rem;
+  rotate: -7deg;
+}
+.vitrina-der {
+  right: -1rem;
+  bottom: 2.5rem;
+  rotate: 6deg;
+}
+@media (min-width: 1536px) {
+  .vitrina-cel {
+    width: 10.5rem;
+  }
+}
+
+/* Foto de Danny: borde fino de la marca y sombra con caída (no un halo) */
+.foto-danny {
+  object-fit: cover;
+  border: 3px solid var(--color-noche);
+  box-shadow:
+    0 0 0 1px rgb(67 217 242 / 0.35),
+    0 18px 40px -16px rgb(0 0 0 / 0.85);
 }
 
 /* Ejemplos que se pueden tocar en "Qué hacemos" (Demos.tsx): una mini pantalla de app por servicio */

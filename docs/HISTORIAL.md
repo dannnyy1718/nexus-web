@@ -2,6 +2,22 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-10-28 (noche): portada más cálida y ordenada como empresa de software (crítica de diseño)
+- Crítica con la skill impeccable: 26/40. Faltaba gente real, todo se veía "de hackers" y las ofertas estaban revueltas.
+- El inicio ahora muestra trabajo real: dos celulares (app de Johana y NODRA Agenda) a los lados del escudo, solo en
+  computador. El texto del inicio nombra lo que hacemos sin "panel" ni "multiplataforma".
+- Nuevo orden: Qué hacemos → **Nuestros productos** (NODRA Agenda como el primero) → Un proyecto real (Johana) →
+  **Quién está detrás**, que sube y lleva la **foto real de Danny** (recortada para quitar el carnet de la Policía)
+  junto al botón de WhatsApp. El mapa del mundo se queda (decisión de Danny).
+- Seguridad en palabras sencillas: "Solo tú ves los datos de tus clientes." Se quitaron la imagen del candado, el
+  enlace a OWASP (pasó a "Mi formación") y el anuncio de Cloud Security.
+- Cierre nuevo: "Cuéntanos cómo funciona tu negocio hoy", con la foto de Danny en vez del escudo borroso.
+- Preguntas nuevas: "¿Mis clientes tienen que descargar algo?" y "¿Cuánto cuesta una app?" (sin cifras inventadas).
+- Mensaje de WhatsApp más natural: "tengo un negocio y quiero saber qué app me sirve".
+- Menos neón: los puntos de la línea del circuito ya no brillan; el brillo queda en el logo, el escudo y los botones.
+- Revisado en local en PC (1440 px) y celular (390 px): sin errores en consola y sin desplazamiento de lado.
+  Falta publicar (con el OK de Danny) y medir PageSpeed en vivo.
+
 ## 2026-10-25: frase del plan Gratis más clara
 - En `/app-de-citas-ibague`, el plan Gratis ahora dice "Para empezar: tu agenda recibe hasta 20 citas al mes."
   Antes decía "hasta 20 citas al mes" y se podía entender como "20 citas gratis" (servicios regalados a los clientes).

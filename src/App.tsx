@@ -13,7 +13,7 @@ const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 const servicios = [
   {
     titulo: 'Tiendas en línea',
-    texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde un panel.',
+    texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde tu celular.',
     Demo: DemoTienda,
   },
   {
@@ -30,8 +30,9 @@ const servicios = [
 ]
 
 const seguridad = [
-  'Cada persona ve solo lo que le corresponde: reglas de acceso estrictas.',
-  'Cada negocio en su propio espacio en la nube, sin mezclarse con otros.',
+  'Tus empleados y tus clientes ven solo lo que les corresponde.',
+  'Cada negocio tiene su propio espacio en la nube, sin mezclarse con otros.',
+  'La conexión va cifrada y revisamos la app contra las fallas más comunes de la web.',
 ]
 
 export default function App() {
@@ -49,9 +50,11 @@ export default function App() {
                 {/* SEO (2026-10-24): el H1 dice qué hacemos, para quién y dónde; Google lo usa para ubicarnos */}
                 Apps a la medida para negocios en Ibagué.
               </h1>
+              {/* Crítica de diseño 2026-10-28: NODRA es una empresa de software con varias apps (Danny), así que el
+                  texto nombra lo que hacemos en palabras de cualquier negocio, sin "panel" ni "multiplataforma" */}
               <p className="mt-6 max-w-[34rem] text-lg text-bruma 2xl:max-w-[40rem] 2xl:text-xl">
-                Desde Ibagué creamos aplicaciones que funcionan en Android, iPhone y computador. Tus clientes
-                agendan o compran desde el celular, y tú lo manejas todo desde un panel.
+                Tiendas en línea, agendas de citas y asistentes con inteligencia artificial, hechos aquí. Tus clientes
+                compran o reservan desde el celular, y tú lo manejas todo desde el tuyo.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <BotonWhatsApp />
@@ -63,7 +66,38 @@ export default function App() {
                 </a>
               </div>
             </div>
-            <Escudo3D />
+            {/* Vitrina (crítica 2026-10-28): el escudo solo decía "marca"; ahora lo acompañan dos trabajos reales
+                para que se vea que hacemos apps. Solo en computador: en el celular el título debe caber en la
+                primera pantalla. Con loading="lazy" el celular ni las descarga (están ocultas). */}
+            <div className="vitrina relative order-1 md:order-2">
+              <Escudo3D />
+              <figure className="vitrina-cel vitrina-izq hidden lg:block">
+                <div className="celular">
+                  <img
+                    src="/img/johana-inicio.webp"
+                    width={480}
+                    height={860}
+                    loading="lazy"
+                    alt="App de citas de Johana Sánchez Nails, hecha por NODRA"
+                    className="block h-auto w-full"
+                  />
+                </div>
+                <figcaption>App de Johana</figcaption>
+              </figure>
+              <figure className="vitrina-cel vitrina-der hidden lg:block">
+                <div className="celular">
+                  <img
+                    src="/img/agenda-portada.webp"
+                    width={480}
+                    height={860}
+                    loading="lazy"
+                    alt="NODRA Agenda, nuestro producto de citas"
+                    className="block h-auto w-full"
+                  />
+                </div>
+                <figcaption>NODRA Agenda</figcaption>
+              </figure>
+            </div>
           </section>
 
           {/* Mapa: Ibagué conectada con el mundo */}
@@ -89,7 +123,7 @@ export default function App() {
           <section id="servicios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Qué hacemos</h2>
-            <p className="mt-3 max-w-[34rem] text-bruma">Apps a la medida para tu negocio. Prueba los ejemplos.</p>
+            <p className="mt-3 max-w-[34rem] text-bruma">Software hecho para tu negocio, no una plantilla. Prueba los ejemplos.</p>
 
             {/* Un ejemplo para tocar por servicio (Demos.tsx), con una sola línea de texto */}
             <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 2xl:gap-12">
@@ -108,46 +142,18 @@ export default function App() {
             </ul>
           </section>
 
-          {/* Proyecto real */}
-          <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
-            <span className="nodo nodo-verde top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
-            <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] 2xl:gap-20">
-              <div>
-                <h3 className="text-xl font-semibold text-verde">Johana Sánchez Nails</h3>
-                <p className="mt-1 text-sm text-bruma">Estudio de belleza</p>
-                <p className="mt-4 max-w-[34rem]">
-                  Sus clientas agendan sin llamar. Johana confirma las citas y cambia sus servicios desde su
-                  celular.
-                </p>
-                <a
-                  href={JOHANA_SERVICIOS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-verde px-6 py-3 font-semibold text-verde transition-colors hover:bg-verde hover:text-abismo"
-                >
-                  Ver la app en vivo
-                  <svg viewBox="0 0 16 16" className="size-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M6 3h7v7M13 3 4 12" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span className="sr-only"> (se abre en otra pestaña)</span>
-                </a>
-                <p className="mt-3 text-sm text-bruma">Abre sus servicios y precios reales.</p>
-              </div>
-              {/* Un solo celular grande que se desliza, con las pantallas reales (CelularJohana.tsx) */}
-              <CelularJohana />
-            </div>
-          </section>
-
-          {/* NODRA Agenda: el producto listo para usar (publicado el 2026-10-10) */}
-          <section className="relative pb-24 pl-12 md:pl-24">
+          {/* Nuestros productos (crítica 2026-10-28): apps propias de NODRA, listas para usar. NODRA Agenda es la
+              primera, no la única (Danny: "es una empresa de software"); las próximas se agregan aquí. */}
+          <section id="productos" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
-            <div className="agenda grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16 2xl:grid-cols-[1fr_18rem] 2xl:px-16">
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Nuestros productos</h2>
+            <p className="mt-3 max-w-[34rem] text-bruma">Apps propias de NODRA, listas para usar desde hoy.</p>
+            <div className="agenda mt-8 grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16 2xl:grid-cols-[1fr_18rem] 2xl:px-16">
               <div>
-                {/* La etiqueta "Disponible" va fuera del h2: adentro, Google y los lectores de pantalla leían
+                {/* La etiqueta "Disponible" va fuera del título: adentro, Google y los lectores de pantalla leían
                     "NODRA AgendaDisponible" (auditoría SEO 2026-10-24) */}
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h2 className="text-2xl font-semibold md:text-[2.25rem]">NODRA Agenda</h2>
+                  <h3 className="text-2xl font-semibold md:text-[2rem]">NODRA Agenda</h3>
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
                 </div>
                 <p className="mt-4 max-w-[36rem]">
@@ -192,103 +198,74 @@ export default function App() {
             </div>
           </section>
 
-          {/* Proceso */}
-          <section className="relative pb-24 pl-12 md:pl-24">
-            <span className="nodo top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo trabajamos</h2>
-            {/* 4 nodos que se encienden al bajar (Pasos.tsx) */}
-            <Pasos />
-          </section>
-
-          {/* Seguridad */}
-          <section className="relative pb-24 pl-12 md:pl-24">
+          {/* Proyecto real */}
+          <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
-            {/* En computador: título a la izquierda y lista a la derecha, para no dejar media pantalla vacía */}
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
+            <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] 2xl:gap-20">
               <div>
-                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
-                <p className="mt-4 max-w-[40rem] text-bruma">
-                  {/* "Formación" y no "ingeniería": Danny aún estudia la ingeniería (textos honestos, regla 8.6) */}
-                  NODRA nace de la formación en ciberseguridad.
+                <h3 className="text-xl font-semibold text-verde">Johana Sánchez Nails</h3>
+                <p className="mt-1 text-sm text-bruma">Estudio de belleza</p>
+                <p className="mt-4 max-w-[34rem]">
+                  Sus clientas agendan sin llamar. Johana confirma las citas y cambia sus servicios desde su
+                  celular.
                 </p>
-                {/* Ilustración hecha con Gemini (2026-10-14): escudo y candado sobre la nube, con los colores de la marca.
-                    Dos tamaños: el celular baja la de 400 px (22 KB) y el computador la de 720 px (48 KB) */}
-                <img
-                  src="/img/seguridad-400.webp"
-                  srcSet="/img/seguridad-400.webp 400w, /img/seguridad-720.webp 720w"
-                  sizes="(min-width: 1536px) 28rem, (min-width: 1024px) 22rem, 18rem"
-                  width={720}
-                  height={720}
-                  loading="lazy"
-                  decoding="async"
-                  alt=""
-                  className="imagen-fundida mt-8 w-full max-w-[18rem] lg:max-w-[22rem] 2xl:max-w-[28rem]"
-                />
-              </div>
-              <div>
-            <ul className="grid max-w-[44rem] gap-5 lg:pt-2 2xl:max-w-[50rem] 2xl:gap-7 2xl:text-lg">
-              {seguridad.map((t) => (
-                <li key={t} className="flex gap-4">
-                  <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
-                    <path
-                      d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6L7.3 12l1.4-1.4 2.1 2.1 4.5-4.5 1.4 1.4-5.9 6Z"
-                      fill="currentColor"
-                    />
+                <a
+                  href={JOHANA_SERVICIOS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-verde px-6 py-3 font-semibold text-verde transition-colors hover:bg-verde hover:text-abismo"
+                >
+                  Ver la app en vivo
+                  <svg viewBox="0 0 16 16" className="size-4" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M6 3h7v7M13 3 4 12" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>{t}</span>
-                </li>
-              ))}
-              <li className="flex gap-4">
-                <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
-                  <path
-                    d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6L7.3 12l1.4-1.4 2.1 2.1 4.5-4.5 1.4 1.4-5.9 6Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                <span>
-                  Conexión cifrada y revisión contra las fallas más comunes de la web, el{' '}
-                  <a
-                    href="https://owasp.org/www-project-top-ten/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-cian underline underline-offset-4 hover:decoration-2"
-                  >
-                    OWASP Top 10
-                    <span className="sr-only"> (se abre en otra pestaña)</span>
-                  </a>
-                  .
-                </span>
-              </li>
-            </ul>
-                <p className="mt-8 max-w-[44rem] border-t border-linea pt-5 text-bruma">
-                  <span className="font-semibold text-oro">Próximo servicio: Cloud Security.</span> Protegeremos la nube
-                  donde viven los datos de tu empresa.
-                </p>
+                  <span className="sr-only"> (se abre en otra pestaña)</span>
+                </a>
+                <p className="mt-3 text-sm text-bruma">Abre sus servicios y precios reales.</p>
               </div>
+              {/* Un solo celular grande que se desliza, con las pantallas reales (CelularJohana.tsx) */}
+              <CelularJohana />
             </div>
           </section>
 
           {/* Quién está detrás (auditoría SEO 2026-10-24): Google y las IA confían más cuando se ve una persona real
-              con su formación. Solo datos verdaderos, revisados por Danny; la Policía no va por decisión suya */}
+              con su formación. Solo datos verdaderos, revisados por Danny; la Policía no va por decisión suya.
+              Crítica 2026-10-28: sube justo después del trabajo real y lleva la foto de Danny (real, recortada para
+              quitar el carnet de la Policía) junto al botón de WhatsApp: la gente le compra a una persona. */}
           <section id="quienes-somos" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
-              <h2 className="text-2xl font-semibold md:text-[2.25rem]">Quién está detrás de NODRA</h2>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
+              <div className="flex items-center gap-5 lg:flex-col lg:items-start">
+                <img
+                  src="/img/danny-360.webp"
+                  width={360}
+                  height={360}
+                  loading="lazy"
+                  alt="Danny Javier Díaz, fundador de NODRA"
+                  className="foto-danny size-24 shrink-0 rounded-full md:size-32 lg:size-44 2xl:size-52"
+                />
+                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Quién está detrás de NODRA</h2>
+              </div>
               <div className="max-w-[44rem] 2xl:max-w-[50rem] 2xl:text-lg">
                 <p>
                   Soy <strong>Danny Javier Díaz</strong>, de Ibagué. Fundé NODRA en 2026 para que los negocios del Tolima
                   tengan apps hechas a su medida, sin pagar precios de agencia grande.
                 </p>
+                <p className="mt-4">Cuando escribes a NODRA, te respondo yo.</p>
+                <div className="mt-6">
+                  <BotonWhatsApp />
+                </div>
                 {/* El resto va plegado para no llenar la portada de texto (pedido de Danny). Mismo desplegable que las
                     preguntas: funciona sin JavaScript y Google igual lo lee porque está en el HTML */}
-                <details className="pregunta mt-5 border-b border-linea">
+                <details className="pregunta mt-6 border-b border-linea">
                   <summary>Mi formación y cómo trabajo</summary>
                   <div className="grid gap-4 pb-5 text-bruma">
                     <p>
                       Me formé como Técnico en Sistemas y Tecnólogo en Análisis y Desarrollo de Software en el SENA, y hoy
                       estudio Ingeniería en Seguridad de la Información en el Politécnico Grancolombiano. Por eso cada app
                       que entrego nace con la seguridad pensada desde el primer día: cada negocio en su propio espacio en la
-                      nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web.
+                      nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web (el OWASP Top 10).
                     </p>
                     <p>
                       Trabajo directo contigo: me escribes por WhatsApp, te explico todo en palabras sencillas y no
@@ -298,6 +275,40 @@ export default function App() {
                   </div>
                 </details>
               </div>
+            </div>
+          </section>
+
+          {/* Proceso */}
+          <section className="relative pb-24 pl-12 md:pl-24">
+            <span className="nodo top-2" aria-hidden="true" />
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo trabajamos</h2>
+            {/* 4 nodos que se encienden al bajar (Pasos.tsx) */}
+            <Pasos />
+          </section>
+
+          {/* Seguridad (crítica 2026-10-28): en palabras del dueño del negocio. Sin "OWASP" (pasó a "Mi formación"),
+              sin el anuncio de Cloud Security (es un servicio futuro para empresas, confundía aquí) y sin la imagen del
+              candado, que se veía genérica y dejaba media sección vacía. */}
+          <section className="relative pb-24 pl-12 md:pl-24">
+            <span className="nodo nodo-verde top-2" aria-hidden="true" />
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
+              <div>
+                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
+                <p className="mt-4 max-w-[40rem] text-lg">Solo tú ves los datos de tus clientes.</p>
+              </div>
+              <ul className="grid max-w-[44rem] gap-5 lg:pt-2 2xl:max-w-[50rem] 2xl:gap-7 2xl:text-lg">
+                {seguridad.map((t) => (
+                  <li key={t} className="flex gap-4">
+                    <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
+                      <path
+                        d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 13.6L7.3 12l1.4-1.4 2.1 2.1 4.5-4.5 1.4 1.4-5.9 6Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -334,11 +345,13 @@ export default function App() {
             <div className="grid items-center gap-8 lg:grid-cols-[1fr_17rem] 2xl:grid-cols-[1fr_24rem]">
               {/* En celular y tableta va centrado (cierre de la página); en computador, a la izquierda junto al escudo */}
               <div className="text-center lg:text-left">
+                {/* Crítica 2026-10-28: el cliente casi nunca llega con "una idea", llega con un problema. Se le pregunta
+                    por su negocio y se le dice qué recibe (precio y fecha), sin prometer nada que no esté medido. */}
                 <h2 className="mx-auto max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl lg:mx-0 2xl:max-w-[44rem] 2xl:text-6xl">
-                  ¿Tienes una idea para tu negocio?
+                  Cuéntanos cómo funciona tu negocio hoy.
                 </h2>
                 <p className="mx-auto mt-5 max-w-[34rem] text-lg text-bruma lg:mx-0">
-                  Cuéntanosla por WhatsApp y te respondemos con una propuesta.
+                  Te respondemos con una propuesta sin costo: qué te sirve, cuánto cuesta y cuándo está lista.
                 </p>
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 lg:justify-start">
                   <BotonWhatsApp grande />
@@ -350,15 +363,19 @@ export default function App() {
                   </a>
                 </div>
               </div>
-              {/* El mismo escudo del inicio (ya está en caché, no descarga nada nuevo), solo en computador */}
-              <img
-                src="/img/escudo-560.webp"
-                width={480}
-                height={480}
-                loading="lazy"
-                alt=""
-                className="escudo hidden lg:block"
-              />
+              {/* Cierre con la cara de Danny (crítica 2026-10-28): el escudo borroso de antes parecía un error de carga.
+                  Es la misma foto de "Quién está detrás" (ya está en caché). Solo en computador. */}
+              <figure className="hidden text-center lg:block">
+                <img
+                  src="/img/danny-360.webp"
+                  width={360}
+                  height={360}
+                  loading="lazy"
+                  alt=""
+                  className="foto-danny mx-auto size-48 rounded-full 2xl:size-60"
+                />
+                <figcaption className="mt-4 text-bruma">Te responde Danny, fundador de NODRA</figcaption>
+              </figure>
             </div>
           </section>
         </div>
