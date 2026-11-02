@@ -9,6 +9,9 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   que no hace falta el aviso de consentimiento.
 - La CSP ahora permite el script de Cloudflare. La política de privacidad lo explica (vigencia 2 de noviembre) y el
   pie dice "no usa cookies ni rastreadores de publicidad", que es lo exacto.
+- PUBLICADO con el OK de Danny y verificado en vivo: contador en las páginas, sin errores de CSP, encabezados activos.
+  PageSpeed Insights con el contador puesto: **100/100/100/100 en celular y en computador** (celular: carga 0,9 s,
+  bloqueo 0 ms). El contador no le quitó velocidad.
 
 ## 2026-10-28 (noche): portada más cálida y ordenada como empresa de software (crítica de diseño)
 - Crítica con la skill impeccable: 26/40. Faltaba gente real, todo se veía "de hackers" y las ofertas estaban revueltas.
