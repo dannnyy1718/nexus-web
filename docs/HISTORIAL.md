@@ -6,6 +6,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Danny: "es muy poco" → se probó subir todo, pero decidió "deja los precios anteriores, pero el mínimo que sea un
   millón". Precios (en `negocio.ts`, `llms.txt` y la ficha para Google): página web $1.000.000 a $1.500.000; tienda
   en línea o agenda a la medida $1.800.000 a $3.500.000; app a la medida desde $3.500.000.
+- **Publicado** el 2-nov con OK de Danny junto con la página nueva `/paginas-web-ibague`, y verificado en vivo: la
+  página responde, precios con mínimo de $1.000.000 en portada, página nueva, ficha y `llms.txt`; ya no aparece
+  $800.000 ni "Plan Gratis hasta 20 citas"; 4 encabezados de seguridad. Lighthouse celular de la página nueva en vivo:
+  98 / 100 / 100 / 100. Falta: Danny pide su indexación en Search Console.
 - El precio ya no va en el primer párrafo de `/paginas-web-ibague` (Danny: "solo quita el precio de ese texto"). Sí
   sigue en el título y la descripción de Google (con los precios nuevos) y en las secciones de precio.
 
