@@ -2,6 +2,14 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-02: contador de visitas sin cookies (Cloudflare Web Analytics)
+- Danny preguntó cómo saber cuántas personas entran a la página. Se creó la cuenta gratis de Cloudflare
+  (con el Gmail avisos.nexusagenda) y se activó Web Analytics para nodrasoft.com sin tocar el DNS de Namecheap.
+- El contador va al final de las 5 páginas (inicio, app de citas, privacidad, términos y 404). No usa cookies, así
+  que no hace falta el aviso de consentimiento.
+- La CSP ahora permite el script de Cloudflare. La política de privacidad lo explica (vigencia 2 de noviembre) y el
+  pie dice "no usa cookies ni rastreadores de publicidad", que es lo exacto.
+
 ## 2026-10-28 (noche): portada más cálida y ordenada como empresa de software (crítica de diseño)
 - Crítica con la skill impeccable: 26/40. Faltaba gente real, todo se veía "de hackers" y las ofertas estaban revueltas.
 - El inicio ahora muestra trabajo real: dos celulares (app de Johana y NODRA Agenda) a los lados del escudo, solo en

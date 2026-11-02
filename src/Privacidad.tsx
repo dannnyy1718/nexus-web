@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { CORREO, CORREO_URL, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
 
 // Aviso de privacidad según la Ley 1581 de 2012 y el Decreto 1377 de 2013 (Colombia)
-const VIGENCIA = '24 de octubre de 2026'
+const VIGENCIA = '2 de noviembre de 2026'
 
 const derechos = [
   'Conocer, actualizar y corregir tus datos.',
@@ -50,8 +50,23 @@ export default function Privacidad() {
 
         <Seccion titulo="Qué datos recoge esta página">
           <p>
-            Ninguno. Esta página no usa cookies, no tiene formularios y no usa herramientas de estadísticas ni
-            rastreadores. Las fuentes y las imágenes se cargan desde esta misma página, no desde otros sitios.
+            Ninguno que te identifique. Esta página no usa cookies, no tiene formularios y no tiene rastreadores
+            de publicidad. Las fuentes y las imágenes se cargan desde esta misma página, no desde otros sitios.
+          </p>
+          <p>
+            Para saber cuántas personas nos visitan usamos Cloudflare Web Analytics, que cuenta visitas sin
+            cookies y sin seguirte entre sitios. Solo vemos totales: cuántas visitas hubo, qué páginas se vieron,
+            de qué sitio llegaron (por ejemplo Google o Facebook), el país y si fue desde celular o computador.
+            Puedes leer cómo maneja los datos en la{' '}
+            <a
+              href="https://www.cloudflare.com/privacypolicy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-niebla hover:text-verde"
+            >
+              política de privacidad de Cloudflare
+            </a>
+            .
           </p>
           <p>
             Nuestro proveedor de alojamiento (Firebase Hosting, de Google) puede registrar datos técnicos de

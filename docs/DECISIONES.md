@@ -151,3 +151,15 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Consecuencias:** cada producto nuevo de NODRA se agrega en "Nuestros productos" y cada cliente terminado (con su
   permiso) en "Un proyecto real" (cambiar el título a plural cuando haya dos). La foto de Danny es real y no debe
   mostrar el carnet ni el cordón de la Policía.
+
+## 27. Contar visitas con Cloudflare Web Analytics, no con Google Analytics (2026-11-02)
+- **Qué:** un script pequeño de Cloudflare (`beacon.min.js`) al final de las 5 páginas HTML. La cuenta es la de
+  `avisos.nexusagenda@gmail.com` en dash.cloudflare.com → Observability → Analytics → Web analytics → nodrasoft.com.
+  El DNS sigue en Namecheap: no hizo falta pasar el dominio a Cloudflare.
+- **Por qué:** Danny quería saber cuántas personas entran. Search Console solo cuenta a quien llega desde Google y
+  deja por fuera WhatsApp, Facebook, TikTok y el QR. Google Analytics usa cookies y obligaría a poner un aviso de
+  consentimiento (regla 8.5). Cloudflare cuenta sin cookies ni huella del visitante, es gratis y pesa muy poco.
+- **Consecuencias:** la CSP permite `static.cloudflareinsights.com` (script) y `cloudflareinsights.com` (envío del
+  conteo). La política de privacidad lo nombra. Cuenta visitas, no personas: una misma persona en dos días son dos
+  visitas. Los bloqueadores de anuncios a veces lo frenan, así que la cifra real puede ser un poco mayor.
+  Para saber qué publicación trae gente, usar enlaces con etiqueta: `nodrasoft.com/?ref=tiktok`.

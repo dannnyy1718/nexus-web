@@ -112,3 +112,14 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
   `v=spf1 include:spf.efwd.registrar-servers.com ~all`. Revisar: `https://dns.google/resolve?name=nodrasoft.com&type=MX`.
 - **Si se cambian los servidores de nombres** (deja de ser "DNS básico de Namecheap"), el reenvío deja de funcionar.
 - **Primero mirar Spam** en avisos.nexusagenda@gmail.com.
+
+## 19. Cloudflare Web Analytics no muestra visitas
+- **Síntoma:** el panel de Cloudflare (Web analytics → nodrasoft.com) sigue en cero horas después de publicar.
+- **Causas y arreglo:**
+  1. Los datos tardan unos minutos en aparecer. Esperar 10-15 minutos y recargar.
+  2. La CSP de `firebase.json` bloquea el script. En la página abrir F12 → Consola: si dice "Content Security
+     Policy", revisar que `script-src` tenga `https://static.cloudflareinsights.com` y `connect-src` tenga
+     `https://cloudflareinsights.com`.
+  3. El script no quedó en el HTML publicado. Ver el código fuente (Ctrl+U) y buscar `cloudflareinsights`.
+     Debe estar antes de `</body>` en las 5 páginas.
+  4. Tu propio navegador lo bloquea (Brave, uBlock, Kaspersky). Probar desde el celular con datos.
