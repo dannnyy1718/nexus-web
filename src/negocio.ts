@@ -14,31 +14,34 @@ export const DEPARTAMENTO = 'Tolima'
   - Competencia en Ibagué (sus webs, nov-2026): planes básicos $389.000-$490.000, intermedios $790.000-$960.000,
     avanzados $1.490.000-$1.600.000, casi siempre con plantilla y sin garantía. NODRA no compite por ser el más
     barato: diseño propio, panel para el dueño, seguridad y 6 meses de garantía.
+  - 2026-11-02 (misma noche): Danny: "es muy poco, no debemos trabajar con precios tan bajos". Se subieron al rango
+    medio-alto del mercado nacional (web de negocio $1-3 millones según GoDaddy; web corporativa $4-8 millones según
+    Cangrejo Digital), no al de las plantillas de Ibagué. CORISOC ($2.600.000) fue precio de primer cliente.
   OJO (Ley 1480): un precio anunciado obliga. Si cambian, cambiarlos aquí (la página, la ficha para Google y la
   pregunta frecuente lo leen de aquí) y en public/llms.txt, el mismo día.
 */
 export const PRECIOS = [
   {
     tipo: 'Página web para tu negocio',
-    desde: 800_000,
-    hasta: 1_500_000,
+    desde: 1_500_000,
+    hasta: 3_000_000,
     incluye: 'Tus servicios, fotos, ubicación, horario y botón de WhatsApp. Lista para celular y para salir en Google.',
   },
   {
     tipo: 'Tienda en línea o agenda a tu medida',
-    desde: 1_800_000,
-    hasta: 3_500_000,
+    desde: 3_500_000,
+    hasta: 7_000_000,
     incluye: 'Lo de la página web, más catálogo o citas y un panel para cambiar precios, fotos y horarios desde tu celular.',
   },
   {
     tipo: 'App a la medida',
-    desde: 3_500_000,
+    desde: 8_000_000,
     hasta: null,
     incluye: 'Cuentas para tus clientes y empleados, permisos por persona y los procesos de tu negocio. Se hace por etapas.',
   },
 ] as const
 
-/** "$800.000 a $1.500.000" o "Desde $3.500.000" */
+/** "$1.500.000 a $3.000.000" o "Desde $8.000.000" */
 export const rangoPrecio = (p: (typeof PRECIOS)[number]) => {
   const f = (n: number) => `$${n.toLocaleString('es-CO')}`
   return p.hasta ? `${f(p.desde)} a ${f(p.hasta)}` : `Desde ${f(p.desde)}`

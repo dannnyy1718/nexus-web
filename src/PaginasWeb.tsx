@@ -37,15 +37,16 @@ export default function PaginasWeb() {
         </a>
 
         <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-5xl">Diseño de páginas web en Ibagué</h1>
-        {/* Respuesta directa en el primer párrafo (40-60 palabras): es lo que Google y las IA citan */}
+        {/* Respuesta directa en el primer párrafo: es lo que Google y las IA citan. Sin precio aquí (Danny 2026-11-02:
+            que no sea lo primero que se ve); el precio va en su sección. */}
         <p className="mt-5 max-w-[42rem] text-lg">
           En NODRA hacemos páginas web para negocios de Ibagué y el Tolima: diseño propio, listas para el celular y para
-          salir en Google, con botón de WhatsApp y 6 meses de garantía. Cuestan de {rangoPrecio(PRECIO_PAGINA_WEB)}.
+          salir en Google, con botón de WhatsApp y 6 meses de garantía.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
           <BotonWhatsApp mensaje={MENSAJES.paginasWeb} />
           <a href="#precio" className="enlace-flecha">
-            Ver qué cambia el precio
+            Ver precio y qué incluye
           </a>
         </div>
         <p className="mt-4 text-sm text-bruma">Te responde Danny, el fundador · {HORARIO_VISIBLE}</p>
