@@ -9,7 +9,7 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Publicado** el 2-nov con OK de Danny junto con la página nueva `/paginas-web-ibague`, y verificado en vivo: la
   página responde, precios con mínimo de $1.000.000 en portada, página nueva, ficha y `llms.txt`; ya no aparece
   $800.000 ni "Plan Gratis hasta 20 citas"; 4 encabezados de seguridad. Lighthouse celular de la página nueva en vivo:
-  98 / 100 / 100 / 100. Falta: Danny pide su indexación en Search Console.
+  98 / 100 / 100 / 100. Danny solicitó su indexación en Search Console el mismo 2-nov.
 - El precio ya no va en el primer párrafo de `/paginas-web-ibague` (Danny: "solo quita el precio de ese texto"). Sí
   sigue en el título y la descripción de Google (con los precios nuevos) y en las secciones de precio.
 
