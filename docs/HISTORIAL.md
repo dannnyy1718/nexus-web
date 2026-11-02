@@ -2,18 +2,17 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
-## 2026-11-02 (noche): precios más altos y sin precio al comienzo
-- Danny: "es muy poco, no debemos trabajar con precios tan bajos" y "quita el precio al comienzo".
-- Precios nuevos (en `negocio.ts`, `llms.txt` y la ficha para Google): página web $1.500.000 a $3.000.000; tienda
-  en línea o agenda a la medida $3.500.000 a $7.000.000; app a la medida desde $8.000.000. Razón en el comentario de
-  `PRECIOS`.
+## 2026-11-02 (noche): mínimo de $1.000.000 y sin precio al comienzo
+- Danny: "es muy poco" → se probó subir todo, pero decidió "deja los precios anteriores, pero el mínimo que sea un
+  millón". Precios (en `negocio.ts`, `llms.txt` y la ficha para Google): página web $1.000.000 a $1.500.000; tienda
+  en línea o agenda a la medida $1.800.000 a $3.500.000; app a la medida desde $3.500.000.
 - El precio ya no va en el primer párrafo de `/paginas-web-ibague` (Danny: "solo quita el precio de ese texto"). Sí
   sigue en el título y la descripción de Google (con los precios nuevos) y en las secciones de precio.
 
 ## 2026-11-02: página nueva "Diseño de páginas web en Ibagué" (/paginas-web-ibague)
 - **Por qué:** semana 2 del estudio de la web: "diseño de páginas web Ibagué" es la búsqueda con la que sale primero
   la competencia, y la portada no competía por ella.
-- **Qué tiene:** respuesta directa arriba (qué hacemos, para quién, precio de $1.500.000 a $3.000.000), qué incluye
+- **Qué tiene:** respuesta directa arriba (qué hacemos, para quién; el precio se quitó de ahí después), qué incluye
   con el ejemplo tocable, precio con lo que lo cambia, **"Qué preguntar antes de contratar una página web"** (6
   preguntas con la respuesta de NODRA, sin nombrar a nadie), cómo trabajamos, el trabajo real de Johana, 6
   preguntas frecuentes y cierre con WhatsApp propio (`MENSAJES.paginasWeb`, anotar como "web-paginas").
@@ -32,8 +31,9 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   NODRA aún no entrega.
 - **Cambios:**
   1. Título de Google y H1: "Páginas web y apps para negocios en Ibagué".
-  2. Sección nueva **"Cuánto cuesta"** con rangos de referencia: página web $1.500.000 a $3.000.000; tienda en línea o
-     agenda a la medida $3.500.000 a $7.000.000; app a la medida desde $8.000.000. Plegado: qué cambia el precio y
+  2. Sección nueva **"Cuánto cuesta"** con rangos de referencia: página web $800.000 a $1.500.000 (esa noche el mínimo
+     subió a $1.000.000, ver arriba); tienda en línea o
+     agenda a la medida $1.800.000 a $3.500.000; app a la medida desde $3.500.000. Plegado: qué cambia el precio y
      qué se paga aparte. Los mismos precios en la ficha para Google (`priceSpecification`), la pregunta frecuente y
      `llms.txt`. Cómo se calcularon: comentario de `PRECIOS` en `src/negocio.ts`.
   3. "Qué hacemos" con un 4.º ejemplo tocable: **Páginas web** (`DemoPagina`). La IA pasó a "Asistentes con
