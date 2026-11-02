@@ -280,14 +280,30 @@ export default function App() {
           <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
-            <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] 2xl:gap-20">
+            {/* Pedido de Danny 2026-11-02 (captura en PC): el texto se veía pequeño y flotando en medio de mucho espacio
+                vacío junto al celular. Ahora va arriba (items-start), con letra más grande en computador y la lista de
+                lo que hace la app (las mismas pestañas reales que se ven en el celular de al lado). */}
+            <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:pt-6 2xl:gap-20">
               <div>
-                <h3 className="text-xl font-semibold text-verde">Johana Sánchez Nails</h3>
-                <p className="mt-1 text-sm text-bruma">Estudio de belleza</p>
-                <p className="mt-4 max-w-[34rem]">
+                <h3 className="text-xl font-semibold text-verde lg:text-3xl">Johana Sánchez Nails</h3>
+                <p className="mt-1 text-sm text-bruma lg:text-base">Estudio de belleza en Ibagué</p>
+                <p className="mt-4 max-w-[34rem] lg:text-xl">
                   Sus clientas agendan sin llamar. Johana confirma las citas y cambia sus servicios desde su
                   celular.
                 </p>
+                <ul className="mt-6 grid max-w-[34rem] gap-3 lg:text-lg">
+                  {[
+                    'Inicio con su marca, sus servicios y sus precios.',
+                    'Agendar: la clienta elige servicio, día y hora libre.',
+                    'Galería con fotos de sus trabajos.',
+                    'Panel privado para confirmar citas y cambiar servicios.',
+                  ].map((t) => (
+                    <li key={t} className="flex gap-3">
+                      <span className="mt-2.5 size-2 shrink-0 rounded-full bg-verde" aria-hidden="true" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
                 <a
                   href={JOHANA_SERVICIOS}
                   target="_blank"
