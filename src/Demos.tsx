@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-// Tres ejemplos pequeños que se pueden tocar en "Qué hacemos" (pedido de Danny, 2026-10-21: menos texto,
+// Ejemplos pequeños que se pueden tocar en "Qué hacemos" (pedido de Danny, 2026-10-21: menos texto,
 // más cosas para ver y tocar). Están hechos con HTML y CSS, sin imágenes: no pesan nada y no frenan la página.
 // Son ejemplos inventados (productos, horarios y respuesta), por eso cada uno dice "Ejemplo" arriba.
 
@@ -66,6 +66,38 @@ const horas = [
   { hora: '2:00 p. m.', libre: false },
   { hora: '4:00 p. m.', libre: true },
 ]
+
+// Página web (estudio de la web 2026-11-02): lo que más busca un negocio de Ibagué es "página web". El ejemplo muestra
+// lo que la gente hace en la página de un negocio: ver si está abierto, cómo llegar y escribirle.
+const ACCIONES_PAGINA = {
+  llegar: 'Se abre Google Maps con la ruta hasta tu local.',
+  escribir: 'Se abre WhatsApp con el mensaje ya escrito para ti.',
+} as const
+
+export function DemoPagina() {
+  const [accion, setAccion] = useState<keyof typeof ACCIONES_PAGINA | null>(null)
+  return (
+    <Marco titulo="Tu página">
+      <div className="demo-fila">
+        <span className="min-w-0">
+          <span className="block truncate text-niebla">Panadería del Barrio</span>
+          <span className="text-verde">Abierto hoy · 6 a. m. a 8 p. m.</span>
+        </span>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button type="button" className="demo-boton" aria-pressed={accion === 'llegar'} onClick={() => setAccion('llegar')}>
+          Cómo llegar
+        </button>
+        <button type="button" className="demo-boton" aria-pressed={accion === 'escribir'} onClick={() => setAccion('escribir')}>
+          Escribir
+        </button>
+      </div>
+      <p className="demo-pie" aria-live="polite">
+        {accion ? ACCIONES_PAGINA[accion] : 'Toca un botón, como lo haría tu cliente.'}
+      </p>
+    </Marco>
+  )
+}
 
 export function DemoCitas() {
   const [elegida, setElegida] = useState<string | null>(null)

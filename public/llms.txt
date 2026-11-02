@@ -4,11 +4,20 @@
 
 ## Servicios
 
-- Apps móviles y web a la medida: una sola app multiplataforma que funciona en Android, iPhone y computador.
+- Páginas web para negocios: servicios, fotos, ubicación, horario y botón de WhatsApp, listas para celular y para salir en Google.
 - Tiendas en línea: catálogo, carrito, pedidos por WhatsApp o pago en línea, y panel para manejar productos e inventario.
 - Sistemas de citas y reservas: los clientes ven horarios libres y agendan solos; el negocio confirma desde el celular.
-- Apps con inteligencia artificial: asistentes que responden a clientes, leen fotos de facturas o escriben descripciones de productos.
-- Cloud Security (seguridad en la nube): próximamente.
+- Apps móviles y web a la medida: una sola app que funciona en Android, iPhone y computador, con cuentas y permisos.
+- En preparación (todavía no se ofrecen): asistentes con inteligencia artificial y Cloud Security (seguridad en la nube).
+
+## Precios de referencia (pesos colombianos, noviembre de 2026)
+
+- Página web para un negocio: $800.000 a $1.500.000.
+- Tienda en línea o agenda de citas a la medida: $1.800.000 a $3.500.000.
+- App a la medida: desde $3.500.000, por etapas.
+- Cambian el precio: número de páginas, formularios especiales, pagos en línea, cuentas de usuario y si NODRA escribe los textos.
+- Aparte: dominio ($60.000 a $120.000 al año), mantenimiento opcional (desde $100.000 al mes) y tiendas de apps si se publican ahí.
+- El precio exacto va por escrito en una propuesta sin costo. NODRA Agenda (app de citas) tiene plan gratis.
 
 ## Cómo trabaja
 

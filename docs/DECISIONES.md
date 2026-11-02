@@ -163,3 +163,24 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   conteo). La política de privacidad lo nombra. Cuenta visitas, no personas: una misma persona en dos días son dos
   visitas. Los bloqueadores de anuncios a veces lo frenan, así que la cifra real puede ser un poco mayor.
   Para saber qué publicación trae gente, usar enlaces con etiqueta: `nodrasoft.com/?ref=tiktok`.
+
+## 28. Precios publicados como rangos de referencia (2026-11-02)
+- **Qué:** sección "Cuánto cuesta" con 3 rangos (página web, tienda/agenda a la medida, app a la medida) y lo que
+  cambia el precio; el precio exacto va en la propuesta escrita.
+- **Por qué:** "depende" espantaba a quien compara; la competencia de Ibagué publica "desde $389.000". Danny pidió
+  rangos "desde-hasta" según lo que diga la skill de marketing. Se calcularon con el proyecto real de CORISOC
+  ($2.600.000 con pagos en línea y panel) y los planes publicados de la competencia (ver `PRECIOS` en `negocio.ts`).
+- **Consecuencias:** un precio anunciado obliga (Ley 1480): si cambian, cambiarlos el mismo día en `negocio.ts`
+  (página, ficha y pregunta frecuente) y en `public/llms.txt`. Una cotización nunca puede quedar por debajo del
+  rango anunciado sin explicar por qué (por ejemplo, un descuento con fecha).
+
+## 29. La IA se anuncia como "En preparación" (2026-11-02)
+- **Qué:** la tarjeta de IA dice "En preparación" y ofrece "Avísame cuando esté listo"; la IA salió del título, del
+  H1, de la ficha para Google y de los servicios de `llms.txt`.
+- **Por qué:** NODRA todavía no ha entregado un asistente con IA (Danny) y lo que se anuncia como servicio obliga.
+- **Consecuencias:** cuando haya un primer asistente entregado, volver a ponerla como servicio, con su precio.
+
+## 30. Un mensaje de WhatsApp distinto por botón (2026-11-02)
+- **Qué:** `MENSAJES` en `Marco.tsx`; la tabla para anotar de dónde vino cada cliente está en `docs/MEDIR.md`.
+- **Por qué:** medir qué parte de la página trae clientes sin cookies ni rastreadores (la página promete no usarlos).
+- **Consecuencias:** si se cambia un texto, cambiar también la tabla de `docs/MEDIR.md`.

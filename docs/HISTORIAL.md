@@ -2,6 +2,27 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-02: cambios del estudio de la web (precios, "páginas web", IA en preparación)
+- **Por qué:** estudio experto (`Empresa NEXUS/4 Estudios/2026-11-02-estudio-web-NODRA.md`): la página no usaba las
+  palabras que busca la gente ("páginas web"), no mostraba precios (la competencia de Ibagué sí) y anunciaba IA que
+  NODRA aún no entrega.
+- **Cambios:**
+  1. Título de Google y H1: "Páginas web y apps para negocios en Ibagué".
+  2. Sección nueva **"Cuánto cuesta"** con rangos de referencia: página web $800.000 a $1.500.000; tienda en línea o
+     agenda a la medida $1.800.000 a $3.500.000; app a la medida desde $3.500.000. Plegado: qué cambia el precio y
+     qué se paga aparte. Los mismos precios en la ficha para Google (`priceSpecification`), la pregunta frecuente y
+     `llms.txt`. Cómo se calcularon: comentario de `PRECIOS` en `src/negocio.ts`.
+  3. "Qué hacemos" con un 4.º ejemplo tocable: **Páginas web** (`DemoPagina`). La IA pasó a "Asistentes con
+     inteligencia artificial · En preparación", con "Avísame cuando esté listo" (decisión de Danny: todavía no se
+     hace nada con IA).
+  4. El **mapa bajó** de la 2.ª pantalla a después de "Un proyecto real" (Danny: "sí, bájalo").
+  5. Primera pantalla del celular: escudo de 216 a 160 px; ahora el botón de WhatsApp y "Ver precios" entran en
+     la primera pantalla, con "Te responde Danny, el fundador · horario" debajo.
+  6. Cada botón de WhatsApp manda un mensaje distinto para saber qué parte trae clientes (`docs/MEDIR.md`).
+  7. Cierre con oferta más concreta ("una conversación corta… sin compromiso, 6 meses de garantía"); sin "OWASP".
+- **Verificado** en la vista previa local a 360 px y 1280 px: nada se sale de lo ancho, 8 enlaces de WhatsApp con su
+  mensaje, ficha con los 3 precios. La página pasó de ~8.700 a ~10.700 px de alto en celular (precios + 4.º ejemplo).
+
 ## 2026-11-02: contador de visitas sin cookies (Cloudflare Web Analytics)
 - Danny preguntó cómo saber cuántas personas entran a la página. Se creó la cuenta gratis de Cloudflare
   (con el Gmail avisos.nexusagenda) y se activó Web Analytics para nodrasoft.com sin tocar el DNS de Namecheap.

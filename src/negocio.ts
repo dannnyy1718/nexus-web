@@ -5,6 +5,61 @@ export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
 export const DEPARTAMENTO = 'Tolima'
 
+/*
+  Precios de referencia (estudio de la web 2026-11-02, docs/DECISIONES.md). Por qué rangos y no un precio fijo: cada
+  proyecto cambia (formularios, pagos en línea, cuentas de usuario…), pero quien compara precios se va si no ve
+  ninguno; la competencia de Ibagué publica "desde $389.000". Cómo se calcularon:
+  - Proyecto real CORISOC (oct-2026): página completa + donaciones en línea + panel de actividades = $2.600.000
+    → cae dentro de "Tienda en línea o agenda a tu medida".
+  - Competencia en Ibagué (sus webs, nov-2026): planes básicos $389.000-$490.000, intermedios $790.000-$960.000,
+    avanzados $1.490.000-$1.600.000, casi siempre con plantilla y sin garantía. NODRA no compite por ser el más
+    barato: diseño propio, panel para el dueño, seguridad y 6 meses de garantía.
+  OJO (Ley 1480): un precio anunciado obliga. Si cambian, cambiarlos aquí (la página, la ficha para Google y la
+  pregunta frecuente lo leen de aquí) y en public/llms.txt, el mismo día.
+*/
+export const PRECIOS = [
+  {
+    tipo: 'Página web para tu negocio',
+    desde: 800_000,
+    hasta: 1_500_000,
+    incluye: 'Tus servicios, fotos, ubicación, horario y botón de WhatsApp. Lista para celular y para salir en Google.',
+  },
+  {
+    tipo: 'Tienda en línea o agenda a tu medida',
+    desde: 1_800_000,
+    hasta: 3_500_000,
+    incluye: 'Lo de la página web, más catálogo o citas y un panel para cambiar precios, fotos y horarios desde tu celular.',
+  },
+  {
+    tipo: 'App a la medida',
+    desde: 3_500_000,
+    hasta: null,
+    incluye: 'Cuentas para tus clientes y empleados, permisos por persona y los procesos de tu negocio. Se hace por etapas.',
+  },
+] as const
+
+/** "$800.000 a $1.500.000" o "Desde $3.500.000" */
+export const rangoPrecio = (p: (typeof PRECIOS)[number]) => {
+  const f = (n: number) => `$${n.toLocaleString('es-CO')}`
+  return p.hasta ? `${f(p.desde)} a ${f(p.hasta)}` : `Desde ${f(p.desde)}`
+}
+
+// Lo que mueve el precio dentro del rango, en palabras del dueño del negocio
+export const QUE_CAMBIA_EL_PRECIO = [
+  'Cuántas páginas o pantallas tiene.',
+  'Formularios especiales (varios pasos, subir fotos o archivos). El de contacto va incluido.',
+  'Pagos en línea con tarjeta, PSE o Nequi. La pasarela cobra aparte su comisión por cada venta.',
+  'Cuentas de usuario y permisos (clientes, empleados, administrador).',
+  'Si escribimos los textos y preparamos las fotos por ti.',
+]
+
+// Costos que no son de NODRA: se pagan directo a cada empresa y se dicen antes de empezar (propuesta clara)
+export const COSTOS_APARTE = [
+  'Dominio propio (tunegocio.com): de $60.000 a $120.000 al año.',
+  'Mantenimiento opcional: desde $100.000 al mes (revisión, copias de seguridad y actualizaciones).',
+  'Solo si la app va a las tiendas: Google Play cobra USD 25 una vez y Apple USD 99 al año.',
+]
+
 export const preguntas = [
   {
     pregunta: '¿Dónde está NODRA?',
@@ -12,21 +67,20 @@ export const preguntas = [
       'NODRA es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Nos contactas por WhatsApp.',
   },
   {
-    pregunta: '¿Qué tipo de apps hacen?',
+    pregunta: '¿Qué hacen?',
     respuesta:
-      'Apps móviles y web a la medida para negocios: tiendas en línea, sistemas de citas y reservas, paneles de administración y apps con inteligencia artificial.',
+      'Páginas web, tiendas en línea, sistemas de citas y reservas y apps a la medida con panel para manejar tu negocio, en Android, iPhone y computador. Los asistentes con inteligencia artificial están en preparación.',
   },
   // Crítica 2026-10-28: las dudas reales de quien no es técnico (¿hay que descargar algo?, ¿cuánto cuesta?).
-  // Respuestas honestas: el precio depende de cada app, así que no se publica una cifra que no existe.
+  // Precio (estudio 2026-11-02): ahora con los rangos de PRECIOS, no "depende" (quien compara se iba).
   {
     pregunta: '¿Funciona en Android y en iPhone? ¿Mis clientes tienen que descargar algo?',
     respuesta:
       'Funciona en Android, iPhone y computador. Tus clientes la abren desde un enlace, sin descargar nada; si quieren, la instalan en su celular con un toque.',
   },
   {
-    pregunta: '¿Cuánto cuesta una app?',
-    respuesta:
-      'Depende de lo que necesite tu negocio. Te enviamos una propuesta sin costo con el precio, lo que incluye y la fecha de entrega. NODRA Agenda tiene un plan gratis para empezar.',
+    pregunta: '¿Cuánto cuesta una página web o una app?',
+    respuesta: `${PRECIOS.map((p) => `${p.tipo}: ${rangoPrecio(p).toLowerCase()}`).join('. ')}. Lo que más cambia el precio: formularios especiales, pagos en línea, cuentas de usuario y cuántas páginas tiene. El precio exacto va por escrito en una propuesta sin costo, antes de empezar. NODRA Agenda tiene un plan gratis.`,
   },
   {
     pregunta: '¿Cómo se paga y qué garantía tiene?',
@@ -61,7 +115,7 @@ export function datosEstructurados() {
         '@type': 'WebPage',
         '@id': `${SITIO}/#webpage`,
         url: `${SITIO}/`,
-        name: 'NODRA Ibagué | Apps a la medida y seguridad en la nube',
+        name: 'Páginas web, tiendas en línea y apps en Ibagué | NODRA',
         inLanguage: 'es-CO',
         isPartOf: { '@id': `${SITIO}/#website` },
         about: NEGOCIO,
@@ -73,7 +127,7 @@ export function datosEstructurados() {
         name: 'NODRA',
         slogan: LEMA,
         description:
-          'Desarrollo de apps móviles y web a la medida en Ibagué, Tolima: tiendas en línea, citas y reservas y apps con inteligencia artificial, con reglas de acceso estrictas y conexión cifrada.',
+          'Páginas web, tiendas en línea, citas y reservas y apps a la medida en Ibagué, Tolima, con reglas de acceso estrictas y conexión cifrada.',
         url: `${SITIO}/`,
         logo: `${SITIO}/apple-touch-icon.png`,
         image: `${SITIO}/og.jpg`,
@@ -101,21 +155,26 @@ export function datosEstructurados() {
           closes: h.cierra,
         })),
         knowsAbout: [
+          'Diseño de páginas web',
           'Desarrollo de aplicaciones móviles',
           'Desarrollo web',
-          'Inteligencia artificial',
           'Ciberseguridad',
           'Seguridad en la nube',
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Servicios de NODRA',
-          itemListElement: [
-            'Apps móviles y web a la medida',
-            'Tiendas en línea',
-            'Sistemas de citas y reservas',
-            'Apps con inteligencia artificial',
-          ].map((nombre) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: nombre, provider: NEGOCIO } })),
+          // Con su rango de precio (estudio 2026-11-02): Google y las IA pueden responder "¿cuánto cuesta?"
+          itemListElement: PRECIOS.map((p) => ({
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: p.tipo, description: p.incluye, provider: NEGOCIO },
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              priceCurrency: 'COP',
+              minPrice: p.desde,
+              ...(p.hasta ? { maxPrice: p.hasta } : {}),
+            },
+          })),
         },
       },
       {

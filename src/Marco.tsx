@@ -4,10 +4,24 @@ export const LEMA = 'Tu negocio, conectado y seguro.'
 
 export const WHATSAPP_NUMERO = '573133655136'
 export const WHATSAPP_VISIBLE = '313 365 5136'
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-  // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
-  'Hola NODRA, tengo un negocio y quiero saber qué app me sirve.',
-)}`
+/** Enlace de WhatsApp con un mensaje ya escrito. */
+export const enlaceWhatsApp = (mensaje: string) => `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`
+
+// Un mensaje distinto por botón (estudio de la web 2026-11-02): así, al leer el primer mensaje en WhatsApp, se sabe
+// qué parte de la página trajo al cliente, SIN cookies ni rastreadores (la página promete no usarlos). Anotar en la
+// hoja de contactos de dónde vino cada uno. Si se cambia un texto, cambiarlo también en docs/MEDIR.md.
+export const MENSAJES = {
+  general: 'Hola NODRA, tengo un negocio y quiero saber qué me sirve.', // encabezado y páginas internas
+  inicio: 'Hola NODRA, vi su página y quiero saber qué le sirve a mi negocio.',
+  precios: 'Hola NODRA, vi los precios y quiero una propuesta para mi negocio.',
+  danny: 'Hola Danny, vi tu página y quiero hablar de mi negocio.',
+  pregunta: 'Hola NODRA, tengo una pregunta: ',
+  cierre: 'Hola NODRA, así funciona mi negocio hoy: ',
+  ia: 'Hola NODRA, me interesa el asistente con inteligencia artificial cuando esté listo.',
+} as const
+
+// Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
+export const WHATSAPP_URL = enlaceWhatsApp(MENSAJES.general)
 
 // Correo de contacto (2026-10-24). Es un reenvío de Namecheap ("Redirigir correo electrónico"):
 // lo que llega aquí cae en avisos.nexusagenda@gmail.com. Solo recibe; las respuestas salen desde ese Gmail.
@@ -33,10 +47,10 @@ export function IconoWhatsApp({ className = '' }: { className?: string }) {
   )
 }
 
-export function BotonWhatsApp({ grande = false }: { grande?: boolean }) {
+export function BotonWhatsApp({ grande = false, mensaje = MENSAJES.general }: { grande?: boolean; mensaje?: string }) {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={enlaceWhatsApp(mensaje)}
       target="_blank"
       rel="noopener noreferrer"
       className={`boton-3d boton-verde inline-flex items-center gap-3 rounded-full font-semibold text-abismo ${

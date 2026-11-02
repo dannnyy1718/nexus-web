@@ -1,10 +1,10 @@
-import { AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, Pie, WHATSAPP_URL, WHATSAPP_VISIBLE } from './Marco'
+import { AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, enlaceWhatsApp, HORARIO_VISIBLE, MENSAJES, Pie, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import CelularJohana from './CelularJohana'
-import { DemoCitas, DemoIA, DemoTienda } from './Demos'
+import { DemoCitas, DemoIA, DemoPagina, DemoTienda } from './Demos'
 import Pasos from './Pasos'
-import { preguntas } from './negocio'
+import { COSTOS_APARTE, PRECIOS, preguntas, QUE_CAMBIA_EL_PRECIO, rangoPrecio } from './negocio'
 
 // GIF transparente de 1 píxel: lo que baja el celular en vez de las capturas de la vitrina (ver la vitrina)
 const PIXEL_VACIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
@@ -13,7 +13,21 @@ const PIXEL_VACIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABA
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 
 // Cada servicio con un ejemplo que se puede tocar y una sola línea de texto (2026-10-21)
-const servicios = [
+// Estudio de la web 2026-11-02: "Páginas web" va primero (es lo que más busca un negocio de Ibagué) y la IA queda
+// "En preparación": NODRA todavía no ha entregado un asistente con IA y lo que se anuncia obliga (Ley 1480).
+type Servicio = {
+  titulo: string
+  texto: string
+  Demo: () => React.JSX.Element
+  enlace?: { href: string; texto: string; externo?: boolean }
+  enPreparacion?: boolean
+}
+const servicios: Servicio[] = [
+  {
+    titulo: 'Páginas web',
+    texto: 'Tu negocio en Google y en el celular de tus clientes: servicios, fotos, cómo llegar y WhatsApp.',
+    Demo: DemoPagina,
+  },
   {
     titulo: 'Tiendas en línea',
     texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde tu celular.',
@@ -26,9 +40,11 @@ const servicios = [
     enlace: { href: '#johana', texto: 'Mira un ejemplo real' },
   },
   {
-    titulo: 'Apps con inteligencia artificial',
-    texto: 'Un asistente que responde a tus clientes, con límite de gasto y sin exponer tus datos.',
+    titulo: 'Asistentes con inteligencia artificial',
+    texto: 'Estamos preparando un asistente que responda a tus clientes por ti, con límite de gasto y sin exponer tus datos.',
     Demo: DemoIA,
+    enlace: { href: enlaceWhatsApp(MENSAJES.ia), texto: 'Avísame cuando esté listo', externo: true },
+    enPreparacion: true,
   },
 ]
 
@@ -50,24 +66,28 @@ export default function App() {
             <span className="nodo nodo-lleno top-8 md:top-16" aria-hidden="true" />
             <div className="order-2 md:order-1">
               <h1 className="text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-5xl lg:text-[3.6rem] 2xl:text-[4.6rem]">
-                {/* SEO (2026-10-24): el H1 dice qué hacemos, para quién y dónde; Google lo usa para ubicarnos */}
-                Apps a la medida para negocios en Ibagué.
+                {/* SEO (2026-10-24): el H1 dice qué hacemos, para quién y dónde; Google lo usa para ubicarnos.
+                    Estudio 2026-11-02: "páginas web" primero, porque es lo que escribe en Google un negocio de Ibagué
+                    (la competencia que sale primero dice "Diseño de páginas web en Ibagué"). */}
+                Páginas web y apps para negocios en Ibagué.
               </h1>
               {/* Crítica de diseño 2026-10-28: NODRA es una empresa de software con varias apps (Danny), así que el
                   texto nombra lo que hacemos en palabras de cualquier negocio, sin "panel" ni "multiplataforma" */}
               <p className="mt-6 max-w-[34rem] text-lg text-bruma 2xl:max-w-[40rem] 2xl:text-xl">
-                Tiendas en línea, agendas de citas y asistentes con inteligencia artificial, hechos aquí. Tus clientes
-                compran o reservan desde el celular, y tú lo manejas todo desde el tuyo.
+                Hechas aquí, a la medida de tu negocio: tus clientes te encuentran en Google, compran o reservan desde el
+                celular, y tú lo manejas todo desde el tuyo.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <BotonWhatsApp />
+                <BotonWhatsApp mensaje={MENSAJES.inicio} />
                 <a
-                  href="#servicios"
+                  href="#precios"
                   className="rounded-full px-4 py-3 font-semibold text-cian underline-offset-4 hover:underline"
                 >
-                  Ver qué hacemos
+                  Ver precios
                 </a>
               </div>
+              {/* Confianza junto al botón (estudio 2026-11-02): quién responde y cuándo, sin prometer tiempos que no se miden */}
+              <p className="mt-4 text-sm text-bruma">Te responde Danny, el fundador · {HORARIO_VISIBLE}</p>
             </div>
             {/* Vitrina (crítica 2026-10-28): el escudo solo decía "marca"; ahora lo acompañan dos trabajos reales
                 para que se vea que hacemos apps. Solo en computador: en el celular el título debe caber en la
@@ -111,25 +131,6 @@ export default function App() {
             </div>
           </section>
 
-          {/* Mapa: Ibagué conectada con el mundo */}
-          <section className="relative pb-24 pl-12 md:pl-24" aria-labelledby="titulo-mapa">
-            <span className="nodo nodo-lleno top-2" aria-hidden="true" />
-            <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end md:gap-12">
-              <h2 id="titulo-mapa" className="max-w-[30rem] text-2xl font-semibold md:text-[2.25rem] 2xl:max-w-[36rem] 2xl:text-[2.75rem]">
-                Hecha en Ibagué, abierta al mundo.
-              </h2>
-              <p className="max-w-[26rem] text-bruma 2xl:max-w-[32rem] 2xl:text-lg">
-                Tu app vive en la nube de Google: tus clientes la abren desde cualquier celular o computador,
-                estén donde estén.
-              </p>
-            </div>
-            <MapaRed />
-            <p className="mt-3 text-sm text-bruma">
-              <span className="hidden md:inline">Pasa el mouse por el mapa o haz clic</span>
-              <span className="md:hidden">Toca el mapa</span> para enviar una conexión desde Ibagué.
-            </p>
-          </section>
-
           {/* Servicios */}
           <section id="servicios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
@@ -137,20 +138,84 @@ export default function App() {
             <p className="mt-3 max-w-[34rem] text-bruma">Software hecho para tu negocio, no una plantilla. Prueba los ejemplos.</p>
 
             {/* Un ejemplo para tocar por servicio (Demos.tsx), con una sola línea de texto */}
-            <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 2xl:gap-12">
-              {servicios.map(({ titulo, texto, Demo, enlace }) => (
+            <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:gap-8 2xl:grid-cols-4 2xl:gap-12">
+              {servicios.map(({ titulo, texto, Demo, enlace, enPreparacion }) => (
                 <li key={titulo} className="max-w-[24rem] lg:max-w-none">
                   <Demo />
-                  <h3 className="mt-5 text-lg font-semibold md:text-xl">{titulo}</h3>
+                  <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <h3 className="text-lg font-semibold md:text-xl">{titulo}</h3>
+                    {enPreparacion && <span className="text-sm font-semibold text-oro">En preparación</span>}
+                  </div>
                   <p className="mt-1 text-bruma">{texto}</p>
                   {enlace && (
-                    <a href={enlace.href} className="enlace-flecha mt-2">
+                    <a
+                      href={enlace.href}
+                      className="enlace-flecha mt-2"
+                      {...(enlace.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
                       {enlace.texto}
+                      {enlace.externo && <span className="sr-only"> (se abre en otra pestaña)</span>}
                     </a>
                   )}
                 </li>
               ))}
             </ul>
+          </section>
+
+          {/* Precios (estudio de la web 2026-11-02): rangos de referencia en vez de "depende". Los datos y cómo se
+              calcularon están en negocio.ts (PRECIOS). Va justo después de "Qué hacemos": primero qué es, luego
+              cuánto vale, luego la prueba (productos y proyecto real). */}
+          <section id="precios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24" aria-labelledby="titulo-precios">
+            <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
+            <h2 id="titulo-precios" className="text-2xl font-semibold md:text-[2.25rem]">Cuánto cuesta</h2>
+            <p className="mt-3 max-w-[38rem] text-bruma">
+              Precios de referencia. El precio exacto te llega por escrito en una propuesta sin costo, antes de empezar.
+            </p>
+            <ul className="mt-8 grid max-w-[60rem] border-t border-linea">
+              {PRECIOS.map((p) => (
+                <li key={p.tipo} className="grid gap-1 border-b border-linea py-5 last:border-b-0 md:grid-cols-[1fr_auto] md:gap-x-10">
+                  <h3 className="text-lg font-semibold md:text-xl">{p.tipo}</h3>
+                  <p className="text-xl font-semibold text-verde tabular-nums md:row-span-2 md:self-center md:text-right md:text-2xl">
+                    {rangoPrecio(p)}
+                  </p>
+                  <p className="max-w-[36rem] text-bruma">{p.incluye}</p>
+                </li>
+              ))}
+            </ul>
+            {/* Plegado (mismo desplegable que las preguntas): en celular las dos listas alargaban la sección ~800 px.
+                Está en el HTML, así que Google y las IA lo leen igual aunque esté cerrado. */}
+            <details className="pregunta max-w-[60rem] border-b border-linea">
+              <summary>Qué cambia el precio y qué se paga aparte</summary>
+              <div className="grid gap-8 pb-6 md:grid-cols-2">
+              <div>
+                <h3 className="font-semibold">Qué cambia el precio</h3>
+                <ul className="mt-3 grid list-disc gap-1.5 pl-5 text-bruma">
+                  {QUE_CAMBIA_EL_PRECIO.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold">Aparte, si lo necesitas</h3>
+                <ul className="mt-3 grid list-disc gap-1.5 pl-5 text-bruma">
+                  {COSTOS_APARTE.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </div>
+              </div>
+            </details>
+            <p className="mt-6 max-w-[44rem] text-bruma">
+              Pagas el 50 % al empezar y el 50 % al recibirla funcionando, con 6 meses de garantía. ¿Solo necesitas una
+              agenda de citas?{' '}
+              <a href="/app-de-citas-ibague" className="font-semibold text-cian underline underline-offset-4">
+                NODRA Agenda
+              </a>{' '}
+              tiene un plan gratis.
+            </p>
+            <div className="mt-7">
+              <BotonWhatsApp mensaje={MENSAJES.precios} />
+            </div>
           </section>
 
           {/* Nuestros productos (crítica 2026-10-28): apps propias de NODRA, listas para usar. NODRA Agenda es la
@@ -240,6 +305,26 @@ export default function App() {
             </div>
           </section>
 
+          {/* Mapa: Ibagué conectada con el mundo. Estudio 2026-11-02: bajó de la 2.ª pantalla a después del proyecto real
+              (Danny: "sí, bájalo"); arriba va lo que decide la compra (qué hacemos, precios, trabajo real). */}
+          <section className="relative pb-24 pl-12 md:pl-24" aria-labelledby="titulo-mapa">
+            <span className="nodo nodo-lleno top-2" aria-hidden="true" />
+            <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end md:gap-12">
+              <h2 id="titulo-mapa" className="max-w-[30rem] text-2xl font-semibold md:text-[2.25rem] 2xl:max-w-[36rem] 2xl:text-[2.75rem]">
+                Hecha en Ibagué, abierta al mundo.
+              </h2>
+              <p className="max-w-[26rem] text-bruma 2xl:max-w-[32rem] 2xl:text-lg">
+                Tu app vive en la nube de Google: tus clientes la abren desde cualquier celular o computador,
+                estén donde estén.
+              </p>
+            </div>
+            <MapaRed />
+            <p className="mt-3 text-sm text-bruma">
+              <span className="hidden md:inline">Pasa el mouse por el mapa o haz clic</span>
+              <span className="md:hidden">Toca el mapa</span> para enviar una conexión desde Ibagué.
+            </p>
+          </section>
+
           {/* Quién está detrás (auditoría SEO 2026-10-24): Google y las IA confían más cuando se ve una persona real
               con su formación. Solo datos verdaderos, revisados por Danny; la Policía no va por decisión suya.
               Crítica 2026-10-28: sube justo después del trabajo real y lleva la foto de Danny (real, recortada para
@@ -265,7 +350,7 @@ export default function App() {
                 </p>
                 <p className="mt-4">Cuando escribes a NODRA, te respondo yo.</p>
                 <div className="mt-6">
-                  <BotonWhatsApp />
+                  <BotonWhatsApp mensaje={MENSAJES.danny} />
                 </div>
                 {/* El resto va plegado para no llenar la portada de texto (pedido de Danny). Mismo desplegable que las
                     preguntas: funciona sin JavaScript y Google igual lo lee porque está en el HTML */}
@@ -276,7 +361,7 @@ export default function App() {
                       Me formé como Técnico en Sistemas y Tecnólogo en Análisis y Desarrollo de Software en el SENA, y hoy
                       estudio Ingeniería en Seguridad de la Información en el Politécnico Grancolombiano. Por eso cada app
                       que entrego nace con la seguridad pensada desde el primer día: cada negocio en su propio espacio en la
-                      nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web (el OWASP Top 10).
+                      nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web.
                     </p>
                     <p>
                       Trabajo directo contigo: me escribes por WhatsApp, te explico todo en palabras sencillas y no
@@ -332,7 +417,7 @@ export default function App() {
             <div className="lg:sticky lg:top-10 lg:self-start">
               <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
               <p className="mt-4 max-w-[22rem] text-bruma 2xl:text-lg">¿Tu pregunta no está aquí? Escríbenos y te respondemos.</p>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-3">
+              <a href={enlaceWhatsApp(MENSAJES.pregunta)} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-3">
                 Preguntar por WhatsApp
                 <span className="sr-only"> (se abre en otra pestaña)</span>
               </a>
@@ -361,12 +446,15 @@ export default function App() {
                 <h2 className="mx-auto max-w-[36rem] text-3xl font-semibold leading-tight md:text-5xl lg:mx-0 2xl:max-w-[44rem] 2xl:text-6xl">
                   Cuéntanos cómo funciona tu negocio hoy.
                 </h2>
+                {/* Oferta (estudio 2026-11-02, ecuación de valor): menos esfuerzo para el cliente (una conversación, sin
+                    compromiso) y más certeza (garantía). Nada que Danny no pueda cumplir con todos. */}
                 <p className="mx-auto mt-5 max-w-[34rem] text-lg text-bruma lg:mx-0">
-                  Te respondemos con una propuesta sin costo: qué te sirve, cuánto cuesta y cuándo está lista.
+                  En una conversación corta por WhatsApp te digo qué te sirve, cuánto cuesta y cuándo está lista. Sin
+                  compromiso, y con 6 meses de garantía si la hacemos.
                 </p>
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 lg:justify-start">
-                  <BotonWhatsApp grande />
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
+                  <BotonWhatsApp grande mensaje={MENSAJES.cierre} />
+                  <a href={enlaceWhatsApp(MENSAJES.cierre)} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-verde">
                     {WHATSAPP_VISIBLE}
                   </a>
                   <a href={CORREO_URL} className="font-semibold hover:text-verde">

@@ -68,7 +68,7 @@ export default function Escudo3D() {
   }, [])
 
   return (
-    <div ref={escena} className="escena-3d relative order-1 mx-auto w-full max-w-[13.5rem] md:order-2 md:max-w-[30rem] 2xl:max-w-[38rem]">
+    <div ref={escena} className="escena-3d relative order-1 mx-auto w-full max-w-[10rem] md:order-2 md:max-w-[30rem] 2xl:max-w-[38rem]">
       <div className="pieza-3d relative">
         <div className="halo absolute -inset-10" aria-hidden="true" />
         <img
