@@ -22,6 +22,9 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   7. Cierre con oferta más concreta ("una conversación corta… sin compromiso, 6 meses de garantía"); sin "OWASP".
 - **Verificado** en la vista previa local a 360 px y 1280 px: nada se sale de lo ancho, 8 enlaces de WhatsApp con su
   mensaje, ficha con los 3 precios. La página pasó de ~8.700 a ~10.700 px de alto en celular (precios + 4.º ejemplo).
+- **Publicada** el 2-nov con OK de Danny ("PUBLICALO") y verificada en vivo en nodrasoft.com: título, precios,
+  "En preparación", ficha con `minPrice`, mensajes de WhatsApp, `llms.txt` y 4 encabezados de seguridad. Lighthouse
+  celular contra la página en vivo: 98 / 100 / 100 / 100 (LCP 1,9 s, CLS 0). PageSpeed API sin cupo ese día.
 
 ## 2026-11-02: contador de visitas sin cookies (Cloudflare Web Analytics)
 - Danny preguntó cómo saber cuántas personas entran a la página. Se creó la cuenta gratis de Cloudflare
