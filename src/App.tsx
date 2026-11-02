@@ -27,6 +27,8 @@ const servicios: Servicio[] = [
     titulo: 'Páginas web',
     texto: 'Tu negocio en Google y en el celular de tus clientes: servicios, fotos, cómo llegar y WhatsApp.',
     Demo: DemoPagina,
+    // Enlace interno con la palabra clave: le dice a Google de qué trata la página nueva
+    enlace: { href: '/paginas-web-ibague', texto: 'Páginas web en Ibagué: qué incluyen' },
   },
   {
     titulo: 'Tiendas en línea',

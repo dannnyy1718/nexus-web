@@ -3,16 +3,17 @@ import { readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
 
-const { render, datosEstructurados, datosAppCitas } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
+const { render, datosEstructurados, datosAppCitas, datosPaginasWeb } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
 const paginas = {
   'index.html': 'inicio',
   'privacidad.html': 'privacidad',
   'terminos.html': 'terminos',
   'app-de-citas-ibague.html': 'appCitas',
+  'paginas-web-ibague.html': 'paginasWeb',
   '404.html': 'noEncontrada',
 }
 // Ficha Schema.org de cada página que la tiene
-const fichas = { inicio: datosEstructurados, appCitas: datosAppCitas }
+const fichas = { inicio: datosEstructurados, appCitas: datosAppCitas, paginasWeb: datosPaginasWeb }
 
 for (const [archivo, pagina] of Object.entries(paginas)) {
   const ruta = resolve('dist', archivo)

@@ -4,10 +4,11 @@ import App from './App'
 import Privacidad from './Privacidad'
 import Terminos from './Terminos'
 import AppCitas from './AppCitas'
+import PaginasWeb from './PaginasWeb'
 import NoEncontrada from './NoEncontrada'
-export { datosEstructurados, datosAppCitas } from './negocio'
+export { datosEstructurados, datosAppCitas, datosPaginasWeb } from './negocio'
 
-const paginas = { inicio: App, privacidad: Privacidad, terminos: Terminos, appCitas: AppCitas, noEncontrada: NoEncontrada }
+const paginas = { inicio: App, privacidad: Privacidad, terminos: Terminos, appCitas: AppCitas, paginasWeb: PaginasWeb, noEncontrada: NoEncontrada }
 
 // Se usa solo al compilar: genera el HTML de cada página para que se vea antes de cargar el JavaScript
 export function render(pagina: keyof typeof paginas) {

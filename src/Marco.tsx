@@ -18,6 +18,7 @@ export const MENSAJES = {
   pregunta: 'Hola NODRA, tengo una pregunta: ',
   cierre: 'Hola NODRA, así funciona mi negocio hoy: ',
   ia: 'Hola NODRA, me interesa el asistente con inteligencia artificial cuando esté listo.',
+  paginasWeb: 'Hola NODRA, vi la página de páginas web y quiero una para mi negocio.', // /paginas-web-ibague
 } as const
 
 // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio

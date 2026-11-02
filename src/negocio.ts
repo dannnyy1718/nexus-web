@@ -287,3 +287,125 @@ export function datosAppCitas() {
     ],
   }
 }
+
+// ---------- Página "Diseño de páginas web en Ibagué" (2026-11-02, estudio de la web, semana 2) ----------
+// Es la búsqueda con la que sale primero la competencia en Ibagué. Responde lo que pregunta quien va a contratar
+// (qué incluye, cuánto cuesta, qué preguntar antes) con datos reales: el precio sale de PRECIOS[0] (un solo lugar).
+export const PAGINA_WEB = `${SITIO}/paginas-web-ibague`
+export const PRECIO_PAGINA_WEB = PRECIOS[0]
+
+// Lo que se le pregunta a cualquier proveedor antes de contratar, y la respuesta de NODRA. Solo respuestas que NODRA
+// cumple hoy (términos de las cotizaciones y garantía estándar): si algo cambia, cambiarlo aquí.
+export const antesDeContratar = [
+  {
+    pregunta: '¿El dominio queda a tu nombre?',
+    respuesta: 'Sí. El dominio (tunegocio.com) se registra a nombre de tu negocio y lo pagas directo al proveedor.',
+  },
+  {
+    pregunta: '¿Tiene garantía?',
+    respuesta: '6 meses: si algo de lo acordado falla, lo corregimos sin costo.',
+  },
+  {
+    pregunta: '¿Es una plantilla?',
+    respuesta: 'No. El diseño se hace para tu negocio, con tu logo, tus colores y tus fotos.',
+  },
+  {
+    pregunta: '¿Se ve bien en el celular y carga rápido?',
+    respuesta: 'Sí. Se diseña primero para celular, que es desde donde te busca casi todo el mundo.',
+  },
+  {
+    pregunta: '¿Quién te responde si necesitas algo?',
+    respuesta: 'Danny, el fundador, por WhatsApp. Sin intermediarios.',
+  },
+  {
+    pregunta: '¿Cuánto cuesta mantenerla?',
+    respuesta: 'Lo dices tú: mantenimiento opcional desde $100.000 al mes, o pagas solo cuando necesites un cambio.',
+  },
+]
+
+export const preguntasPaginasWeb = [
+  {
+    pregunta: '¿Cuánto cuesta una página web en Ibagué con NODRA?',
+    respuesta: `Una página web para tu negocio cuesta de ${rangoPrecio(PRECIOS[0])}, según cuántas secciones tenga, si lleva formularios especiales y si escribimos los textos por ti. El precio exacto va por escrito en una propuesta sin costo, antes de empezar. Se paga 50 % al empezar y 50 % al recibirla.`,
+  },
+  {
+    pregunta: '¿Cuánto se demora?',
+    respuesta:
+      'La fecha de entrega va en la propuesta y empieza a contar cuando tengamos tus textos, fotos y logo. Si el material se demora, la entrega se corre los mismos días.',
+  },
+  {
+    pregunta: '¿Necesito tener textos y fotos?',
+    respuesta:
+      'Lo ideal es que nos envíes fotos reales de tu negocio y tu trabajo. Si necesitas ayuda con los textos, los escribimos contigo (eso cambia el precio).',
+  },
+  {
+    pregunta: '¿Mi página va a salir en Google?',
+    respuesta:
+      'La dejamos lista para Google: rápida, con título, descripción y los datos de tu negocio bien puestos. Salir de primero también depende de tu Perfil de Empresa en Google y de tus reseñas; te explicamos cómo configurarlo.',
+  },
+  {
+    pregunta: '¿Puedo cambiar precios o fotos yo mismo?',
+    respuesta:
+      'En la página sencilla, los cambios los hacemos nosotros (en el mantenimiento o cuando los pidas). Si quieres cambiarlos tú desde el celular, te sirve la tienda en línea o agenda a tu medida, que trae un panel.',
+  },
+  {
+    pregunta: '¿Trabajan con negocios fuera de Ibagué?',
+    respuesta: 'Sí. Estamos en Ibagué, pero trabajamos por WhatsApp con negocios de todo el Tolima y del resto de Colombia.',
+  },
+]
+
+export function datosPaginasWeb() {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${PAGINA_WEB}#webpage`,
+        url: PAGINA_WEB,
+        name: 'Diseño de páginas web en Ibagué | NODRA',
+        inLanguage: 'es-CO',
+        isPartOf: { '@id': `${SITIO}/#website` },
+        about: { '@id': `${PAGINA_WEB}#servicio` },
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITIO}/` },
+            { '@type': 'ListItem', position: 2, name: 'Diseño de páginas web en Ibagué', item: PAGINA_WEB },
+          ],
+        },
+      },
+      {
+        '@type': 'Service',
+        '@id': `${PAGINA_WEB}#servicio`,
+        name: 'Diseño de páginas web para negocios',
+        serviceType: 'Diseño de páginas web',
+        description: PRECIOS[0].incluye,
+        provider: NEGOCIO,
+        areaServed: [
+          { '@type': 'City', name: CIUDAD },
+          { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
+        ],
+        url: PAGINA_WEB,
+        offers: {
+          '@type': 'Offer',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'COP',
+            minPrice: PRECIOS[0].desde,
+            maxPrice: PRECIOS[0].hasta,
+          },
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${PAGINA_WEB}#faq`,
+        isPartOf: { '@id': `${PAGINA_WEB}#webpage` },
+        mainEntity: preguntasPaginasWeb.map((p) => ({
+          '@type': 'Question',
+          name: p.pregunta,
+          acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
+        })),
+      },
+    ],
+  }
+}

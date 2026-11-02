@@ -184,3 +184,13 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Qué:** `MENSAJES` en `Marco.tsx`; la tabla para anotar de dónde vino cada cliente está en `docs/MEDIR.md`.
 - **Por qué:** medir qué parte de la página trae clientes sin cookies ni rastreadores (la página promete no usarlos).
 - **Consecuencias:** si se cambia un texto, cambiar también la tabla de `docs/MEDIR.md`.
+
+## 31. Una página por servicio, empezando por "páginas web en Ibagué" (2026-11-02)
+- **Qué:** `/paginas-web-ibague` (componente `PaginasWeb.tsx`, datos y ficha en `negocio.ts`). Sigue el modelo de
+  `/app-de-citas-ibague`: palabra clave en dirección, título, H1, primer párrafo y un H2; respuesta directa arriba;
+  preguntas frecuentes plegadas; WhatsApp propio.
+- **Por qué:** cada búsqueda importante necesita su propia página para competir en Google y en las respuestas de IA.
+- **Consecuencias:** para agregar otra (por ejemplo `/tienda-virtual-ibague`): HTML con su título y canónica, entrada
+  en `vite.config.ts`, `main.tsx`, `entry-server.tsx`, `scripts/prerender.mjs` (página y ficha), `sitemap.xml`,
+  `llms.txt`, un enlace interno desde la portada y una fila en `docs/MEDIR.md`. Las respuestas de "Qué preguntar
+  antes de contratar" son promesas: si cambian los términos o la garantía, cambiarlas aquí.

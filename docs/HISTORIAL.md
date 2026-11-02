@@ -2,6 +2,22 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-02: página nueva "Diseño de páginas web en Ibagué" (/paginas-web-ibague)
+- **Por qué:** semana 2 del estudio de la web: "diseño de páginas web Ibagué" es la búsqueda con la que sale primero
+  la competencia, y la portada no competía por ella.
+- **Qué tiene:** respuesta directa arriba (qué hacemos, para quién, precio de $800.000 a $1.500.000), qué incluye
+  con el ejemplo tocable, precio con lo que lo cambia, **"Qué preguntar antes de contratar una página web"** (6
+  preguntas con la respuesta de NODRA, sin nombrar a nadie), cómo trabajamos, el trabajo real de Johana, 6
+  preguntas frecuentes y cierre con WhatsApp propio (`MENSAJES.paginasWeb`, anotar como "web-paginas").
+- **Para Google y las IA:** ficha Service con rango de precio + preguntas frecuentes + migas, en el mapa del sitio,
+  en `llms.txt` y con enlace desde la tarjeta "Páginas web" de la portada.
+- **Arreglo de paso:** la descripción de `/app-de-citas-ibague` decía "Plan Gratis hasta 20 citas" (frase prohibida:
+  se entiende como citas regaladas). Ahora: "Tu agenda gratis: recibe hasta 20 citas al mes".
+- **Verificado** en vista previa local (360 px): nada se sale de lo ancho; Lighthouse celular 99 / 100 / 81 / 100 (el
+  81 es solo por ser http en el PC; en nodrasoft.com va por https).
+- **Después de publicar:** pedir indexación de la página en Search Console (Inspección de URLs → Solicitar
+  indexación), como se hizo con la de citas.
+
 ## 2026-11-02: cambios del estudio de la web (precios, "páginas web", IA en preparación)
 - **Por qué:** estudio experto (`Empresa NEXUS/4 Estudios/2026-11-02-estudio-web-NODRA.md`): la página no usaba las
   palabras que busca la gente ("páginas web"), no mostraba precios (la competencia de Ibagué sí) y anunciaba IA que
