@@ -2,6 +2,15 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (tarde): frase resumen debajo del título principal
+- **Por qué:** la auditoría SEO mostró que el párrafo de arriba no decía quién es NODRA, qué hace ni dónde. Google y
+  las IA (ChatGPT, Gemini) necesitan una frase que se entienda sola para poder citarla.
+- **Cambio:** "NODRA es una empresa de desarrollo de software en Ibagué, Tolima: páginas web desde $1.000.000, tiendas
+  en línea, citas y apps a la medida, con 6 meses de garantía." En celular se ve solo esa frase, para que el botón de
+  WhatsApp siga en la primera pantalla (medido a 360x740); en computador sigue también la frase de antes. Decisión 34.
+- **Revisado en local:** celular 360 px y PC 1366 px sin desbordes; Lighthouse local 99 / 100 / 77 (por http y el
+  contador de visitas, que en local no conecta) / 100.
+
 ## 2026-11-04 (tarde): menú de servicios en el pie de página
 - **Por qué:** la auditoría SEO mostró que las páginas que venden recibían 1 enlace interno y las legales 5.
 - **Cambio:** el pie de las 6 páginas tiene ahora "Servicios: Diseño de páginas web en Ibagué · App de citas para

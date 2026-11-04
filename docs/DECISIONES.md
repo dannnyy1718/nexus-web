@@ -217,3 +217,13 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   Además las dos páginas de servicio quedan enlazadas entre sí.
 - **Consecuencias:** cada página de servicio nueva (decisión 31) se agrega también a este menú, con un texto que diga
   de qué trata (nunca "ver más"). Si llegan a ser más de 4, pasar a una lista en columna.
+
+## 34. Frase resumen bajo el H1; en celular solo esa frase (2026-11-04)
+- **Qué:** el párrafo bajo el H1 empieza con "NODRA es una empresa de desarrollo de software en Ibagué, Tolima:
+  páginas web desde $1.000.000, tiendas en línea, citas y apps a la medida, con 6 meses de garantía." El precio sale
+  de `PRECIOS`. La frase de antes ("Tus clientes te encuentran en Google…") solo se ve desde 640 px (`hidden sm:inline`).
+- **Por qué:** la auditoría SEO (M11.summary.missing_tldr) mostró que el 1.er párrafo no decía quién es NODRA, qué hace
+  ni dónde; Google y las IA citan frases que se entienden solas. Medido a 360x740: con las dos frases el botón de
+  WhatsApp bajaba de 724 a 864 px y salía de la 1.ª pantalla; con solo el resumen vuelve a 724 px.
+- **Consecuencias:** si cambia el precio mínimo, la frase se actualiza sola. Si se alarga el resumen, volver a medir
+  el botón a 360x740 antes de publicar. La 2.ª frase sigue en el HTML del celular (oculta), así que Google la lee igual.

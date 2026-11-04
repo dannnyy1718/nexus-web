@@ -77,10 +77,20 @@ export default function App() {
                 Páginas web y apps para negocios en Ibagué.
               </h1>
               {/* Crítica de diseño 2026-10-28: NODRA es una empresa de software con varias apps (Danny), así que el
-                  texto nombra lo que hacemos en palabras de cualquier negocio, sin "panel" ni "multiplataforma" */}
+                  texto nombra lo que hacemos en palabras de cualquier negocio, sin "panel" ni "multiplataforma".
+                  Auditoría SEO 2026-11-04 (M11.summary.missing_tldr): la 1.ª frase es un resumen que se entiende solo
+                  (empresa + servicios + ciudad + un dato), para que Google y las IA la puedan citar tal cual. Solo usa
+                  datos que ya están en la página: el precio sale de PRECIOS y la garantía de 6 meses va en Pasos y FAQ.
+                  Medido a 360x740 (celular de gama media): con las dos frases el botón de WhatsApp quedaba en 864 px,
+                  fuera de la 1.ª pantalla; por eso en celular solo va el resumen (botón en 724 px, igual que antes) y
+                  la 2.ª frase aparece desde 640 px. No recortar el resumen sin volver a medir. */}
               <p className="mt-6 max-w-[34rem] text-lg text-bruma 2xl:max-w-[40rem] 2xl:text-xl">
-                Hechas aquí, a la medida de tu negocio: tus clientes te encuentran en Google, compran o reservan desde el
-                celular, y tú lo manejas todo desde el tuyo.
+                {`NODRA es una empresa de desarrollo de software en Ibagué, Tolima: páginas web desde $${PRECIOS[0].desde.toLocaleString('es-CO')}, tiendas en línea, citas y apps a la medida, con 6 meses de garantía.`}
+                <span className="hidden sm:inline">
+                  {' '}
+                  Tus clientes te encuentran en Google, compran o reservan desde el celular, y tú lo manejas todo desde
+                  el tuyo.
+                </span>
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <BotonWhatsApp mensaje={MENSAJES.inicio} />
