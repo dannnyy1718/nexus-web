@@ -11,6 +11,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   buena, crecía y empujaba la foto (salto CLS 0,13).
 - **Arreglo:** cada página pide sus 2 letras desde el primer instante (`scripts/prerender.mjs`) y la foto de arriba
   tiene versión de 720 px para celular. Resultado local: tienda 95 (salto 0, LCP 2,9 s), portada 100. Decisión 36.
+- **Publicado** con OK de Danny ("publica") y verificado en vivo: las 6 páginas responden 200 y traen las 2 letras
+  precargadas; las 4 fotos cargan; 4 encabezados de seguridad. Lighthouse celular en vivo: tienda 94 / 100 / 100 / 100
+  (salto 0, LCP 2,9 s), portada 98 / 100 / 100 / 100 (salto 0).
+- **Pendiente de Danny:** pedir indexación de /tienda-virtual-ibague en Search Console.
 
 ## 2026-11-04 (tarde): tienda virtual más corta, más sencilla y más visual
 - **Por qué:** Danny pidió (1) que la entienda un dueño de negocio de 30 a 70 años y (2) la regla de oro "poco texto,
