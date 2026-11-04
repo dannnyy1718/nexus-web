@@ -11,7 +11,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Sin "trabajo real":** NODRA aún no tiene una tienda publicada; se agrega cuando exista (decisión 35).
 - **Revisado en local:** 360 px y 1366 px sin desbordes; botón de WhatsApp en la 1.ª pantalla del celular;
   Lighthouse local 100 / 100 / 77 (http y contador, normal en local) / 100.
-- **Pendiente:** OK de Danny para publicar; después, pedir indexación de la página en Search Console.
+- **Publicado** con OK de Danny ("publica") y verificado en vivo: nodrasoft.com/tienda-virtual-ibague responde 200,
+  título, H1, canonical y ficha FAQ en el HTML; está en el sitemap y la portada la enlaza (tarjeta + pie); 4
+  encabezados de seguridad. Lighthouse celular en vivo 98 / 100 / 100 / 100 (LCP 1,9 s).
+- **Pendiente de Danny:** pedir indexación de la página en Search Console.
 
 ## 2026-11-04 (tarde): frase resumen debajo del título principal
 - **Por qué:** la auditoría SEO mostró que el párrafo de arriba no decía quién es NODRA, qué hace ni dónde. Google y
