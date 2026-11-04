@@ -15,6 +15,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   5. **Hecha en Ibagué, Tolima. Abierta al mundo.** · Cómo trabajamos → **Cómo hacemos tu página web o app** ·
      **Apps seguras desde el primer día** · **Preguntas frecuentes sobre páginas web y apps**.
 - Reglas para los próximos títulos en `docs/DECISIONES.md` (32).
+- **Publicado** el 4-nov con OK de Danny y verificado en vivo (nodrasoft.com y nexus-tech-co.web.app): los 10 H2
+  nuevos, la tarjeta de NODRA Agenda y el párrafo con precios salen en el HTML; ya no aparecen los títulos viejos; las
+  otras páginas responden 200 y siguen los 4 encabezados de seguridad. Revisado antes a 360 px y 1366 px (nada se
+  sale de la pantalla). Falta: pedir reindexación de la portada en Search Console.
 
 ## 2026-11-02 (noche): mínimo de $1.000.000 y sin precio al comienzo
 - Danny: "es muy poco" → se probó subir todo, pero decidió "deja los precios anteriores, pero el mínimo que sea un
