@@ -19,6 +19,7 @@ export const MENSAJES = {
   cierre: 'Hola NODRA, así funciona mi negocio hoy: ',
   ia: 'Hola NODRA, me interesa el asistente con inteligencia artificial cuando esté listo.',
   paginasWeb: 'Hola NODRA, vi la página de páginas web y quiero una para mi negocio.', // /paginas-web-ibague
+  tienda: 'Hola NODRA, vi la página de tiendas virtuales y quiero vender en línea.', // /tienda-virtual-ibague
 } as const
 
 // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
@@ -121,6 +122,10 @@ export function Pie() {
             <span className="font-semibold text-niebla">Servicios:</span>{' '}
             <a href="/paginas-web-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
               Diseño de páginas web en Ibagué
+            </a>{' '}
+            ·{' '}
+            <a href="/tienda-virtual-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              Tienda virtual en Ibagué
             </a>{' '}
             ·{' '}
             <a href="/app-de-citas-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">

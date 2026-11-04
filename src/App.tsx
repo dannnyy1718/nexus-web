@@ -37,6 +37,7 @@ const servicios: Servicio[] = [
     titulo: 'Tiendas en línea',
     texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde tu celular.',
     Demo: DemoTienda,
+    enlace: { href: '/tienda-virtual-ibague', texto: 'Tiendas virtuales en Ibagué: qué incluyen' },
   },
   {
     titulo: 'Citas y reservas',

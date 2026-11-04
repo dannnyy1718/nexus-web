@@ -227,3 +227,17 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   WhatsApp bajaba de 724 a 864 px y salía de la 1.ª pantalla; con solo el resumen vuelve a 724 px.
 - **Consecuencias:** si cambia el precio mínimo, la frase se actualiza sola. Si se alarga el resumen, volver a medir
   el botón a 360x740 antes de publicar. La 2.ª frase sigue en el HTML del celular (oculta), así que Google la lee igual.
+
+## 35. Página /tienda-virtual-ibague con contenido propio (2026-11-04)
+- **Qué:** `TiendaVirtual.tsx` + `tienda-virtual-ibague.html`, datos y ficha (Service + FAQ + migas) en `negocio.ts`,
+  precio de `PRECIOS[1]`, enlace en el pie, en la tarjeta "Tiendas en línea" de la portada, sitemap y llms.txt.
+  Mensaje de WhatsApp propio (`MENSAJES.tienda` → `web-tienda` en MEDIR.md).
+- **Por qué:** investigación SEO + GEO del 4-nov (§10.2): faltaban páginas por servicio y la regla es "una página nueva
+  solo con contenido propio". Lo propio: pedidos por WhatsApp vs. pagos en línea, "¿me basta con WhatsApp?" (respuesta
+  honesta: a veces sí) y lo que pide la ley para vender en línea en Colombia. Se usa "tienda virtual" porque así lo
+  escribe la gente en Colombia; en la portada sigue "Tiendas en línea".
+- **Honestidad:** NODRA aún no ha publicado una tienda virtual, así que la página NO tiene sección "Un trabajo real"; el
+  ejemplo tocable dice "Ejemplo". La guía legal dice que es general y que se consulte al contador o abogado. Cuando
+  haya una tienda real entregada, agregar el caso (con permiso del cliente) y quitar esta nota.
+- **Consecuencias:** si cambia el precio de la tienda o la agenda a la medida, cambia solo (`PRECIOS[1]`). El menú del
+  pie ya tiene 3 servicios; con más de 4, pasar a columna (decisión 33).

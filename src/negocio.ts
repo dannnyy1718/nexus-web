@@ -412,3 +412,137 @@ export function datosPaginasWeb() {
     ],
   }
 }
+
+// ---------- Página "Tienda virtual en Ibagué" (2026-11-04, investigación SEO + GEO §10.2) ----------
+// Una página nueva solo si tiene contenido propio (regla de la investigación: nada de copiar /paginas-web-ibague
+// cambiando palabras). Lo propio aquí: pedidos por WhatsApp vs. pagos en línea, si basta con WhatsApp, y lo que pide
+// la ley para vender en línea en Colombia. El precio sale de PRECIOS[1] (un solo lugar). Honesto: NODRA todavía no ha
+// publicado una tienda virtual, así que la página no muestra ninguna como "trabajo real".
+export const PAGINA_TIENDA = `${SITIO}/tienda-virtual-ibague`
+export const PRECIO_TIENDA = PRECIOS[1]
+
+// Las dos formas de cobrar. La de WhatsApp es más barata (sin pasarela); la de pagos en línea vende a cualquier hora.
+export const formasDeCobrar = [
+  {
+    titulo: 'Pedidos por WhatsApp',
+    texto:
+      'Tu cliente arma el pedido en la tienda y te llega por WhatsApp con la lista y el total. Tú confirmas y cobras por transferencia, Nequi o contra entrega. No hay comisión por venta.',
+    paraQuien: 'Para empezar, o si respondes rápido y recibes pocos pedidos al día.',
+  },
+  {
+    titulo: 'Pagos en línea',
+    texto:
+      'Tu cliente paga ahí mismo con PSE, Nequi o tarjeta, a cualquier hora. La plata llega a la cuenta de tu negocio por una pasarela de pagos colombiana, que cobra su comisión por cada venta.',
+    paraQuien: 'Si vendes fuera de horario o no quieres confirmar cada pago a mano. Sube el precio de la tienda.',
+  },
+]
+
+// "¿Necesito tienda o me basta WhatsApp?" (pregunta real de los dueños, investigación §5). Respuesta honesta: a veces basta.
+export const cuandoSirveTienda = [
+  'Tienes muchos productos, o precios que cambian seguido.',
+  'Pasas horas mandando fotos y precios uno por uno por WhatsApp.',
+  'Te escriben de noche o en domingo y esas ventas se pierden.',
+  'Quieres que te encuentren en Google y no solo quien ya tiene tu número.',
+]
+
+// Guía general de lo que pide la ley colombiana para vender en línea. No es asesoría legal: por eso la página dice
+// que se consulte al contador o abogado. Si cambia una ley, cambiarla aquí.
+export const leyVenderEnLinea = [
+  'Mostrar quién vende: nombre del negocio, NIT o cédula, dirección y contacto (Ley 1480 de 2011).',
+  'El precio total con impuestos y el costo del envío, antes de pagar.',
+  'Derecho de retracto: tu cliente puede devolver la compra dentro de 5 días hábiles (Ley 1480, art. 47).',
+  'Aviso de privacidad y autorización para usar los datos de tus clientes (Ley 1581 de 2012).',
+  'Factura electrónica si tu negocio está obligado ante la DIAN. La tienda no la reemplaza: la sigues expidiendo con tu proveedor.',
+]
+
+export const preguntasTienda = [
+  {
+    pregunta: '¿Cuánto cuesta una tienda virtual en Ibagué con NODRA?',
+    respuesta: `Una tienda virtual cuesta de ${rangoPrecio(PRECIOS[1])}, según cuántos productos cargamos al inicio, si lleva pagos en línea y si los productos tienen tallas o colores. El precio exacto va por escrito en una propuesta sin costo, antes de empezar. Se paga 50 % al empezar y 50 % al recibirla funcionando.`,
+  },
+  {
+    pregunta: '¿Puedo recibir pagos con Nequi y PSE?',
+    respuesta:
+      'Sí, con una pasarela de pagos colombiana. La plata llega directo a la cuenta de tu negocio, no pasa por NODRA. La pasarela cobra su comisión por cada venta y te pide los documentos de tu negocio, como el RUT y una certificación bancaria; te acompañamos en el registro.',
+  },
+  {
+    pregunta: '¿Cuántos productos puedo tener?',
+    respuesta:
+      'No hay un límite fijo: tú agregas y quitas productos desde tu panel. Si quieres que nosotros carguemos el catálogo inicial, o tus productos tienen tallas y colores, eso va en la propuesta.',
+  },
+  {
+    pregunta: '¿La tienda maneja domicilios?',
+    respuesta:
+      'La tienda puede cobrar el envío por zona o barrio y mostrarlo antes de pagar. Las entregas las haces tú o tu mensajero: NODRA no hace domicilios.',
+  },
+  {
+    pregunta: '¿Mis clientes tienen que descargar algo?',
+    respuesta: 'No. Abren tu tienda desde un enlace en el celular o el computador y compran ahí mismo.',
+  },
+  {
+    pregunta: '¿Cuánto se demora?',
+    respuesta:
+      'La fecha de entrega va en la propuesta y empieza a contar cuando tengamos tus fotos, precios y logo. Si el material se demora, la entrega se corre los mismos días.',
+  },
+  {
+    pregunta: '¿Trabajan con negocios fuera de Ibagué?',
+    respuesta: 'Sí. Estamos en Ibagué, pero trabajamos por WhatsApp con negocios de todo el Tolima y del resto de Colombia.',
+  },
+]
+
+export function datosTienda() {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${PAGINA_TIENDA}#webpage`,
+        url: PAGINA_TIENDA,
+        name: 'Tienda virtual en Ibagué | NODRA',
+        inLanguage: 'es-CO',
+        isPartOf: { '@id': `${SITIO}/#website` },
+        about: { '@id': `${PAGINA_TIENDA}#servicio` },
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITIO}/` },
+            { '@type': 'ListItem', position: 2, name: 'Tienda virtual en Ibagué', item: PAGINA_TIENDA },
+          ],
+        },
+      },
+      {
+        '@type': 'Service',
+        '@id': `${PAGINA_TIENDA}#servicio`,
+        name: 'Tienda virtual para negocios',
+        serviceType: 'Desarrollo de tiendas virtuales',
+        description:
+          'Catálogo con fotos y precios, carrito, pedidos por WhatsApp o pagos en línea con PSE, Nequi o tarjeta, y un panel para cambiar precios e inventario desde el celular.',
+        provider: NEGOCIO,
+        areaServed: [
+          { '@type': 'City', name: CIUDAD },
+          { '@type': 'AdministrativeArea', name: DEPARTAMENTO },
+        ],
+        url: PAGINA_TIENDA,
+        offers: {
+          '@type': 'Offer',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'COP',
+            minPrice: PRECIOS[1].desde,
+            maxPrice: PRECIOS[1].hasta,
+          },
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${PAGINA_TIENDA}#faq`,
+        isPartOf: { '@id': `${PAGINA_TIENDA}#webpage` },
+        mainEntity: preguntasTienda.map((p) => ({
+          '@type': 'Question',
+          name: p.pregunta,
+          acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
+        })),
+      },
+    ],
+  }
+}

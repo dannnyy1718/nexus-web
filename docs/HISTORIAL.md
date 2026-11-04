@@ -2,6 +2,17 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (tarde): página nueva "Tienda virtual en Ibagué"
+- **Por qué:** la investigación SEO + GEO pidió una página por servicio, cada una con contenido propio (no copiada).
+- **Qué tiene:** qué incluye, ejemplo tocable, "¿pedidos por WhatsApp o pagos en línea?", precio
+  ($1.800.000 a $3.500.000, de `PRECIOS`), "¿me basta con WhatsApp?", lo que pide la ley para vender en línea en
+  Colombia, cómo trabajamos, 7 preguntas frecuentes y botón de WhatsApp con mensaje propio (`web-tienda`).
+- **Conectada en:** pie de todas las páginas, tarjeta "Tiendas en línea" de la portada, sitemap, llms.txt y README.
+- **Sin "trabajo real":** NODRA aún no tiene una tienda publicada; se agrega cuando exista (decisión 35).
+- **Revisado en local:** 360 px y 1366 px sin desbordes; botón de WhatsApp en la 1.ª pantalla del celular;
+  Lighthouse local 100 / 100 / 77 (http y contador, normal en local) / 100.
+- **Pendiente:** OK de Danny para publicar; después, pedir indexación de la página en Search Console.
+
 ## 2026-11-04 (tarde): frase resumen debajo del título principal
 - **Por qué:** la auditoría SEO mostró que el párrafo de arriba no decía quién es NODRA, qué hace ni dónde. Google y
   las IA (ChatGPT, Gemini) necesitan una frase que se entienda sola para poder citarla.
