@@ -208,3 +208,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   la portada no compita con ellas; sin la palabra "agencia" (NODRA se presenta como alternativa a las agencias).
 - **Consecuencias:** reemplaza los nombres de sección de la decisión 26: los productos nuevos van en "Apps listas para
   usar en tu negocio"; con un segundo cliente terminado, el H2 del caso pasa a plural ("Casos reales: …").
+
+## 33. Menú de servicios en el pie de todas las páginas (2026-11-04)
+- **Qué:** `<nav aria-label="Servicios">` en `Pie()` (`Marco.tsx`) con "Diseño de páginas web en Ibagué" →
+  `/paginas-web-ibague` y "App de citas para negocios" → `/app-de-citas-ibague`.
+- **Por qué:** auditoría SEO del 4-nov: las páginas de servicio recibían 1 enlace interno (solo desde la portada) y
+  las legales 5. Google usa los enlaces internos para saber qué páginas importan más; ahora las que venden llegan a 6.
+  Además las dos páginas de servicio quedan enlazadas entre sí.
+- **Consecuencias:** cada página de servicio nueva (decisión 31) se agrega también a este menú, con un texto que diga
+  de qué trata (nunca "ver más"). Si llegan a ser más de 4, pasar a una lista en columna.

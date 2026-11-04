@@ -112,6 +112,22 @@ export function Pie() {
         </span>
       </span>
       <div className="grid gap-1">
+        {/* Servicios en todas las páginas (auditoría SEO 2026-11-04): las páginas que venden recibían 1 enlace interno
+            y las legales 5, y Google lo leía como que las legales importaban más. Cada página de servicio nueva va
+            aquí (ver DECISIONES.md 31 y 33). El texto del enlace dice de qué trata la página, no "ver más". Sin partir cada enlace por dentro: en celular
+            "App" quedaba sola al final de una línea. */}
+        <nav aria-label="Servicios">
+          <p>
+            <span className="font-semibold text-niebla">Servicios:</span>{' '}
+            <a href="/paginas-web-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              Diseño de páginas web en Ibagué
+            </a>{' '}
+            ·{' '}
+            <a href="/app-de-citas-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              App de citas para negocios
+            </a>
+          </p>
+        </nav>
         <p>
           <span className="font-semibold text-niebla">Atención:</span> {HORARIO_VISIBLE}
         </p>
