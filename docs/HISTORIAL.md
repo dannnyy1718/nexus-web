@@ -10,6 +10,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   WhatsApp siga en la primera pantalla (medido a 360x740); en computador sigue también la frase de antes. Decisión 34.
 - **Revisado en local:** celular 360 px y PC 1366 px sin desbordes; Lighthouse local 99 / 100 / 77 (por http y el
   contador de visitas, que en local no conecta) / 100.
+- **Publicado** por Danny con "!" (al permiso automático de Claude no le llegó respuesta) y verificado en vivo: la
+  frase está en el HTML, el botón de WhatsApp queda en 724 px de 740 a 360x740. Lighthouse celular en vivo
+  98 / 100 / 100 / 100 (LCP 1,9 s).
+- **Pendiente de Danny:** pedir en Search Console que Google vuelva a revisar la portada.
 
 ## 2026-11-04 (tarde): menú de servicios en el pie de página
 - **Por qué:** la auditoría SEO mostró que las páginas que venden recibían 1 enlace interno y las legales 5.
