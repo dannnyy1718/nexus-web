@@ -6,6 +6,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Por qué:** la auditoría SEO mostró que las páginas que venden recibían 1 enlace interno y las legales 5.
 - **Cambio:** el pie de las 6 páginas tiene ahora "Servicios: Diseño de páginas web en Ibagué · App de citas para
   negocios" (`Marco.tsx`). Las páginas de servicio pasan de 1 a 6 enlaces internos y se enlazan entre sí. Decisión 33.
+- **Publicado** con OK de Danny ("publica") y verificado en vivo: el pie trae los 2 enlaces en portada,
+  /paginas-web-ibague, /app-de-citas-ibague y /privacidad; los 4 encabezados de seguridad siguen. Lighthouse celular
+  en vivo: 97 / 100 / 100 / 100 (LCP 1,9 s).
+- **Pendiente de Danny:** pedir en Search Console que Google vuelva a revisar la portada.
 
 ## 2026-11-04: títulos H2 de la portada que se pueden encontrar en Google
 - **Por qué:** Danny notó que varios H2 no usaban palabras de búsqueda. La auditoría SEO + GEO (comparada con la
