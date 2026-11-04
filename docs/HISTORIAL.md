@@ -2,6 +2,16 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (tarde): fotos en la tienda virtual y letras que ya no hacen saltar la página
+- **Fotos:** Danny hizo 4 imágenes con IA (3 con ChatGPT, 1 con Gemini; originales en `3 Marketing/Imagenes/Tienda Virtual`):
+  dueña de tienda (arriba), pedido por WhatsApp, pago en línea y domicilio. Comprimidas a .webp (de ~2,5 MB a 22-84 KB),
+  con su descripción y la etiqueta "Imagen de ejemplo" (son personas inventadas, no clientes). Reemplazan los dos
+  ejemplos hechos con código de pedido y pago.
+- **Problema encontrado:** con la foto arriba, Lighthouse bajó a 83: el título se pintaba con otra letra y, al llegar la
+  buena, crecía y empujaba la foto (salto CLS 0,13).
+- **Arreglo:** cada página pide sus 2 letras desde el primer instante (`scripts/prerender.mjs`) y la foto de arriba
+  tiene versión de 720 px para celular. Resultado local: tienda 95 (salto 0, LCP 2,9 s), portada 100. Decisión 36.
+
 ## 2026-11-04 (tarde): tienda virtual más corta, más sencilla y más visual
 - **Por qué:** Danny pidió (1) que la entienda un dueño de negocio de 30 a 70 años y (2) la regla de oro "poco texto,
   la gente es más visual".

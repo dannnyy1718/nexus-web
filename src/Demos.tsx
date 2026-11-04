@@ -18,44 +18,6 @@ function Marco({ titulo, children }: { titulo: string; children: React.ReactNode
   )
 }
 
-// Página /tienda-virtual-ibague (2026-11-04, Danny: "poco texto, la gente es más visual"): las dos formas de cobrar
-// se MUESTRAN en vez de explicarse. Son imágenes fijas hechas con HTML (no pesan) y dicen "Ejemplo" como las demás.
-export function DemoPedidoWhatsApp() {
-  return (
-    <Marco titulo="Te llega por WhatsApp">
-      <div className="grid gap-2">
-        <p className="demo-burbuja demo-asistente">
-          <strong className="text-niebla">Pedido nuevo</strong>
-          <br />2 × Café del Tolima · {pesos(56000)}
-          <br />1 × Achiras x 12 · {pesos(9000)}
-          <br />
-          <strong className="text-verde">Total {pesos(65000)}</strong>
-        </p>
-        <p className="demo-burbuja demo-cliente">¡Listo! Te llega hoy.</p>
-      </div>
-    </Marco>
-  )
-}
-
-export function DemoPagoEnLinea() {
-  return (
-    <Marco titulo="Paga ahí mismo">
-      <p className="demo-fila">
-        <span className="text-bruma">Total</span>
-        <strong className="text-niebla">{pesos(65000)}</strong>
-      </p>
-      <ul className="mt-3 grid grid-cols-3 gap-2 text-center font-semibold" aria-label="Formas de pago">
-        {['PSE', 'Nequi', 'Tarjeta'].map((m) => (
-          <li key={m} className="rounded-xl border border-contorno py-2">
-            {m}
-          </li>
-        ))}
-      </ul>
-      <p className="demo-pie demo-listo">✓ La plata llega a tu cuenta</p>
-    </Marco>
-  )
-}
-
 const productos = [
   { nombre: 'Café del Tolima 500 g', precio: 28000 },
   { nombre: 'Achiras x 12', precio: 9000 },

@@ -1,5 +1,5 @@
 import { BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
-import { DemoPagoEnLinea, DemoPedidoWhatsApp, DemoTienda } from './Demos'
+import { DemoTienda } from './Demos'
 import {
   COSTOS_APARTE,
   cuandoSirveTienda,
@@ -20,6 +20,33 @@ const incluye = ['Tu logo y tus colores', 'Cambias precios desde tu celular', 'L
 const pasos = ['Hablamos por WhatsApp', 'Te mando la propuesta', 'Pagas la mitad y la hacemos', 'Pagas el resto y es tuya']
 
 const titulo2 = 'text-2xl font-semibold md:text-[2.25rem]'
+
+// Fotos de ejemplo hechas con IA (Danny, 2026-11-04: ChatGPT y Gemini; originales en 3 Marketing/Imagenes/Tienda
+// Virtual). Son personas inventadas: por eso dicen "Imagen de ejemplo" y nunca se presentan como clientes reales
+// (Ley 1480 y regla 8.6 del manual). Comprimidas a .webp con ffmpeg (de ~2,5 MB a 28-84 KB) y con ancho y alto
+// puestos para que la página no salte al cargar. Solo la de arriba carga de una vez; las demás, al bajar.
+type Foto = { src: string; srcSet?: string; ancho: number; alto: number; alt: string; arriba?: boolean }
+function FotoEjemplo({ src, srcSet, ancho, alto, alt, arriba = false }: Foto) {
+  return (
+    <figure className="relative overflow-hidden rounded-3xl border border-linea">
+      <img
+        src={src}
+        srcSet={srcSet}
+        sizes={srcSet ? '(min-width: 896px) 832px, calc(100vw - 2rem)' : undefined}
+        width={ancho}
+        height={alto}
+        alt={alt}
+        loading={arriba ? 'eager' : 'lazy'}
+        fetchPriority={arriba ? 'high' : undefined}
+        decoding="async"
+        className="block h-auto w-full"
+      />
+      <figcaption className="absolute bottom-3 right-3 rounded-full bg-abismo/85 px-3 py-0.5 text-xs text-niebla">
+        Imagen de ejemplo
+      </figcaption>
+    </figure>
+  )
+}
 
 export default function TiendaVirtual() {
   return (
@@ -43,6 +70,16 @@ export default function TiendaVirtual() {
             Ver precio
           </a>
         </div>
+        <div className="mt-10">
+          <FotoEjemplo
+            src="/img/tienda-duena-720.webp"
+            srcSet="/img/tienda-duena-480.webp 480w, /img/tienda-duena-720.webp 720w, /img/tienda-duena-960.webp 960w"
+            ancho={960}
+            alto={720}
+            alt="Dueña de una tienda de barrio sonríe mientras mira un pedido en su celular"
+            arriba
+          />
+        </div>
 
         {/* Qué incluye: el ejemplo tocable muestra la tienda; al lado, 4 cosas en pocas palabras */}
         {/* En celular, primero el título y luego el ejemplo; en computador, el ejemplo a la izquierda */}
@@ -65,14 +102,28 @@ export default function TiendaVirtual() {
           </div>
         </section>
 
-        {/* Las dos formas de cobrar se MUESTRAN (Demos.tsx) en vez de explicarse */}
+        {/* Las dos formas de cobrar se MUESTRAN con una foto en vez de explicarse */}
         <section className="mt-16">
           <h2 className={titulo2}>¿Pedidos por WhatsApp o pagos en línea?</h2>
           <p className="mt-3 text-lg text-bruma">Escoge una. Puedes cambiar después.</p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {formasDeCobrar.map((f, i) => (
               <div key={f.titulo}>
-                {i === 0 ? <DemoPedidoWhatsApp /> : <DemoPagoEnLinea />}
+                {i === 0 ? (
+                  <FotoEjemplo
+                    src="/img/tienda-pedido-whatsapp.webp"
+                    ancho={640}
+                    alto={640}
+                    alt="Un cliente arma su lista de compras en un chat de WhatsApp dentro de una panadería"
+                  />
+                ) : (
+                  <FotoEjemplo
+                    src="/img/tienda-pago.webp"
+                    ancho={640}
+                    alto={640}
+                    alt="Una clienta paga su compra desde el celular, sentada en el sofá de su casa"
+                  />
+                )}
                 <h3 className="mt-4 text-xl font-semibold">
                   {f.titulo} <span className="ml-1 align-middle text-base font-semibold text-verde">· {f.etiqueta}</span>
                 </h3>
@@ -128,6 +179,16 @@ export default function TiendaVirtual() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-lg">Y el domicilio lo llevas tú o tu mensajero, como siempre.</p>
+          <div className="mt-4">
+            <FotoEjemplo
+              src="/img/tienda-domicilio-640.webp"
+              srcSet="/img/tienda-domicilio-640.webp 640w, /img/tienda-domicilio-960.webp 960w"
+              ancho={960}
+              alto={716}
+              alt="Un mensajero en moto entrega una bolsa con un pedido a una señora en la puerta de su casa, con montañas al fondo"
+            />
+          </div>
         </section>
 
         {/* Guía corta de la ley, útil aunque no nos contraten. No es asesoría legal: lo dice abajo. */}

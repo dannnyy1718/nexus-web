@@ -123,3 +123,13 @@ Antes de todo: `npm install` y `npm run build`. Si el build falla, el mensaje en
   3. El script no quedó en el HTML publicado. Ver el código fuente (Ctrl+U) y buscar `cloudflareinsights`.
      Debe estar antes de `</body>` en las 5 páginas.
   4. Tu propio navegador lo bloquea (Brave, uBlock, Kaspersky). Probar desde el celular con datos.
+
+## 20. La página "salta" al cargar o Lighthouse baja por CLS / LCP
+- **Síntoma:** al abrir la página, el título cambia de letra y lo de abajo se mueve; Lighthouse marca "Cumulative Layout
+  Shift" alto o la velocidad baja de 90 (pasó el 2026-11-04 en /tienda-virtual-ibague al poner una foto arriba).
+- **Causas y arreglo:**
+  1. Las letras llegan tarde. Ver el código fuente (Ctrl+U): deben estar los 2 `<link rel="preload" as="font">`. Si
+     `npm run build` dice "Se esperaban 2 letras", se cambió de letra: actualizar la búsqueda en `scripts/prerender.mjs`.
+  2. Una imagen sin `width` y `height`: ponérselos (el tamaño real del archivo).
+  3. La foto de arriba pesa mucho: hacer versiones 480/720/960 en .webp (ffmpeg, calidad ~70) con `srcSet`.
+  4. Medir siempre con `--blocked-url-patterns="*kaspersky-labs.com*"` en el PC de Danny (Kaspersky inyecta un script).

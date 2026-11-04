@@ -243,3 +243,14 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   pie ya tiene 3 servicios; con más de 4, pasar a columna (decisión 33).
 - **Público y regla de oro (Danny, 4-nov):** se escribe para dueños de 30 a 70 años, con palabras de todos los días y
   POCO TEXTO: cada idea en una frase corta o en un ejemplo que se ve; lo largo, plegado. Aplica a toda página nueva.
+
+## 36. Letras precargadas en todas las páginas y fotos de ejemplo hechas con IA (2026-11-04)
+- **Qué:** `scripts/prerender.mjs` agrega a cada página un `<link rel="preload" as="font">` para las 2 letras
+  (Unbounded e Instrument Sans, latín). Si no encuentra exactamente 2, la compilación se detiene con un error claro.
+- **Por qué:** el navegador descubría las letras tarde; al llegar, el título cambiaba de tamaño y empujaba lo de abajo.
+  En /tienda-virtual-ibague eso era un salto de 0,13 (Lighthouse 83). Con la precarga: salto 0. No suma peso.
+- **Fotos con IA:** sirven para que se entienda sin leer (regla de oro de Danny), pero son personas inventadas: van con
+  "Imagen de ejemplo", sin logos de marcas ni texto dentro, y nunca como clientes o testimonios. Cada foto en .webp de
+  menos de 90 KB, con ancho y alto; solo la primera carga de una vez (`fetchPriority=high`), las demás al bajar.
+- **Consecuencias:** si se cambia de letra, actualizar la expresión de `letras` en el prerender. Para fotos nuevas:
+  ffmpeg a .webp calidad ~70, versiones 480/720/960 para la de arriba, y medir Lighthouse antes de publicar.
