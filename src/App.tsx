@@ -9,6 +9,9 @@ import { COSTOS_APARTE, PRECIOS, preguntas, QUE_CAMBIA_EL_PRECIO, rangoPrecio } 
 // GIF transparente de 1 píxel: lo que baja el celular en vez de las capturas de la vitrina (ver la vitrina)
 const PIXEL_VACIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
 
+// "$1.000.000": el precio mínimo de PRECIOS[i], para el párrafo bajo el título de precios
+const desde = (i: number) => `$${PRECIOS[i].desde.toLocaleString('es-CO')}`
+
 // La app real de Johana, abierta directo en su lista de servicios (no en agendar)
 const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 
@@ -136,8 +139,12 @@ export default function App() {
           {/* Servicios */}
           <section id="servicios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Qué hacemos</h2>
-            <p className="mt-3 max-w-[34rem] text-bruma">Software hecho para tu negocio, no una plantilla. Prueba los ejemplos.</p>
+            {/* H2 con las palabras que busca la gente (auditoría SEO 2026-11-04): "Qué hacemos" no decía de qué
+                trata la sección. "Ibagué" va solo en el H1 y en un H2 para no sonar forzado (ver DECISIONES.md). */}
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Desarrollo de software para negocios</h2>
+            <p className="mt-3 max-w-[34rem] text-bruma">
+              Páginas web, tiendas en línea y apps a la medida, hechas en Ibagué. Prueba los ejemplos.
+            </p>
 
             {/* Un ejemplo para tocar por servicio (Demos.tsx), con una sola línea de texto */}
             <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:gap-8 2xl:grid-cols-4 2xl:gap-12">
@@ -169,9 +176,12 @@ export default function App() {
               cuánto vale, luego la prueba (productos y proyecto real). */}
           <section id="precios" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24" aria-labelledby="titulo-precios">
             <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
-            <h2 id="titulo-precios" className="text-2xl font-semibold md:text-[2.25rem]">Cuánto cuesta</h2>
+            <h2 id="titulo-precios" className="text-2xl font-semibold md:text-[2.25rem]">Precios de páginas web y apps</h2>
+            {/* Las cifras van también aquí, justo bajo el título (auditoría GEO 2026-11-04): las IA citan el primer
+                párrafo después del encabezado, y antes no tenía ningún precio. Salen de PRECIOS (un solo lugar). */}
             <p className="mt-3 max-w-[38rem] text-bruma">
-              Precios de referencia. El precio exacto te llega por escrito en una propuesta sin costo, antes de empezar.
+              Página web desde {desde(0)}, tienda en línea o agenda desde {desde(1)} y app a la medida desde{' '}
+              {desde(2)}. Son precios de referencia: el exacto te llega por escrito, sin costo, antes de empezar.
             </p>
             <ul className="mt-8 grid max-w-[60rem] border-t border-linea">
               {PRECIOS.map((p) => (
@@ -224,14 +234,14 @@ export default function App() {
               primera, no la única (Danny: "es una empresa de software"); las próximas se agregan aquí. */}
           <section id="productos" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-oro-vivo top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Nuestros productos</h2>
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Apps listas para usar en tu negocio</h2>
             <p className="mt-3 max-w-[34rem] text-bruma">Apps propias de NODRA, listas para usar desde hoy.</p>
             <div className="agenda mt-8 grid items-center gap-10 rounded-3xl border border-oro/40 p-5 md:p-10 lg:grid-cols-[1fr_15rem] lg:gap-16 2xl:grid-cols-[1fr_18rem] 2xl:px-16">
               <div>
                 {/* La etiqueta "Disponible" va fuera del título: adentro, Google y los lectores de pantalla leían
                     "NODRA AgendaDisponible" (auditoría SEO 2026-10-24) */}
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="text-2xl font-semibold md:text-[2rem]">NODRA Agenda</h3>
+                  <h3 className="text-2xl font-semibold md:text-[2rem]">NODRA Agenda: app de citas para negocios</h3>
                   <span className="font-sans text-base font-semibold text-verde">Disponible</span>
                 </div>
                 <p className="mt-4 max-w-[36rem]">
@@ -279,7 +289,7 @@ export default function App() {
           {/* Proyecto real */}
           <section id="johana" className="relative scroll-mt-8 pb-24 pl-12 md:pl-24">
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Un proyecto real</h2>
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Caso real: la app de un estudio de uñas en Ibagué</h2>
             {/* Pedido de Danny 2026-11-02 (captura en PC): el texto se veía pequeño y flotando en medio de mucho espacio
                 vacío junto al celular. Ahora va arriba (items-start), con letra más grande en computador y la lista de
                 lo que hace la app (las mismas pestañas reales que se ven en el celular de al lado). */}
@@ -329,7 +339,7 @@ export default function App() {
             <span className="nodo nodo-lleno top-2" aria-hidden="true" />
             <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end md:gap-12">
               <h2 id="titulo-mapa" className="max-w-[30rem] text-2xl font-semibold md:text-[2.25rem] 2xl:max-w-[36rem] 2xl:text-[2.75rem]">
-                Hecha en Ibagué, abierta al mundo.
+                Hecha en Ibagué, Tolima. Abierta al mundo.
               </h2>
               <p className="max-w-[26rem] text-bruma 2xl:max-w-[32rem] 2xl:text-lg">
                 Tu app vive en la nube de Google: tus clientes la abren desde cualquier celular o computador,
@@ -395,7 +405,7 @@ export default function App() {
           {/* Proceso */}
           <section className="relative pb-24 pl-12 md:pl-24">
             <span className="nodo top-2" aria-hidden="true" />
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo trabajamos</h2>
+            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo hacemos tu página web o app</h2>
             {/* 4 nodos que se encienden al bajar (Pasos.tsx) */}
             <Pasos />
           </section>
@@ -407,7 +417,7 @@ export default function App() {
             <span className="nodo nodo-verde top-2" aria-hidden="true" />
             <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
               <div>
-                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Seguridad desde el primer día</h2>
+                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Apps seguras desde el primer día</h2>
                 <p className="mt-4 max-w-[40rem] text-lg">Solo tú ves los datos de tus clientes.</p>
               </div>
               <ul className="grid max-w-[44rem] gap-5 lg:pt-2 2xl:max-w-[50rem] 2xl:gap-7 2xl:text-lg">
@@ -433,7 +443,7 @@ export default function App() {
             {/* En computador el título se queda fijo al bajar (sticky) y lleva una salida a WhatsApp:
                 así la columna izquierda no queda vacía y quien no encuentra su respuesta sabe qué hacer */}
             <div className="lg:sticky lg:top-10 lg:self-start">
-              <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
+              <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes sobre páginas web y apps</h2>
               <p className="mt-4 max-w-[22rem] text-bruma 2xl:text-lg">¿Tu pregunta no está aquí? Escríbenos y te respondemos.</p>
               <a href={enlaceWhatsApp(MENSAJES.pregunta)} target="_blank" rel="noopener noreferrer" className="enlace-flecha mt-3">
                 Preguntar por WhatsApp

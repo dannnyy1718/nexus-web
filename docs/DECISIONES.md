@@ -194,3 +194,17 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   en `vite.config.ts`, `main.tsx`, `entry-server.tsx`, `scripts/prerender.mjs` (página y ficha), `sitemap.xml`,
   `llms.txt`, un enlace interno desde la portada y una fila en `docs/MEDIR.md`. Las respuestas de "Qué preguntar
   antes de contratar" son promesas: si cambian los términos o la garantía, cambiarlas aquí.
+
+## 32. Títulos H2 de la portada con las palabras que busca la gente (2026-11-04)
+- **Qué:** los H2 dicen el tema de su sección: "Desarrollo de software para negocios", "Precios de páginas web y apps",
+  "Apps listas para usar en tu negocio" (antes "Nuestros productos"), "Caso real: la app de un estudio de uñas en
+  Ibagué" (antes "Un proyecto real"), "Hecha en Ibagué, Tolima. Abierta al mundo.", "Cómo hacemos tu página web o app",
+  "Apps seguras desde el primer día" y "Preguntas frecuentes sobre páginas web y apps". "Quién está detrás de NODRA" y
+  el llamado final no cambian. El párrafo bajo el título de precios ya trae las cifras (salen de `PRECIOS`).
+- **Por qué:** auditoría SEO + GEO del 4-nov (comparada con adsnetsoluciones.com): 8 de 10 H2 servían para cualquier
+  empresa de cualquier ciudad. Google usa los H2 para entender cada parte y las IA para sacar el pedazo que citan.
+- **Reglas al escribir un H2 nuevo:** cortos (en celular el H2 mide 24 px); "Ibagué" en máximo 1-2 H2 de la portada
+  (ya está en el título y el H1); no repetir los H2 de `/paginas-web-ibague` ni de `/app-de-citas-ibague`, para que
+  la portada no compita con ellas; sin la palabra "agencia" (NODRA se presenta como alternativa a las agencias).
+- **Consecuencias:** reemplaza los nombres de sección de la decisión 26: los productos nuevos van en "Apps listas para
+  usar en tu negocio"; con un segundo cliente terminado, el H2 del caso pasa a plural ("Casos reales: …").

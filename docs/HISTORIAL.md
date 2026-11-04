@@ -2,6 +2,20 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04: títulos H2 de la portada que se pueden encontrar en Google
+- **Por qué:** Danny notó que varios H2 no usaban palabras de búsqueda. La auditoría SEO + GEO (comparada con la
+  página de AdsNet Soluciones) lo confirmó: 8 de 10 H2 eran genéricos ("Qué hacemos", "Cuánto cuesta"…).
+- **Cambios (solo texto, sin tocar el diseño ni la velocidad):**
+  1. Qué hacemos → **Desarrollo de software para negocios**; su párrafo ahora dice "Páginas web, tiendas en línea y
+     apps a la medida, hechas en Ibagué."
+  2. Cuánto cuesta → **Precios de páginas web y apps**; el párrafo de abajo ya trae las cifras (desde $1.000.000,
+     $1.800.000 y $3.500.000, leídas de `PRECIOS`).
+  3. Nuestros productos → **Apps listas para usar en tu negocio**; tarjeta: **NODRA Agenda: app de citas para negocios**.
+  4. Un proyecto real → **Caso real: la app de un estudio de uñas en Ibagué**.
+  5. **Hecha en Ibagué, Tolima. Abierta al mundo.** · Cómo trabajamos → **Cómo hacemos tu página web o app** ·
+     **Apps seguras desde el primer día** · **Preguntas frecuentes sobre páginas web y apps**.
+- Reglas para los próximos títulos en `docs/DECISIONES.md` (32).
+
 ## 2026-11-02 (noche): mínimo de $1.000.000 y sin precio al comienzo
 - Danny: "es muy poco" → se probó subir todo, pero decidió "deja los precios anteriores, pero el mínimo que sea un
   millón". Precios (en `negocio.ts`, `llms.txt` y la ficha para Google): página web $1.000.000 a $1.500.000; tienda
