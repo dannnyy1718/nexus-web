@@ -1,5 +1,5 @@
-import { BotonWhatsApp, Encabezado, enlaceWhatsApp, HORARIO_VISIBLE, MENSAJES, Pie } from './Marco'
-import { DemoTienda } from './Demos'
+import { BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
+import { DemoPagoEnLinea, DemoPedidoWhatsApp, DemoTienda } from './Demos'
 import {
   COSTOS_APARTE,
   cuandoSirveTienda,
@@ -11,25 +11,15 @@ import {
 } from './negocio'
 
 // Página "Tienda virtual en Ibagué" (2026-11-04, investigación SEO + GEO §10.2, decisión 35).
-// Mismo molde que /paginas-web-ibague, pero con contenido propio: cómo cobrar (WhatsApp o pagos en línea), si basta con
-// WhatsApp y lo que pide la ley para vender en línea. "Tienda virtual" es como lo escribe la gente en Colombia; va en
-// la dirección, el título, el H1, el primer párrafo y un H2. Solo promesas que NODRA cumple hoy.
+// Para dueños de negocio de 30 a 70 años (Danny): palabras de todos los días y REGLA DE ORO "poco texto, la gente es
+// más visual". Por eso cada idea va en una frase corta o en un ejemplo que se ve, y lo largo queda plegado (Google lo
+// lee igual). "Tienda virtual" va en la dirección, el título, el H1, el primer párrafo y un H2.
 
-const incluye = [
-  'Catálogo con fotos, precios y categorías, con tu logo y tus colores. No es una plantilla.',
-  'Carrito de compras pensado primero para el celular.',
-  'Un panel para ti: cambias precios, fotos e inventario desde tu celular.',
-  'Pedidos que te llegan por WhatsApp con la lista y el total, o pagos en línea si los eliges.',
-  'Lista para Google y rápida, como esta página.',
-  'Términos con derecho de retracto y aviso de privacidad, como pide la ley para vender en línea.',
-]
+const incluye = ['Tu logo y tus colores', 'Cambias precios desde tu celular', 'Lista para salir en Google', '6 meses de garantía']
 
-const pasos = [
-  { titulo: 'Conversamos', texto: 'Me cuentas por WhatsApp qué vendes y cómo cobras hoy. Sin costo.' },
-  { titulo: 'Propuesta por escrito', texto: 'Qué incluye, cuánto cuesta y cuándo se entrega.' },
-  { titulo: 'La hacemos', texto: 'Pagas el 50 % y ves los avances antes de terminar.' },
-  { titulo: 'Te la entregamos', texto: 'Pagas el otro 50 % con la tienda funcionando. 6 meses de garantía.' },
-]
+const pasos = ['Hablamos por WhatsApp', 'Te mando la propuesta', 'Pagas la mitad y la hacemos', 'Pagas el resto y es tuya']
+
+const titulo2 = 'text-2xl font-semibold md:text-[2.25rem]'
 
 export default function TiendaVirtual() {
   return (
@@ -37,95 +27,88 @@ export default function TiendaVirtual() {
       <Encabezado />
 
       <main id="contenido" className="mx-auto max-w-4xl px-4 pb-20 pt-8 md:px-8 md:pt-14">
-        <a href="/" className="text-sm font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+        <a href="/" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
           Volver al inicio
         </a>
 
         <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-5xl">Tienda virtual para negocios en Ibagué</h1>
-        {/* Respuesta directa en el primer párrafo, que se entienda sola (Google y las IA la citan tal cual). Sin precio
-            aquí, igual que en /paginas-web-ibague (Danny 2026-11-02): el precio va en su sección. */}
-        <p className="mt-5 max-w-[42rem] text-lg">
-          En NODRA hacemos tiendas virtuales para negocios de Ibagué y el Tolima: catálogo con fotos y precios, carrito,
-          pedidos por WhatsApp o pagos con PSE, Nequi o tarjeta, y un panel para cambiar precios desde tu celular. Con 6
-          meses de garantía.
+        {/* Una frase que se entienda sola (Google y las IA la citan tal cual). Sin precio: va en su sección. */}
+        <p className="mt-5 max-w-[40rem] text-lg">
+          En NODRA hacemos tiendas virtuales para negocios de Ibagué: tus productos con foto y precio, y los pedidos te
+          llegan por WhatsApp o ya pagados.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
           <BotonWhatsApp mensaje={MENSAJES.tienda} />
           <a href="#precio" className="enlace-flecha">
-            Ver precio y qué incluye
+            Ver precio
           </a>
         </div>
-        <p className="mt-4 text-sm text-bruma">Te responde Danny, el fundador · {HORARIO_VISIBLE}</p>
 
-        <section className="mt-16 grid items-start gap-10 md:grid-cols-[1fr_20rem]">
-          <div>
-            <h2 className="text-2xl font-semibold md:text-[2.25rem]">Qué incluye tu tienda virtual</h2>
-            <ul className="mt-6 grid gap-3">
+        {/* Qué incluye: el ejemplo tocable muestra la tienda; al lado, 4 cosas en pocas palabras */}
+        {/* En celular, primero el título y luego el ejemplo; en computador, el ejemplo a la izquierda */}
+        <section className="mt-16 grid items-center gap-8 md:grid-cols-[20rem_1fr]">
+          <div className="max-w-[22rem] md:order-first">
+            <DemoTienda />
+          </div>
+          <div className="order-first">
+            <h2 className={titulo2}>Qué incluye tu tienda virtual</h2>
+            <ul className="mt-6 grid gap-3 text-lg">
               {incluye.map((t) => (
-                <li key={t} className="flex gap-3">
-                  <span className="mt-2 size-2 shrink-0 rounded-full bg-verde" aria-hidden="true" />
-                  <span>{t}</span>
+                <li key={t} className="flex items-center gap-3">
+                  <span className="text-verde" aria-hidden="true">
+                    ✓
+                  </span>
+                  {t}
                 </li>
               ))}
             </ul>
           </div>
-          {/* El mismo ejemplo tocable de la portada (dice "Ejemplo" arriba: no es una tienda real) */}
-          <div className="max-w-[22rem]">
-            <DemoTienda />
-          </div>
         </section>
 
-        {/* Contenido propio de esta página: la decisión que de verdad tiene que tomar el dueño */}
+        {/* Las dos formas de cobrar se MUESTRAN (Demos.tsx) en vez de explicarse */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">¿Pedidos por WhatsApp o pagos en línea?</h2>
-          <p className="mt-3 max-w-[42rem] text-bruma">
-            Tu tienda virtual puede cobrar de dos formas, y puedes empezar con una y pasar a la otra después.
-          </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {formasDeCobrar.map((f) => (
-              <div key={f.titulo} className="rounded-2xl border border-linea p-5">
-                <h3 className="font-semibold">{f.titulo}</h3>
-                <p className="mt-2 text-bruma">{f.texto}</p>
-                <p className="mt-3 text-sm">
-                  <span className="font-semibold text-verde">Te sirve:</span> {f.paraQuien}
-                </p>
+          <h2 className={titulo2}>¿Pedidos por WhatsApp o pagos en línea?</h2>
+          <p className="mt-3 text-lg text-bruma">Escoge una. Puedes cambiar después.</p>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {formasDeCobrar.map((f, i) => (
+              <div key={f.titulo}>
+                {i === 0 ? <DemoPedidoWhatsApp /> : <DemoPagoEnLinea />}
+                <h3 className="mt-4 text-xl font-semibold">
+                  {f.titulo} <span className="ml-1 align-middle text-base font-semibold text-verde">· {f.etiqueta}</span>
+                </h3>
+                <p className="mt-1 text-bruma">{f.texto}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Precio a la vista, con lo que lo cambia al lado (regla 8.3 del manual de NODRA y Ley 1480) */}
+        {/* Precio grande y a la vista (regla 8.3 y Ley 1480); el detalle plegado para no llenar de texto */}
         <section id="precio" className="mt-16 scroll-mt-8">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">¿Cuánto cuesta una tienda virtual en Ibagué?</h2>
+          <h2 className={titulo2}>¿Cuánto cuesta una tienda virtual en Ibagué?</h2>
           <p className="mt-5 text-3xl font-semibold text-verde tabular-nums md:text-4xl">{rangoPrecio(PRECIO_TIENDA)}</p>
-          <p className="mt-2 max-w-[40rem] text-bruma">
-            Es un precio de referencia. El exacto te llega por escrito en una propuesta sin costo, antes de empezar.
-          </p>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="font-semibold">Qué cambia el precio</h3>
-              <ul className="mt-3 grid list-disc gap-1.5 pl-5 text-bruma">
-                <li>Si lleva pagos en línea o solo pedidos por WhatsApp.</li>
-                <li>Cuántos productos cargamos nosotros al inicio.</li>
+          <p className="mt-2 text-bruma">El precio exacto te llega por escrito y sin costo, antes de empezar.</p>
+          <details className="pregunta mt-4 border-y border-linea">
+            <summary>¿Qué cambia el precio y qué se paga aparte?</summary>
+            <div className="grid gap-6 pb-5 text-bruma md:grid-cols-2">
+              <ul className="grid list-disc gap-1.5 pl-5">
+                <li>Si el cliente paga en la tienda o solo te pide por WhatsApp.</li>
+                <li>Cuántos productos subimos nosotros al empezar.</li>
                 <li>Productos con tallas, colores o sabores.</li>
-                <li>Envío con precio distinto por zona o barrio.</li>
+                <li>Domicilio con precio distinto según el barrio.</li>
               </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold">Aparte, si lo necesitas</h3>
-              <ul className="mt-3 grid list-disc gap-1.5 pl-5 text-bruma">
-                <li>Comisión de la pasarela por cada venta en línea (la cobra ella, no NODRA).</li>
+              <ul className="grid list-disc gap-1.5 pl-5">
+                <li>El porcentaje que cobra la empresa de pagos por cada venta en línea (no es para NODRA).</li>
                 {/* Sin el costo de las tiendas de apps: la tienda virtual se abre desde un enlace, no desde Google Play */}
                 {COSTOS_APARTE.filter((t) => !t.includes('tiendas')).map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
             </div>
-          </div>
-          <p className="mt-6 max-w-[44rem] text-bruma">
-            ¿Solo quieres mostrar tus productos y que te escriban, sin carrito ni panel? Te sirve una{' '}
+          </details>
+          <p className="mt-5 text-bruma">
+            ¿Solo quieres mostrar tus productos? Te sirve una{' '}
             <a href="/paginas-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
-              página web para tu negocio
+              página web
             </a>
             , que cuesta menos.
           </p>
@@ -133,50 +116,53 @@ export default function TiendaVirtual() {
 
         {/* La pregunta honesta (investigación §5): a veces basta con WhatsApp, y decirlo da confianza */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">¿Necesito una tienda virtual o me basta con WhatsApp?</h2>
-          <p className="mt-4 max-w-[42rem]">
-            Si vendes pocos productos y contestas rápido, el catálogo gratis de WhatsApp Business te puede bastar. Una
-            tienda virtual vale la pena cuando:
-          </p>
-          <ul className="mt-4 grid gap-3">
+          <h2 className={titulo2}>¿Necesito una tienda virtual o me basta con WhatsApp?</h2>
+          <p className="mt-4 text-lg">Si vendes poco y contestas rápido, te basta con WhatsApp. La tienda vale la pena si:</p>
+          <ul className="mt-4 grid gap-3 text-lg">
             {cuandoSirveTienda.map((t) => (
-              <li key={t} className="flex gap-3">
-                <span className="mt-2 size-2 shrink-0 rounded-full bg-cian" aria-hidden="true" />
-                <span>{t}</span>
+              <li key={t} className="flex items-center gap-3">
+                <span className="text-cian" aria-hidden="true">
+                  ✓
+                </span>
+                {t}
               </li>
             ))}
           </ul>
         </section>
 
-        {/* Guía general, útil aunque no nos contraten. No es asesoría legal: lo dice al final. */}
+        {/* Guía corta de la ley, útil aunque no nos contraten. No es asesoría legal: lo dice abajo. */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">Lo que pide la ley para vender en línea en Colombia</h2>
-          <p className="mt-3 max-w-[42rem] text-bruma">Tu tienda virtual lo trae listo desde el primer día:</p>
-          <ol className="mt-5 grid list-decimal gap-2 pl-5">
+          <h2 className={titulo2}>Lo que pide la ley para vender en línea en Colombia</h2>
+          <p className="mt-3 text-lg text-bruma">Tu tienda lo trae listo:</p>
+          <ul className="mt-4 grid gap-3 text-lg">
             {leyVenderEnLinea.map((t) => (
-              <li key={t}>{t}</li>
+              <li key={t} className="flex items-center gap-3">
+                <span className="text-verde" aria-hidden="true">
+                  ✓
+                </span>
+                {t}
+              </li>
             ))}
-          </ol>
-          <p className="mt-4 max-w-[42rem] text-sm text-bruma">
-            Es una guía general. Para tu caso, consulta a tu contador o abogado.
-          </p>
+          </ul>
+          <p className="mt-4 text-bruma">Es una guía general. Para tu caso, pregúntale a tu contador.</p>
         </section>
 
+        {/* Cómo trabajamos: solo los 4 pasos, con número grande */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo trabajamos</h2>
-          <ol className="mt-6 grid gap-5 md:grid-cols-2">
+          <h2 className={titulo2}>Cómo trabajamos</h2>
+          <ol className="mt-6 grid gap-4 sm:grid-cols-2">
             {pasos.map((p, i) => (
-              <li key={p.titulo} className="rounded-2xl border border-linea p-5">
-                <span className="font-semibold text-cian">{i + 1}.</span> <span className="font-semibold">{p.titulo}</span>
-                <p className="mt-2 text-bruma">{p.texto}</p>
+              <li key={p} className="flex items-center gap-4 rounded-2xl border border-linea p-4 text-lg font-semibold">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-cian/15 text-cian">{i + 1}</span>
+                {p}
               </li>
             ))}
           </ol>
         </section>
 
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold md:text-[2.25rem]">Preguntas frecuentes</h2>
-          {/* Plegadas como en la portada: funcionan sin JavaScript y Google igual lee las respuestas */}
+          <h2 className={titulo2}>Preguntas frecuentes</h2>
+          {/* Plegadas: no llenan la pantalla de texto, funcionan sin JavaScript y Google igual lee las respuestas */}
           <div className="mt-6 border-b border-linea">
             {preguntasTienda.map((p) => (
               <details key={p.pregunta} className="pregunta">
@@ -189,10 +175,7 @@ export default function TiendaVirtual() {
 
         <section className="mt-16 rounded-3xl border border-verde/40 p-6 md:p-10">
           <h2 className="text-2xl font-semibold md:text-3xl">Cuéntame qué vendes</h2>
-          <p className="mt-3 max-w-[38rem] text-bruma">
-            En una conversación corta por WhatsApp te digo qué necesita tu tienda, cómo te conviene cobrar, cuánto cuesta y
-            cuándo está lista. Sin compromiso.
-          </p>
+          <p className="mt-3 text-lg text-bruma">Te respondo yo, Danny. Sin compromiso.</p>
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
             <BotonWhatsApp mensaje={MENSAJES.tienda} />
             <a href={enlaceWhatsApp(MENSAJES.pregunta)} target="_blank" rel="noopener noreferrer" className="enlace-flecha">

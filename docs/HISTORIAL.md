@@ -2,6 +2,17 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (tarde): tienda virtual más corta, más sencilla y más visual
+- **Por qué:** Danny pidió (1) que la entienda un dueño de negocio de 30 a 70 años y (2) la regla de oro "poco texto,
+  la gente es más visual".
+- **Cambios:** palabras de todos los días (sin "panel", "inventario", "plantilla"; "pasarela de pagos" explicada);
+  nada en letra pequeña; de 791 a 427 palabras visibles y de 7.182 a 5.591 px de largo en celular; dos ejemplos que se
+  ven en vez de explicarse (pedido que llega por WhatsApp y pantalla de pago PSE/Nequi/tarjeta, `Demos.tsx`); lo de
+  "qué cambia el precio" quedó plegado; factura electrónica pasó a preguntas frecuentes.
+- **Revisado en local:** 360 px sin desbordes; Lighthouse 95 / 100 / – / 100. Sin publicar.
+- **Siguiente:** Danny genera con Gemini las imágenes de ejemplo (prompts en la conversación del 4-nov) y Claude las
+  comprime a .webp y las pone.
+
 ## 2026-11-04 (tarde): página nueva "Tienda virtual en Ibagué"
 - **Por qué:** la investigación SEO + GEO pidió una página por servicio, cada una con contenido propio (no copiada).
 - **Qué tiene:** qué incluye, ejemplo tocable, "¿pedidos por WhatsApp o pagos en línea?", precio

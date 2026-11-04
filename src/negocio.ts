@@ -220,6 +220,11 @@ export const planesCitas = [
 
 export const preguntasCitas = [
   {
+    pregunta: '¿La tienda hace la factura electrónica?',
+    respuesta:
+      'No. Si la DIAN se la exige a tu negocio, la sigues haciendo como hoy, con tu programa de facturación.',
+  },
+  {
     pregunta: '¿Mis clientes tienen que descargar algo?',
     respuesta: 'No. Abren tu enlace en el celular y reservan ahí mismo, sin crear cuenta.',
   },
@@ -421,38 +426,27 @@ export function datosPaginasWeb() {
 export const PAGINA_TIENDA = `${SITIO}/tienda-virtual-ibague`
 export const PRECIO_TIENDA = PRECIOS[1]
 
-// Las dos formas de cobrar. La de WhatsApp es más barata (sin pasarela); la de pagos en línea vende a cualquier hora.
+// Las dos formas de cobrar, en una línea cada una: el ejemplo visual (Demos.tsx) explica el resto.
+// Regla de oro de Danny (2026-11-04): poco texto, la gente es más visual.
 export const formasDeCobrar = [
-  {
-    titulo: 'Pedidos por WhatsApp',
-    texto:
-      'Tu cliente arma el pedido en la tienda y te llega por WhatsApp con la lista y el total. Tú confirmas y cobras por transferencia, Nequi o contra entrega. No hay comisión por venta.',
-    paraQuien: 'Para empezar, o si respondes rápido y recibes pocos pedidos al día.',
-  },
-  {
-    titulo: 'Pagos en línea',
-    texto:
-      'Tu cliente paga ahí mismo con PSE, Nequi o tarjeta, a cualquier hora. La plata llega a la cuenta de tu negocio por una pasarela de pagos colombiana, que cobra su comisión por cada venta.',
-    paraQuien: 'Si vendes fuera de horario o no quieres confirmar cada pago a mano. Sube el precio de la tienda.',
-  },
+  { titulo: 'Pedidos por WhatsApp', texto: 'Cobras como ya lo haces: transferencia, Nequi o al entregar.', etiqueta: 'Sin comisión' },
+  { titulo: 'Pagos en línea', texto: 'Te pagan con PSE, Nequi o tarjeta a cualquier hora. La empresa de pagos cobra un pequeño porcentaje.', etiqueta: 'Abierta 24 horas' },
 ]
 
-// "¿Necesito tienda o me basta WhatsApp?" (pregunta real de los dueños, investigación §5). Respuesta honesta: a veces basta.
+// "¿Me basta con WhatsApp?" (pregunta real de los dueños, investigación §5). Respuesta honesta: a veces sí.
 export const cuandoSirveTienda = [
-  'Tienes muchos productos, o precios que cambian seguido.',
-  'Pasas horas mandando fotos y precios uno por uno por WhatsApp.',
-  'Te escriben de noche o en domingo y esas ventas se pierden.',
-  'Quieres que te encuentren en Google y no solo quien ya tiene tu número.',
+  'Tienes muchos productos.',
+  'Te escriben de noche y pierdes ventas.',
+  'Quieres clientes nuevos desde Google.',
 ]
 
-// Guía general de lo que pide la ley colombiana para vender en línea. No es asesoría legal: por eso la página dice
-// que se consulte al contador o abogado. Si cambia una ley, cambiarla aquí.
+// Lo que pide la ley para vender en línea en Colombia, en pocas palabras. No es asesoría legal (la página lo dice).
+// La factura electrónica va en las preguntas frecuentes. Si cambia una ley, cambiarla aquí.
 export const leyVenderEnLinea = [
-  'Mostrar quién vende: nombre del negocio, NIT o cédula, dirección y contacto (Ley 1480 de 2011).',
-  'El precio total con impuestos y el costo del envío, antes de pagar.',
-  'Derecho de retracto: tu cliente puede devolver la compra dentro de 5 días hábiles (Ley 1480, art. 47).',
-  'Aviso de privacidad y autorización para usar los datos de tus clientes (Ley 1581 de 2012).',
-  'Factura electrónica si tu negocio está obligado ante la DIAN. La tienda no la reemplaza: la sigues expidiendo con tu proveedor.',
+  'Quién vende y cómo contactarte (Ley 1480)',
+  'El precio total antes de pagar',
+  'Devoluciones dentro de 5 días hábiles (Ley 1480, art. 47)',
+  'Permiso del cliente para guardar sus datos (Ley 1581)',
 ]
 
 export const preguntasTienda = [
@@ -463,17 +457,17 @@ export const preguntasTienda = [
   {
     pregunta: '¿Puedo recibir pagos con Nequi y PSE?',
     respuesta:
-      'Sí, con una pasarela de pagos colombiana. La plata llega directo a la cuenta de tu negocio, no pasa por NODRA. La pasarela cobra su comisión por cada venta y te pide los documentos de tu negocio, como el RUT y una certificación bancaria; te acompañamos en el registro.',
+      'Sí. Se hace con una empresa de pagos colombiana (pasarela de pagos), que se queda con un pequeño porcentaje de cada venta. La plata llega directo a la cuenta de tu negocio, no pasa por NODRA. Para inscribirte te piden el RUT y una certificación bancaria, y te acompañamos en ese paso.',
   },
   {
     pregunta: '¿Cuántos productos puedo tener?',
     respuesta:
-      'No hay un límite fijo: tú agregas y quitas productos desde tu panel. Si quieres que nosotros carguemos el catálogo inicial, o tus productos tienen tallas y colores, eso va en la propuesta.',
+      'Los que necesites: tú mismo agregas y quitas productos desde tu celular. Si quieres que nosotros subamos los primeros productos, o tienes tallas y colores, eso va en la propuesta.',
   },
   {
     pregunta: '¿La tienda maneja domicilios?',
     respuesta:
-      'La tienda puede cobrar el envío por zona o barrio y mostrarlo antes de pagar. Las entregas las haces tú o tu mensajero: NODRA no hace domicilios.',
+      'La tienda puede sumar el valor del domicilio según el barrio y mostrarlo antes de pagar. Las entregas las haces tú o tu mensajero: NODRA no lleva pedidos.',
   },
   {
     pregunta: '¿Mis clientes tienen que descargar algo?',

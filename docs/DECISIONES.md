@@ -241,3 +241,5 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   haya una tienda real entregada, agregar el caso (con permiso del cliente) y quitar esta nota.
 - **Consecuencias:** si cambia el precio de la tienda o la agenda a la medida, cambia solo (`PRECIOS[1]`). El menú del
   pie ya tiene 3 servicios; con más de 4, pasar a columna (decisión 33).
+- **Público y regla de oro (Danny, 4-nov):** se escribe para dueños de 30 a 70 años, con palabras de todos los días y
+  POCO TEXTO: cada idea en una frase corta o en un ejemplo que se ve; lo largo, plegado. Aplica a toda página nueva.
