@@ -307,54 +307,54 @@ export const PRECIO_PAGINA_WEB = PRECIOS[0]
 export const antesDeContratar = [
   {
     pregunta: '¿El dominio queda a tu nombre?',
-    respuesta: 'Sí. El dominio (tunegocio.com) se registra a nombre de tu negocio y lo pagas directo al proveedor.',
+    respuesta: 'Sí. La dirección (tunegocio.com) queda a nombre de tu negocio.',
   },
   {
     pregunta: '¿Tiene garantía?',
-    respuesta: '6 meses: si algo de lo acordado falla, lo corregimos sin costo.',
+    respuesta: 'Sí, 6 meses. Si algo falla, lo arreglamos gratis.',
   },
   {
-    pregunta: '¿Es una plantilla?',
-    respuesta: 'No. El diseño se hace para tu negocio, con tu logo, tus colores y tus fotos.',
+    pregunta: '¿Es un diseño repetido?',
+    respuesta: 'No. Se hace solo para tu negocio.',
   },
   {
     pregunta: '¿Se ve bien en el celular y carga rápido?',
-    respuesta: 'Sí. Se diseña primero para celular, que es desde donde te busca casi todo el mundo.',
+    respuesta: 'Sí. Se hace primero para el celular.',
   },
   {
     pregunta: '¿Quién te responde si necesitas algo?',
-    respuesta: 'Danny, el fundador, por WhatsApp. Sin intermediarios.',
+    respuesta: 'Danny, el fundador, por WhatsApp.',
   },
   {
     pregunta: '¿Cuánto cuesta mantenerla?',
-    respuesta: 'Lo dices tú: mantenimiento opcional desde $100.000 al mes, o pagas solo cuando necesites un cambio.',
+    respuesta: 'Desde $100.000 al mes, si lo quieres. Si no, pagas solo cuando pidas un cambio.',
   },
 ]
 
 export const preguntasPaginasWeb = [
   {
     pregunta: '¿Cuánto cuesta una página web en Ibagué con NODRA?',
-    respuesta: `Una página web para tu negocio cuesta de ${rangoPrecio(PRECIOS[0])}, según cuántas secciones tenga, si lleva formularios especiales y si escribimos los textos por ti. El precio exacto va por escrito en una propuesta sin costo, antes de empezar. Se paga 50 % al empezar y 50 % al recibirla.`,
+    respuesta: `Una página web para tu negocio cuesta de ${rangoPrecio(PRECIOS[0])}, según cuántas partes tenga y si escribimos los textos por ti. El precio exacto te llega por escrito y sin costo, antes de empezar. Pagas la mitad al empezar y la otra mitad al recibirla.`,
   },
   {
     pregunta: '¿Cuánto se demora?',
     respuesta:
-      'La fecha de entrega va en la propuesta y empieza a contar cuando tengamos tus textos, fotos y logo. Si el material se demora, la entrega se corre los mismos días.',
+      'La fecha va escrita en la propuesta y empieza a contar cuando nos mandas tus fotos, textos y logo.',
   },
   {
     pregunta: '¿Necesito tener textos y fotos?',
     respuesta:
-      'Lo ideal es que nos envíes fotos reales de tu negocio y tu trabajo. Si necesitas ayuda con los textos, los escribimos contigo (eso cambia el precio).',
+      'Lo mejor son fotos reales de tu negocio, tomadas con tu celular. Los textos los podemos escribir contigo.',
   },
   {
     pregunta: '¿Mi página va a salir en Google?',
     respuesta:
-      'La dejamos lista para Google: rápida, con título, descripción y los datos de tu negocio bien puestos. Salir de primero también depende de tu Perfil de Empresa en Google y de tus reseñas; te explicamos cómo configurarlo.',
+      'La dejamos lista para que Google la encuentre. Salir de primero también depende de tu perfil en Google Maps y de tus reseñas, y te enseñamos a manejarlos.',
   },
   {
     pregunta: '¿Puedo cambiar precios o fotos yo mismo?',
     respuesta:
-      'En la página sencilla, los cambios los hacemos nosotros (en el mantenimiento o cuando los pidas). Si quieres cambiarlos tú desde el celular, te sirve la tienda en línea o agenda a tu medida, que trae un panel.',
+      'En la página web, los cambios los hacemos nosotros cuando nos los pidas. Si quieres cambiarlos tú desde el celular, te sirve una tienda virtual.',
   },
   {
     pregunta: '¿Trabajan con negocios fuera de Ibagué?',

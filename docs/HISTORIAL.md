@@ -2,6 +2,15 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (noche): /paginas-web-ibague más corta y sencilla
+- **Por qué:** mismas reglas de Danny que la tienda (público de 30 a 70 años, poco texto). Consejo de marketing: una sola
+  revisión ligera y luego parar la web hasta tener datos de visitas.
+- **Cambios:** de 629 a 380 palabras visibles; 4 cosas que incluye con ✓; precio grande con el detalle plegado;
+  "qué preguntar antes de contratar" con respuestas de una línea; el trabajo real de Johana ahora se ve en el celular que
+  se desliza (capturas reales, `CelularJohana`); enlace a /tienda-virtual-ibague. `FotoEjemplo` pasó a su propio archivo.
+- **Pendiente:** la pestaña "Panel" del celular de Johana baja de línea a 360 px (igual que en la portada). OK de Danny
+  para publicar.
+
 ## 2026-11-04 (tarde): fotos en la tienda virtual y letras que ya no hacen saltar la página
 - **Fotos:** Danny hizo 4 imágenes con IA (3 con ChatGPT, 1 con Gemini; originales en `3 Marketing/Imagenes/Tienda Virtual`):
   dueña de tienda (arriba), pedido por WhatsApp, pago en línea y domicilio. Comprimidas a .webp (de ~2,5 MB a 22-84 KB),
