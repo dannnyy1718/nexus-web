@@ -402,6 +402,13 @@ export default function App() {
                       que entrego nace con la seguridad pensada desde el primer día: cada negocio en su propio espacio en la
                       nube, reglas de acceso estrictas y revisión contra las fallas más comunes de la web.
                     </p>
+                    {/* Dato con fuente y año (2026-11-04, sacado de la página de ProColombia "Software y servicios TI"):
+                        las IA citan más los textos con cifras verificables. Es de 2021: si sale un dato más nuevo de IDC,
+                        cambiarlo aquí con su año. Nunca poner cifras sin fuente (regla 8.6). */}
+                    <p>
+                      Hago el software desde Ibagué, en un país que en 2021 fue el tercer mercado de tecnología más grande
+                      de Latinoamérica, según la firma de estudios IDC.
+                    </p>
                     <p>
                       Trabajo directo contigo: me escribes por WhatsApp, te explico todo en palabras sencillas y no
                       desaparezco después de la entrega. Cada app tiene 6 meses de garantía.

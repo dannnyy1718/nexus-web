@@ -2,6 +2,13 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-04 (noche): dato de confianza con fuente en "Quién está detrás"
+- **Qué:** dentro del desplegable "Mi formación y cómo trabajo" se agregó una línea: Colombia fue en 2021 el tercer
+  mercado de tecnología de Latinoamérica (IDC). Va plegado para no llenar la portada de texto.
+- **Por qué:** se revisó la página de ProColombia sobre software y TI; casi todo es para inversionistas, pero su forma
+  de escribir (cada cifra con fuente y año) ayuda a que Google y las IA citen la página. Tolima e Ibagué no aparecen
+  allá: espacio libre para NODRA. Dato viejo (2021): cambiarlo si IDC publica uno más nuevo.
+
 ## 2026-11-04 (noche): /paginas-web-ibague más corta y sencilla
 - **Por qué:** mismas reglas de Danny que la tienda (público de 30 a 70 años, poco texto). Consejo de marketing: una sola
   revisión ligera y luego parar la web hasta tener datos de visitas.
