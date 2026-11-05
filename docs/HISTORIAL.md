@@ -8,6 +8,8 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - **Por qué:** se revisó la página de ProColombia sobre software y TI; casi todo es para inversionistas, pero su forma
   de escribir (cada cifra con fuente y año) ayuda a que Google y las IA citen la página. Tolima e Ibagué no aparecen
   allá: espacio libre para NODRA. Dato viejo (2021): cambiarlo si IDC publica uno más nuevo.
+- **Publicado y verificado en vivo (4-nov noche):** portada con el dato IDC y /paginas-web-ibague corta (275f0ef), las
+  dos con 200 OK en nodrasoft.com y los encabezados de seguridad activos. Falta pedir reindexar ambas en Search Console.
 
 ## 2026-11-04 (noche): /paginas-web-ibague más corta y sencilla
 - **Por qué:** mismas reglas de Danny que la tienda (público de 30 a 70 años, poco texto). Consejo de marketing: una sola
