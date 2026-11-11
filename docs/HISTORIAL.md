@@ -2,6 +2,12 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-11: plan Gratis de NODRA Agenda = 20 citas de prueba una sola vez
+- **Qué:** donde decía "Tu agenda gratis: recibe hasta 20 citas al mes" (planes de `/app-de-citas-ibague` y su
+  descripción para Google y WhatsApp) ahora dice **"Pruébala gratis: recibe tus primeras 20 citas sin pagar"**.
+- **Por qué:** decisión de Danny: las 20 citas gratis son para probar, una sola vez, no cada mes. La app NODRA Agenda
+  cambió igual el mismo día (ver su `docs/DECISIONES.md`). Sin publicar hasta el OK de Danny.
+
 ## 2026-11-04 (noche): dato de confianza con fuente en "Quién está detrás"
 - **Qué:** dentro del desplegable "Mi formación y cómo trabajo" se agregó una línea: Colombia fue en 2021 el tercer
   mercado de tecnología de Latinoamérica (IDC). Va plegado para no llenar la portada de texto.
