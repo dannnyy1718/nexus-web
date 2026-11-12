@@ -2,6 +2,19 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-12: `/app-de-citas-ibague` deja de ser puro texto
+- **Por qué:** video de TikTok "Tu web no es una Biblia" (con puro texto nadie pasa de la 3.ª sección). Al contar
+  palabras e imágenes por sección, esta era la única página con 4 secciones seguidas sin nada para ver, y no mostraba
+  la app en ningún lado. Las de páginas web y tienda ya tenían su ejemplo tocable en la 2.ª sección.
+- **Qué:** 1) junto al título, la captura de la portada de NODRA Agenda (la misma de la portada, 40 KB);
+  2) en "Cómo funciona", un ejemplo por paso, hecho con HTML y CSS (0 KB): la página de "Estudio Luna" (inventado),
+  el enlace compartido por WhatsApp y el panel con un botón "Confirmar" que se puede tocar (`src/Demos.tsx`).
+  No se borró texto: ayuda a salir en Google.
+- **Arreglo:** la pregunta "¿La tienda hace la factura electrónica?" estaba por error en las preguntas de la página
+  de citas desde el 4-nov (commit 1db5a40); se pasó a la de tienda virtual, que era donde iba.
+- Probado en el PC (celular 390 px y computador 1366 px): sin desbordes, el botón conserva el foco del teclado.
+  **Sin publicar** (Danny: "prepáralo ya, sin publicar"). Al publicar sale también el cambio del 2026-11-11.
+
 ## 2026-11-11: plan Gratis de NODRA Agenda = 20 citas de prueba una sola vez
 - **Qué:** donde decía "Tu agenda gratis: recibe hasta 20 citas al mes" (planes de `/app-de-citas-ibague` y su
   descripción para Google y WhatsApp) ahora dice **"Pruébala gratis: recibe tus primeras 20 citas sin pagar"**.

@@ -1,5 +1,9 @@
 import { AGENDA_URL, Encabezado, Pie, WHATSAPP_URL } from './Marco'
+import { DemoPasoConfirmar, DemoPasoEnlace, DemoPasoPagina } from './Demos'
 import { pasosCitas, planesCitas, preguntasCitas } from './negocio'
+
+// Un ejemplo para ver por cada paso de "Cómo funciona", en el mismo orden que pasosCitas (2026-11-12)
+const demosPasos = [DemoPasoPagina, DemoPasoEnlace, DemoPasoConfirmar]
 
 // Página "App de citas en Ibagué" (2026-10-24, plan SEO): lleva a NODRA Agenda.
 // La palabra clave "app de citas ... Ibagué" va en la dirección, el H1, el título, la descripción, el primer párrafo
@@ -43,26 +47,50 @@ export default function AppCitas() {
           Volver al inicio
         </a>
 
-        <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-5xl">App de citas para negocios en Ibagué</h1>
-        <p className="mt-5 max-w-[40rem] text-lg">
-          NODRA Agenda es la app de citas hecha en Ibagué: tus clientes reservan desde el celular, sin llamarte, y tú
-          confirmas desde tu panel.
-        </p>
-        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <BotonAgenda />
-          <span className="text-sm text-bruma">Sin tarjeta de crédito.</span>
+        {/* Título y la app al lado (2026-11-12): antes la página no mostraba la app en ningún lado */}
+        <div className="mt-6 grid items-center gap-10 md:grid-cols-[1fr_14rem]">
+          <div>
+            <h1 className="text-3xl font-semibold leading-tight md:text-5xl">App de citas para negocios en Ibagué</h1>
+            <p className="mt-5 max-w-[40rem] text-lg">
+              NODRA Agenda es la app de citas hecha en Ibagué: tus clientes reservan desde el celular, sin llamarte, y tú
+              confirmas desde tu panel.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <BotonAgenda />
+              <span className="text-sm text-bruma">Sin tarjeta de crédito.</span>
+            </div>
+          </div>
+          {/* La misma captura de la portada (40 KB, ya en caché si vienen del inicio). Sin datos de clientes. */}
+          <figure className="mx-auto w-full max-w-[13rem] md:max-w-none">
+            <div className="celular">
+              <img
+                src="/img/agenda-portada.webp"
+                width={480}
+                height={860}
+                decoding="async"
+                alt="Portada de NODRA Agenda: Tu agenda de citas, con tu marca, en tu celular, y el botón Crear mi agenda gratis"
+                className="block h-auto w-full"
+              />
+            </div>
+          </figure>
         </div>
 
         <section className="mt-16">
           <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo funciona</h2>
           <ol className="mt-6 grid gap-5 md:grid-cols-3">
-            {pasosCitas.map((p, i) => (
-              <li key={p.titulo} className="rounded-2xl border border-linea p-5">
-                <span className="font-semibold text-cian">{i + 1}.</span>{' '}
-                <span className="font-semibold">{p.titulo}</span>
-                <p className="mt-2 text-bruma">{p.texto}</p>
-              </li>
-            ))}
+            {pasosCitas.map((p, i) => {
+              const Demo = demosPasos[i]
+              return (
+                <li key={p.titulo} className="flex flex-col gap-4">
+                  <div>
+                    <span className="font-semibold text-cian">{i + 1}.</span>{' '}
+                    <span className="font-semibold">{p.titulo}</span>
+                    <p className="mt-2 text-bruma">{p.texto}</p>
+                  </div>
+                  {Demo && <Demo />}
+                </li>
+              )
+            })}
           </ol>
         </section>
 

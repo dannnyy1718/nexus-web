@@ -221,11 +221,6 @@ export const planesCitas = [
 
 export const preguntasCitas = [
   {
-    pregunta: '¿La tienda hace la factura electrónica?',
-    respuesta:
-      'No. Si la DIAN se la exige a tu negocio, la sigues haciendo como hoy, con tu programa de facturación.',
-  },
-  {
     pregunta: '¿Mis clientes tienen que descargar algo?',
     respuesta: 'No. Abren tu enlace en el celular y reservan ahí mismo, sin crear cuenta.',
   },
@@ -451,6 +446,12 @@ export const leyVenderEnLinea = [
 ]
 
 export const preguntasTienda = [
+  // Estaba por error en preguntasCitas desde el 2026-11-04 (commit 1db5a40); movida aquí el 2026-11-12
+  {
+    pregunta: '¿La tienda hace la factura electrónica?',
+    respuesta:
+      'No. Si la DIAN se la exige a tu negocio, la sigues haciendo como hoy, con tu programa de facturación.',
+  },
   {
     pregunta: '¿Cuánto cuesta una tienda virtual en Ibagué con NODRA?',
     respuesta: `Una tienda virtual cuesta de ${rangoPrecio(PRECIOS[1])}, según cuántos productos cargamos al inicio, si lleva pagos en línea y si los productos tienen tallas o colores. El precio exacto va por escrito en una propuesta sin costo, antes de empezar. Se paga 50 % al empezar y 50 % al recibirla funcionando.`,

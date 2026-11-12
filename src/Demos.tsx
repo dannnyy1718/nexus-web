@@ -192,3 +192,71 @@ export function DemoIA() {
     </Marco>
   )
 }
+
+// Los 3 pasos de "Cómo funciona" en /app-de-citas-ibague (2026-11-12). Esa página tenía 4 secciones seguidas de solo
+// texto (lección del video "Tu web no es una Biblia": con puro texto nadie pasa de la 3.ª sección). Mismo estilo que
+// los ejemplos de la portada: HTML y CSS, sin imágenes. "Estudio Luna" y sus precios son inventados (dice "Ejemplo").
+const serviciosEjemplo = [
+  { nombre: 'Manicure tradicional', precio: 25000 },
+  { nombre: 'Pestañas pelo a pelo', precio: 80000 },
+]
+
+export function DemoPasoPagina() {
+  return (
+    <Marco titulo="Tu página">
+      <p className="font-semibold text-niebla">Estudio Luna</p>
+      <ul className="mt-2 grid gap-2">
+        {serviciosEjemplo.map((s) => (
+          <li key={s.nombre} className="demo-fila">
+            <span className="min-w-0 truncate">{s.nombre}</span>
+            <span className="text-bruma">{pesos(s.precio)}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="demo-pie text-bruma">Lunes a sábado · 9 a. m. a 7 p. m.</p>
+    </Marco>
+  )
+}
+
+export function DemoPasoEnlace() {
+  return (
+    <Marco titulo="Tu WhatsApp">
+      <div className="grid gap-2">
+        <p className="demo-burbuja demo-cliente">Ya puedes agendar tu cita desde el celular</p>
+        {/* No es un enlace de verdad: "estudio-luna" no existe. Se ve como enlace, pero es solo texto.
+            <wbr /> deja partir la línea después de la barra y no en mitad de una palabra. */}
+        <p className="demo-burbuja demo-cliente text-cian underline underline-offset-4">
+          agenda.nodrasoft.com/<wbr />estudio-luna
+        </p>
+      </div>
+      <p className="demo-pie text-bruma">También en Instagram o con tu código QR.</p>
+    </Marco>
+  )
+}
+
+export function DemoPasoConfirmar() {
+  const [confirmada, setConfirmada] = useState(false)
+  return (
+    <Marco titulo="Tu panel">
+      <div className="demo-fila">
+        <span className="min-w-0">
+          <span className="block truncate text-niebla">Nueva cita · Manicure</span>
+          <span className="text-bruma">Martes · 10:30 a. m.</span>
+        </span>
+      </div>
+      <div className="demo-pie">
+        <span aria-live="polite">
+          {confirmada ? <span className="demo-listo">Cita confirmada</span> : <span>Por confirmar</span>}
+        </span>
+        {/* Un solo botón que cambia de texto: si se cambiara por otro, el teclado perdería el foco */}
+        <button
+          type="button"
+          className={confirmada ? 'demo-enlace' : 'demo-boton'}
+          onClick={() => setConfirmada((c) => !c)}
+        >
+          {confirmada ? 'Deshacer' : 'Confirmar'}
+        </button>
+      </div>
+    </Marco>
+  )
+}
