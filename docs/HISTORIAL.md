@@ -15,6 +15,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   accesibilidad 100, SEO 100 (buenas prácticas 82 solo por ser http en local). **Sin publicar** hasta el OK de Danny.
 - Danny pidió una línea bajo la escalera: si la página recibe pagos o donaciones, o tiene panel para publicar, ya es
   tienda o app ($1.800.000 a $3.500.000). Así nadie compara un proyecto como CORISOC con los planes sencillos.
+- **Publicada y verificada en vivo el mismo día** (Danny: "agrega esa línea y publica la guía"): las 7 direcciones dan
+  200, la ficha Article y la línea nueva están en el HTML, el pie y /paginas-web-ibague enlazan la guía y siguen los
+  encabezados de seguridad. Lighthouse celular en vivo: 96/100/100/100, LCP 2,3 s, CLS 0. Indexación solicitada en
+  Search Console. Search Console (3 meses): 14 clics y 35 impresiones en total.
 
 ## 2026-11-12: `/app-de-citas-ibague` deja de ser puro texto
 - **Por qué:** video de TikTok "Tu web no es una Biblia" (con puro texto nadie pasa de la 3.ª sección). Al contar
