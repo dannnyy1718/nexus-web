@@ -13,6 +13,8 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 - Ese mismo día se pidió en Search Console que Google vuelva a leer `/app-de-citas-ibague` (aún mostraba "20 citas al mes").
 - Probado en local (390 y 1366 px, sin desbordes, ~435 palabras). Lighthouse celular local: rendimiento 96,
   accesibilidad 100, SEO 100 (buenas prácticas 82 solo por ser http en local). **Sin publicar** hasta el OK de Danny.
+- Danny pidió una línea bajo la escalera: si la página recibe pagos o donaciones, o tiene panel para publicar, ya es
+  tienda o app ($1.800.000 a $3.500.000). Así nadie compara un proyecto como CORISOC con los planes sencillos.
 
 ## 2026-11-12: `/app-de-citas-ibague` deja de ser puro texto
 - **Por qué:** video de TikTok "Tu web no es una Biblia" (con puro texto nadie pasa de la 3.ª sección). Al contar

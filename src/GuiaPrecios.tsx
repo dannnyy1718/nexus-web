@@ -85,6 +85,12 @@ export default function GuiaPrecios() {
                 </li>
               ))}
             </ol>
+            {/* Danny 2026-11-12: que nadie compare una página que recibe pagos o tiene panel (p. ej. CORISOC) con
+                los planes de arriba, que son solo para mostrar el negocio. El rango sale de PRECIOS[1] (un solo lugar). */}
+            <p className="mt-4 rounded-2xl border border-cian/40 p-4 text-lg">
+              Si tu página <strong>recibe pagos o donaciones</strong>, o tiene un <strong>panel para publicar tú mismo</strong>,
+              ya es una tienda o app: de {rangoPrecio(PRECIOS[1])}.
+            </p>
             <details className="pregunta mt-4 border-y border-linea">
               <summary>¿De dónde salen estos precios?</summary>
               <p className="pb-5 text-bruma">
