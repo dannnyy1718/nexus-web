@@ -19,6 +19,7 @@ tabla:
 | "Hola NODRA, me interesa el asistente con inteligencia artificial…" | Tarjeta de IA (en preparación) | web-ia |
 | "Hola NODRA, vi la página de páginas web y quiero una para mi negocio." | Página /paginas-web-ibague | web-paginas |
 | "Hola NODRA, vi la página de tiendas virtuales y quiero vender en línea." | Página /tienda-virtual-ibague | web-tienda |
+| "Hola NODRA, leí la guía de precios y quiero una propuesta para mi negocio." | Guía /cuanto-cuesta-una-pagina-web-ibague | web-guia |
 | "Hola NODRA, tengo un negocio y quiero saber qué me sirve." | Encabezado y páginas internas | web-general |
 La persona puede borrar el mensaje antes de enviarlo: entonces anotar "desconocido". Es una pista, no una cuenta exacta.
 

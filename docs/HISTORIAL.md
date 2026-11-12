@@ -2,6 +2,18 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-12 (noche): guía "¿Cuánto cuesta una página web en Ibagué?"
+- **Por qué:** Danny notó que la página no sale en Google. Revisado en vivo: Google sí tiene 9 páginas de
+  nodrasoft.com y con "NODRA Ibagué" salimos de primeros, pero con "páginas web Ibagué" no aparecemos: arriba van
+  Maps, agencias que publican precios y un artículo de ranking.
+- **Qué:** página nueva `/cuanto-cuesta-una-pagina-web-ibague` con los precios que publican 5 agencias de Ibagué
+  (de $389.000 a $1.600.000, más la opción gratis de la Alcaldía con Kolau), qué se paga aparte, por qué cambia el
+  precio, cuál sirve a cada negocio y cuánto cobra NODRA. Autor y fecha visibles. Enlace en el pie de todas las páginas
+  y en el precio de `/paginas-web-ibague`. Ver DECISIONES.md 37.
+- Ese mismo día se pidió en Search Console que Google vuelva a leer `/app-de-citas-ibague` (aún mostraba "20 citas al mes").
+- Probado en local (390 y 1366 px, sin desbordes, ~435 palabras). Lighthouse celular local: rendimiento 96,
+  accesibilidad 100, SEO 100 (buenas prácticas 82 solo por ser http en local). **Sin publicar** hasta el OK de Danny.
+
 ## 2026-11-12: `/app-de-citas-ibague` deja de ser puro texto
 - **Por qué:** video de TikTok "Tu web no es una Biblia" (con puro texto nadie pasa de la 3.ª sección). Al contar
   palabras e imágenes por sección, esta era la única página con 4 secciones seguidas sin nada para ver, y no mostraba

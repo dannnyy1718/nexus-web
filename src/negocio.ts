@@ -542,3 +542,130 @@ export function datosTienda() {
     ],
   }
 }
+
+// ---------- Guía "¿Cuánto cuesta una página web en Ibagué?" (2026-11-12, revisión de Google con Danny) ----------
+// Por qué existe: al buscar "páginas web Ibagué", Google muestra arriba a quien publica precios y el resumen con IA
+// cita artículos que responden "cuánto cuesta". Esta guía responde la pregunta para TODO el mercado (no solo NODRA):
+// así Google y las IA tienen una respuesta completa que citar. Distinta de /paginas-web-ibague (que vende el servicio
+// de NODRA): aquí se compara, se explica qué se paga aparte y cuál sirve a cada negocio.
+// HONESTIDAD (regla 8.6): los precios del mercado son los que 5 agencias y diseñadores que ofrecen páginas web en
+// Ibagué publican en sus propias páginas, revisados en oct-nov 2026 (detalle y nombres en
+// Empresa NEXUS/4 Estudios/2026-11-02-estudio-web-NODRA.md y docs/DECISIONES.md 37). No se nombra a ninguna agencia
+// (Ley 1480: comparar sin rebajar a nadie). Si se vuelve a revisar el mercado, cambiar GUIA_ACTUALIZADA y estos rangos.
+export const PAGINA_GUIA = `${SITIO}/cuanto-cuesta-una-pagina-web-ibague`
+export const GUIA_PUBLICADA = '2026-11-12'
+export const GUIA_ACTUALIZADA = '2026-11-12'
+export const GUIA_ACTUALIZADA_VISIBLE = '12 de noviembre de 2026'
+
+/** Escalones de precio del mercado en Ibagué. `hasta` sirve también para dibujar el largo de la barra. */
+export const preciosMercado = [
+  {
+    nivel: 'Gratis',
+    precio: '$0 para empezar',
+    hasta: 0,
+    trae: 'La armas tú con una plantilla. Ejemplo: el plan de digitalización de la Alcaldía de Ibagué con Kolau.',
+  },
+  {
+    nivel: 'Básica',
+    precio: '$389.000 a $650.000',
+    hasta: 650_000,
+    trae: 'Una sola página hecha con plantilla. Algunas traen el dominio y el alojamiento solo del primer año.',
+  },
+  {
+    nivel: 'Intermedia',
+    precio: '$789.000 a $960.000',
+    hasta: 960_000,
+    trae: 'Varias secciones: servicios, fotos, ubicación y contacto.',
+  },
+  {
+    nivel: 'Avanzada',
+    precio: '$1.490.000 a $1.600.000',
+    hasta: 1_600_000,
+    trae: 'Más páginas y funciones. Lo que incluye cambia mucho de una agencia a otra.',
+  },
+]
+
+// Lo que hace que una página cueste $400.000 y otra $1.500.000, en palabras del dueño del negocio
+export const porQueCambia = [
+  { que: 'Plantilla o diseño propio', explica: 'Una plantilla es más barata, pero otros negocios pueden tener la misma.' },
+  { que: 'Quién pone textos y fotos', explica: 'Si los escriben por ti o toman las fotos, sube el precio.' },
+  { que: 'Funciones extra', explica: 'Pagos en línea, citas o formularios especiales cuestan más que un botón de WhatsApp.' },
+  { que: 'Garantía y quién te responde', explica: 'Pregunta qué pasa si algo falla después de entregada, y por cuánto tiempo.' },
+]
+
+export const preguntasGuia = [
+  {
+    pregunta: '¿Se puede tener una página web gratis?',
+    respuesta:
+      'Sí. Hay programas gratis, como el de la Alcaldía de Ibagué con Kolau, y constructores donde la armas tú. Sirven para empezar; el costo es tu tiempo, y el dominio propio o las funciones extra suelen ser pagos.',
+  },
+  {
+    pregunta: '¿Cuánto cuesta el dominio (tunegocio.com) en Colombia?',
+    respuesta:
+      'Entre $60.000 y $120.000 al año, según la terminación (.com, .co). Pide que quede a nombre de tu negocio, no del diseñador.',
+  },
+  {
+    pregunta: '¿Hay que pagar todos los años?',
+    respuesta:
+      'Casi siempre sí: el dominio se renueva cada año. Si el plan trae el alojamiento solo el primer año, pregunta cuánto cuesta renovarlo antes de pagar.',
+  },
+  {
+    pregunta: '¿Me basta con Facebook, Instagram o el perfil de Google?',
+    respuesta:
+      'Para empezar, sí ayudan, y el perfil de Google Maps es gratis. La página web suma cuando quieres mostrar precios, recibir pedidos o citas, y que el contenido sea tuyo y no de una red social.',
+  },
+  {
+    pregunta: '¿Cuánto se demora hacer una página web?',
+    respuesta:
+      'Algunas agencias de Ibagué entregan las sencillas con plantilla en 3 a 7 días. Las de diseño propio toman más. Pide la fecha por escrito y desde cuándo cuenta.',
+  },
+]
+
+export function datosGuia() {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${PAGINA_GUIA}#webpage`,
+        url: PAGINA_GUIA,
+        name: '¿Cuánto cuesta una página web en Ibagué? | NODRA',
+        inLanguage: 'es-CO',
+        isPartOf: { '@id': `${SITIO}/#website` },
+        mainEntity: { '@id': `${PAGINA_GUIA}#guia` },
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITIO}/` },
+            { '@type': 'ListItem', position: 2, name: '¿Cuánto cuesta una página web en Ibagué?', item: PAGINA_GUIA },
+          ],
+        },
+      },
+      {
+        // Artículo con autor y fechas: Google y las IA prefieren guías con quién las escribió y cuándo se revisaron
+        '@type': 'Article',
+        '@id': `${PAGINA_GUIA}#guia`,
+        headline: '¿Cuánto cuesta una página web en Ibagué? Precios de 2026',
+        inLanguage: 'es-CO',
+        datePublished: GUIA_PUBLICADA,
+        dateModified: GUIA_ACTUALIZADA,
+        // Mismo @id que en la portada; el nombre se repite para que la guía se entienda sola
+        author: { '@type': 'Person', '@id': `${SITIO}/#fundador`, name: 'Danny Javier Díaz' },
+        publisher: NEGOCIO,
+        image: `${SITIO}/og.jpg`,
+        about: { '@type': 'Thing', name: 'Precio de una página web en Ibagué' },
+        contentLocation: { '@type': 'City', name: CIUDAD },
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${PAGINA_GUIA}#faq`,
+        isPartOf: { '@id': `${PAGINA_GUIA}#webpage` },
+        mainEntity: preguntasGuia.map((p) => ({
+          '@type': 'Question',
+          name: p.pregunta,
+          acceptedAnswer: { '@type': 'Answer', text: p.respuesta },
+        })),
+      },
+    ],
+  }
+}

@@ -70,6 +70,10 @@ export default function PaginasWeb() {
           <h2 className={titulo2}>¿Cuánto cuesta una página web en Ibagué?</h2>
           <p className="mt-5 text-3xl font-semibold text-verde tabular-nums md:text-4xl">{rangoPrecio(PRECIO_PAGINA_WEB)}</p>
           <p className="mt-2 text-bruma">El precio exacto te llega por escrito y sin costo, antes de empezar.</p>
+          {/* Hacia la guía de precios del mercado (decisión 37): quien compara precios encuentra la comparación aquí */}
+          <a href="/cuanto-cuesta-una-pagina-web-ibague" className="enlace-flecha mt-3">
+            Comparar con otros precios de Ibagué
+          </a>
           <details className="pregunta mt-4 border-y border-linea">
             <summary>¿Qué cambia el precio y qué se paga aparte?</summary>
             <div className="grid gap-6 pb-5 text-bruma md:grid-cols-2">

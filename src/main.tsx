@@ -9,11 +9,12 @@ import Terminos from './Terminos'
 import AppCitas from './AppCitas'
 import PaginasWeb from './PaginasWeb'
 import TiendaVirtual from './TiendaVirtual'
+import GuiaPrecios from './GuiaPrecios'
 import NoEncontrada from './NoEncontrada'
 
 // El HTML ya viene pre-renderizado (scripts/prerender.mjs); React solo se engancha a él
 // Cada HTML dice qué página es (data-pagina en <body>), así la 404 funciona en cualquier dirección
-const paginas = { inicio: App, privacidad: Privacidad, terminos: Terminos, appCitas: AppCitas, paginasWeb: PaginasWeb, tiendaVirtual: TiendaVirtual, noEncontrada: NoEncontrada }
+const paginas = { inicio: App, privacidad: Privacidad, terminos: Terminos, appCitas: AppCitas, paginasWeb: PaginasWeb, tiendaVirtual: TiendaVirtual, guia: GuiaPrecios, noEncontrada: NoEncontrada }
 const Pagina = paginas[document.body.dataset.pagina as keyof typeof paginas] ?? App
 
 hydrateRoot(

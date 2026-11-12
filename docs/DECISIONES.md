@@ -254,3 +254,25 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   menos de 90 KB, con ancho y alto; solo la primera carga de una vez (`fetchPriority=high`), las demás al bajar.
 - **Consecuencias:** si se cambia de letra, actualizar la expresión de `letras` en el prerender. Para fotos nuevas:
   ffmpeg a .webp calidad ~70, versiones 480/720/960 para la de arriba, y medir Lighthouse antes de publicar.
+
+## 37. Guía "¿Cuánto cuesta una página web en Ibagué?" con precios del mercado (2026-11-12)
+- **Qué:** página `/cuanto-cuesta-una-pagina-web-ibague` (`GuiaPrecios.tsx`, datos y ficha Article + FAQ + migas en
+  `negocio.ts`): escalera de precios del mercado (gratis, básica, intermedia, avanzada), lo que se paga aparte, por qué
+  cambia el precio, cuál sirve a cada negocio, y al final cuánto cobra NODRA. Enlazada desde el pie de todas las
+  páginas ("Guía:") y desde la sección de precio de `/paginas-web-ibague`. Sitemap con `lastmod`, llms.txt y mensaje de
+  WhatsApp propio (`MENSAJES.guia` → `web-guia`).
+- **Por qué:** revisión en Google del 12-nov: con "páginas web Ibagué" NODRA no sale; arriba van Maps, agencias que
+  publican precios y un artículo de ranking, y el resumen con IA solo cita esos. Una guía que responde la pregunta para
+  todo el mercado (no solo para NODRA) es lo que Google y las IA citan (investigación SEO + GEO del 4-nov, §10.2).
+- **De dónde salen los precios (honestidad, regla 8.6):** lo que publican en sus propias páginas 5 agencias y
+  diseñadores que ofrecen páginas web en Ibagué: Piemse ($389.000 / $489.000 / $789.000), Vista Diseño ($460.000 /
+  $960.000 / $1.600.000), Lorena Ayala ($390.000 / $790.000 / $1.490.000), Landing Pro Ads ($450.000-$900.000) y
+  Tevez Marketing (landing desde $650.000, sitio desde $1.500.000), revisados entre el 27-oct y el 12-nov-2026; la
+  opción gratis es el plan de la Alcaldía de Ibagué con Kolau (kolau.es/ibague). Detalle en
+  `Empresa NEXUS/4 Estudios/2026-11-02-estudio-web-NODRA.md`.
+- **Sin nombrar agencias en la página:** se comparan precios sin señalar ni rebajar a nadie (Ley 1480), igual que en
+  "Qué preguntar antes de contratar". Kolau sí se nombra porque es un programa gratis de la Alcaldía, útil para el lector.
+- **No compite con `/paginas-web-ibague`:** esa vende el servicio de NODRA; la guía compara el mercado y la enlaza.
+- **Consecuencias:** volver a revisar los precios del mercado cada 3-6 meses; al hacerlo, cambiar `preciosMercado`,
+  `GUIA_ACTUALIZADA` y `GUIA_ACTUALIZADA_VISIBLE` (fecha visible + `dateModified`), el `lastmod` del sitemap y la línea
+  de llms.txt, el mismo día. Las barras usan clases fijas (`w-[41%]`…) porque la CSP no deja estilos en línea.

@@ -20,6 +20,7 @@ export const MENSAJES = {
   ia: 'Hola NODRA, me interesa el asistente con inteligencia artificial cuando esté listo.',
   paginasWeb: 'Hola NODRA, vi la página de páginas web y quiero una para mi negocio.', // /paginas-web-ibague
   tienda: 'Hola NODRA, vi la página de tiendas virtuales y quiero vender en línea.', // /tienda-virtual-ibague
+  guia: 'Hola NODRA, leí la guía de precios y quiero una propuesta para mi negocio.', // /cuanto-cuesta-una-pagina-web-ibague
 } as const
 
 // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
@@ -133,6 +134,13 @@ export function Pie() {
             </a>
           </p>
         </nav>
+        {/* Guía de precios (2026-11-12, decisión 37): enlazada desde todas las páginas para que Google la encuentre */}
+        <p>
+          <span className="font-semibold text-niebla">Guía:</span>{' '}
+          <a href="/cuanto-cuesta-una-pagina-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            ¿Cuánto cuesta una página web en Ibagué?
+          </a>
+        </p>
         <p>
           <span className="font-semibold text-niebla">Atención:</span> {HORARIO_VISIBLE}
         </p>

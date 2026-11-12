@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, rmSync, readdirSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
 
-const { render, datosEstructurados, datosAppCitas, datosPaginasWeb, datosTienda } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
+const { render, datosEstructurados, datosAppCitas, datosPaginasWeb, datosTienda, datosGuia } = await import(pathToFileURL(resolve('dist-ssr/entry-server.js')).href)
 const paginas = {
   'index.html': 'inicio',
   'privacidad.html': 'privacidad',
@@ -11,10 +11,11 @@ const paginas = {
   'app-de-citas-ibague.html': 'appCitas',
   'paginas-web-ibague.html': 'paginasWeb',
   'tienda-virtual-ibague.html': 'tiendaVirtual',
+  'cuanto-cuesta-una-pagina-web-ibague.html': 'guia',
   '404.html': 'noEncontrada',
 }
 // Ficha Schema.org de cada página que la tiene
-const fichas = { inicio: datosEstructurados, appCitas: datosAppCitas, paginasWeb: datosPaginasWeb, tiendaVirtual: datosTienda }
+const fichas = { inicio: datosEstructurados, appCitas: datosAppCitas, paginasWeb: datosPaginasWeb, tiendaVirtual: datosTienda, guia: datosGuia }
 
 // Letras pedidas desde el primer instante (2026-11-04, decisión 36). Sin esto el navegador las descubría tarde
 // (a los ~200 ms, al leer el CSS), pintaba el título con otra letra y, al llegar la buena, el título crecía y empujaba
