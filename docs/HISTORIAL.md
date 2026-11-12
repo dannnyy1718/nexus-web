@@ -14,6 +14,11 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   de citas desde el 4-nov (commit 1db5a40); se pasó a la de tienda virtual, que era donde iba.
 - Probado en el PC (celular 390 px y computador 1366 px): sin desbordes, el botón conserva el foco del teclado.
   **Sin publicar** (Danny: "prepáralo ya, sin publicar"). Al publicar sale también el cambio del 2026-11-11.
+- **Publicado y verificado en vivo el mismo día** (Danny: "publica la web"), junto con el cambio del 2026-11-11:
+  "Estudio Luna" y "primeras 20 citas sin pagar" en `/app-de-citas-ibague`, la pregunta de factura solo en tienda,
+  la captura de Agenda carga (40 KB) y los 4 encabezados de seguridad siguen activos. Lighthouse celular (local, sin
+  Kaspersky): rendimiento 95, accesibilidad 100, buenas prácticas 100, SEO 100; LCP 2,3 s, CLS 0. PageSpeed Insights
+  sin clave dio "cuota diaria agotada": medir ahí otro día.
 
 ## 2026-11-11: plan Gratis de NODRA Agenda = 20 citas de prueba una sola vez
 - **Qué:** donde decía "Tu agenda gratis: recibe hasta 20 citas al mes" (planes de `/app-de-citas-ibague` y su
