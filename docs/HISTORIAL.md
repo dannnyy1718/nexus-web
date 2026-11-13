@@ -59,8 +59,9 @@ pantallas en celular (Servicios 2,5 · Precios 1,7 · Johana 1,6 · Agenda 1,4).
 **11,8 pantallas** (Servicios 2,5 → 1,0; Johana 1,6 → 1,3; Cómo hacemos + Seguridad 1,4 → 1,3). Los botones miden 48 px,
 cambian el ejemplo sin mover la página, y los 4 servicios siguen en `dist/index.html`. En computador se ve igual
 (4 ejemplos, lista de Johana). Lighthouse celular local 100/100/77 (http local)/100, CLS 0. La fecha de la portada ya
-era 2026-11-12 (mismo día), no hubo que cambiarla. Decisión 41. **Faltan:** paso 4 (texto de Danny), publicar con su
-OK y el paso 6 (~12-dic).
+era 2026-11-12 (mismo día), no hubo que cambiarla. Decisión 41. **PUBLICADO** el mismo día con el OK de Danny ("publica
+la portada más corta") y verificado en vivo a 390x844: 11,8 pantallas, los botones cambian el ejemplo, sin desborde.
+**Faltan:** paso 4 (texto de Danny) y el paso 6 (~12-dic).
 
 **Si algo se complica** (los botones hacen saltar la página, baja Lighthouse o el HTML pre-armado deja de traer los 4
 servicios): parar y avisarle a Danny para volver a Fable. No improvisar.
