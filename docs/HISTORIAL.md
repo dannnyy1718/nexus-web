@@ -2,17 +2,61 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
-## PENDIENTE: opinión de Fable sobre cómo acortar la portada (anotado 2026-11-12, noche)
-- **Qué revisar:** el estudio `Empresa NEXUS/4 Estudios/2026-11-12-estudio-taste-paginas-exitosas.md` (Piemse,
-  Cangrejo Digital y AgendaPro medidos con la skill `taste`; capturas en `Empresa NEXUS/.playwright-mcp/taste-*.jpeg`).
-- **Datos clave:** la portada mide 13,7 pantallas en celular y 8,2 en computador (~1.060 palabras). Lo que más ocupa:
-  Servicios con 4 ejemplos (2,5 pantallas), Precios (1,7) y el caso de Johana (1,6).
-- **Propuesta de Opus (8 cambios, §4 del estudio):** recomendados 1) Servicios en pestañas, 2) unir "Cómo hacemos" +
-  "Seguridad", 3) 4 beneficios con ✓ en la primera pantalla. Pasos concretos por archivo en el §5 del estudio.
-- **Preguntas para Fable:** ¿está bien el diagnóstico? ¿Qué cambiaría, quitaría o agregaría de los 8? ¿Las pestañas
-  esconden demasiado para un público de 30 a 70 años? ¿Hay algo mejor para que la portada no sea tan larga?
-- **Después:** Fable deja aquí los pasos finales (archivo, cambio, cómo verificar) y Opus los ejecuta. Publicar solo con
-  el OK de Danny.
+## PENDIENTES PARA OPUS: acortar la portada en celular (opinión de Fable, 2026-11-12 noche)
+Estudio de base: `Empresa NEXUS/4 Estudios/2026-11-12-estudio-taste-paginas-exitosas.md`. Datos: la portada mide 13,7
+pantallas en celular (Servicios 2,5 · Precios 1,7 · Johana 1,6 · Agenda 1,4).
+
+**Opinión de Fable (resumen):**
+- Los números del estudio están bien, con 2 salvedades: (a) Piemse sale arriba en Google por antigüedad y reseñas, no
+  por ser corta: acortar NO va a subir a NODRA en Google; (b) no hay ningún dato de que el largo esté haciendo perder
+  clientes (el contador muestra pocas visitas, no gente que se va). El menú y el botón fijo de WhatsApp de hoy ya
+  resuelven lo principal ("saber qué hay" y "escribir desde cualquier parte"). Acortar es pulir, no es urgente.
+- Meta razonable: ~11 pantallas en celular. Bajar más obligaría a quitar cosas que venden.
+- De los 8 cambios del estudio: **SÍ** el 1 (pestañas, solo en celular y con ajustes), el 2 (unir Cómo hacemos +
+  Seguridad) y el 6 (pregunta "¿es para mi negocio?", si Danny da el texto). **NO por ahora:** el 3 (✓ en la primera
+  pantalla: no acorta y toca el resumen que se puso para Google y las IA, decisión 34), el 4 (cifra "14 negocios": es
+  pequeña, 9 de 14 están en 0 citas y puede incluir cuentas propias o de prueba; esperar a ~50 con citas), el 5 (texto
+  en el botón fijo: se publicó hoy, primero medir `web-fijo` un mes; a 360 px taparía contenido) y el 8 (mapa: ahorra
+  0,2, no vale el riesgo). El 7 (más trabajos reales) es el que más pesa y depende de CORISOC.
+- **Agregado por Fable:** en celular, esconder la lista de 4 puntos del caso de Johana (paso 3): se puso el 2-nov para
+  llenar el vacío en computador, y en celular repite lo que ya muestra el celular deslizable.
+- **Considerado y descartado:** recortar la sección de Precios. Es lo que decide la compra y lo que citan las IA.
+- Pestañas y público de 30 a 70: sirven SI los 4 nombres están siempre a la vista como botones grandes (así, por
+  primera vez, se ven los 4 servicios sin bajar 2,5 pantallas). Nada de deslizar ni de íconos solos.
+
+**Pasos (en orden; en cada uno: `npm run build`, revisar a 360x740 y 1366x768, y docs en el mismo commit):**
+
+1. **Servicios con botones para elegir, solo en celular.** Archivo `src/App.tsx`, sección `#servicios` (la lista
+   `servicios.map`). Sacar la lista a un componente con estado `elegido` (empieza en 0 = Páginas web).
+   - Encima de la lista, 4 botones en cuadrícula de 2x2, visibles solo en celular (`md:hidden`): "Páginas web",
+     "Tiendas", "Citas", "Asistente IA". Cada uno `<button type="button" aria-pressed>` de 48 px de alto mínimo; el
+     elegido con borde y texto cian y además un ✓ (que no dependa solo del color).
+   - Cada `<li>` no elegido lleva `max-md:hidden`. Desde `md` se ven los 4 como hoy (la cuadrícula actual NO cambia).
+   - Los 4 textos y enlaces siguen en el HTML pre-armado (se esconden con clase, no se dejan de pintar).
+   - Sin estilos en línea (CSP). Sin animación al cambiar.
+   - **Verificar:** a 360 px la sección mide ≤ ~1,1 pantallas; al tocar cada botón cambia el ejemplo y la página no
+     salta; funciona con teclado (Tab + Enter/Espacio); "Tiendas en línea" y los enlaces "qué incluyen" están en
+     `dist/index.html`; a 1366 px se ve igual que antes; el enlace "Mira un ejemplo real" sigue bajando a Johana.
+2. **Unir "Cómo hacemos" y "Seguridad".** `src/App.tsx`: borrar la `<section>` "Apps seguras desde el primer día" y
+   poner su contenido dentro de la sección "Cómo hacemos tu página web o app", debajo de `<Pasos />`: un `<h3>` "Segura
+   desde el primer día" + la lista `seguridad` (los mismos 3 textos y el mismo ícono), en 3 columnas en computador.
+   - **Verificar:** no queda un nodo huérfano en la línea del circuito (se va el `nodo nodo-verde` de la sección
+     borrada); un solo H2 para las dos; a 360 px el conjunto mide ≤ ~1 pantalla.
+3. **Caso de Johana más corto en celular.** `src/App.tsx`, sección `#johana`: en la lista `<ul>` de 4 puntos cambiar
+   `grid` por `hidden lg:grid`. Nada más.
+   - **Verificar:** a 360 px no sale la lista; a 1366 px se ve igual que hoy.
+4. **(Solo con texto aprobado por Danny)** Pregunta nueva en `preguntas` de `src/negocio.ts`: "¿NODRA es para mi
+   negocio?", respuesta de 2 frases: para quién sí y para quién no. El "para quién no" lo dice Danny (propuesta: "No,
+   si necesitas la página para mañana o buscas la opción más barata del mercado").
+5. **Al terminar 1-3:** medir el largo en celular a 390x844 (meta ~11 pantallas; anotar aquí el número real),
+   Lighthouse celular ≥ 90 con `--blocked-url-patterns="*kaspersky-labs.com*"`, cambiar `ACTUALIZADA.inicio` en
+   `negocio.ts` y el `<lastmod>` de la portada en `public/sitemap.xml` a la fecha del día (decisión 38), escribir la
+   decisión 41 en `DECISIONES.md`, commit + push. **Publicar solo con el OK de Danny** y verificar en vivo.
+6. **Un mes después (~12-dic):** contar los WhatsApp por canal (`docs/MEDIR.md`). Si `web-fijo` trae contactos, ahí sí
+   probar el botón fijo con texto (cambio 5 del estudio).
+
+**Si algo se complica** (los botones hacen saltar la página, baja Lighthouse o el HTML pre-armado deja de traer los 4
+servicios): parar y avisarle a Danny para volver a Fable. No improvisar.
 
 ## 2026-11-12 (noche, 5): menú publicado
 - Publicado y verificado en vivo en nodrasoft.com: en celular abre los 7 enlaces, se cierra al elegir y sin desborde.
