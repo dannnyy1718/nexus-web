@@ -1,10 +1,10 @@
-import { AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, enlaceWhatsApp, HORARIO_VISIBLE, MENSAJES, Pie, WHATSAPP_VISIBLE } from './Marco'
+import { Actualizada, AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, enlaceWhatsApp, HORARIO_VISIBLE, MENSAJES, Pie, WHATSAPP_VISIBLE } from './Marco'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import CelularJohana from './CelularJohana'
 import { DemoCitas, DemoIA, DemoPagina, DemoTienda } from './Demos'
 import Pasos from './Pasos'
-import { COSTOS_APARTE, PRECIOS, preguntas, QUE_CAMBIA_EL_PRECIO, rangoPrecio } from './negocio'
+import { ACTUALIZADA, COSTOS_APARTE, PRECIOS, preguntas, QUE_CAMBIA_EL_PRECIO, rangoPrecio } from './negocio'
 
 // GIF transparente de 1 píxel: lo que baja el celular en vez de las capturas de la vitrina (ver la vitrina)
 const PIXEL_VACIO = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
@@ -236,6 +236,10 @@ export default function App() {
               </a>{' '}
               tiene un plan gratis.
             </p>
+            {/* Hacia la guía de precios (auditoría 2026-11-12): desde el texto de la portada no se llegaba a ella */}
+            <a href="/cuanto-cuesta-una-pagina-web-ibague" className="enlace-flecha mt-3">
+              Guía: cuánto cuesta una página web en Ibagué
+            </a>
             <div className="mt-7">
               <BotonWhatsApp mensaje={MENSAJES.precios} />
             </div>
@@ -522,6 +526,7 @@ export default function App() {
                 <figcaption className="mt-4 text-bruma">Te responde Danny, fundador de NODRA</figcaption>
               </figure>
             </div>
+            <Actualizada fecha={ACTUALIZADA.inicio} className="mt-12 text-center lg:text-left" />
           </section>
         </div>
       </main>

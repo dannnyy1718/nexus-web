@@ -55,7 +55,8 @@ npx -y firebase-tools deploy --only hosting
 | Página "App de citas en Ibagué" | `src/AppCitas.tsx` + `src/negocio.ts` | Textos en `AppCitas.tsx`; pasos, planes (precios) y preguntas en `negocio.ts`; título y descripción en `app-de-citas-ibague.html` |
 | Páginas "Páginas web" y "Tienda virtual" en Ibagué | `src/PaginasWeb.tsx`, `src/TiendaVirtual.tsx` + `src/negocio.ts` | Textos en cada .tsx; precio (`PRECIOS`), preguntas y ficha para Google en `negocio.ts`; título y descripción en su .html |
 | Agregar otra página | `nuevo.html` + `vite.config.ts` + `main.tsx` + `entry-server.tsx` + `scripts/prerender.mjs` + `public/sitemap.xml` + `public/llms.txt` + menú del pie (`Marco.tsx`) | Copiar cómo está hecha `tienda-virtual-ibague` |
-| Páginas que Google debe leer | `public/sitemap.xml` | Agregar una `<url>` por página nueva |
+| Páginas que Google debe leer | `public/sitemap.xml` | Agregar una `<url>` por página nueva, con su `<lastmod>` |
+| Fecha "Página actualizada el…" | `ACTUALIZADA` en `src/negocio.ts` + `<lastmod>` en `public/sitemap.xml` | Solo cuando cambie el contenido de esa página; la misma fecha en los dos (DECISIONES 38) |
 | Imágenes | `public/img/` | Usar WebP; poner siempre texto alternativo (`alt`) |
 | Pantallas de Johana que cambian solas | `src/PantallasJohana.tsx` | La lista `pantallas` (imagen 480x860 en `public/img/`) |
 | Mapa mundial (densidad o recorte) | `scripts/mapa-puntos.mjs` | Cambiar `PASO`, `LON` o `LAT` y correr `npm run mapa` |

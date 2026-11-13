@@ -2,6 +2,23 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-12 (noche, 2): cambios de la auditoría SEO + GEO + visual
+- **Por qué:** auditoría de las 7 páginas del 12-nov (nada grave, solo ajustes). Danny pidió aplicar lo sugerido.
+- **Botón de WhatsApp fijo en celular:** un botón redondo abajo a la derecha, en todas las páginas. Aparece al bajar
+  (arriba ya está el botón grande). Abre WhatsApp con un mensaje propio (anotar como `web-fijo`, ver MEDIR.md).
+- **Fechas:** la portada y las 3 páginas de servicio dicen "Página actualizada el…" al final; la misma fecha va en la
+  ficha para Google (`dateModified`) y en `sitemap.xml`, que ahora trae fecha en las 7 direcciones.
+- **Enlaces entre páginas:** portada → guía de precios (en la sección de precios); app de citas → páginas web y tienda
+  virtual; tienda virtual → guía de precios.
+- **Descripción de "App de citas":** de 177 a 155 letras, para que Google no la corte.
+- **Pie de página:** letra más grande en celular (16 px), cada enlace en su renglón y con más alto para el dedo.
+- **"Páginas web" ya no arranca con puro texto:** al lado del título va la captura real de la app de Johana.
+- **Medido en local (celular):** Lighthouse 99 rendimiento, 100 accesibilidad, 100 SEO; sin desborde a 360 px.
+- **No se hizo, y por qué:** TikTok sigue como `@nexus.tech.co` en la ficha hasta que Danny renombre la cuenta;
+  el segundo trabajo real espera a CORISOC; los celulares en la primera pantalla del celular no caben sin sacar el
+  botón de WhatsApp de esa pantalla (decisión 34); el mapa se queda (decisión de Danny del 28-oct).
+- Ver DECISIONES.md 38.
+
 ## 2026-11-12 (noche): guía "¿Cuánto cuesta una página web en Ibagué?"
 - **Por qué:** Danny notó que la página no sale en Google. Revisado en vivo: Google sí tiene 9 páginas de
   nodrasoft.com y con "NODRA Ibagué" salimos de primeros, pero con "páginas web Ibagué" no aparecemos: arriba van

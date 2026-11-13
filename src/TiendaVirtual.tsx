@@ -1,7 +1,8 @@
-import { BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
+import { Actualizada, BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
 import { DemoTienda } from './Demos'
 import FotoEjemplo from './FotoEjemplo'
 import {
+  ACTUALIZADA,
   COSTOS_APARTE,
   cuandoSirveTienda,
   formasDeCobrar,
@@ -135,7 +136,11 @@ export default function TiendaVirtual() {
             <a href="/paginas-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
               página web
             </a>
-            , que cuesta menos.
+            , que cuesta menos. Mira{' '}
+            <a href="/cuanto-cuesta-una-pagina-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              cuánto cuesta una página web en Ibagué
+            </a>
+            .
           </p>
         </section>
 
@@ -219,6 +224,7 @@ export default function TiendaVirtual() {
             </a>
           </div>
         </section>
+        <Actualizada fecha={ACTUALIZADA.tienda} />
       </main>
 
       <Pie />

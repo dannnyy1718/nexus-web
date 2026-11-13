@@ -1,4 +1,5 @@
 // Piezas compartidas por todas las páginas: contacto, encabezado y pie de página
+import { useEffect, useState } from 'react'
 
 export const LEMA = 'Tu negocio, conectado y seguro.'
 
@@ -21,6 +22,7 @@ export const MENSAJES = {
   paginasWeb: 'Hola NODRA, vi la página de páginas web y quiero una para mi negocio.', // /paginas-web-ibague
   tienda: 'Hola NODRA, vi la página de tiendas virtuales y quiero vender en línea.', // /tienda-virtual-ibague
   guia: 'Hola NODRA, leí la guía de precios y quiero una propuesta para mi negocio.', // /cuanto-cuesta-una-pagina-web-ibague
+  fijo: 'Hola NODRA, estoy viendo su página y quiero hablar de mi negocio.', // botón redondo fijo del celular (todas las páginas)
 } as const
 
 // Crítica 2026-10-28: quien escribe casi nunca sabe que quiere "una app"; sabe que tiene un negocio
@@ -102,10 +104,59 @@ export function Encabezado() {
   )
 }
 
+// Enlaces del pie (auditoría 2026-11-12): medían menos de 24 px de alto y la letra era pequeña para dueños de negocio de
+// 30 a 70 años. Con "py-1" cada enlace tiene más de 24 px para el dedo (WCAG 2.2, tamaño del objetivo). En celular
+// cada enlace va en su propio renglón ("block") y los puntos separadores se esconden; en computador, en fila.
+const ENLACE_PIE = 'block py-1 md:inline-block font-semibold text-cian underline underline-offset-4 hover:decoration-2'
+
+// Botón redondo de WhatsApp que se queda fijo abajo, SOLO en celular (auditoría 2026-11-12): la portada mide unas 13
+// pantallas y el encabezado no se queda fijo, así que en tramos largos no había cómo escribir sin devolverse.
+// Aparece al bajar 600 px: en la primera pantalla ya está el botón grande de WhatsApp y este se le montaba encima
+// (medido a 360x740). Mientras está escondido usa "invisible", así el teclado y los lectores de pantalla lo saltan.
+// La escucha del scroll es pasiva y solo vuelve a pintar al cruzar la raya (dos veces, no en cada movimiento), así
+// que no afecta la velocidad. En computador no sale: allá los botones de cada sección quedan siempre cerca.
+// El pie deja espacio abajo (pb-24) para que no tape el texto final.
+function BotonFijoWhatsApp() {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const revisar = () => setVisible(window.scrollY > 600)
+    revisar()
+    window.addEventListener('scroll', revisar, { passive: true })
+    return () => window.removeEventListener('scroll', revisar)
+  }, [])
+  return (
+    <a
+      href={enlaceWhatsApp(MENSAJES.fijo)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Escribir a NODRA por WhatsApp (se abre en otra pestaña)"
+      className={`boton-3d boton-verde fixed bottom-4 right-4 z-40 grid size-14 place-items-center rounded-full text-abismo md:hidden ${
+        visible ? '' : 'invisible'
+      }`}
+    >
+      <IconoWhatsApp className="size-7" />
+    </a>
+  )
+}
+
+// "Página actualizada el 12 de noviembre de 2026" (auditoría 2026-11-12): Google y las IA prefieren contenido con
+// fecha. La fecha sale de ACTUALIZADA en negocio.ts, la misma que va en la ficha (dateModified) y en el sitemap.
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+export function Actualizada({ fecha, className = 'mt-12' }: { fecha: string; className?: string }) {
+  const [anio, mes, dia] = fecha.split('-').map(Number)
+  return (
+    <p className={`${className} text-sm text-bruma`}>
+      Página actualizada el <time dateTime={fecha}>{`${dia} de ${MESES[mes - 1]} de ${anio}`}</time>.
+    </p>
+  )
+}
+
 export function Pie() {
   // En celular las tres partes van una debajo de otra y centradas; en computador, en una fila
   return (
-    <footer className="mx-auto grid max-w-[92rem] justify-items-center gap-4 border-t border-linea px-4 py-8 text-center text-sm text-bruma md:grid-cols-[auto_1fr_auto] md:items-center md:justify-items-stretch md:gap-8 md:px-8 md:text-left xl:px-12">
+    <>
+    <BotonFijoWhatsApp />
+    <footer className="mx-auto grid max-w-[92rem] justify-items-center gap-4 border-t border-linea px-4 pb-24 pt-8 text-center text-base text-bruma md:pb-8 md:text-sm md:grid-cols-[auto_1fr_auto] md:items-center md:justify-items-stretch md:gap-8 md:px-8 md:text-left xl:px-12">
       <span className="flex items-center gap-3">
         <img src="/img/escudo-mini.webp" alt="" width={36} height={36} className="rounded-lg" loading="lazy" />
         <span className="grid text-left leading-tight">
@@ -113,7 +164,7 @@ export function Pie() {
           <span className="text-niebla">{LEMA}</span>
         </span>
       </span>
-      <div className="grid gap-1">
+      <div className="grid gap-2 md:gap-1">
         {/* Servicios en todas las páginas (auditoría SEO 2026-11-04): las páginas que venden recibían 1 enlace interno
             y las legales 5, y Google lo leía como que las legales importaban más. Cada página de servicio nueva va
             aquí (ver DECISIONES.md 31 y 33). El texto del enlace dice de qué trata la página, no "ver más". Sin partir cada enlace por dentro: en celular
@@ -121,15 +172,15 @@ export function Pie() {
         <nav aria-label="Servicios">
           <p>
             <span className="font-semibold text-niebla">Servicios:</span>{' '}
-            <a href="/paginas-web-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            <a href="/paginas-web-ibague" className={`whitespace-nowrap ${ENLACE_PIE}`}>
               Diseño de páginas web en Ibagué
             </a>{' '}
-            ·{' '}
-            <a href="/tienda-virtual-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            <span className="hidden md:inline" aria-hidden="true">·</span>{' '}
+            <a href="/tienda-virtual-ibague" className={`whitespace-nowrap ${ENLACE_PIE}`}>
               Tienda virtual en Ibagué
             </a>{' '}
-            ·{' '}
-            <a href="/app-de-citas-ibague" className="whitespace-nowrap font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+            <span className="hidden md:inline" aria-hidden="true">·</span>{' '}
+            <a href="/app-de-citas-ibague" className={`whitespace-nowrap ${ENLACE_PIE}`}>
               App de citas para negocios
             </a>
           </p>
@@ -137,7 +188,7 @@ export function Pie() {
         {/* Guía de precios (2026-11-12, decisión 37): enlazada desde todas las páginas para que Google la encuentre */}
         <p>
           <span className="font-semibold text-niebla">Guía:</span>{' '}
-          <a href="/cuanto-cuesta-una-pagina-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+          <a href="/cuanto-cuesta-una-pagina-web-ibague" className={ENLACE_PIE}>
             ¿Cuánto cuesta una página web en Ibagué?
           </a>
         </p>
@@ -146,22 +197,23 @@ export function Pie() {
         </p>
         <p>
           <span className="font-semibold text-niebla">Correo:</span>{' '}
-          <a href={CORREO_URL} className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+          <a href={CORREO_URL} className={ENLACE_PIE}>
             {CORREO}
           </a>
         </p>
         <p>
           Esta página no usa cookies ni rastreadores de publicidad.{' '}
-          <a href="/privacidad" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+          <a href="/privacidad" className={ENLACE_PIE}>
             Aviso de privacidad
           </a>{' '}
-          ·{' '}
-          <a href="/terminos" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+          <span className="hidden md:inline" aria-hidden="true">·</span>{' '}
+          <a href="/terminos" className={ENLACE_PIE}>
             Términos y condiciones
           </a>
         </p>
       </div>
       <span>© {new Date().getFullYear()} NODRA. Software a la medida en Ibagué, Tolima.</span>
     </footer>
+    </>
   )
 }

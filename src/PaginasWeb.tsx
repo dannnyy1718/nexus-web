@@ -1,7 +1,7 @@
-import { BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
+import { Actualizada, BotonWhatsApp, Encabezado, enlaceWhatsApp, MENSAJES, Pie } from './Marco'
 import { DemoPagina } from './Demos'
 import CelularJohana from './CelularJohana'
-import { antesDeContratar, COSTOS_APARTE, PRECIO_PAGINA_WEB, preguntasPaginasWeb, rangoPrecio } from './negocio'
+import { ACTUALIZADA, antesDeContratar, COSTOS_APARTE, PRECIO_PAGINA_WEB, preguntasPaginasWeb, rangoPrecio } from './negocio'
 
 // Página "Diseño de páginas web en Ibagué" (2026-11-02, estudio de la web, semana 2).
 // Por qué existe: es la búsqueda con la que sale primero la competencia en Ibagué y la portada no competía por ella.
@@ -34,17 +34,36 @@ export default function PaginasWeb() {
           Volver al inicio
         </a>
 
-        <h1 className="mt-6 text-3xl font-semibold leading-tight md:text-5xl">Diseño de páginas web en Ibagué</h1>
-        {/* Una frase que se entienda sola (Google y las IA la citan tal cual). Sin precio aquí (Danny 2026-11-02). */}
-        <p className="mt-5 max-w-[40rem] text-lg">
-          En NODRA hacemos páginas web para negocios de Ibagué: te encuentran en Google, ven tus servicios en el celular y
-          te escriben por WhatsApp. Con 6 meses de garantía.
-        </p>
-        <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <BotonWhatsApp mensaje={MENSAJES.paginasWeb} />
-          <a href="#precio" className="enlace-flecha">
-            Ver precio
-          </a>
+        {/* Título y un trabajo real al lado (auditoría 2026-11-12): la página arrancaba con puro texto. Mismo acomodo
+            que /app-de-citas-ibague. La captura es la portada real de Johana (22 KB, sin datos de clientas). */}
+        <div className="mt-6 grid items-center gap-10 md:grid-cols-[1fr_14rem]">
+          <div>
+            <h1 className="text-3xl font-semibold leading-tight md:text-5xl">Diseño de páginas web en Ibagué</h1>
+            {/* Una frase que se entienda sola (Google y las IA la citan tal cual). Sin precio aquí (Danny 2026-11-02). */}
+            <p className="mt-5 max-w-[40rem] text-lg">
+              En NODRA hacemos páginas web para negocios de Ibagué: te encuentran en Google, ven tus servicios en el
+              celular y te escriben por WhatsApp. Con 6 meses de garantía.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <BotonWhatsApp mensaje={MENSAJES.paginasWeb} />
+              <a href="#precio" className="enlace-flecha">
+                Ver precio
+              </a>
+            </div>
+          </div>
+          <figure className="mx-auto w-full max-w-[13rem] text-center md:max-w-none">
+            <div className="celular">
+              <img
+                src="/img/johana-inicio.webp"
+                width={480}
+                height={860}
+                decoding="async"
+                alt="Página de Johana Sánchez Nails en un celular, hecha por NODRA"
+                className="block h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-bruma">Trabajo real: Johana Sánchez Nails, Ibagué</figcaption>
+          </figure>
         </div>
 
         {/* En celular, primero el título y luego el ejemplo tocable; en computador, el ejemplo a la izquierda */}
@@ -171,6 +190,7 @@ export default function PaginasWeb() {
             </a>
           </div>
         </section>
+        <Actualizada fecha={ACTUALIZADA.paginasWeb} />
       </main>
 
       <Pie />

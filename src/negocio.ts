@@ -5,6 +5,16 @@ export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
 export const DEPARTAMENTO = 'Tolima'
 
+// Fecha del último cambio de contenido de cada página (auditoría 2026-11-12). Sale visible al final de la página
+// ("Página actualizada el…"), en la ficha para Google (dateModified) y debe ser IGUAL al <lastmod> de
+// public/sitemap.xml. Cambiarla SOLO cuando cambie el contenido de esa página, no por cambiarla (sería engañar).
+export const ACTUALIZADA = {
+  inicio: '2026-11-12',
+  paginasWeb: '2026-11-12',
+  tienda: '2026-11-12',
+  citas: '2026-11-12',
+} as const
+
 /*
   Precios de referencia (estudio de la web 2026-11-02, docs/DECISIONES.md). Por qué rangos y no un precio fijo: cada
   proyecto cambia (formularios, pagos en línea, cuentas de usuario…), pero quien compara precios se va si no ve
@@ -118,6 +128,7 @@ export function datosEstructurados() {
         '@type': 'WebPage',
         '@id': `${SITIO}/#webpage`,
         url: `${SITIO}/`,
+        dateModified: ACTUALIZADA.inicio,
         name: 'Páginas web, tiendas en línea y apps en Ibagué | NODRA',
         inLanguage: 'es-CO',
         isPartOf: { '@id': `${SITIO}/#website` },
@@ -247,6 +258,7 @@ export function datosAppCitas() {
         '@type': 'WebPage',
         '@id': `${PAGINA_CITAS}#webpage`,
         url: PAGINA_CITAS,
+        dateModified: ACTUALIZADA.citas,
         name: 'App de citas en Ibagué | NODRA Agenda',
         inLanguage: 'es-CO',
         isPartOf: { '@id': `${SITIO}/#website` },
@@ -366,6 +378,7 @@ export function datosPaginasWeb() {
         '@type': 'WebPage',
         '@id': `${PAGINA_WEB}#webpage`,
         url: PAGINA_WEB,
+        dateModified: ACTUALIZADA.paginasWeb,
         name: 'Diseño de páginas web en Ibagué | NODRA',
         inLanguage: 'es-CO',
         isPartOf: { '@id': `${SITIO}/#website` },
@@ -494,6 +507,7 @@ export function datosTienda() {
         '@type': 'WebPage',
         '@id': `${PAGINA_TIENDA}#webpage`,
         url: PAGINA_TIENDA,
+        dateModified: ACTUALIZADA.tienda,
         name: 'Tienda virtual en Ibagué | NODRA',
         inLanguage: 'es-CO',
         isPartOf: { '@id': `${SITIO}/#website` },

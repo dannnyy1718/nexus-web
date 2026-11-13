@@ -1,6 +1,6 @@
-import { AGENDA_URL, Encabezado, Pie, WHATSAPP_URL } from './Marco'
+import { Actualizada, AGENDA_URL, Encabezado, Pie, WHATSAPP_URL } from './Marco'
 import { DemoPasoConfirmar, DemoPasoEnlace, DemoPasoPagina } from './Demos'
-import { pasosCitas, planesCitas, preguntasCitas } from './negocio'
+import { ACTUALIZADA, pasosCitas, planesCitas, preguntasCitas } from './negocio'
 
 // Un ejemplo para ver por cada paso de "Cómo funciona", en el mismo orden que pasosCitas (2026-11-12)
 const demosPasos = [DemoPasoPagina, DemoPasoEnlace, DemoPasoConfirmar]
@@ -157,6 +157,18 @@ export default function AppCitas() {
               <span className="sr-only"> (se abre en otra pestaña)</span>
             </a>
           </p>
+          {/* Hacia las páginas hermanas (auditoría 2026-11-12): esta página no enlazaba a ningún otro servicio */}
+          <p className="mt-5 text-bruma">
+            ¿Necesitas algo más que citas? Mira las{' '}
+            <a href="/paginas-web-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              páginas web
+            </a>{' '}
+            y las{' '}
+            <a href="/tienda-virtual-ibague" className="font-semibold text-cian underline underline-offset-4 hover:decoration-2">
+              tiendas virtuales
+            </a>{' '}
+            que hacemos en Ibagué.
+          </p>
         </section>
 
         <section className="mt-16">
@@ -183,6 +195,7 @@ export default function AppCitas() {
             </a>
           </div>
         </section>
+        <Actualizada fecha={ACTUALIZADA.citas} />
       </main>
 
       <Pie />

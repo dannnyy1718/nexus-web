@@ -276,3 +276,23 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
 - **Consecuencias:** volver a revisar los precios del mercado cada 3-6 meses; al hacerlo, cambiar `preciosMercado`,
   `GUIA_ACTUALIZADA` y `GUIA_ACTUALIZADA_VISIBLE` (fecha visible + `dateModified`), el `lastmod` del sitemap y la línea
   de llms.txt, el mismo día. Las barras usan clases fijas (`w-[41%]`…) porque la CSP no deja estilos en línea.
+
+## 38. Botón fijo de WhatsApp en celular, fechas en cada página y enlaces entre páginas (2026-11-12)
+- **Botón fijo (`BotonFijoWhatsApp` en `Marco.tsx`, sale dentro de `Pie`):** solo en celular (`md:hidden`), redondo de
+  56 px, abajo a la derecha. Aparece al bajar 600 px: a 360x740 se montaba sobre el botón grande de la primera pantalla.
+  Mientras está escondido usa `invisible` (el teclado y los lectores de pantalla lo saltan). La escucha del scroll es
+  pasiva y solo repinta al cruzar la raya. Mensaje propio `MENSAJES.fijo` → canal `web-fijo`. El pie deja `pb-24` en
+  celular para que el botón no tape el final.
+- **Fechas (`ACTUALIZADA` en `negocio.ts` + `Actualizada` en `Marco.tsx`):** una fecha por página, que sale en 3
+  lugares: visible al final ("Página actualizada el…"), `dateModified` de la ficha y `<lastmod>` de
+  `public/sitemap.xml`. **Regla:** cambiarla SOLO cuando cambie el contenido de esa página y en los 3 lugares el mismo
+  día; poner fechas nuevas sin cambios es engañar a Google (y a las personas). Privacidad y Términos usan su fecha de
+  vigencia; la guía tiene la suya (`GUIA_ACTUALIZADA`).
+- **Enlaces entre páginas:** cada página de servicio enlaza al menos a una hermana desde el texto (no solo desde el
+  pie), con un texto que dice de qué trata la otra página.
+- **Pie:** letra de 16 px en celular y enlaces de más de 24 px de alto (público de 30 a 70 años, WCAG 2.2). En celular
+  cada enlace va en su renglón y los puntos separadores se esconden.
+- **Lo que se dejó igual a propósito:** celulares de la vitrina solo en computador (decisión 34: en celular el botón de
+  WhatsApp debe quedar en la primera pantalla); el mapa se queda (Danny, 28-oct).
+- **Consecuencias:** al agregar una página nueva, darle su fecha en `ACTUALIZADA`, su `<lastmod>` y un enlace desde el
+  texto de una página hermana.
