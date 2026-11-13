@@ -1,6 +1,6 @@
 # NODRA
 
-> NODRA es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Crea apps móviles y web a la medida para negocios, con reglas de acceso estrictas y conexión cifrada. Lema: "Tu negocio, conectado y seguro."
+> NODRA (también NodraSoft, sitio web nodrasoft.com) es una empresa de desarrollo de software en Ibagué, Tolima (Colombia). Crea apps móviles y web a la medida para negocios, con reglas de acceso estrictas y conexión cifrada. Lema: "Tu negocio, conectado y seguro."
 
 ## Servicios
 

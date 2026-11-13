@@ -5,6 +5,11 @@ export const SITIO = 'https://nodrasoft.com'
 export const CIUDAD = 'Ibagué'
 export const DEPARTAMENTO = 'Tolima'
 
+// Otros nombres con los que buscan a NODRA (12-nov-2026): Danny buscó "nodrasoft" en incógnito y no salíamos; con
+// "nodrasoft Ibagué" sí. Google no sabía que el dominio y la marca son la misma empresa (además existen otras "Nodra").
+// Van en la ficha (alternateName) de la empresa y del sitio. Solo nombres que de verdad usamos; nada de rellenar.
+export const OTROS_NOMBRES = ['NodraSoft', 'nodrasoft.com']
+
 // Fecha del último cambio de contenido de cada página (auditoría 2026-11-12). Sale visible al final de la página
 // ("Página actualizada el…"), en la ficha para Google (dateModified) y debe ser IGUAL al <lastmod> de
 // public/sitemap.xml. Cambiarla SOLO cuando cambie el contenido de esa página, no por cambiarla (sería engañar).
@@ -121,6 +126,7 @@ export function datosEstructurados() {
         '@id': `${SITIO}/#website`,
         url: `${SITIO}/`,
         name: 'NODRA',
+        alternateName: OTROS_NOMBRES,
         inLanguage: 'es-CO',
         publisher: NEGOCIO,
       },
@@ -139,6 +145,7 @@ export function datosEstructurados() {
         '@type': 'ProfessionalService',
         '@id': `${SITIO}/#negocio`,
         name: 'NODRA',
+        alternateName: OTROS_NOMBRES,
         slogan: LEMA,
         description:
           'Páginas web, tiendas en línea, citas y reservas y apps a la medida en Ibagué, Tolima, con reglas de acceso estrictas y conexión cifrada.',

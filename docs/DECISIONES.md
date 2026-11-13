@@ -296,3 +296,12 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   WhatsApp debe quedar en la primera pantalla); el mapa se queda (Danny, 28-oct).
 - **Consecuencias:** al agregar una página nueva, darle su fecha en `ACTUALIZADA`, su `<lastmod>` y un enlace desde el
   texto de una página hermana.
+
+## 39. "NodraSoft" y "nodrasoft.com" como otros nombres de NODRA (2026-11-12)
+- **Qué:** `alternateName: OTROS_NOMBRES` en los nodos `WebSite` y `ProfessionalService` de la ficha de la portada, y
+  la misma aclaración en la primera línea de `public/llms.txt`.
+- **Por qué:** la búsqueda "nodrasoft" sola no mostraba la página (sí con "Ibagué"). El nombre visible es NODRA y
+  "nodrasoft" solo estaba en la dirección; con otras empresas llamadas Nodra, Google no unía las dos cosas.
+  `alternateName` en `WebSite` es lo que Google usa para el nombre del sitio en los resultados.
+- **Regla:** solo nombres que NODRA usa de verdad. No se cambió la fecha de "Página actualizada" porque el contenido
+  visible no cambió (decisión 38).

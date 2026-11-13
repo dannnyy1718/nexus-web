@@ -2,6 +2,14 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-12 (noche, 3): "NodraSoft" como otro nombre de la empresa
+- **Por qué:** Danny buscó "nodrasoft" en incógnito y no salíamos; con "nodrasoft Ibagué" sí. Google no sabía que el
+  dominio y la marca NODRA son la misma empresa, y hay otras "Nodra" (una S.A.S. en Bogotá, un Instagram nodra.tech).
+- **Qué:** `alternateName` ("NodraSoft", "nodrasoft.com") en la ficha de la empresa y del sitio (`OTROS_NOMBRES` en
+  `negocio.ts`) y en la primera línea de `llms.txt`. No cambia nada visible ni la velocidad. Ver DECISIONES.md 39.
+- **Lo que más ayuda y no depende del código:** verificar el Perfil de Google (19-nov) y los directorios con el mismo
+  nombre y web. Lo normal es que Google tarde 1 a 3 meses en reconocer una marca nueva.
+
 ## 2026-11-12 (noche, 2): cambios de la auditoría SEO + GEO + visual
 - **Por qué:** auditoría de las 7 páginas del 12-nov (nada grave, solo ajustes). Danny pidió aplicar lo sugerido.
 - **Botón de WhatsApp fijo en celular:** un botón redondo abajo a la derecha, en todas las páginas. Aparece al bajar
