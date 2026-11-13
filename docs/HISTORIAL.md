@@ -2,6 +2,21 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## PENDIENTE: opinión de Fable sobre cómo acortar la portada (anotado 2026-11-12, noche)
+- **Qué revisar:** el estudio `Empresa NEXUS/4 Estudios/2026-11-12-estudio-taste-paginas-exitosas.md` (Piemse,
+  Cangrejo Digital y AgendaPro medidos con la skill `taste`; capturas en `Empresa NEXUS/.playwright-mcp/taste-*.jpeg`).
+- **Datos clave:** la portada mide 13,7 pantallas en celular y 8,2 en computador (~1.060 palabras). Lo que más ocupa:
+  Servicios con 4 ejemplos (2,5 pantallas), Precios (1,7) y el caso de Johana (1,6).
+- **Propuesta de Opus (8 cambios, §4 del estudio):** recomendados 1) Servicios en pestañas, 2) unir "Cómo hacemos" +
+  "Seguridad", 3) 4 beneficios con ✓ en la primera pantalla. Pasos concretos por archivo en el §5 del estudio.
+- **Preguntas para Fable:** ¿está bien el diagnóstico? ¿Qué cambiaría, quitaría o agregaría de los 8? ¿Las pestañas
+  esconden demasiado para un público de 30 a 70 años? ¿Hay algo mejor para que la portada no sea tan larga?
+- **Después:** Fable deja aquí los pasos finales (archivo, cambio, cómo verificar) y Opus los ejecuta. Publicar solo con
+  el OK de Danny.
+
+## 2026-11-12 (noche, 5): menú publicado
+- Publicado y verificado en vivo en nodrasoft.com: en celular abre los 7 enlaces, se cierra al elegir y sin desborde.
+
 ## 2026-11-12 (noche, 4): menú arriba
 - **Por qué:** Danny (con captura): quien llega no sabe qué más hay en la página, y la portada crece para mostrarlo
   todo. Con un menú, la gente va directo a lo que busca.
