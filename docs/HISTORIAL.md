@@ -55,6 +55,13 @@ pantallas en celular (Servicios 2,5 · Precios 1,7 · Johana 1,6 · Agenda 1,4).
 6. **Un mes después (~12-dic):** contar los WhatsApp por canal (`docs/MEDIR.md`). Si `web-fijo` trae contactos, ahí sí
    probar el botón fijo con texto (cambio 5 del estudio).
 
+**HECHO por Opus el 2026-11-12 (noche), SIN PUBLICAR:** pasos 1, 2 y 3. Medido a 390x844: la portada pasó de 13,7 a
+**11,8 pantallas** (Servicios 2,5 → 1,0; Johana 1,6 → 1,3; Cómo hacemos + Seguridad 1,4 → 1,3). Los botones miden 48 px,
+cambian el ejemplo sin mover la página, y los 4 servicios siguen en `dist/index.html`. En computador se ve igual
+(4 ejemplos, lista de Johana). Lighthouse celular local 100/100/77 (http local)/100, CLS 0. La fecha de la portada ya
+era 2026-11-12 (mismo día), no hubo que cambiarla. Decisión 41. **Faltan:** paso 4 (texto de Danny), publicar con su
+OK y el paso 6 (~12-dic).
+
 **Si algo se complica** (los botones hacen saltar la página, baja Lighthouse o el HTML pre-armado deja de traer los 4
 servicios): parar y avisarle a Danny para volver a Fable. No improvisar.
 

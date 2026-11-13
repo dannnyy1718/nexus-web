@@ -320,3 +320,16 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   pequeño. Medido a 320, 360 y 1366 px.
 - **Consecuencias:** una página de servicio nueva se agrega a `MENU_SERVICIOS` (y al pie). Una sección nueva de la
   portada que deba estar en el menú necesita su `id` y `scroll-mt-8`.
+
+## 41. Portada más corta en celular (2026-11-12)
+- **Qué:** (1) Servicios: en celular, 4 botones en cuadrícula 2x2 ("Páginas web", "Tiendas", "Citas", "Asistente IA")
+  y solo el ejemplo elegido a la vista (`ListaServicios` en `App.tsx`; los otros llevan `max-md:hidden`); desde 768 px,
+  los 4 como antes. (2) "Seguridad" dejó de ser sección aparte: va dentro de "Cómo hacemos" con un H3. (3) La lista de
+  4 puntos del caso de Johana solo se ve en computador.
+- **Por qué:** pedido de Danny (portada muy larga). Estudio con `taste` (Piemse, Cangrejo, AgendaPro) y opinión de
+  Fable: acortar sin quitar lo que vende. 13,7 → 11,8 pantallas en celular.
+- **Botones y no pestañas que se deslizan:** público de 30 a 70 años: los 4 nombres siempre a la vista, 48 px, con ✓ en
+  el elegido (no depende solo del color) y `aria-pressed` para lectores de pantalla.
+- **Google:** los 4 textos y enlaces siguen en el HTML pre-armado; solo se esconden con una clase en celular.
+- **Lo que NO se hizo, a propósito (opinión de Fable):** ✓ en la primera pantalla (choca con la decisión 34), cifra de
+  negocios de la Agenda (aún pequeña), texto en el botón fijo (medir `web-fijo` primero), tocar Precios o el mapa.

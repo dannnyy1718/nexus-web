@@ -1,4 +1,5 @@
 import { Actualizada, AGENDA_URL, BotonWhatsApp, CORREO, CORREO_URL, Encabezado, enlaceWhatsApp, HORARIO_VISIBLE, MENSAJES, Pie, WHATSAPP_VISIBLE } from './Marco'
+import { useState } from 'react'
 import Escudo3D from './Escudo3D'
 import MapaRed from './MapaRed'
 import CelularJohana from './CelularJohana'
@@ -20,6 +21,8 @@ const JOHANA_SERVICIOS = 'https://johana-sanchez-nails.web.app/#servicios'
 // "En preparación": NODRA todavía no ha entregado un asistente con IA y lo que se anuncia obliga (Ley 1480).
 type Servicio = {
   titulo: string
+  /** Nombre corto para el botón de elegir en celular (decisión 41) */
+  corto: string
   texto: string
   Demo: () => React.JSX.Element
   enlace?: { href: string; texto: string; externo?: boolean }
@@ -28,6 +31,7 @@ type Servicio = {
 const servicios: Servicio[] = [
   {
     titulo: 'Páginas web',
+    corto: 'Páginas web',
     texto: 'Tu negocio en Google y en el celular de tus clientes: servicios, fotos, cómo llegar y WhatsApp.',
     Demo: DemoPagina,
     // Enlace interno con la palabra clave: le dice a Google de qué trata la página nueva
@@ -35,24 +39,77 @@ const servicios: Servicio[] = [
   },
   {
     titulo: 'Tiendas en línea',
+    corto: 'Tiendas',
     texto: 'Catálogo, carrito y pedidos. Tú cambias precios e inventario desde tu celular.',
     Demo: DemoTienda,
     enlace: { href: '/tienda-virtual-ibague', texto: 'Tiendas virtuales en Ibagué: qué incluyen' },
   },
   {
     titulo: 'Citas y reservas',
+    corto: 'Citas',
     texto: 'Tus clientes agendan solos, sin llamar. Tú confirmas desde el celular.',
     Demo: DemoCitas,
     enlace: { href: '#johana', texto: 'Mira un ejemplo real' },
   },
   {
     titulo: 'Asistentes con inteligencia artificial',
+    corto: 'Asistente IA',
     texto: 'Estamos preparando un asistente que responda a tus clientes por ti, con límite de gasto y sin exponer tus datos.',
     Demo: DemoIA,
     enlace: { href: enlaceWhatsApp(MENSAJES.ia), texto: 'Avísame cuando esté listo', externo: true },
     enPreparacion: true,
   },
 ]
+
+// Servicios: en celular, 4 botones para elegir y un solo ejemplo a la vista (decisión 41, opinión de Fable 12-nov).
+// Antes los 4 ejemplos apilados medían 2,5 pantallas; ahora los 4 nombres se ven de una y se muestra el elegido.
+// Desde 768 px se ven los 4 como siempre. Los 4 textos y enlaces siguen en el HTML pre-armado (solo se esconden con
+// una clase), así Google y las IA los leen igual. Empieza en "Páginas web" (lo más buscado en Ibagué).
+function ListaServicios() {
+  const [elegido, setElegido] = useState(0)
+  return (
+    <>
+      <div className="mt-8 grid grid-cols-2 gap-2 md:hidden" role="group" aria-label="Elige un servicio para ver su ejemplo">
+        {servicios.map((s, i) => (
+          <button
+            key={s.titulo}
+            type="button"
+            aria-pressed={i === elegido}
+            onClick={() => setElegido(i)}
+            className={`flex min-h-12 items-center justify-center gap-2 rounded-xl border px-3 font-semibold ${
+              i === elegido ? 'border-cian bg-cian/10 text-cian' : 'border-contorno'
+            }`}
+          >
+            {i === elegido && <span aria-hidden="true">✓</span>}
+            {s.corto}
+          </button>
+        ))}
+      </div>
+      <ul className="mt-8 grid gap-12 md:mt-10 md:grid-cols-2 lg:gap-8 2xl:grid-cols-4 2xl:gap-12">
+        {servicios.map(({ titulo, texto, Demo, enlace, enPreparacion }, i) => (
+          <li key={titulo} className={`max-w-[24rem] lg:max-w-none ${i === elegido ? '' : 'max-md:hidden'}`}>
+            <Demo />
+            <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 className="text-lg font-semibold md:text-xl">{titulo}</h3>
+              {enPreparacion && <span className="text-sm font-semibold text-oro">En preparación</span>}
+            </div>
+            <p className="mt-1 text-bruma">{texto}</p>
+            {enlace && (
+              <a
+                href={enlace.href}
+                className="enlace-flecha mt-2"
+                {...(enlace.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {enlace.texto}
+                {enlace.externo && <span className="sr-only"> (se abre en otra pestaña)</span>}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
 
 const seguridad = [
   'Tus empleados y tus clientes ven solo lo que les corresponde.',
@@ -158,28 +215,7 @@ export default function App() {
             </p>
 
             {/* Un ejemplo para tocar por servicio (Demos.tsx), con una sola línea de texto */}
-            <ul className="mt-10 grid gap-12 md:grid-cols-2 lg:gap-8 2xl:grid-cols-4 2xl:gap-12">
-              {servicios.map(({ titulo, texto, Demo, enlace, enPreparacion }) => (
-                <li key={titulo} className="max-w-[24rem] lg:max-w-none">
-                  <Demo />
-                  <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 className="text-lg font-semibold md:text-xl">{titulo}</h3>
-                    {enPreparacion && <span className="text-sm font-semibold text-oro">En preparación</span>}
-                  </div>
-                  <p className="mt-1 text-bruma">{texto}</p>
-                  {enlace && (
-                    <a
-                      href={enlace.href}
-                      className="enlace-flecha mt-2"
-                      {...(enlace.externo ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    >
-                      {enlace.texto}
-                      {enlace.externo && <span className="sr-only"> (se abre en otra pestaña)</span>}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <ListaServicios />
           </section>
 
           {/* Precios (estudio de la web 2026-11-02): rangos de referencia en vez de "depende". Los datos y cómo se
@@ -316,7 +352,8 @@ export default function App() {
                   Sus clientas agendan sin llamar. Johana confirma las citas y cambia sus servicios desde su
                   celular.
                 </p>
-                <ul className="mt-6 grid max-w-[34rem] gap-3 lg:text-lg">
+                {/* Solo en computador (decisión 41): en celular repetía lo que ya muestra el celular deslizable */}
+                <ul className="mt-6 hidden max-w-[34rem] gap-3 lg:grid lg:text-lg">
                   {[
                     'Inicio con su marca, sus servicios y sus precios.',
                     'Agendar: la clienta elige servicio, día y hora libre.',
@@ -430,19 +467,12 @@ export default function App() {
             <h2 className="text-2xl font-semibold md:text-[2.25rem]">Cómo hacemos tu página web o app</h2>
             {/* 4 nodos que se encienden al bajar (Pasos.tsx) */}
             <Pasos />
-          </section>
 
-          {/* Seguridad (crítica 2026-10-28): en palabras del dueño del negocio. Sin "OWASP" (pasó a "Mi formación"),
-              sin el anuncio de Cloud Security (es un servicio futuro para empresas, confundía aquí) y sin la imagen del
-              candado, que se veía genérica y dejaba media sección vacía. */}
-          <section className="relative pb-24 pl-12 md:pl-24">
-            <span className="nodo nodo-verde top-2" aria-hidden="true" />
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 2xl:grid-cols-[minmax(0,30rem)_1fr] 2xl:gap-24">
-              <div>
-                <h2 className="text-2xl font-semibold md:text-[2.25rem]">Apps seguras desde el primer día</h2>
-                <p className="mt-4 max-w-[40rem] text-lg">Solo tú ves los datos de tus clientes.</p>
-              </div>
-              <ul className="grid max-w-[44rem] gap-5 lg:pt-2 2xl:max-w-[50rem] 2xl:gap-7 2xl:text-lg">
+            {/* Seguridad, dentro de "Cómo hacemos" (decisión 41): antes era una sección aparte de 0,6 pantallas en
+                celular. En palabras del dueño del negocio, sin "OWASP" ni Cloud Security (crítica 2026-10-28). */}
+            <h3 className="mt-14 text-xl font-semibold md:text-2xl">Segura desde el primer día</h3>
+            <p className="mt-2 text-lg">Solo tú ves los datos de tus clientes.</p>
+            <ul className="mt-6 grid max-w-[60rem] gap-5 md:grid-cols-3 md:gap-8 2xl:text-lg">
                 {seguridad.map((t) => (
                   <li key={t} className="flex gap-4">
                     <svg viewBox="0 0 24 24" className="mt-1 size-5 shrink-0 text-verde" aria-hidden="true">
@@ -454,8 +484,7 @@ export default function App() {
                     <span>{t}</span>
                   </li>
                 ))}
-              </ul>
-            </div>
+            </ul>
           </section>
 
           {/* Preguntas frecuentes */}
