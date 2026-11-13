@@ -89,6 +89,14 @@ export const preguntas = [
     respuesta:
       'Páginas web, tiendas en línea, sistemas de citas y reservas y apps a la medida con panel para manejar tu negocio, en Android, iPhone y computador. Los asistentes con inteligencia artificial están en preparación.',
   },
+  // "Para quién sí y para quién no" (estudio taste 2026-11-12, idea de Cangrejo Digital): decir con honestidad a quién
+  // NO le servimos da confianza y ahorra conversaciones que no van a ningún lado. Texto propuesto por Claude; Danny lo
+  // aprueba antes de publicar (paso 4 de los pendientes del HISTORIAL).
+  {
+    pregunta: '¿NODRA es para mi negocio?',
+    respuesta:
+      'Sí, si tienes un negocio en Ibagué o el Tolima y quieres que te encuentren en Google, te escriban por WhatsApp o reserven desde el celular. No, si necesitas la página para mañana o buscas la opción más barata del mercado: cada proyecto lleva propuesta por escrito, fecha de entrega y 6 meses de garantía.',
+  },
   // Crítica 2026-10-28: las dudas reales de quien no es técnico (¿hay que descargar algo?, ¿cuánto cuesta?).
   // Precio (estudio 2026-11-02): ahora con los rangos de PRECIOS, no "depende" (quien compara se iba).
   {
