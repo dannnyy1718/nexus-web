@@ -18,6 +18,10 @@ Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
   el segundo trabajo real espera a CORISOC; los celulares en la primera pantalla del celular no caben sin sacar el
   botón de WhatsApp de esa pantalla (decisión 34); el mapa se queda (decisión de Danny del 28-oct).
 - Ver DECISIONES.md 38.
+- **Publicado y verificado en vivo el 12-nov (~8:15 p. m.):** las 7 páginas responden 200 y traen el botón fijo; fecha
+  visible y `dateModified` en las 4 páginas; sitemap con 7 fechas; descripción nueva; enlaces nuevos; encabezados de
+  seguridad activos. **Velocidad en vivo SIN medir:** Lighthouse falló en este PC (NO_NAVSTART) y PageSpeed sin cupo;
+  medir en pagespeed.web.dev (en local dio 99).
 
 ## 2026-11-12 (noche): guía "¿Cuánto cuesta una página web en Ibagué?"
 - **Por qué:** Danny notó que la página no sale en Google. Revisado en vivo: Google sí tiene 9 páginas de
