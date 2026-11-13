@@ -305,3 +305,18 @@ Qué se decidió y por qué, para no repetir discusiones ni deshacer algo sin sa
   `alternateName` en `WebSite` es lo que Google usa para el nombre del sitio en los resultados.
 - **Regla:** solo nombres que NODRA usa de verdad. No se cambió la fecha de "Página actualizada" porque el contenido
   visible no cambió (decisión 38).
+
+## 40. Menú de navegación en el encabezado (2026-11-12)
+- **Qué:** `Encabezado` en `Marco.tsx` con `MENU_SERVICIOS` y `MENU_SECCIONES`. Computador (desde 1024 px): enlaces a
+  la vista y "Servicios" como desplegable. Celular/tableta: botón "Menú" con la lista completa. Componente
+  `Desplegable` = `<details>` del navegador + un poco de JavaScript solo para cerrarlo (al elegir un enlace, al tocar
+  fuera, con Escape).
+- **Por qué así:** `<details>` abre sin JavaScript y con teclado, y no choca con la CSP. Sin el cierre automático, al
+  tocar "Precios" en la portada el menú quedaba abierto arriba.
+- **Enlaces con `/#seccion`:** funcionan desde cualquier página; en la portada solo bajan, sin recargar.
+- **"Trabajo real" y no "Trabajos":** hoy hay un solo caso publicado (Johana); cambiarlo cuando haya más (regla 8.6).
+- **Celular angosto:** a 360 px el texto "Escríbenos" no cabía junto a "Menú": arriba queda solo el ícono de WhatsApp
+  (el botón grande y el fijo siguen abajo); por debajo de 360 px "Menú" queda solo con su ícono y "NODRA" un poco más
+  pequeño. Medido a 320, 360 y 1366 px.
+- **Consecuencias:** una página de servicio nueva se agrega a `MENU_SERVICIOS` (y al pie). Una sección nueva de la
+  portada que deba estar en el menú necesita su `id` y `scroll-mt-8`.

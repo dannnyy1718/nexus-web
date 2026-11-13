@@ -2,6 +2,15 @@
 
 Qué se hizo cada día, en palabras sencillas. Lo más nuevo arriba.
 
+## 2026-11-12 (noche, 4): menú arriba
+- **Por qué:** Danny (con captura): quien llega no sabe qué más hay en la página, y la portada crece para mostrarlo
+  todo. Con un menú, la gente va directo a lo que busca.
+- **Qué:** en computador, menú siempre a la vista: Servicios (despliega Páginas web, Tiendas virtuales, App de citas y
+  la Guía de precios), Precios, Trabajo real y Quiénes somos. En celular y tableta, botón "Menú" que abre la misma
+  lista en letra grande; el botón de WhatsApp de arriba queda solo con el ícono para que quepa. Sale en todas las páginas.
+- **Revisado:** 320, 360 y 1366 px sin desborde; se cierra al elegir, al tocar fuera y con Escape; contraste 7,8 a
+  13,8:1; botones de 44 px o más. Ver DECISIONES.md 40.
+
 ## 2026-11-12 (noche, 3): "NodraSoft" como otro nombre de la empresa
 - **Por qué:** Danny buscó "nodrasoft" en incógnito y no salíamos; con "nodrasoft Ibagué" sí. Google no sabía que el
   dominio y la marca NODRA son la misma empresa, y hay otras "Nodra" (una S.A.S. en Bogotá, un Instagram nodra.tech).

@@ -1,5 +1,5 @@
 // Piezas compartidas por todas las páginas: contacto, encabezado y pie de página
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 
 export const LEMA = 'Tu negocio, conectado y seguro.'
 
@@ -68,6 +68,67 @@ export function BotonWhatsApp({ grande = false, mensaje = MENSAJES.general }: { 
   )
 }
 
+// Menú de arriba (pedido de Danny 2026-11-12): quien llega no sabía qué más había en la página y la portada crecía
+// para mostrarlo todo. Ver DECISIONES 40. Los enlaces a secciones van con "/#..." para que funcionen desde cualquier
+// página (en la portada solo baja, sin recargar).
+const MENU_SERVICIOS = [
+  { href: '/paginas-web-ibague', texto: 'Páginas web' },
+  { href: '/tienda-virtual-ibague', texto: 'Tiendas virtuales' },
+  { href: '/app-de-citas-ibague', texto: 'App de citas (NODRA Agenda)' },
+  { href: '/cuanto-cuesta-una-pagina-web-ibague', texto: 'Guía: ¿cuánto cuesta una página web?' },
+]
+// "Trabajo real" en singular: hoy hay un solo caso publicado (Johana); "Trabajos" prometería más (regla 8.6)
+const MENU_SECCIONES = [
+  { href: '/#precios', texto: 'Precios' },
+  { href: '/#johana', texto: 'Trabajo real' },
+  { href: '/#quienes-somos', texto: 'Quiénes somos' },
+]
+
+const ENLACE_MENU = 'flex min-h-12 items-center rounded-lg px-3 font-semibold transition-colors hover:bg-linea/60 hover:text-cian'
+
+// Desplegable con <details> del navegador: abre y cierra sin JavaScript y con teclado. El poco JavaScript que lleva
+// solo lo cierra cuando hace falta (al elegir un enlace, al tocar fuera o con Escape); sin eso, al bajar a "Precios"
+// el menú se quedaba abierto arriba. Es una sola escucha de clics: no afecta la velocidad.
+function Desplegable({ resumen, children, className = '' }: { resumen: ReactNode; children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDetailsElement>(null)
+  useEffect(() => {
+    const fuera = (e: MouseEvent) => {
+      const d = ref.current
+      if (d?.open && !d.contains(e.target as Node)) d.open = false
+    }
+    document.addEventListener('click', fuera)
+    return () => document.removeEventListener('click', fuera)
+  }, [])
+  return (
+    <details
+      ref={ref}
+      className={`group ${className}`}
+      onClick={(e) => {
+        if ((e.target as HTMLElement).closest('a') && ref.current) ref.current.open = false
+      }}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape' && ref.current?.open) {
+          ref.current.open = false
+          ref.current.querySelector('summary')?.focus()
+        }
+      }}
+    >
+      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full font-semibold transition-colors hover:text-cian [&::-webkit-details-marker]:hidden">
+        {resumen}
+      </summary>
+      {children}
+    </details>
+  )
+}
+
+function Flecha() {
+  return (
+    <svg viewBox="0 0 16 16" className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export function Encabezado() {
   return (
     <>
@@ -78,27 +139,106 @@ export function Encabezado() {
         Ir al contenido
       </a>
 
-      <header className="mx-auto flex max-w-[92rem] items-center justify-between px-4 py-5 md:px-8 xl:px-12">
-        <a href="/" className="flex items-center gap-3 md:gap-4" aria-label="NODRA, inicio">
+      <header className="relative z-30 mx-auto flex max-w-[92rem] items-center justify-between gap-2 px-4 py-5 sm:gap-4 md:px-8 xl:px-12">
+        <a href="/" className="flex shrink-0 items-center gap-2 sm:gap-3 md:gap-4" aria-label="NODRA, inicio">
           <img
             src="/img/escudo-mini.webp"
             alt=""
             width={64}
             height={64}
-            className="size-12 rounded-xl shadow-[0_0_24px_-4px_var(--color-cian)] md:size-16"
+            className="size-11 rounded-xl shadow-[0_0_24px_-4px_var(--color-cian)] sm:size-12 md:size-16"
           />
-          <span className="marca marca-brillo text-2xl md:text-[2rem]">NODRA</span>
+          <span className="marca marca-brillo text-xl min-[380px]:text-2xl md:text-[2rem]">NODRA</span>
         </a>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-contorno px-4 py-2 text-sm font-semibold transition-colors hover:border-verde hover:text-verde"
-        >
-          <IconoWhatsApp className="size-4" />
-          <span className="hidden sm:inline">Escríbenos</span>
-          <span className="sm:hidden">WhatsApp</span>
-        </a>
+
+        {/* Computador: el menú siempre a la vista (público de 30 a 70 años: que no tenga que buscarlo) */}
+        <nav aria-label="Principal" className="hidden lg:block">
+          <ul className="flex items-center gap-6 xl:gap-9">
+            <li className="relative">
+              <Desplegable
+                resumen={
+                  <>
+                    Servicios <Flecha />
+                  </>
+                }
+              >
+                <ul className="absolute left-0 top-full mt-2 grid w-80 gap-1 rounded-2xl border border-contorno bg-noche p-2 shadow-[0_24px_48px_-12px_rgb(0_0_0/0.7)]">
+                  {MENU_SERVICIOS.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} className={ENLACE_MENU}>
+                        {l.texto}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </Desplegable>
+            </li>
+            {MENU_SECCIONES.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="flex min-h-11 items-center font-semibold transition-colors hover:text-cian">
+                  {l.texto}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escríbenos por WhatsApp (se abre en otra pestaña)"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-contorno px-3 text-sm font-semibold transition-colors hover:border-verde hover:text-verde sm:px-4"
+          >
+            <IconoWhatsApp className="size-5 sm:size-4" />
+            {/* En celular solo el ícono: con el botón "Menú" al lado, el texto no cabía a 360 px */}
+            <span className="hidden sm:inline">Escríbenos</span>
+          </a>
+
+          {/* Celular y tableta: botón "Menú" que abre la misma lista en letra grande */}
+          <Desplegable
+            className="lg:hidden"
+            resumen={
+              <span className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-contorno px-3 text-sm sm:gap-2 sm:px-4">
+                <svg viewBox="0 0 20 20" className="size-5 group-open:hidden" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <path d="M3 6h14M3 10h14M3 14h14" />
+                </svg>
+                <svg viewBox="0 0 20 20" className="hidden size-5 group-open:block" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  <path d="M5 5l10 10M15 5L5 15" />
+                </svg>
+                {/* En celulares muy angostos (menos de 360 px) solo el ícono; el lector de pantalla igual dice "Menú" */}
+                <span className="max-[359px]:sr-only">Menú</span>
+              </span>
+            }
+          >
+            <nav
+              aria-label="Principal"
+              className="absolute inset-x-4 top-full grid gap-1 rounded-2xl border border-contorno bg-noche p-3 text-lg shadow-[0_24px_48px_-12px_rgb(0_0_0/0.8)] md:inset-x-8"
+            >
+              <p className="px-3 pt-1 text-sm font-semibold text-bruma">Servicios</p>
+              <ul className="grid gap-1">
+                {MENU_SERVICIOS.map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} className={ENLACE_MENU}>
+                      {l.texto}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <hr className="my-2 border-linea" />
+              <ul className="grid gap-1">
+                {MENU_SECCIONES.map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} className={ENLACE_MENU}>
+                      {l.texto}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </Desplegable>
+        </div>
       </header>
     </>
   )
