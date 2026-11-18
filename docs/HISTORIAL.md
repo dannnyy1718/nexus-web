@@ -67,6 +67,11 @@ verificado en vivo el mismo día. **Falta:** el paso 6 (~12-dic).
 **Si algo se complica** (los botones hacen saltar la página, baja Lighthouse o el HTML pre-armado deja de traer los 4
 servicios): parar y avisarle a Danny para volver a Fable. No improvisar.
 
+## 2026-11-18: pie de página centrado en computador
+- **Cambio:** en computador, la parte del medio del pie (Servicios, Guía, Atención, Correo, privacidad) ahora va
+  centrada. Antes quedaba pegada a la izquierda y se veía corrida (pedido de Danny con una captura). En celular ya
+  iba centrada; no cambió. Archivo: `src/Marco.tsx` (función `Pie`, clase `md:text-center`).
+
 ## 2026-11-12 (noche, 5): menú publicado
 - Publicado y verificado en vivo en nodrasoft.com: en celular abre los 7 enlaces, se cierra al elegir y sin desborde.
 

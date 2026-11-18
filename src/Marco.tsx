@@ -304,7 +304,8 @@ export function Pie() {
           <span className="text-niebla">{LEMA}</span>
         </span>
       </span>
-      <div className="grid gap-2 md:gap-1">
+      {/* Centrado también en computador (pedido de Danny 2026-11-18): pegado a la izquierda se veía corrido */}
+      <div className="grid gap-2 md:gap-1 md:text-center">
         {/* Servicios en todas las páginas (auditoría SEO 2026-11-04): las páginas que venden recibían 1 enlace interno
             y las legales 5, y Google lo leía como que las legales importaban más. Cada página de servicio nueva va
             aquí (ver DECISIONES.md 31 y 33). El texto del enlace dice de qué trata la página, no "ver más". Sin partir cada enlace por dentro: en celular
