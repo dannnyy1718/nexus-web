@@ -67,6 +67,13 @@ verificado en vivo el mismo día. **Falta:** el paso 6 (~12-dic).
 **Si algo se complica** (los botones hacen saltar la página, baja Lighthouse o el HTML pre-armado deja de traer los 4
 servicios): parar y avisarle a Danny para volver a Fable. No improvisar.
 
+## 2026-11-23: auditoría del lunes (solo revisión, nada cambió)
+- `npm audit` 0 fallas; Mozilla Observatory **A+ (130)**; encabezados completos; `www` y `http` llevan con 301 a
+  `https://nodrasoft.com/`; la dirección vieja `nexus-tech-co.web.app` responde pero su canonical apunta a nodrasoft.com.
+- **0 enlaces rotos:** 7 páginas del sitemap y 39 enlaces revisados; los 11 botones de WhatsApp van al mismo número.
+- **Textos honestos:** sin testimonios ni cifras inventadas (las únicas cifras son el 50 % / 50 % del pago).
+- **PageSpeed en vivo (pagespeed.web.dev, celular): 100 / 100 / 100 / 100**, carga 0,9 s, CLS 0.
+
 ## 2026-11-18: pie de página centrado en computador
 - **Cambio:** en computador, la parte del medio del pie (Servicios, Guía, Atención, Correo, privacidad) ahora va
   centrada. Antes quedaba pegada a la izquierda y se veía corrida (pedido de Danny con una captura). En celular ya
